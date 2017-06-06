@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace basisform
 {
-    public partial class IpadBasis : Form
+    public partial class IpadLogin : IpadBasis
     {
-        public IpadBasis()
+        public IpadLogin()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

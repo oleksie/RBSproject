@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace basisform
+namespace WindowsFormsApplication1
 {
-    public partial class IpadBasis : Form
+    public partial class ipadbasis : Form
     {
-        public IpadBasis()
+        public ipadbasis()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
