@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace basisform
+namespace UI
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace basisform
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ipadbasis());
+            Application.Run(new Basisform());
         }
     }
 }
