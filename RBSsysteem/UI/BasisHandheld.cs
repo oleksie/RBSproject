@@ -16,5 +16,10 @@ namespace UI
         {
             InitializeComponent();
         }
+
+        private void BasisHandheld_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
