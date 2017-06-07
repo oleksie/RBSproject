@@ -82,6 +82,18 @@
     <Compile Include="HandheldPopUpBestel.Designer.cs">
       <DependentUpon>HandheldPopUpBestel.cs</DependentUpon>
     </Compile>
+    <Compile Include="HandheldPopUpLetOp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HandheldPopUpLetOp.Designer.cs">
+      <DependentUpon>HandheldPopUpLetOp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HandheldPopUpReminder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HandheldPopUpReminder.Designer.cs">
+      <DependentUpon>HandheldPopUpReminder.cs</DependentUpon>
+    </Compile>
     <Compile Include="HandheldTafels.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +119,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HandheldPopUpBestel.resx">
       <DependentUpon>HandheldPopUpBestel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HandheldPopUpLetOp.resx">
+      <DependentUpon>HandheldPopUpLetOp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HandheldPopUpReminder.resx">
+      <DependentUpon>HandheldPopUpReminder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HandheldTafels.resx">
       <DependentUpon>HandheldTafels.cs</DependentUpon>
