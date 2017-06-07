@@ -35,10 +35,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Btn_AfrekenenTerug = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Lbl_PersoonlijkNr = new System.Windows.Forms.Label();
             this.Lbl_TafelNr = new System.Windows.Forms.Label();
+            this.Lbl_PersoonlijkNr = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -116,15 +116,27 @@
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             // 
-            // label1
+            // Lbl_TafelNr
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(6, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = " : Persoonlijk nummer";
+            this.Lbl_TafelNr.AutoSize = true;
+            this.Lbl_TafelNr.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Lbl_TafelNr.Location = new System.Drawing.Point(104, 39);
+            this.Lbl_TafelNr.Name = "Lbl_TafelNr";
+            this.Lbl_TafelNr.Size = new System.Drawing.Size(46, 17);
+            this.Lbl_TafelNr.TabIndex = 3;
+            this.Lbl_TafelNr.Text = "label4";
+            // 
+            // Lbl_PersoonlijkNr
+            // 
+            this.Lbl_PersoonlijkNr.AutoSize = true;
+            this.Lbl_PersoonlijkNr.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Lbl_PersoonlijkNr.Location = new System.Drawing.Point(141, 18);
+            this.Lbl_PersoonlijkNr.Margin = new System.Windows.Forms.Padding(0);
+            this.Lbl_PersoonlijkNr.Name = "Lbl_PersoonlijkNr";
+            this.Lbl_PersoonlijkNr.Size = new System.Drawing.Size(46, 17);
+            this.Lbl_PersoonlijkNr.TabIndex = 2;
+            this.Lbl_PersoonlijkNr.Text = "label3";
+            this.Lbl_PersoonlijkNr.Click += new System.EventHandler(this.Lbl_AfrekenenPersoonNr_Click);
             // 
             // label2
             // 
@@ -137,26 +149,15 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Tafel nummer : ";
             // 
-            // Lbl_PersoonlijkNr
+            // label1
             // 
-            this.Lbl_PersoonlijkNr.AutoSize = true;
-            this.Lbl_PersoonlijkNr.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Lbl_PersoonlijkNr.Location = new System.Drawing.Point(157, 18);
-            this.Lbl_PersoonlijkNr.Name = "Lbl_PersoonlijkNr";
-            this.Lbl_PersoonlijkNr.Size = new System.Drawing.Size(46, 17);
-            this.Lbl_PersoonlijkNr.TabIndex = 2;
-            this.Lbl_PersoonlijkNr.Text = "label3";
-            this.Lbl_PersoonlijkNr.Click += new System.EventHandler(this.Lbl_AfrekenenPersoonNr_Click);
-            // 
-            // Lbl_TafelNr
-            // 
-            this.Lbl_TafelNr.AutoSize = true;
-            this.Lbl_TafelNr.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Lbl_TafelNr.Location = new System.Drawing.Point(114, 39);
-            this.Lbl_TafelNr.Name = "Lbl_TafelNr";
-            this.Lbl_TafelNr.Size = new System.Drawing.Size(46, 17);
-            this.Lbl_TafelNr.TabIndex = 3;
-            this.Lbl_TafelNr.Text = "label4";
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(6, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(144, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = " : Persoonlijk nummer";
             // 
             // HandheldAfrekenen
             // 
