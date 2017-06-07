@@ -46,7 +46,7 @@ namespace UI
 
         private void roundButton2_Click(object sender, EventArgs e)
         {
-            BackgroundImageLayout = ImageLayout.Stretch;
+            
         }
 
         private void roundButton9_Click_1(object sender, EventArgs e)
@@ -80,6 +80,11 @@ namespace UI
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_TafelsLoguit_Click(object sender, EventArgs e)
         {
 
         }

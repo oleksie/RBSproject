@@ -64,6 +64,12 @@
     <Compile Include="HandheldAfrekenen.Designer.cs">
       <DependentUpon>HandheldAfrekenen.cs</DependentUpon>
     </Compile>
+    <Compile Include="HandheldKaart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HandheldKaart.Designer.cs">
+      <DependentUpon>HandheldKaart.cs</DependentUpon>
+    </Compile>
     <Compile Include="HandheldLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HandheldAfrekenen.resx">
       <DependentUpon>HandheldAfrekenen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HandheldKaart.resx">
+      <DependentUpon>HandheldKaart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HandheldLogin.resx">
       <DependentUpon>HandheldLogin.cs</DependentUpon>

@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class HandheldLogin : BasisHandheld
+    public partial class HandheldKaart : BasisHandheld
     {
-        public HandheldLogin()
+        public HandheldKaart()
         {
             InitializeComponent();
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        private void HandheldKaart_Load(object sender, EventArgs e)
         {
 
         }

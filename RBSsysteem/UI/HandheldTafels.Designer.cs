@@ -49,9 +49,9 @@
             this.Lbl_Status4 = new System.Windows.Forms.Label();
             this.Lbl_Status10 = new System.Windows.Forms.Label();
             this.Lbl_Status5 = new System.Windows.Forms.Label();
-            this.Btn_TafelsLoguit = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Lbl_PersoonlijkNr = new System.Windows.Forms.Label();
+            this.Btn_TafelsLoguit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Btn_Tafel1
@@ -240,15 +240,6 @@
             this.Lbl_Status5.TabIndex = 19;
             this.Lbl_Status5.Text = "label10";
             // 
-            // Btn_TafelsLoguit
-            // 
-            this.Btn_TafelsLoguit.Location = new System.Drawing.Point(71, 864);
-            this.Btn_TafelsLoguit.Name = "Btn_TafelsLoguit";
-            this.Btn_TafelsLoguit.Size = new System.Drawing.Size(140, 77);
-            this.Btn_TafelsLoguit.TabIndex = 21;
-            this.Btn_TafelsLoguit.Text = "Loguit";
-            this.Btn_TafelsLoguit.UseVisualStyleBackColor = true;
-            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(12, 10);
@@ -265,14 +256,23 @@
             this.Lbl_PersoonlijkNr.Size = new System.Drawing.Size(0, 17);
             this.Lbl_PersoonlijkNr.TabIndex = 23;
             // 
+            // Btn_TafelsLoguit
+            // 
+            this.Btn_TafelsLoguit.Location = new System.Drawing.Point(83, 863);
+            this.Btn_TafelsLoguit.Name = "Btn_TafelsLoguit";
+            this.Btn_TafelsLoguit.Size = new System.Drawing.Size(128, 79);
+            this.Btn_TafelsLoguit.TabIndex = 24;
+            this.Btn_TafelsLoguit.Text = "Loguit";
+            this.Btn_TafelsLoguit.UseVisualStyleBackColor = true;
+            // 
             // HandheldTafels
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(750, 977);
+            this.Controls.Add(this.Btn_TafelsLoguit);
             this.Controls.Add(this.Lbl_PersoonlijkNr);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.Btn_TafelsLoguit);
             this.Controls.Add(this.Lbl_Status10);
             this.Controls.Add(this.Lbl_Status5);
             this.Controls.Add(this.Lbl_Status9);
@@ -317,9 +317,9 @@
             this.Controls.SetChildIndex(this.Lbl_Status9, 0);
             this.Controls.SetChildIndex(this.Lbl_Status5, 0);
             this.Controls.SetChildIndex(this.Lbl_Status10, 0);
-            this.Controls.SetChildIndex(this.Btn_TafelsLoguit, 0);
             this.Controls.SetChildIndex(this.textBox1, 0);
             this.Controls.SetChildIndex(this.Lbl_PersoonlijkNr, 0);
+            this.Controls.SetChildIndex(this.Btn_TafelsLoguit, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,8 +347,8 @@
         private System.Windows.Forms.Label Lbl_Status4;
         private System.Windows.Forms.Label Lbl_Status10;
         private System.Windows.Forms.Label Lbl_Status5;
-        private System.Windows.Forms.Button Btn_TafelsLoguit;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label Lbl_PersoonlijkNr;
+        private System.Windows.Forms.Button Btn_TafelsLoguit;
     }
 }
