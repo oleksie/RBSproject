@@ -134,6 +134,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Logica\Logica.csproj">
+      <Project>{9279efea-7d18-4d17-b692-1da78069da9a}</Project>
+      <Name>Logica</Name>
+    </ProjectReference>
     <ProjectReference Include="..\StyleGuide\StyleGuide.csproj">
       <Project>{75cd7662-2a51-457c-9bed-82e0a7d3221a}</Project>
       <Name>StyleGuide</Name>

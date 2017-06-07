@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bestellen));
             this.button1 = new System.Windows.Forms.Button();
             this.Lunch = new System.Windows.Forms.TabControl();
@@ -44,7 +43,6 @@
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.tabPage10 = new System.Windows.Forms.TabPage();
@@ -58,8 +56,11 @@
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabPage15 = new System.Windows.Forms.TabPage();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.ListViewtje = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.Lunch.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -77,8 +78,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.ListViewtje);
             this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.listBox1);
             this.panel1.Controls.Add(this.Lunch);
             this.panel1.Controls.Add(this.button1);
             // 
@@ -235,7 +236,6 @@
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ImageKey = "calculator-icon.png";
-            this.button3.ImageList = this.imageList1;
             this.button3.Location = new System.Drawing.Point(57, 62);
             this.button3.Name = "button3";
             this.button3.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -244,12 +244,6 @@
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button3.UseVisualStyleBackColor = false;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "calculator-icon.png");
             // 
             // pictureBox2
             // 
@@ -339,7 +333,6 @@
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ImageKey = "calculator-icon.png";
-            this.button2.ImageList = this.imageList1;
             this.button2.Location = new System.Drawing.Point(57, 62);
             this.button2.Name = "button2";
             this.button2.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -400,14 +393,6 @@
             this.tabPage15.Text = "tabPage15";
             this.tabPage15.UseVisualStyleBackColor = true;
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(83, 584);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(575, 303);
-            this.listBox1.TabIndex = 2;
-            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(42, 919);
@@ -417,6 +402,32 @@
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // ListViewtje
+            // 
+            this.ListViewtje.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.ListViewtje.Location = new System.Drawing.Point(87, 584);
+            this.ListViewtje.Name = "ListViewtje";
+            this.ListViewtje.Size = new System.Drawing.Size(571, 303);
+            this.ListViewtje.TabIndex = 4;
+            this.ListViewtje.TileSize = new System.Drawing.Size(1, 1);
+            this.ListViewtje.UseCompatibleStateImageBehavior = false;
+            this.ListViewtje.View = System.Windows.Forms.View.Tile;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Naam";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "aantal";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Opmerkingen";
             // 
             // Bestellen
             // 
@@ -449,8 +460,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.TabControl tabControl3;
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.Button button3;
@@ -474,5 +483,9 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button Lunch_Voorgerecht_Steak;
+        private System.Windows.Forms.ListView ListViewtje;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
     }
 }
