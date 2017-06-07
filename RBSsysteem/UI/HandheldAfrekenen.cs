@@ -8,26 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StyleGuide
+namespace UI
 {
-    public partial class BasisHandheldForm : Form
+    public partial class HandheldAfrekenen : BasisHandheld
     {
-        public BasisHandheldForm()
+        public HandheldAfrekenen()
         {
             InitializeComponent();
         }
 
-        private void BasisHandheld_Load(object sender, EventArgs e)
+        private void HandheldAfrekenen_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void Lbl_AfrekenenPersoonNr_Click(object sender, EventArgs e)
         {
 
         }
