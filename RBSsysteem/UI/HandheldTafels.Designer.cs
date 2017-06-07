@@ -154,7 +154,7 @@
             this.Lbl_Status1.AutoSize = true;
             this.Lbl_Status1.Location = new System.Drawing.Point(303, 349);
             this.Lbl_Status1.Name = "Lbl_Status1";
-            this.Lbl_Status1.Size = new System.Drawing.Size(0, 17);
+            this.Lbl_Status1.Size = new System.Drawing.Size(0, 13);
             this.Lbl_Status1.TabIndex = 11;
             // 
             // Lbl_Status6
@@ -162,7 +162,7 @@
             this.Lbl_Status6.AutoSize = true;
             this.Lbl_Status6.Location = new System.Drawing.Point(506, 349);
             this.Lbl_Status6.Name = "Lbl_Status6";
-            this.Lbl_Status6.Size = new System.Drawing.Size(46, 17);
+            this.Lbl_Status6.Size = new System.Drawing.Size(35, 13);
             this.Lbl_Status6.TabIndex = 12;
             this.Lbl_Status6.Text = "label2";
             // 
@@ -171,7 +171,7 @@
             this.Lbl_Status7.AutoSize = true;
             this.Lbl_Status7.Location = new System.Drawing.Point(506, 461);
             this.Lbl_Status7.Name = "Lbl_Status7";
-            this.Lbl_Status7.Size = new System.Drawing.Size(46, 17);
+            this.Lbl_Status7.Size = new System.Drawing.Size(35, 13);
             this.Lbl_Status7.TabIndex = 14;
             this.Lbl_Status7.Text = "label3";
             // 
@@ -180,7 +180,7 @@
             this.Lbl_Status2.AutoSize = true;
             this.Lbl_Status2.Location = new System.Drawing.Point(303, 461);
             this.Lbl_Status2.Name = "Lbl_Status2";
-            this.Lbl_Status2.Size = new System.Drawing.Size(46, 17);
+            this.Lbl_Status2.Size = new System.Drawing.Size(35, 13);
             this.Lbl_Status2.TabIndex = 13;
             this.Lbl_Status2.Text = "label4";
             this.Lbl_Status2.Click += new System.EventHandler(this.label4_Click);
@@ -190,7 +190,7 @@
             this.Lbl_Status8.AutoSize = true;
             this.Lbl_Status8.Location = new System.Drawing.Point(506, 582);
             this.Lbl_Status8.Name = "Lbl_Status8";
-            this.Lbl_Status8.Size = new System.Drawing.Size(46, 17);
+            this.Lbl_Status8.Size = new System.Drawing.Size(35, 13);
             this.Lbl_Status8.TabIndex = 16;
             this.Lbl_Status8.Text = "label5";
             // 
@@ -199,7 +199,7 @@
             this.Lbl_Status3.AutoSize = true;
             this.Lbl_Status3.Location = new System.Drawing.Point(303, 582);
             this.Lbl_Status3.Name = "Lbl_Status3";
-            this.Lbl_Status3.Size = new System.Drawing.Size(46, 17);
+            this.Lbl_Status3.Size = new System.Drawing.Size(35, 13);
             this.Lbl_Status3.TabIndex = 15;
             this.Lbl_Status3.Text = "label6";
             this.Lbl_Status3.Click += new System.EventHandler(this.label6_Click);
@@ -209,7 +209,7 @@
             this.Lbl_Status9.AutoSize = true;
             this.Lbl_Status9.Location = new System.Drawing.Point(506, 684);
             this.Lbl_Status9.Name = "Lbl_Status9";
-            this.Lbl_Status9.Size = new System.Drawing.Size(46, 17);
+            this.Lbl_Status9.Size = new System.Drawing.Size(35, 13);
             this.Lbl_Status9.TabIndex = 18;
             this.Lbl_Status9.Text = "label7";
             // 
@@ -218,7 +218,7 @@
             this.Lbl_Status4.AutoSize = true;
             this.Lbl_Status4.Location = new System.Drawing.Point(303, 684);
             this.Lbl_Status4.Name = "Lbl_Status4";
-            this.Lbl_Status4.Size = new System.Drawing.Size(46, 17);
+            this.Lbl_Status4.Size = new System.Drawing.Size(35, 13);
             this.Lbl_Status4.TabIndex = 17;
             this.Lbl_Status4.Text = "label8";
             // 
@@ -227,7 +227,7 @@
             this.Lbl_Status10.AutoSize = true;
             this.Lbl_Status10.Location = new System.Drawing.Point(506, 794);
             this.Lbl_Status10.Name = "Lbl_Status10";
-            this.Lbl_Status10.Size = new System.Drawing.Size(46, 17);
+            this.Lbl_Status10.Size = new System.Drawing.Size(35, 13);
             this.Lbl_Status10.TabIndex = 20;
             this.Lbl_Status10.Text = "label9";
             // 
@@ -236,7 +236,7 @@
             this.Lbl_Status5.AutoSize = true;
             this.Lbl_Status5.Location = new System.Drawing.Point(303, 794);
             this.Lbl_Status5.Name = "Lbl_Status5";
-            this.Lbl_Status5.Size = new System.Drawing.Size(54, 17);
+            this.Lbl_Status5.Size = new System.Drawing.Size(41, 13);
             this.Lbl_Status5.TabIndex = 19;
             this.Lbl_Status5.Text = "label10";
             // 
@@ -253,7 +253,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(12, 10);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(199, 22);
+            this.textBox1.Size = new System.Drawing.Size(199, 20);
             this.textBox1.TabIndex = 22;
             this.textBox1.Text = "Persoonlijk nummer : ";
             // 
@@ -262,7 +262,7 @@
             this.Lbl_PersoonlijkNr.AutoSize = true;
             this.Lbl_PersoonlijkNr.Location = new System.Drawing.Point(148, 15);
             this.Lbl_PersoonlijkNr.Name = "Lbl_PersoonlijkNr";
-            this.Lbl_PersoonlijkNr.Size = new System.Drawing.Size(0, 17);
+            this.Lbl_PersoonlijkNr.Size = new System.Drawing.Size(0, 13);
             this.Lbl_PersoonlijkNr.TabIndex = 23;
             // 
             // HandheldTafels
