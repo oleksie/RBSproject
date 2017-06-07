@@ -52,10 +52,34 @@
     <Compile Include="BasisHandheld.Designer.cs">
       <DependentUpon>BasisHandheld.cs</DependentUpon>
     </Compile>
+    <Compile Include="Handheld.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Handheld.Designer.cs">
+      <DependentUpon>Handheld.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HandheldLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HandheldLogin.Designer.cs">
+      <DependentUpon>HandheldLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HandheldTafels.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HandheldTafels.Designer.cs">
+      <DependentUpon>HandheldTafels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BasisHandheld.resx">
       <DependentUpon>BasisHandheld.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HandheldLogin.resx">
+      <DependentUpon>HandheldLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HandheldTafels.resx">
+      <DependentUpon>HandheldTafels.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
