@@ -31,7 +31,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Btn_HandheldPopUpLetOPJa = new System.Windows.Forms.Button();
-            this.Btn_handheldPopUpLetOpNee = new System.Windows.Forms.Button();
+            this.Btn_HandheldPopUpLetOpNee = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -66,15 +66,15 @@
             this.Btn_HandheldPopUpLetOPJa.UseVisualStyleBackColor = true;
             this.Btn_HandheldPopUpLetOPJa.Click += new System.EventHandler(this.Btn_HandheldPopUpBestelTerug_Click);
             // 
-            // Btn_handheldPopUpLetOpNee
+            // Btn_HandheldPopUpLetOpNee
             // 
-            this.Btn_handheldPopUpLetOpNee.Location = new System.Drawing.Point(334, 233);
-            this.Btn_handheldPopUpLetOpNee.Name = "Btn_handheldPopUpLetOpNee";
-            this.Btn_handheldPopUpLetOpNee.Size = new System.Drawing.Size(111, 64);
-            this.Btn_handheldPopUpLetOpNee.TabIndex = 9;
-            this.Btn_handheldPopUpLetOpNee.Text = "Nee";
-            this.Btn_handheldPopUpLetOpNee.UseVisualStyleBackColor = true;
-            this.Btn_handheldPopUpLetOpNee.Click += new System.EventHandler(this.Btn_HandheldPopUpBestelOk_Click);
+            this.Btn_HandheldPopUpLetOpNee.Location = new System.Drawing.Point(334, 233);
+            this.Btn_HandheldPopUpLetOpNee.Name = "Btn_HandheldPopUpLetOpNee";
+            this.Btn_HandheldPopUpLetOpNee.Size = new System.Drawing.Size(111, 64);
+            this.Btn_HandheldPopUpLetOpNee.TabIndex = 9;
+            this.Btn_HandheldPopUpLetOpNee.Text = "Nee";
+            this.Btn_HandheldPopUpLetOpNee.UseVisualStyleBackColor = true;
+            this.Btn_HandheldPopUpLetOpNee.Click += new System.EventHandler(this.Btn_HandheldPopUpBestelOk_Click);
             // 
             // label1
             // 
@@ -94,7 +94,7 @@
             this.ClientSize = new System.Drawing.Size(494, 337);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Btn_HandheldPopUpLetOPJa);
-            this.Controls.Add(this.Btn_handheldPopUpLetOpNee);
+            this.Controls.Add(this.Btn_HandheldPopUpLetOpNee);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
             this.Name = "HandheldPopUpLetOp";
@@ -109,7 +109,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Btn_HandheldPopUpLetOPJa;
-        private System.Windows.Forms.Button Btn_handheldPopUpLetOpNee;
+        private System.Windows.Forms.Button Btn_HandheldPopUpLetOpNee;
         private System.Windows.Forms.Label label1;
     }
 }
