@@ -29,7 +29,7 @@ namespace UI
             this.Hide();
         }
 
-        private void Bestellen_Load(object sender, EventArgs e)
+        private void Lunch_Voorgerecht_Steak_Click(object sender, EventArgs e)
         {
 
         }

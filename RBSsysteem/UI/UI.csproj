@@ -58,12 +58,6 @@
     <Compile Include="Bestellen.Designer.cs">
       <DependentUpon>Bestellen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Handheld.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Handheld.Designer.cs">
-      <DependentUpon>Handheld.cs</DependentUpon>
-    </Compile>
     <Compile Include="HandheldAfrekenen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,9 +89,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Bestellen.resx">
       <DependentUpon>Bestellen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Handheld.resx">
-      <DependentUpon>Handheld.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HandheldAfrekenen.resx">
       <DependentUpon>HandheldAfrekenen.cs</DependentUpon>
