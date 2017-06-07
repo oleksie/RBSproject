@@ -42,18 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BasisHandheld.cs">
+    <Compile Include="BasisHandheldForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BasisHandheld.Designer.cs">
-      <DependentUpon>BasisHandheld.cs</DependentUpon>
+    <Compile Include="BasisHandheldForm.Designer.cs">
+      <DependentUpon>BasisHandheldForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="BasisHandheld.resx">
-      <DependentUpon>BasisHandheld.cs</DependentUpon>
+    <EmbeddedResource Include="BasisHandheldForm.resx">
+      <DependentUpon>BasisHandheldForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

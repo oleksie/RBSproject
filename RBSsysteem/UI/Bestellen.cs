@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class Bestellen : StyleGuide.BasisHandheld
+    public partial class Bestellen : StyleGuide.BasisHandheldForm
     {
         public Bestellen()
         {

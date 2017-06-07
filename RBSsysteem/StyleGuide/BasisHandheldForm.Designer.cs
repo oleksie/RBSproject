@@ -1,6 +1,6 @@
 ﻿namespace StyleGuide
 {
-    partial class BasisHandheld
+    partial class BasisHandheldForm
     {
         /// <summary>
         /// Required designer variable.

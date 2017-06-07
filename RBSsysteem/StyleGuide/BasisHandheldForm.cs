@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace StyleGuide
 {
-    public partial class BasisHandheld : Form
+    public partial class BasisHandheldForm : Form
     {
-        public BasisHandheld()
+        public BasisHandheldForm()
         {
             InitializeComponent();
         }
