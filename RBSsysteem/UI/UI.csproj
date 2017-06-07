@@ -49,8 +49,14 @@
     <Compile Include="BasisHandheld.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BasisHandheld.Designer.cs">
+    <Compile Include="BasisHandheld.designer.cs">
       <DependentUpon>BasisHandheld.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bestellen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bestellen.Designer.cs">
+      <DependentUpon>Bestellen.cs</DependentUpon>
     </Compile>
     <Compile Include="Handheld.cs">
       <SubType>Form</SubType>
@@ -87,6 +93,12 @@
     <EmbeddedResource Include="BasisHandheld.resx">
       <DependentUpon>BasisHandheld.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Bestellen.resx">
+      <DependentUpon>Bestellen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Handheld.resx">
+      <DependentUpon>Handheld.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HandheldAfrekenen.resx">
       <DependentUpon>HandheldAfrekenen.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +132,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StyleGuide\StyleGuide.csproj">
+      <Project>{75cd7662-2a51-457c-9bed-82e0a7d3221a}</Project>
+      <Name>StyleGuide</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
