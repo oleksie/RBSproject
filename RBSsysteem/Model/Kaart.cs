@@ -1,4 +1,7 @@
-﻿public enum Kaart
+﻿namespace Model
 {
-    Lunch, Diner, Dranken
-};
+    public enum Kaart
+    {
+        Lunch, Diner, Dranken
+    }
+}

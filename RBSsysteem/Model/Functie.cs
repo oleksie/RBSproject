@@ -1,4 +1,7 @@
-﻿public enum Functie
+﻿namespace Model
 {
-    Bediende, Kok, Barman, Eigenaar
-};
+    public enum Functie
+    {
+        Bediende, Kok, Barman, Eigenaar
+    }
+}

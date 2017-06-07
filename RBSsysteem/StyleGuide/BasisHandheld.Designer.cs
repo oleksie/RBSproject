@@ -1,4 +1,4 @@
-﻿namespace UI
+﻿namespace StyleGuide
 {
     partial class BasisHandheld
     {
@@ -28,20 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // BasisForm
+            // panel1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(750, 977);
-            this.Name = "BasisForm";
-            this.Text = "Form1";
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(752, 985);
+            this.panel1.TabIndex = 0;
+            // 
+            // BasisHandheld
+            // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(752, 985);
+            this.Controls.Add(this.panel1);
+            this.Name = "BasisHandheld";
+            this.Text = "BasisHandheld";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        protected System.Windows.Forms.Panel panel1;
     }
 }
-

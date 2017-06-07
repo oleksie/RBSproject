@@ -1,4 +1,7 @@
-﻿public enum Categorie
+﻿namespace Model
 {
-    Voorgerecht, Hoofdgerecht, Tussengerecht, Nagerecht, Frisdrank, Bieren, Gedestilleerde_dranken, Koffie_Thee, Wijnen
-};
+    public enum Categorie
+    {
+        Voorgerecht, Hoofdgerecht, Tussengerecht, Nagerecht, Frisdrank, Bieren, Gedestilleerde_dranken, Koffie_Thee, Wijnen
+    }
+}
