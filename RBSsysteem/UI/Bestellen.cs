@@ -21,5 +21,17 @@ namespace UI
         {
             MessageBox.Show("Dot Net Perls is awesome.");
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            HandheldLogin hee = new HandheldLogin();
+            hee.Show();
+            this.Hide();
+        }
+
+        private void Bestellen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
