@@ -52,6 +52,12 @@
     <Compile Include="BasisHandheld.designer.cs">
       <DependentUpon>BasisHandheld.cs</DependentUpon>
     </Compile>
+    <Compile Include="BasisKokBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BasisKokBar.Designer.cs">
+      <DependentUpon>BasisKokBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Bestellen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BasisHandheld.resx">
       <DependentUpon>BasisHandheld.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BasisKokBar.resx">
+      <DependentUpon>BasisKokBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Bestellen.resx">
       <DependentUpon>Bestellen.cs</DependentUpon>
