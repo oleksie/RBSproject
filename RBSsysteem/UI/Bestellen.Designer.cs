@@ -207,7 +207,7 @@
             this.tabControl3.Controls.Add(this.tabPage9);
             this.tabControl3.Controls.Add(this.tabPage10);
             this.tabControl3.Controls.Add(this.tabPage11);
-            this.tabControl3.ItemSize = new System.Drawing.Size(143, 50);
+            this.tabControl3.ItemSize = new System.Drawing.Size(144, 50);
             this.tabControl3.Location = new System.Drawing.Point(-4, -3);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
@@ -415,19 +415,22 @@
             this.ListViewtje.TabIndex = 4;
             this.ListViewtje.TileSize = new System.Drawing.Size(1, 1);
             this.ListViewtje.UseCompatibleStateImageBehavior = false;
-            this.ListViewtje.View = System.Windows.Forms.View.Tile;
+            this.ListViewtje.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Naam";
+            this.columnHeader1.Width = 200;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "aantal";
+            this.columnHeader2.Width = 100;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Opmerkingen";
+            this.columnHeader3.Width = 100;
             // 
             // Bestellen
             // 

@@ -9,7 +9,7 @@ namespace Logica
 {
     public class BestellingService
     {
-        public static ListViewItem ItemNaarListview()
+        public ListViewItem ItemNaarListview()
         {
             ListViewItem li = new ListViewItem("steak tartaar");
             li.SubItems.Add("3");

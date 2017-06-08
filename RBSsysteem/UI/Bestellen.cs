@@ -32,8 +32,8 @@ namespace UI
 
         private void Lunch_Voorgerecht_Steak_Click(object sender, EventArgs e)
         {
-            ListViewItem hoi = BestellingService.ItemNaarListview();
-            this.ListViewtje.View = View.Details;
+            BestellingService a = new BestellingService();
+            ListViewItem hoi = a.ItemNaarListview();
 
             this.ListViewtje.Items.Add(hoi);
         }
