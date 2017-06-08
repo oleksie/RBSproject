@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Logica;
 
 namespace UI
 {
@@ -31,7 +32,10 @@ namespace UI
 
         private void Lunch_Voorgerecht_Steak_Click(object sender, EventArgs e)
         {
+            ListViewItem hoi = BestellingService.ItemNaarListview();
+            this.ListViewtje.View = View.Details;
 
+            this.ListViewtje.Items.Add(hoi);
         }
     }
 }
