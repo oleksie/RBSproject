@@ -39,7 +39,7 @@ namespace DAL
                 int menuitemID = reader.GetInt32(1);
                 string opmerkingen = reader.GetString(2);
                 int aantal = reader.GetInt32(3);
-                int status = reader.GetInt32(4);
+                string status = reader.GetString(4);
                 DateTime tijdOpgenomen = reader.GetDateTime(5);
 
 
