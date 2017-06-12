@@ -11,7 +11,7 @@ namespace Model
         public MenuItem menuitem;
         public int aantal;
         public string commentaar;
-        public int status;
+        public string status;
         public DateTime tijdOpgenomen;
 
         public BestellingItem()

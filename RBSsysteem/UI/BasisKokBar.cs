@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Logica;
 
 namespace UI
 {
@@ -14,6 +15,7 @@ namespace UI
     {
         public BasisKokBar()
         {
+            BarmanKok BarKok = new BarmanKok();
             InitializeComponent();
             lv_KokBarman.View = View.Details;
             lv_KokBarman.GridLines = true;
@@ -26,6 +28,14 @@ namespace UI
             lv_KokBarman.Columns.Add("Commentaar", 200);
             lv_KokBarman.Columns.Add("Status", 100);
             lv_KokBarman.Columns.Add("Tijd Opgenomen", 100);
+
+            List<ListViewItem> bestellinglist = BarKok.Bestellinglist();
+
+            for (int i = 0; i < bestellinglist.Count; i++)
+            {
+                lv_KokBarman.Items.Add(bestellinglist[i]);
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
