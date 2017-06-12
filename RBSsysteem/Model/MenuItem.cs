@@ -8,16 +8,53 @@ namespace Model
 {
     public class MenuItem
     {
-        public int menuItem_id;
-        public int voorraad;
-        public string naam;
-        public float prijs;
-        public Categorie categorie;
-        public Kaart kaart;
+        private int id;
+        private int voorraad;
+        private string naam;
+        private double prijs;
+        private string omschrijving;
+        private int categorieid;
+
 
         public MenuItem()
         {
 
+        }
+
+        public int ID
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        public int Voorraad
+        {
+            get { return voorraad; }
+            set { voorraad = value; }
+        }
+
+        public string Naam
+        {
+            get { return naam; }
+            set { naam = value; }
+        }
+
+        public double Prijs
+        {
+            get { return prijs; }
+            set { prijs = value; }
+        }
+
+        public string Omschrijving
+        {
+            get { return omschrijving; }
+            set { omschrijving = value; }
+        }
+
+        public int CategorieID
+        {
+            get { return categorieid; }
+            set { categorieid = value; }
         }
     }
 }

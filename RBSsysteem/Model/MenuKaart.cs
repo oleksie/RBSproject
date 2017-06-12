@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class Categorie
+    public class MenuKaart
     {
         private int id;
-        private int menukaartid;
         private string naam;
 
-        public Categorie()
+        public MenuKaart()
         {
 
         }
@@ -23,16 +22,10 @@ namespace Model
             set { id = value; }
         }
 
-        public int MenuKaartID
-        {
-            get { return menukaartid; }
-            set { menukaartid = value; }
-        }
-
         public string Naam
         {
             get { return naam; }
             set { naam = value; }
         }
-    } 
+    }
 }

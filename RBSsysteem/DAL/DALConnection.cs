@@ -10,18 +10,12 @@ namespace DAL
 {
     public class DALConnection
     {
-        public SqlConnection openConnectieDB(string naam)
+        public SqlConnection MaakConnectieDB(string naam)
         {
-            string connString = ConfigurationManager.ConnectionStrings[naam].ConnectionString;
+            string connString =  ConfigurationManager.ConnectionStrings[naam].ConnectionString;
             SqlConnection connection = new SqlConnection(connString);
 
-            connection.Open();
             return connection;
-        }
-
-        private void sluitConnectieDB(SqlConnection connection)
-        {
-            connection.Close();
         }
     }
 }

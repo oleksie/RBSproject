@@ -16,6 +16,9 @@ namespace UI
         public Bestellen()
         {
             InitializeComponent();
+
+            BestellingService hee = new BestellingService();
+            hee.MenuItemNaarListView(this.ListViewtje);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -32,10 +35,8 @@ namespace UI
 
         private void Lunch_Voorgerecht_Steak_Click(object sender, EventArgs e)
         {
-            BestellingService a = new BestellingService();
-            ListViewItem hoi = a.ItemNaarListview();
-
-            this.ListViewtje.Items.Add(hoi);
+            BestellingService hee = new BestellingService();
+            hee.MenuKaartNaarListview(ListViewtje);
         }
     }
 }
