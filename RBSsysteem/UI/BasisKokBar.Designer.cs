@@ -32,6 +32,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Lbl_Tijd = new System.Windows.Forms.Label();
             this.Label1 = new System.Windows.Forms.Label();
+            this.lv_KokBarman = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +50,7 @@
             this.Lbl_Tijd.AutoSize = true;
             this.Lbl_Tijd.Location = new System.Drawing.Point(1065, 125);
             this.Lbl_Tijd.Name = "Lbl_Tijd";
-            this.Lbl_Tijd.Size = new System.Drawing.Size(0, 17);
+            this.Lbl_Tijd.Size = new System.Drawing.Size(0, 13);
             this.Lbl_Tijd.TabIndex = 1;
             this.Lbl_Tijd.Click += new System.EventHandler(this.Lbl_Tijd_Click);
             // 
@@ -59,15 +60,24 @@
             this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label1.Location = new System.Drawing.Point(960, 52);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(93, 32);
+            this.Label1.Size = new System.Drawing.Size(70, 26);
             this.Label1.TabIndex = 2;
             this.Label1.Text = "label1";
+            // 
+            // lv_KokBarman
+            // 
+            this.lv_KokBarman.Location = new System.Drawing.Point(12, 92);
+            this.lv_KokBarman.Name = "lv_KokBarman";
+            this.lv_KokBarman.Size = new System.Drawing.Size(1330, 629);
+            this.lv_KokBarman.TabIndex = 3;
+            this.lv_KokBarman.UseCompatibleStateImageBehavior = false;
             // 
             // BasisKokBar
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1902, 1033);
+            this.ClientSize = new System.Drawing.Size(1354, 733);
+            this.Controls.Add(this.lv_KokBarman);
             this.Controls.Add(this.Label1);
             this.Controls.Add(this.Lbl_Tijd);
             this.Controls.Add(this.pictureBox1);
@@ -85,5 +95,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label Lbl_Tijd;
         private System.Windows.Forms.Label Label1;
+        private System.Windows.Forms.ListView lv_KokBarman;
     }
 }

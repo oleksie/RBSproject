@@ -15,6 +15,17 @@ namespace UI
         public BasisKokBar()
         {
             InitializeComponent();
+            lv_KokBarman.View = View.Details;
+            lv_KokBarman.GridLines = true;
+            lv_KokBarman.FullRowSelect = true;
+            lv_KokBarman.CheckBoxes = true;
+
+            lv_KokBarman.Columns.Add("Check", 20);
+            lv_KokBarman.Columns.Add("Menu", 200);
+            lv_KokBarman.Columns.Add("Aantal", 100);
+            lv_KokBarman.Columns.Add("Commentaar", 200);
+            lv_KokBarman.Columns.Add("Status", 100);
+            lv_KokBarman.Columns.Add("Tijd Opgenomen", 100);
         }
 
         private void button1_Click(object sender, EventArgs e)
