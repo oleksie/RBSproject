@@ -20,7 +20,7 @@ namespace DAL
         }
         public List<BestellingItem> GetAll()
         {
-            SqlConnection connection = dbConnection.openConnectieDB("reader");
+            SqlConnection connection = dbConnection.MaakConnectieDB("reader");
             List<BestellingItem> bestellingItemList = new List<BestellingItem>();
 
             connection.Open();
