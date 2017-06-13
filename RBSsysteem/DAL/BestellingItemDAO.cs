@@ -7,6 +7,7 @@ using Model;
 using DAL;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace DAL
 {
@@ -46,6 +47,7 @@ namespace DAL
 
                 BestellingItem bestellingitem = new BestellingItem();
 
+                bestellingitem.bestelitemID = bestellingID;
                 //bestellingitem.menuitem = menuitemID;
                 bestellingitem.commentaar = opmerkingen;
                 bestellingitem.aantal = aantal;
@@ -59,6 +61,29 @@ namespace DAL
             connection.Close();
             reader.Close();
             return bestellingItemList;
+        }
+        public void UpdateStatus(int id)
+        {
+            SqlConnection connection = dbConnection.MaakConnectieDB("writer");
+
+            connection.Open();
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append("Update BESTELITEM SET status = 'bereid' where bestelitem_id = @id");
+            
+            SqlParameter BestelIDParam = new SqlParameter("@id", SqlDbType.Int, 32);
+
+            String sql = sb.ToString();
+
+            SqlCommand command = new SqlCommand(sql, connection);
+
+            command.Parameters.Add(BestelIDParam);
+
+            BestelIDParam.Value = id;
+            command.Prepare();
+            command.ExecuteNonQuery();
+
+            connection.Close(); ;
         }
     }
 }
