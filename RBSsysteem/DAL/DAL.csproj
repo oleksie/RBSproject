@@ -47,6 +47,7 @@
     <Compile Include="CategorieDAO.cs" />
     <Compile Include="BestellingItemDAO.cs" />
     <Compile Include="DALConnection.cs" />
+    <Compile Include="MedewerkerDAO.cs" />
     <Compile Include="MenuItemDAO.cs" />
     <Compile Include="MenukaartDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
