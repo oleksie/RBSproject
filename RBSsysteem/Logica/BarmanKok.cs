@@ -13,9 +13,10 @@ namespace Logica
 {
     public class BarmanKok
     {
+
+        BestellingItemDAO bestelitemconnect = new BestellingItemDAO();
         public List<ListViewItem> Bestellinglist()
         {
-            BestellingItemDAO bestelitemconnect = new BestellingItemDAO();
             List<BestellingItem> current = new List<BestellingItem>();
             List<ListViewItem> listview = new List<ListViewItem>();
 
@@ -24,7 +25,7 @@ namespace Logica
             current = bestelitemconnect.GetAll();
             for (int i = 0; i < current.Count; i++)
             {
-                arr[0] = null;
+                arr[0] = Convert.ToString(current[i].bestelitemID);
                 arr[1] = Convert.ToString(current[i].menuitem.Naam);
                 arr[2] = Convert.ToString(current[i].aantal);
                 arr[3] = Convert.ToString(current[i].commentaar);
@@ -34,6 +35,11 @@ namespace Logica
                 listview.Add(item);
             }
             return listview;
+        }
+        public void Updatebestelitem(ListViewItem item)
+        {
+           string bestelitemid = Convert.ToString(item.GetSubItemAt(0, 0));
+           bestelitemconnect.UpdateStatus(Convert.ToInt32(bestelitemid));
         }
     }
 }

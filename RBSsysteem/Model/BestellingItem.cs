@@ -8,6 +8,7 @@ namespace Model
 {
     public class BestellingItem
     {
+        public int bestelitemID;
         public MenuItem menuitem;
         public int aantal;
         public string commentaar;

@@ -13,9 +13,9 @@ namespace UI
 {
     public partial class BasisKokBar : Form
     {
+        BarmanKok BarKok = new BarmanKok();
         public BasisKokBar()
         {
-            BarmanKok BarKok = new BarmanKok();
             InitializeComponent();
             lv_KokBarman.View = View.Details;
             lv_KokBarman.GridLines = true;
@@ -38,21 +38,6 @@ namespace UI
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void Lbl_Tijd_Click(object sender, EventArgs e)
         {
          
@@ -61,6 +46,17 @@ namespace UI
         private void BasisKokBar_Load(object sender, EventArgs e)
         {
             Label1.Text = DateTime.Now.ToShortTimeString();
+        }
+
+        private void lv_KokBarman_ItemActivate(object sender, EventArgs e)
+        {
+            foreach(ListViewItem item in lv_KokBarman.SelectedItems)
+            {
+                if (item.Text.Contains("in bereiding"))
+                {
+                    BarKok.Updatebestelitem(item);
+                }
+            }
         }
     }
 }
