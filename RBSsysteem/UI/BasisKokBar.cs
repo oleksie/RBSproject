@@ -52,9 +52,10 @@ namespace UI
         {
             foreach(ListViewItem item in lv_KokBarman.SelectedItems)
             {
-                if (item.Text.Contains("in bereiding"))
+                if (item.Checked == true)
                 {
                     BarKok.Updatebestelitem(item);
+                    item.Remove();
                 }
             }
         }

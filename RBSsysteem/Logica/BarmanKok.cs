@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAL;
 using Model;
+
 namespace Logica
 {
     public class BarmanKok
@@ -25,14 +26,17 @@ namespace Logica
             current = bestelitemconnect.GetAll();
             for (int i = 0; i < current.Count; i++)
             {
-                arr[0] = Convert.ToString(current[i].bestelitemID);
-                arr[1] = Convert.ToString(current[i].menuitem.Naam);
-                arr[2] = Convert.ToString(current[i].aantal);
-                arr[3] = Convert.ToString(current[i].commentaar);
-                arr[4] = current[i].status;
-                arr[5] = Convert.ToString(current[i].tijdOpgenomen);
-                item = new ListViewItem(arr);
-                listview.Add(item);
+                if (current[i].status == "in bereiding")
+                {
+                    arr[0] = Convert.ToString(current[i].bestelitemID);
+                    arr[1] = Convert.ToString(current[i].menuitem.Naam);
+                    arr[2] = Convert.ToString(current[i].aantal);
+                    arr[3] = Convert.ToString(current[i].commentaar);
+                    arr[4] = current[i].status;
+                    arr[5] = Convert.ToString(current[i].tijdOpgenomen);
+                    item = new ListViewItem(arr);
+                    listview.Add(item);
+                }
             }
             return listview;
         }
