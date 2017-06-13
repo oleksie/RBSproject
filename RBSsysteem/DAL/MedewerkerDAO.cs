@@ -33,7 +33,7 @@ namespace DAL
 
             // controleer of er ten minste één record is terug gestuurd
             if (!reader.Read())
-                throw new InvalidOperationException("No records were returned.");
+                return null;
 
             medewerker.medewerkerId = reader.GetInt32(0);
             medewerker.naam = reader.GetString(1);

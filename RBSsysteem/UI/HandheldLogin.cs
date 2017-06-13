@@ -30,15 +30,26 @@ namespace UI
             {
                 lblLoginError.Text = "U heeft een foutieve input gegeven.";
             }
+
             if (inlognummer != 0)
             {
-                LoginService loginService = new LoginService();
-                Medewerker medewerker = loginService.LoginMedewerker(inlognummer);
-
-                if (medewerker.medewerkerId > 0)
-                    lblLoginError.Text = "Yay";
-                else
-                    lblLoginError.Text = "Nay";
+                try
+                {
+                    LoginService loginService = new LoginService();
+                    Medewerker medewerker = loginService.LoginMedewerker(inlognummer);
+                    lblLoginError.Text = medewerker.naam;
+                    switch (medewerker.rol)
+                    {
+                        case (Rol) 1:
+                            HandheldTafels handheldTafels = new HandheldTafels(medewerker);
+                            handheldTafels.Show();
+                            break;
+                    }
+                }
+                catch
+                {
+                    lblLoginError.Text = "Inlognummer bestaat niet.";
+                }
             }
         }
     }
