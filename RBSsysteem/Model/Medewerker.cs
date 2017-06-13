@@ -8,10 +8,10 @@ namespace Model
 {
     public class Medewerker
     {
-        public int medewerker_id;
-        public Functie functie;//enum
-        public int inlogNummer;
-        public string naam;
+        public int medewerkerId { get; set; }
+        public string naam { get; set; }
+        public int inlognummer { get; set; }
+        public Rol rol { get; set; }//enum
 
         public Medewerker()
         {

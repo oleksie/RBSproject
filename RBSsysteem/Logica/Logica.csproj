@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BarmanKok.cs" />
     <Compile Include="BestellingService.cs" />
+    <Compile Include="LoginService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
