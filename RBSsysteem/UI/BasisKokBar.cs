@@ -30,7 +30,7 @@ namespace UI
             lv_KokBarman.Columns.Add("Tijd Opgenomen", 100);
 
             List<ListViewItem> bestellinglist = BarKok.Bestellinglist();
-
+            
             for (int i = 0; i < bestellinglist.Count; i++)
             {
                 lv_KokBarman.Items.Add(bestellinglist[i]);

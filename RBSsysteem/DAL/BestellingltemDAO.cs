@@ -11,11 +11,11 @@ using System.Data;
 
 namespace DAL
 {
-    public class BestellingItemDAO
+    public class BestellingltemDAO
     {
         DALConnection dbConnection = new DALConnection();
-       
-        public BestellingItemDAO()
+
+        public BestellingltemDAO()
         {
 
         }
@@ -27,7 +27,7 @@ namespace DAL
             connection.Open();
             StringBuilder sb = new StringBuilder();
 
-            sb.Append("select BestelItem.bestelitem_id,BestelItem.menuitem_id,BestelItem.opmerkingen,BestelItem.aantal,BestelItem.status,BestelItem.tijd_opgenomen,MenuItem.naam from BestelItem inner join MenuItem on BestelItem.menuitem_id = MenuItem.menuitem_id; ");
+            sb.Append("Select * From BestelItem");
 
             String sql = sb.ToString();
 
@@ -38,11 +38,11 @@ namespace DAL
             {
                 int bestellingID = reader.GetInt32(0);
                 int menuitemID = reader.GetInt32(1);
-                string opmerkingen = reader.GetString(2);
-                int aantal = reader.GetInt32(3);
-                string status = reader.GetString(4);
-                DateTime tijdOpgenomen = reader.GetDateTime(5);
-                string naam = reader.GetString(6);
+                string opmerkingen = reader.GetString(3);
+                int aantal = reader.GetInt32(4);
+                string status = reader.GetString(5);
+                DateTime tijdOpgenomen = reader.GetDateTime(6);
+
 
 
                 BestellingItem bestellingitem = new BestellingItem();
@@ -53,7 +53,7 @@ namespace DAL
                 bestellingitem.aantal = aantal;
                 bestellingitem.status = status;
                 bestellingitem.tijdOpgenomen = tijdOpgenomen;
-                //bestellingitem.menuitem.Naam = naam;
+
 
                 bestellingItemList.Add(bestellingitem);
             }
@@ -61,37 +61,6 @@ namespace DAL
             connection.Close();
             reader.Close();
             return bestellingItemList;
-        }
-
-        public List<MenuItem> GetNaam()
-        {
-            SqlConnection connection = dbConnection.MaakConnectieDB("reader");
-            List<MenuItem> menuItemList = new List<MenuItem>();
-
-            connection.Open();
-            StringBuilder sb = new StringBuilder();
-
-            sb.Append("select BestelItem.bestelitem_id,BestelItem.menuitem_id,BestelItem.opmerkingen,BestelItem.aantal,BestelItem.status,BestelItem.tijd_opgenomen,MenuItem.naam from BestelItem inner join MenuItem on BestelItem.menuitem_id = MenuItem.menuitem_id; ");
-
-            String sql = sb.ToString();
-
-            SqlCommand command = new SqlCommand(sql, connection);
-            SqlDataReader reader = command.ExecuteReader();
-
-            while (reader.Read())
-            {
-                string naam = reader.GetString(6);
-
-
-                MenuItem menuitem = new MenuItem();
-                menuitem.Naam = naam;
-
-                menuItemList.Add(menuitem);
-            }
-
-            connection.Close();
-            reader.Close();
-            return menuItemList;
         }
         public void UpdateStatus(int id)
         {
@@ -101,7 +70,7 @@ namespace DAL
             StringBuilder sb = new StringBuilder();
 
             sb.Append("Update BESTELITEM SET status = 'bereid' where bestelitem_id = @id");
-            
+
             SqlParameter BestelIDParam = new SqlParameter("@id", SqlDbType.Int, 32);
 
             String sql = sb.ToString();
