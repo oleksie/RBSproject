@@ -114,6 +114,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoundButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="BasisHandheld.resx">
       <DependentUpon>BasisHandheld.cs</DependentUpon>
     </EmbeddedResource>
