@@ -71,6 +71,7 @@
             this.lv_KokBarman.Size = new System.Drawing.Size(1330, 629);
             this.lv_KokBarman.TabIndex = 3;
             this.lv_KokBarman.UseCompatibleStateImageBehavior = false;
+            this.lv_KokBarman.ItemActivate += new System.EventHandler(this.lv_KokBarman_ItemActivate);
             // 
             // BasisKokBar
             // 
