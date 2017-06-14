@@ -17,12 +17,14 @@ namespace UI
         public Bestellen()
         {
             InitializeComponent();
+
+            ShowLunchStart();
+            ShowDinerStart();
+            ShowDrankStart();
+
             CategorieLunch.SelectedIndexChanged += CategorieLunch_SelectedIndexChanged;
             CategorieDiner.SelectedIndexChanged += CategorieDiner_SelectedIndexChanged;
             CategorieDranken.SelectedIndexChanged += CategorieDranken_SelectedIndexChanged;
-
-            //BestellingService hee = new BestellingService();
-            //hee.MenuItemNaarListView(this.ListViewtje);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -32,21 +34,73 @@ namespace UI
             this.Hide();
         }
 
+        private void ShowLunchStart()
+        {
+            MenuItemService hoi = new MenuItemService();
+            List<Button> btnList = null;
+            btnList = hoi.MenuItemNaarButton(this.CategorieLunch, this.FLPLunchVoor);
+            foreach (Button x in btnList)
+            {
+                x.Click += new EventHandler(button_Click);
+            }
+        }
+
+        private void ShowDinerStart()
+        {
+            MenuItemService hoi = new MenuItemService();
+            List<Button> btnList = null;
+            btnList = hoi.MenuItemNaarButton(this.CategorieDiner, this.FLPDinerVoor);
+            foreach (Button x in btnList)
+            {
+                x.Click += new EventHandler(button_Click);
+            }
+        }
+
+        private void ShowDrankStart()
+        {
+            MenuItemService hoi = new MenuItemService();
+            List<Button> btnList = null;
+            btnList = hoi.MenuItemNaarButton(this.CategorieDranken, this.FLPDrankFris);
+            foreach (Button x in btnList)
+            {
+                x.Click += new EventHandler(button_Click);
+            }
+        }
+
+        public void button_Click(object sender, EventArgs e)
+        {
+            MenuItemService actieButton = new MenuItemService();
+            actieButton.MenuItemNaarList(this.ListViewtje, (sender as Button));
+        }
+
         private void CategorieLunch_SelectedIndexChanged(Object sender, EventArgs e)
         {
             MenuItemService hoi = new MenuItemService();
+            List<Button> btnList = null;
 
             if (CategorieLunch.SelectedTab.Name == "HoofdgerechtLunch")
             {
-                hoi.MenuItemNaarButton(this.CategorieLunch, this.FLPLunchHoofd);
+                btnList = hoi.MenuItemNaarButton(this.CategorieLunch, this.FLPLunchHoofd);
+                foreach (Button x in btnList)
+                {
+                    x.Click += new EventHandler(button_Click);
+                }
             }
             else if (CategorieLunch.SelectedTab.Name == "VoorgerechtLunch")
             {
-                hoi.MenuItemNaarButton(this.CategorieLunch, this.FLPLunchVoor);
+                btnList = hoi.MenuItemNaarButton(this.CategorieLunch, this.FLPLunchVoor);
+                foreach (Button x in btnList)
+                {
+                    x.Click += new EventHandler(button_Click);
+                }
             }
             else
             {
-                hoi.MenuItemNaarButton(this.CategorieLunch, this.FLPLucnhNa);
+                btnList = hoi.MenuItemNaarButton(this.CategorieLunch, this.FLPLucnhNa);
+                foreach (Button x in btnList)
+                {
+                    x.Click += new EventHandler(button_Click);
+                }
             }
                 
         }
@@ -54,48 +108,86 @@ namespace UI
         private void CategorieDiner_SelectedIndexChanged(Object sender, EventArgs e)
         {
             MenuItemService hoi = new MenuItemService();
+            List<Button> btnList = null;
 
             if (CategorieDiner.SelectedTab.Name == "HoofdgerechtDiner")
             {
-                hoi.MenuItemNaarButton(this.CategorieDiner, this.FLPDinerHoofd);
+                btnList = hoi.MenuItemNaarButton(this.CategorieDiner, this.FLPDinerHoofd);
+                foreach (Button x in btnList)
+                {
+                    x.Click += new EventHandler(button_Click);
+                }
             }
             else if (CategorieDiner.SelectedTab.Name == "VoorgerechtDiner")
             {
-                hoi.MenuItemNaarButton(this.CategorieDiner, this.FLPDinerVoor);
+                btnList = hoi.MenuItemNaarButton(this.CategorieDiner, this.FLPDinerVoor);
+                foreach (Button x in btnList)
+                {
+                    x.Click += new EventHandler(button_Click);
+                }
             }
             else if (CategorieDiner.SelectedTab.Name == "TussengerechtDiner")
             {
-                hoi.MenuItemNaarButton(this.CategorieDiner, this.FLPDinerTussen);
+                btnList = hoi.MenuItemNaarButton(this.CategorieDiner, this.FLPDinerTussen);
+                foreach (Button x in btnList)
+                {
+                    x.Click += new EventHandler(button_Click);
+                }
             }
             else
             {
-                hoi.MenuItemNaarButton(this.CategorieDiner, this.FLPDinerNa);
+                btnList = hoi.MenuItemNaarButton(this.CategorieDiner, this.FLPDinerNa);
+                foreach (Button x in btnList)
+                {
+                    x.Click += new EventHandler(button_Click);
+                }
             }
         }
 
         private void CategorieDranken_SelectedIndexChanged(Object sender, EventArgs e)
         {
             MenuItemService hoi = new MenuItemService();
+            List<Button> btnList = null;
 
             if (CategorieDranken.SelectedTab.Name == "Frisdrank")
             {
-                hoi.MenuItemNaarButton(this.CategorieDranken, this.FLPDrankFris);
+                btnList = hoi.MenuItemNaarButton(this.CategorieDranken, this.FLPDrankFris);
+                foreach (Button x in btnList)
+                {
+                    x.Click += new EventHandler(button_Click);
+                }
             }
             else if (CategorieDranken.SelectedTab.Name == "Bier")
             {
-                hoi.MenuItemNaarButton(this.CategorieDranken, this.FLPDrankBier);
+                btnList = hoi.MenuItemNaarButton(this.CategorieDranken, this.FLPDrankBier);
+                foreach (Button x in btnList)
+                {
+                    x.Click += new EventHandler(button_Click);
+                }
             }
             else if (CategorieDranken.SelectedTab.Name == "Wijn")
             {
-                hoi.MenuItemNaarButton(this.CategorieDranken, this.FLPDrankWijn);
+                btnList = hoi.MenuItemNaarButton(this.CategorieDranken, this.FLPDrankWijn);
+                foreach (Button x in btnList)
+                {
+                    x.Click += new EventHandler(button_Click);
+                }
             }
             else if (CategorieDranken.SelectedTab.Name == "Gedistileerd")
             {
-                hoi.MenuItemNaarButton(this.CategorieDranken, this.FLPDrankGedis);
+                btnList = hoi.MenuItemNaarButton(this.CategorieDranken, this.FLPDrankGedis);
+                foreach (Button x in btnList)
+                {
+                    x.Click += new EventHandler(button_Click);
+                }
             }
             else
             {
-                hoi.MenuItemNaarButton(this.CategorieDranken, this.FLPDrankKoffthee);
+                btnList = hoi.MenuItemNaarButton(this.CategorieDranken, this.FLPDrankKoffthee);
+                foreach (Button x in btnList)
+                {
+                    x.Click += new EventHandler(button_Click);
+                }
             }
         }
     }

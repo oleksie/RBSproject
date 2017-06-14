@@ -16,11 +16,14 @@ namespace Logica
 
         }
 
-        public void MenuItemNaarButton(TabControl tab, FlowLayoutPanel panel)
+        public List<Button> MenuItemNaarButton(TabControl tab, FlowLayoutPanel panel)
         {
             panel.Controls.Clear();
 
             MenuItemDAO menuItem = new MenuItemDAO();
+
+            List<Button> btnList = new List<Button>();
+            Button button = null;
 
             if (tab.SelectedTab.Name == "HoofdgerechtLunch")
             {
@@ -28,11 +31,15 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsLunchVoor)
                 {
-                    Button button = new Button();
+                    button = new Button();
                     button.Text = x.Naam;
+                    button.Width = 200;
 
+                    btnList.Add(button);
                     panel.Controls.Add(button);
+                    
                 }
+                return btnList;
             }
             else if (tab.SelectedTab.Name == "VoorgerechtLunch")
             {
@@ -40,11 +47,13 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsLunchHoofd)
                 {
-                    Button button = new Button();
+                    button = new Button();
                     button.Text = x.Naam;
 
                     panel.Controls.Add(button);
+                    btnList.Add(button);
                 }
+                return btnList;
             }
             else if (tab.SelectedTab.Name == "NagerechtLunch")
             {
@@ -52,11 +61,13 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsLunchNa)
                 {
-                    Button button = new Button();
+                    button = new Button();
                     button.Text = x.Naam;
 
                     panel.Controls.Add(button);
+                    btnList.Add(button);
                 }
+                return btnList;
             }
             else if (tab.SelectedTab.Name == "VoorgerechtDiner")
             {
@@ -64,11 +75,13 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsDinerVoor)
                 {
-                    Button button = new Button();
+                    button = new Button();
                     button.Text = x.Naam;
 
                     panel.Controls.Add(button);
+                    btnList.Add(button);
                 }
+                return btnList;
             }
             else if (tab.SelectedTab.Name == "TussengerechtDiner")
             {
@@ -76,11 +89,13 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsDinerTussen)
                 {
-                    Button button = new Button();
+                    button = new Button();
                     button.Text = x.Naam;
 
                     panel.Controls.Add(button);
+                    btnList.Add(button);
                 }
+                return btnList;
             }
             else if (tab.SelectedTab.Name == "HoofdgerechtDiner")
             {
@@ -88,11 +103,13 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsDinerHoofd)
                 {
-                    Button button = new Button();
+                    button = new Button();
                     button.Text = x.Naam;
 
                     panel.Controls.Add(button);
+                    btnList.Add(button);
                 }
+                return btnList;
             }
             else if (tab.SelectedTab.Name == "NagerechtDiner")
             {
@@ -100,11 +117,13 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsDinerNa)
                 {
-                    Button button = new Button();
+                    button = new Button();
                     button.Text = x.Naam;
 
                     panel.Controls.Add(button);
+                    btnList.Add(button);
                 }
+                return btnList;
             }
             else if (tab.SelectedTab.Name == "Frisdrank")
             {
@@ -112,11 +131,13 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsFris)
                 {
-                    Button button = new Button();
+                    button = new Button();
                     button.Text = x.Naam;
 
                     panel.Controls.Add(button);
+                    btnList.Add(button);
                 }
+                return btnList;
             }
             else if (tab.SelectedTab.Name == "Bier")
             {
@@ -124,11 +145,13 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsBier)
                 {
-                    Button button = new Button();
+                    button = new Button();
                     button.Text = x.Naam;
 
                     panel.Controls.Add(button);
+                    btnList.Add(button);
                 }
+                return btnList;
             }
             else if (tab.SelectedTab.Name == "Wijn")
             {
@@ -136,11 +159,13 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsWijn)
                 {
-                    Button button = new Button();
+                    button = new Button();
                     button.Text = x.Naam;
 
                     panel.Controls.Add(button);
+                    btnList.Add(button);
                 }
+                return btnList;
             }
             else if (tab.SelectedTab.Name == "Gedistileerd")
             {
@@ -148,11 +173,13 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsGedis)
                 {
-                    Button button = new Button();
+                    button = new Button();
                     button.Text = x.Naam;
 
                     panel.Controls.Add(button);
+                    btnList.Add(button);
                 }
+                return btnList;
             }
             else
             {
@@ -160,11 +187,13 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsKoffthee)
                 {
-                    Button button = new Button();
+                    button = new Button();
                     button.Text = x.Naam;
 
                     panel.Controls.Add(button);
+                    btnList.Add(button);
                 }
+                return btnList;
             }
 
             //foreach (Model.MenuItem x in menuItems)
@@ -178,6 +207,27 @@ namespace Logica
             //MenuItems.SubItems.Add(x.Omschrijving);
             //list.Items.Add(MenuItems);
             //}
+
+            return btnList;
+        }
+
+        public void MenuItemNaarList(ListView list, Button button)
+        {
+            MenuItemDAO menuItem = new MenuItemDAO();
+            List<Model.MenuItem> menuItemsKoffthee = menuItem.GetMenuItems();
+            foreach (Model.MenuItem x in menuItemsKoffthee)
+            {
+                if (button.Text == x.Naam)
+                {
+                    ListViewItem MenuItems = new ListViewItem(x.ID.ToString());
+                    MenuItems.SubItems.Add(x.CategorieID.ToString());
+                    MenuItems.SubItems.Add(x.Voorraad.ToString());
+                    MenuItems.SubItems.Add(x.Naam);
+                    MenuItems.SubItems.Add(x.Prijs.ToString());
+                    MenuItems.SubItems.Add(x.Omschrijving);
+                    list.Items.Add(MenuItems);
+                }
+            }
         }
     }
 }
