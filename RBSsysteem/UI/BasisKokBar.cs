@@ -8,14 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logica;
+using Model;
 
 namespace UI
 {
     public partial class BasisKokBar : Form
     {
         BarmanKok BarKok = new BarmanKok();
-        public BasisKokBar()
+        public BasisKokBar(Medewerker m)
         {
+            Medewerker medewerker = m;
+
             InitializeComponent();
             lv_KokBarman.View = View.Details;
             lv_KokBarman.GridLines = true;
