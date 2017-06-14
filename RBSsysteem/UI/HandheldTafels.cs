@@ -86,22 +86,21 @@ namespace UI
         {
 
         }
-
+        
         private void Btn_TafelsLoguit_Click(object sender, EventArgs e)
         {
-
+            // vul login met huidig geopend (maar verborgen) login form
+            HandheldLogin login = (HandheldLogin) Application.OpenForms["HandheldLogin"];
+            login.Show();
+            // sluit huidig formulier
+            this.Close();
         }
-    }
-    public class RoundButton : Button
-    {
-        protected override void OnPaint(System.Windows.Forms.PaintEventArgs e)
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-            GraphicsPath grPath = new GraphicsPath();
-            grPath.AddEllipse(0, 0, ClientSize.Width, ClientSize.Height);
-            this.Region = new System.Drawing.Region(grPath);
-            base.OnPaint(e);
+            RoundButton testButton = new RoundButton();
+            
+            flowLayoutPanel1.Controls.Add(testButton);
         }
     }
-    
 }
-
