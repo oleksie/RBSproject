@@ -17,8 +17,8 @@ namespace UI
         BarmanKok BarKok = new BarmanKok();
         public BasisKokBar(Medewerker m)
         {
+            List<ListViewItem> bestellinglist = new List<ListViewItem>();
             Medewerker medewerker = m;
-
             InitializeComponent();
             lv_KokBarman.View = View.Details;
             lv_KokBarman.GridLines = true;
@@ -31,12 +31,10 @@ namespace UI
             lv_KokBarman.Columns.Add("Commentaar", 200);
             lv_KokBarman.Columns.Add("Status", 100);
             lv_KokBarman.Columns.Add("Tijd Opgenomen", 100);
-
-            List<ListViewItem> bestellinglist = BarKok.BestellinglistGerechten();
-            foreach (ListViewItem item in bestellinglist)
-            {
-
-            }
+            if (m.rol == Rol.Kok)
+            { bestellinglist = BarKok.BestellinglistGerechten(); }
+            else if (m.rol == Rol.Barman)
+            { bestellinglist = BarKok.BestellinglistDrank(); }
             for (int i = 0; i < bestellinglist.Count; i++)
             {
                 lv_KokBarman.Items.Add(bestellinglist[i]);
