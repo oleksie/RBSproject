@@ -49,10 +49,9 @@
             this.Lbl_Status4 = new System.Windows.Forms.Label();
             this.Lbl_Status10 = new System.Windows.Forms.Label();
             this.Lbl_Status5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.Lbl_PersoonlijkNr = new System.Windows.Forms.Label();
             this.Btn_TafelsLoguit = new System.Windows.Forms.Button();
-            this.roundButton1 = new UI.RoundButton();
+            this.lblPersoonlijkNummer = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Btn_Tafel1
@@ -241,14 +240,6 @@
             this.Lbl_Status5.TabIndex = 19;
             this.Lbl_Status5.Text = "label10";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(12, 10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(199, 20);
-            this.textBox1.TabIndex = 22;
-            this.textBox1.Text = "Persoonlijk nummer : ";
-            // 
             // Lbl_PersoonlijkNr
             // 
             this.Lbl_PersoonlijkNr.AutoSize = true;
@@ -266,14 +257,14 @@
             this.Btn_TafelsLoguit.Text = "Loguit";
             this.Btn_TafelsLoguit.UseVisualStyleBackColor = true;
             // 
-            // roundButton1
+            // lblPersoonlijkNummer
             // 
-            this.roundButton1.Location = new System.Drawing.Point(620, 338);
-            this.roundButton1.Name = "roundButton1";
-            this.roundButton1.Size = new System.Drawing.Size(120, 104);
-            this.roundButton1.TabIndex = 25;
-            this.roundButton1.Text = "roundButton1";
-            this.roundButton1.UseVisualStyleBackColor = true;
+            this.lblPersoonlijkNummer.AutoSize = true;
+            this.lblPersoonlijkNummer.Location = new System.Drawing.Point(13, 15);
+            this.lblPersoonlijkNummer.Name = "lblPersoonlijkNummer";
+            this.lblPersoonlijkNummer.Size = new System.Drawing.Size(104, 13);
+            this.lblPersoonlijkNummer.TabIndex = 25;
+            this.lblPersoonlijkNummer.Text = "Persoonlijk nummer: ";
             // 
             // HandheldTafels
             // 
@@ -281,10 +272,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(750, 977);
-            this.Controls.Add(this.roundButton1);
+            this.Controls.Add(this.lblPersoonlijkNummer);
             this.Controls.Add(this.Btn_TafelsLoguit);
             this.Controls.Add(this.Lbl_PersoonlijkNr);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Lbl_Status10);
             this.Controls.Add(this.Lbl_Status5);
             this.Controls.Add(this.Lbl_Status9);
@@ -329,10 +319,9 @@
             this.Controls.SetChildIndex(this.Lbl_Status9, 0);
             this.Controls.SetChildIndex(this.Lbl_Status5, 0);
             this.Controls.SetChildIndex(this.Lbl_Status10, 0);
-            this.Controls.SetChildIndex(this.textBox1, 0);
             this.Controls.SetChildIndex(this.Lbl_PersoonlijkNr, 0);
             this.Controls.SetChildIndex(this.Btn_TafelsLoguit, 0);
-            this.Controls.SetChildIndex(this.roundButton1, 0);
+            this.Controls.SetChildIndex(this.lblPersoonlijkNummer, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,9 +349,8 @@
         private System.Windows.Forms.Label Lbl_Status4;
         private System.Windows.Forms.Label Lbl_Status10;
         private System.Windows.Forms.Label Lbl_Status5;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label Lbl_PersoonlijkNr;
         private System.Windows.Forms.Button Btn_TafelsLoguit;
-        private RoundButton roundButton1;
+        private System.Windows.Forms.Label lblPersoonlijkNummer;
     }
 }

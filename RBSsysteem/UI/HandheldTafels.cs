@@ -8,15 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
+using Model;
 
 namespace UI
 {
     public partial class HandheldTafels : BasisHandheld
     {
         
-        public HandheldTafels()
+        public HandheldTafels(Medewerker m)
         {
+            Medewerker medewerker = m;
             InitializeComponent();
+            lblPersoonlijkNummer.Text += medewerker.inlognummer;
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)

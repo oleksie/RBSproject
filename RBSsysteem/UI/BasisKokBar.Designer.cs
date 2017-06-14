@@ -32,6 +32,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Lbl_Tijd = new System.Windows.Forms.Label();
             this.Label1 = new System.Windows.Forms.Label();
+            this.lv_KokBarman = new System.Windows.Forms.ListView();
+            this.btn_Loguit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,11 +66,32 @@
             this.Label1.Text = "label1";
             this.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // lv_KokBarman
+            // 
+            this.lv_KokBarman.Location = new System.Drawing.Point(12, 92);
+            this.lv_KokBarman.Name = "lv_KokBarman";
+            this.lv_KokBarman.Size = new System.Drawing.Size(1330, 629);
+            this.lv_KokBarman.TabIndex = 3;
+            this.lv_KokBarman.UseCompatibleStateImageBehavior = false;
+            this.lv_KokBarman.ItemActivate += new System.EventHandler(this.lv_KokBarman_ItemActivate);
+            // 
+            // btn_Loguit
+            // 
+            this.btn_Loguit.Location = new System.Drawing.Point(13, 13);
+            this.btn_Loguit.Name = "btn_Loguit";
+            this.btn_Loguit.Size = new System.Drawing.Size(90, 73);
+            this.btn_Loguit.TabIndex = 4;
+            this.btn_Loguit.Text = "Uitloggen";
+            this.btn_Loguit.UseVisualStyleBackColor = true;
+            this.btn_Loguit.Click += new System.EventHandler(this.btn_Loguit_Click);
+            // 
             // BasisKokBar
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1902, 1033);
+            this.ClientSize = new System.Drawing.Size(1354, 733);
+            this.Controls.Add(this.btn_Loguit);
+            this.Controls.Add(this.lv_KokBarman);
             this.Controls.Add(this.Label1);
             this.Controls.Add(this.Lbl_Tijd);
             this.Controls.Add(this.pictureBox1);
@@ -86,5 +109,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label Lbl_Tijd;
         private System.Windows.Forms.Label Label1;
+        private System.Windows.Forms.ListView lv_KokBarman;
+        private System.Windows.Forms.Button btn_Loguit;
     }
 }

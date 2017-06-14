@@ -38,13 +38,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(752, 985);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // BasisHandheld
+            // BasisHandheldForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(752, 985);
             this.Controls.Add(this.panel1);
-            this.Name = "BasisHandheld";
+            this.Name = "BasisHandheldForm";
             this.Text = "BasisHandheld";
             this.ResumeLayout(false);
 

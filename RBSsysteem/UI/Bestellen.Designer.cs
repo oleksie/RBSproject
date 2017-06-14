@@ -28,59 +28,73 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bestellen));
             this.button1 = new System.Windows.Forms.Button();
-            this.Lunch = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabControl4 = new System.Windows.Forms.TabControl();
-            this.tabPage12 = new System.Windows.Forms.TabPage();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.Lunch_Voorgerecht_Steak = new System.Windows.Forms.Button();
-            this.tabPage13 = new System.Windows.Forms.TabPage();
-            this.tabPage14 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabControl3 = new System.Windows.Forms.TabControl();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.button3 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.tabPage10 = new System.Windows.Forms.TabPage();
-            this.tabPage11 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.tabPage15 = new System.Windows.Forms.TabPage();
             this.button4 = new System.Windows.Forms.Button();
             this.ListViewtje = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.CategorieDranken = new System.Windows.Forms.TabControl();
+            this.Frisdrank = new System.Windows.Forms.TabPage();
+            this.Bier = new System.Windows.Forms.TabPage();
+            this.Wijn = new System.Windows.Forms.TabPage();
+            this.Gedistileerd = new System.Windows.Forms.TabPage();
+            this.Koffiethee = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.CategorieDiner = new System.Windows.Forms.TabControl();
+            this.VoorgerechtDiner = new System.Windows.Forms.TabPage();
+            this.TussengerechtDiner = new System.Windows.Forms.TabPage();
+            this.HoofdgerechtDiner = new System.Windows.Forms.TabPage();
+            this.NagerechtDiner = new System.Windows.Forms.TabPage();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.CategorieLunch = new System.Windows.Forms.TabControl();
+            this.VoorgerechtLunch = new System.Windows.Forms.TabPage();
+            this.FLPLunchVoor = new System.Windows.Forms.FlowLayoutPanel();
+            this.HoofdgerechtLunch = new System.Windows.Forms.TabPage();
+            this.FLPLunchHoofd = new System.Windows.Forms.FlowLayoutPanel();
+            this.NagerechtLunch = new System.Windows.Forms.TabPage();
+            this.FLPLucnhNa = new System.Windows.Forms.FlowLayoutPanel();
+            this.MenuKaart = new System.Windows.Forms.TabControl();
+            this.FLPDinerVoor = new System.Windows.Forms.FlowLayoutPanel();
+            this.FLPDinerTussen = new System.Windows.Forms.FlowLayoutPanel();
+            this.FLPDinerHoofd = new System.Windows.Forms.FlowLayoutPanel();
+            this.FLPDinerNa = new System.Windows.Forms.FlowLayoutPanel();
+            this.FLPDrankFris = new System.Windows.Forms.FlowLayoutPanel();
+            this.FLPDrankBier = new System.Windows.Forms.FlowLayoutPanel();
+            this.FLPDrankWijn = new System.Windows.Forms.FlowLayoutPanel();
+            this.FLPDrankGedis = new System.Windows.Forms.FlowLayoutPanel();
+            this.FLPDrankKoffthee = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
-            this.Lunch.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabControl4.SuspendLayout();
-            this.tabPage12.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabControl3.SuspendLayout();
-            this.tabPage8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPage3.SuspendLayout();
-            this.tabControl2.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.CategorieDranken.SuspendLayout();
+            this.Frisdrank.SuspendLayout();
+            this.Bier.SuspendLayout();
+            this.Wijn.SuspendLayout();
+            this.Gedistileerd.SuspendLayout();
+            this.Koffiethee.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.CategorieDiner.SuspendLayout();
+            this.VoorgerechtDiner.SuspendLayout();
+            this.TussengerechtDiner.SuspendLayout();
+            this.HoofdgerechtDiner.SuspendLayout();
+            this.NagerechtDiner.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.CategorieLunch.SuspendLayout();
+            this.VoorgerechtLunch.SuspendLayout();
+            this.HoofdgerechtLunch.SuspendLayout();
+            this.NagerechtLunch.SuspendLayout();
+            this.MenuKaart.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.ListViewtje);
             this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.Lunch);
+            this.panel1.Controls.Add(this.MenuKaart);
             this.panel1.Controls.Add(this.button1);
             // 
             // button1
@@ -90,308 +104,6 @@
             this.button1.Size = new System.Drawing.Size(281, 72);
             this.button1.TabIndex = 0;
             this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // Lunch
-            // 
-            this.Lunch.Controls.Add(this.tabPage1);
-            this.Lunch.Controls.Add(this.tabPage2);
-            this.Lunch.Controls.Add(this.tabPage3);
-            this.Lunch.ItemSize = new System.Drawing.Size(192, 50);
-            this.Lunch.Location = new System.Drawing.Point(83, 152);
-            this.Lunch.Name = "Lunch";
-            this.Lunch.SelectedIndex = 0;
-            this.Lunch.Size = new System.Drawing.Size(579, 399);
-            this.Lunch.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.Lunch.TabIndex = 1;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.tabControl4);
-            this.tabPage1.Location = new System.Drawing.Point(4, 54);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(571, 341);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Lunch";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabControl4
-            // 
-            this.tabControl4.Controls.Add(this.tabPage12);
-            this.tabControl4.Controls.Add(this.tabPage13);
-            this.tabControl4.Controls.Add(this.tabPage14);
-            this.tabControl4.ItemSize = new System.Drawing.Size(192, 50);
-            this.tabControl4.Location = new System.Drawing.Point(-4, -4);
-            this.tabControl4.Name = "tabControl4";
-            this.tabControl4.SelectedIndex = 0;
-            this.tabControl4.Size = new System.Drawing.Size(579, 348);
-            this.tabControl4.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.tabControl4.TabIndex = 3;
-            // 
-            // tabPage12
-            // 
-            this.tabPage12.Controls.Add(this.button7);
-            this.tabPage12.Controls.Add(this.button6);
-            this.tabPage12.Controls.Add(this.Lunch_Voorgerecht_Steak);
-            this.tabPage12.Location = new System.Drawing.Point(4, 54);
-            this.tabPage12.Name = "tabPage12";
-            this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage12.Size = new System.Drawing.Size(571, 290);
-            this.tabPage12.TabIndex = 0;
-            this.tabPage12.Text = "Voorgerecht";
-            this.tabPage12.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(271, 58);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(240, 199);
-            this.button7.TabIndex = 2;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(63, 175);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(145, 82);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // Lunch_Voorgerecht_Steak
-            // 
-            this.Lunch_Voorgerecht_Steak.Location = new System.Drawing.Point(63, 58);
-            this.Lunch_Voorgerecht_Steak.Name = "Lunch_Voorgerecht_Steak";
-            this.Lunch_Voorgerecht_Steak.Size = new System.Drawing.Size(145, 82);
-            this.Lunch_Voorgerecht_Steak.TabIndex = 0;
-            this.Lunch_Voorgerecht_Steak.Text = "Steak tartaar\r\nmet Truffelmayonnaise";
-            this.Lunch_Voorgerecht_Steak.UseVisualStyleBackColor = true;
-            this.Lunch_Voorgerecht_Steak.Click += new System.EventHandler(this.Lunch_Voorgerecht_Steak_Click);
-            // 
-            // tabPage13
-            // 
-            this.tabPage13.Location = new System.Drawing.Point(4, 54);
-            this.tabPage13.Name = "tabPage13";
-            this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage13.Size = new System.Drawing.Size(571, 290);
-            this.tabPage13.TabIndex = 1;
-            this.tabPage13.Text = "Hoofdgerecht";
-            this.tabPage13.UseVisualStyleBackColor = true;
-            // 
-            // tabPage14
-            // 
-            this.tabPage14.Location = new System.Drawing.Point(4, 54);
-            this.tabPage14.Name = "tabPage14";
-            this.tabPage14.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage14.Size = new System.Drawing.Size(571, 290);
-            this.tabPage14.TabIndex = 2;
-            this.tabPage14.Text = "Nagerecht";
-            this.tabPage14.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.tabControl3);
-            this.tabPage2.Location = new System.Drawing.Point(4, 54);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(571, 341);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Diner";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabControl3
-            // 
-            this.tabControl3.Controls.Add(this.tabPage8);
-            this.tabControl3.Controls.Add(this.tabPage9);
-            this.tabControl3.Controls.Add(this.tabPage10);
-            this.tabControl3.Controls.Add(this.tabPage11);
-            this.tabControl3.ItemSize = new System.Drawing.Size(143, 50);
-            this.tabControl3.Location = new System.Drawing.Point(-4, -3);
-            this.tabControl3.Name = "tabControl3";
-            this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(579, 348);
-            this.tabControl3.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.tabControl3.TabIndex = 1;
-            // 
-            // tabPage8
-            // 
-            this.tabPage8.Controls.Add(this.button3);
-            this.tabPage8.Controls.Add(this.pictureBox2);
-            this.tabPage8.Location = new System.Drawing.Point(4, 54);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(571, 290);
-            this.tabPage8.TabIndex = 0;
-            this.tabPage8.Text = "tabPage8";
-            this.tabPage8.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ImageKey = "calculator-icon.png";
-            this.button3.Location = new System.Drawing.Point(57, 62);
-            this.button3.Name = "button3";
-            this.button3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button3.Size = new System.Drawing.Size(111, 105);
-            this.button3.TabIndex = 1;
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(233, 47);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(186, 139);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // tabPage9
-            // 
-            this.tabPage9.Location = new System.Drawing.Point(4, 54);
-            this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(571, 290);
-            this.tabPage9.TabIndex = 1;
-            this.tabPage9.Text = "tabPage9";
-            this.tabPage9.UseVisualStyleBackColor = true;
-            // 
-            // tabPage10
-            // 
-            this.tabPage10.Location = new System.Drawing.Point(4, 54);
-            this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage10.Size = new System.Drawing.Size(571, 290);
-            this.tabPage10.TabIndex = 2;
-            this.tabPage10.Text = "tabPage10";
-            this.tabPage10.UseVisualStyleBackColor = true;
-            // 
-            // tabPage11
-            // 
-            this.tabPage11.Location = new System.Drawing.Point(4, 54);
-            this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage11.Size = new System.Drawing.Size(571, 290);
-            this.tabPage11.TabIndex = 3;
-            this.tabPage11.Text = "tabPage11";
-            this.tabPage11.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.tabControl2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 54);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(571, 341);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Dranken";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabControl2
-            // 
-            this.tabControl2.Controls.Add(this.tabPage4);
-            this.tabControl2.Controls.Add(this.tabPage5);
-            this.tabControl2.Controls.Add(this.tabPage6);
-            this.tabControl2.Controls.Add(this.tabPage7);
-            this.tabControl2.Controls.Add(this.tabPage15);
-            this.tabControl2.ItemSize = new System.Drawing.Size(115, 50);
-            this.tabControl2.Location = new System.Drawing.Point(-4, -4);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(579, 348);
-            this.tabControl2.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.tabControl2.TabIndex = 2;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.button2);
-            this.tabPage4.Controls.Add(this.pictureBox1);
-            this.tabPage4.Location = new System.Drawing.Point(4, 54);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(571, 290);
-            this.tabPage4.TabIndex = 0;
-            this.tabPage4.Text = "tabPage4";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ImageKey = "calculator-icon.png";
-            this.button2.Location = new System.Drawing.Point(57, 62);
-            this.button2.Name = "button2";
-            this.button2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button2.Size = new System.Drawing.Size(111, 105);
-            this.button2.TabIndex = 1;
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(233, 47);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(186, 139);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 54);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(571, 290);
-            this.tabPage5.TabIndex = 1;
-            this.tabPage5.Text = "tabPage5";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Location = new System.Drawing.Point(4, 54);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(571, 290);
-            this.tabPage6.TabIndex = 2;
-            this.tabPage6.Text = "tabPage6";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.Location = new System.Drawing.Point(4, 54);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(571, 290);
-            this.tabPage7.TabIndex = 3;
-            this.tabPage7.Text = "tabPage7";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // tabPage15
-            // 
-            this.tabPage15.Location = new System.Drawing.Point(4, 54);
-            this.tabPage15.Name = "tabPage15";
-            this.tabPage15.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage15.Size = new System.Drawing.Size(571, 290);
-            this.tabPage15.TabIndex = 4;
-            this.tabPage15.Text = "tabPage15";
-            this.tabPage15.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
@@ -408,26 +120,340 @@
             this.ListViewtje.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
-            this.columnHeader3});
-            this.ListViewtje.Location = new System.Drawing.Point(87, 584);
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6});
+            this.ListViewtje.Location = new System.Drawing.Point(87, 588);
             this.ListViewtje.Name = "ListViewtje";
             this.ListViewtje.Size = new System.Drawing.Size(571, 303);
             this.ListViewtje.TabIndex = 4;
             this.ListViewtje.TileSize = new System.Drawing.Size(1, 1);
             this.ListViewtje.UseCompatibleStateImageBehavior = false;
-            this.ListViewtje.View = System.Windows.Forms.View.Tile;
+            this.ListViewtje.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Naam";
+            this.columnHeader1.Width = 44;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "aantal";
+            this.columnHeader2.Width = 42;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Opmerkingen";
+            this.columnHeader3.Width = 81;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Width = 89;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.CategorieDranken);
+            this.tabPage3.Location = new System.Drawing.Point(4, 54);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(571, 341);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Dranken";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // CategorieDranken
+            // 
+            this.CategorieDranken.Controls.Add(this.Frisdrank);
+            this.CategorieDranken.Controls.Add(this.Bier);
+            this.CategorieDranken.Controls.Add(this.Wijn);
+            this.CategorieDranken.Controls.Add(this.Gedistileerd);
+            this.CategorieDranken.Controls.Add(this.Koffiethee);
+            this.CategorieDranken.ItemSize = new System.Drawing.Size(115, 50);
+            this.CategorieDranken.Location = new System.Drawing.Point(-4, -4);
+            this.CategorieDranken.Name = "CategorieDranken";
+            this.CategorieDranken.SelectedIndex = 0;
+            this.CategorieDranken.Size = new System.Drawing.Size(579, 348);
+            this.CategorieDranken.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.CategorieDranken.TabIndex = 2;
+            // 
+            // Frisdrank
+            // 
+            this.Frisdrank.Controls.Add(this.FLPDrankFris);
+            this.Frisdrank.Location = new System.Drawing.Point(4, 54);
+            this.Frisdrank.Name = "Frisdrank";
+            this.Frisdrank.Padding = new System.Windows.Forms.Padding(3);
+            this.Frisdrank.Size = new System.Drawing.Size(571, 290);
+            this.Frisdrank.TabIndex = 0;
+            this.Frisdrank.Text = "Frisdrank";
+            this.Frisdrank.UseVisualStyleBackColor = true;
+            // 
+            // Bier
+            // 
+            this.Bier.Controls.Add(this.FLPDrankBier);
+            this.Bier.Location = new System.Drawing.Point(4, 54);
+            this.Bier.Name = "Bier";
+            this.Bier.Padding = new System.Windows.Forms.Padding(3);
+            this.Bier.Size = new System.Drawing.Size(571, 290);
+            this.Bier.TabIndex = 1;
+            this.Bier.Text = "Bier";
+            this.Bier.UseVisualStyleBackColor = true;
+            // 
+            // Wijn
+            // 
+            this.Wijn.Controls.Add(this.FLPDrankWijn);
+            this.Wijn.Location = new System.Drawing.Point(4, 54);
+            this.Wijn.Name = "Wijn";
+            this.Wijn.Padding = new System.Windows.Forms.Padding(3);
+            this.Wijn.Size = new System.Drawing.Size(571, 290);
+            this.Wijn.TabIndex = 2;
+            this.Wijn.Text = "Wijn";
+            this.Wijn.UseVisualStyleBackColor = true;
+            // 
+            // Gedistileerd
+            // 
+            this.Gedistileerd.Controls.Add(this.FLPDrankGedis);
+            this.Gedistileerd.Location = new System.Drawing.Point(4, 54);
+            this.Gedistileerd.Name = "Gedistileerd";
+            this.Gedistileerd.Padding = new System.Windows.Forms.Padding(3);
+            this.Gedistileerd.Size = new System.Drawing.Size(571, 290);
+            this.Gedistileerd.TabIndex = 3;
+            this.Gedistileerd.Text = "Gedistileerd";
+            this.Gedistileerd.UseVisualStyleBackColor = true;
+            // 
+            // Koffiethee
+            // 
+            this.Koffiethee.Controls.Add(this.FLPDrankKoffthee);
+            this.Koffiethee.Location = new System.Drawing.Point(4, 54);
+            this.Koffiethee.Name = "Koffiethee";
+            this.Koffiethee.Padding = new System.Windows.Forms.Padding(3);
+            this.Koffiethee.Size = new System.Drawing.Size(571, 290);
+            this.Koffiethee.TabIndex = 4;
+            this.Koffiethee.Text = "Koffie/Thee";
+            this.Koffiethee.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.CategorieDiner);
+            this.tabPage2.Location = new System.Drawing.Point(4, 54);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(571, 341);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Diner";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // CategorieDiner
+            // 
+            this.CategorieDiner.Controls.Add(this.VoorgerechtDiner);
+            this.CategorieDiner.Controls.Add(this.TussengerechtDiner);
+            this.CategorieDiner.Controls.Add(this.HoofdgerechtDiner);
+            this.CategorieDiner.Controls.Add(this.NagerechtDiner);
+            this.CategorieDiner.ItemSize = new System.Drawing.Size(144, 50);
+            this.CategorieDiner.Location = new System.Drawing.Point(-4, -3);
+            this.CategorieDiner.Name = "CategorieDiner";
+            this.CategorieDiner.SelectedIndex = 0;
+            this.CategorieDiner.Size = new System.Drawing.Size(579, 348);
+            this.CategorieDiner.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.CategorieDiner.TabIndex = 1;
+            // 
+            // VoorgerechtDiner
+            // 
+            this.VoorgerechtDiner.Controls.Add(this.FLPDinerVoor);
+            this.VoorgerechtDiner.Location = new System.Drawing.Point(4, 54);
+            this.VoorgerechtDiner.Name = "VoorgerechtDiner";
+            this.VoorgerechtDiner.Padding = new System.Windows.Forms.Padding(3);
+            this.VoorgerechtDiner.Size = new System.Drawing.Size(571, 290);
+            this.VoorgerechtDiner.TabIndex = 0;
+            this.VoorgerechtDiner.Text = "Voorgerecht";
+            this.VoorgerechtDiner.UseVisualStyleBackColor = true;
+            // 
+            // TussengerechtDiner
+            // 
+            this.TussengerechtDiner.Controls.Add(this.FLPDinerTussen);
+            this.TussengerechtDiner.Location = new System.Drawing.Point(4, 54);
+            this.TussengerechtDiner.Name = "TussengerechtDiner";
+            this.TussengerechtDiner.Padding = new System.Windows.Forms.Padding(3);
+            this.TussengerechtDiner.Size = new System.Drawing.Size(571, 290);
+            this.TussengerechtDiner.TabIndex = 1;
+            this.TussengerechtDiner.Text = "Tussengerecht";
+            this.TussengerechtDiner.UseVisualStyleBackColor = true;
+            // 
+            // HoofdgerechtDiner
+            // 
+            this.HoofdgerechtDiner.Controls.Add(this.FLPDinerHoofd);
+            this.HoofdgerechtDiner.Location = new System.Drawing.Point(4, 54);
+            this.HoofdgerechtDiner.Name = "HoofdgerechtDiner";
+            this.HoofdgerechtDiner.Padding = new System.Windows.Forms.Padding(3);
+            this.HoofdgerechtDiner.Size = new System.Drawing.Size(571, 290);
+            this.HoofdgerechtDiner.TabIndex = 2;
+            this.HoofdgerechtDiner.Text = "Hoofdgerecht";
+            this.HoofdgerechtDiner.UseVisualStyleBackColor = true;
+            // 
+            // NagerechtDiner
+            // 
+            this.NagerechtDiner.Controls.Add(this.FLPDinerNa);
+            this.NagerechtDiner.Location = new System.Drawing.Point(4, 54);
+            this.NagerechtDiner.Name = "NagerechtDiner";
+            this.NagerechtDiner.Padding = new System.Windows.Forms.Padding(3);
+            this.NagerechtDiner.Size = new System.Drawing.Size(571, 290);
+            this.NagerechtDiner.TabIndex = 3;
+            this.NagerechtDiner.Text = "Nagerecht";
+            this.NagerechtDiner.UseVisualStyleBackColor = true;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.CategorieLunch);
+            this.tabPage1.Location = new System.Drawing.Point(4, 54);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(571, 341);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Lunch";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // CategorieLunch
+            // 
+            this.CategorieLunch.Controls.Add(this.VoorgerechtLunch);
+            this.CategorieLunch.Controls.Add(this.HoofdgerechtLunch);
+            this.CategorieLunch.Controls.Add(this.NagerechtLunch);
+            this.CategorieLunch.ItemSize = new System.Drawing.Size(192, 50);
+            this.CategorieLunch.Location = new System.Drawing.Point(-4, -4);
+            this.CategorieLunch.Name = "CategorieLunch";
+            this.CategorieLunch.SelectedIndex = 0;
+            this.CategorieLunch.Size = new System.Drawing.Size(579, 348);
+            this.CategorieLunch.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.CategorieLunch.TabIndex = 3;
+            // 
+            // VoorgerechtLunch
+            // 
+            this.VoorgerechtLunch.Controls.Add(this.FLPLunchVoor);
+            this.VoorgerechtLunch.Location = new System.Drawing.Point(4, 54);
+            this.VoorgerechtLunch.Name = "VoorgerechtLunch";
+            this.VoorgerechtLunch.Padding = new System.Windows.Forms.Padding(3);
+            this.VoorgerechtLunch.Size = new System.Drawing.Size(571, 290);
+            this.VoorgerechtLunch.TabIndex = 0;
+            this.VoorgerechtLunch.Text = "Voorgerecht";
+            this.VoorgerechtLunch.UseVisualStyleBackColor = true;
+            // 
+            // FLPLunchVoor
+            // 
+            this.FLPLunchVoor.Location = new System.Drawing.Point(53, 28);
+            this.FLPLunchVoor.Name = "FLPLunchVoor";
+            this.FLPLunchVoor.Size = new System.Drawing.Size(464, 235);
+            this.FLPLunchVoor.TabIndex = 2;
+            // 
+            // HoofdgerechtLunch
+            // 
+            this.HoofdgerechtLunch.Controls.Add(this.FLPLunchHoofd);
+            this.HoofdgerechtLunch.Location = new System.Drawing.Point(4, 54);
+            this.HoofdgerechtLunch.Name = "HoofdgerechtLunch";
+            this.HoofdgerechtLunch.Padding = new System.Windows.Forms.Padding(3);
+            this.HoofdgerechtLunch.Size = new System.Drawing.Size(571, 290);
+            this.HoofdgerechtLunch.TabIndex = 1;
+            this.HoofdgerechtLunch.Text = "Hoofdgerecht";
+            this.HoofdgerechtLunch.UseVisualStyleBackColor = true;
+            // 
+            // FLPLunchHoofd
+            // 
+            this.FLPLunchHoofd.Location = new System.Drawing.Point(53, 28);
+            this.FLPLunchHoofd.Name = "FLPLunchHoofd";
+            this.FLPLunchHoofd.Size = new System.Drawing.Size(464, 235);
+            this.FLPLunchHoofd.TabIndex = 1;
+            // 
+            // NagerechtLunch
+            // 
+            this.NagerechtLunch.Controls.Add(this.FLPLucnhNa);
+            this.NagerechtLunch.Location = new System.Drawing.Point(4, 54);
+            this.NagerechtLunch.Name = "NagerechtLunch";
+            this.NagerechtLunch.Padding = new System.Windows.Forms.Padding(3);
+            this.NagerechtLunch.Size = new System.Drawing.Size(571, 290);
+            this.NagerechtLunch.TabIndex = 2;
+            this.NagerechtLunch.Text = "Nagerecht";
+            this.NagerechtLunch.UseVisualStyleBackColor = true;
+            // 
+            // FLPLucnhNa
+            // 
+            this.FLPLucnhNa.Location = new System.Drawing.Point(53, 28);
+            this.FLPLucnhNa.Name = "FLPLucnhNa";
+            this.FLPLucnhNa.Size = new System.Drawing.Size(464, 235);
+            this.FLPLucnhNa.TabIndex = 2;
+            // 
+            // MenuKaart
+            // 
+            this.MenuKaart.Controls.Add(this.tabPage1);
+            this.MenuKaart.Controls.Add(this.tabPage2);
+            this.MenuKaart.Controls.Add(this.tabPage3);
+            this.MenuKaart.ItemSize = new System.Drawing.Size(192, 50);
+            this.MenuKaart.Location = new System.Drawing.Point(83, 152);
+            this.MenuKaart.Name = "MenuKaart";
+            this.MenuKaart.SelectedIndex = 0;
+            this.MenuKaart.Size = new System.Drawing.Size(579, 399);
+            this.MenuKaart.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.MenuKaart.TabIndex = 1;
+            // 
+            // FLPDinerVoor
+            // 
+            this.FLPDinerVoor.Location = new System.Drawing.Point(53, 28);
+            this.FLPDinerVoor.Name = "FLPDinerVoor";
+            this.FLPDinerVoor.Size = new System.Drawing.Size(464, 235);
+            this.FLPDinerVoor.TabIndex = 3;
+            // 
+            // FLPDinerTussen
+            // 
+            this.FLPDinerTussen.Location = new System.Drawing.Point(53, 28);
+            this.FLPDinerTussen.Name = "FLPDinerTussen";
+            this.FLPDinerTussen.Size = new System.Drawing.Size(464, 235);
+            this.FLPDinerTussen.TabIndex = 3;
+            // 
+            // FLPDinerHoofd
+            // 
+            this.FLPDinerHoofd.Location = new System.Drawing.Point(53, 28);
+            this.FLPDinerHoofd.Name = "FLPDinerHoofd";
+            this.FLPDinerHoofd.Size = new System.Drawing.Size(464, 235);
+            this.FLPDinerHoofd.TabIndex = 3;
+            // 
+            // FLPDinerNa
+            // 
+            this.FLPDinerNa.Location = new System.Drawing.Point(53, 28);
+            this.FLPDinerNa.Name = "FLPDinerNa";
+            this.FLPDinerNa.Size = new System.Drawing.Size(464, 235);
+            this.FLPDinerNa.TabIndex = 3;
+            // 
+            // FLPDrankFris
+            // 
+            this.FLPDrankFris.Location = new System.Drawing.Point(53, 28);
+            this.FLPDrankFris.Name = "FLPDrankFris";
+            this.FLPDrankFris.Size = new System.Drawing.Size(464, 235);
+            this.FLPDrankFris.TabIndex = 4;
+            // 
+            // FLPDrankBier
+            // 
+            this.FLPDrankBier.Location = new System.Drawing.Point(53, 28);
+            this.FLPDrankBier.Name = "FLPDrankBier";
+            this.FLPDrankBier.Size = new System.Drawing.Size(464, 235);
+            this.FLPDrankBier.TabIndex = 4;
+            // 
+            // FLPDrankWijn
+            // 
+            this.FLPDrankWijn.Location = new System.Drawing.Point(53, 28);
+            this.FLPDrankWijn.Name = "FLPDrankWijn";
+            this.FLPDrankWijn.Size = new System.Drawing.Size(464, 235);
+            this.FLPDrankWijn.TabIndex = 4;
+            // 
+            // FLPDrankGedis
+            // 
+            this.FLPDrankGedis.Location = new System.Drawing.Point(53, 28);
+            this.FLPDrankGedis.Name = "FLPDrankGedis";
+            this.FLPDrankGedis.Size = new System.Drawing.Size(464, 235);
+            this.FLPDrankGedis.TabIndex = 4;
+            // 
+            // FLPDrankKoffthee
+            // 
+            this.FLPDrankKoffthee.Location = new System.Drawing.Point(53, 28);
+            this.FLPDrankKoffthee.Name = "FLPDrankKoffthee";
+            this.FLPDrankKoffthee.Size = new System.Drawing.Size(464, 235);
+            this.FLPDrankKoffthee.TabIndex = 4;
             // 
             // Bestellen
             // 
@@ -437,55 +463,69 @@
             this.Name = "Bestellen";
             this.Text = "Bestellen";
             this.panel1.ResumeLayout(false);
-            this.Lunch.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabControl4.ResumeLayout(false);
-            this.tabPage12.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabControl3.ResumeLayout(false);
-            this.tabPage8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabPage3.ResumeLayout(false);
-            this.tabControl2.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.CategorieDranken.ResumeLayout(false);
+            this.Frisdrank.ResumeLayout(false);
+            this.Bier.ResumeLayout(false);
+            this.Wijn.ResumeLayout(false);
+            this.Gedistileerd.ResumeLayout(false);
+            this.Koffiethee.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.CategorieDiner.ResumeLayout(false);
+            this.VoorgerechtDiner.ResumeLayout(false);
+            this.TussengerechtDiner.ResumeLayout(false);
+            this.HoofdgerechtDiner.ResumeLayout(false);
+            this.NagerechtDiner.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.CategorieLunch.ResumeLayout(false);
+            this.VoorgerechtLunch.ResumeLayout(false);
+            this.HoofdgerechtLunch.ResumeLayout(false);
+            this.NagerechtLunch.ResumeLayout(false);
+            this.MenuKaart.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TabControl Lunch;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TabControl tabControl3;
-        private System.Windows.Forms.TabPage tabPage8;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TabPage tabPage9;
-        private System.Windows.Forms.TabPage tabPage10;
-        private System.Windows.Forms.TabPage tabPage11;
-        private System.Windows.Forms.TabControl tabControl4;
-        private System.Windows.Forms.TabPage tabPage12;
-        private System.Windows.Forms.TabPage tabPage13;
-        private System.Windows.Forms.TabPage tabPage14;
-        private System.Windows.Forms.TabControl tabControl2;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.TabPage tabPage7;
-        private System.Windows.Forms.TabPage tabPage15;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button Lunch_Voorgerecht_Steak;
         private System.Windows.Forms.ListView ListViewtje;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.TabControl MenuKaart;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabControl CategorieLunch;
+        private System.Windows.Forms.TabPage VoorgerechtLunch;
+        private System.Windows.Forms.TabPage HoofdgerechtLunch;
+        private System.Windows.Forms.TabPage NagerechtLunch;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabControl CategorieDiner;
+        private System.Windows.Forms.TabPage VoorgerechtDiner;
+        private System.Windows.Forms.TabPage TussengerechtDiner;
+        private System.Windows.Forms.TabPage HoofdgerechtDiner;
+        private System.Windows.Forms.TabPage NagerechtDiner;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabControl CategorieDranken;
+        private System.Windows.Forms.TabPage Frisdrank;
+        private System.Windows.Forms.TabPage Bier;
+        private System.Windows.Forms.TabPage Wijn;
+        private System.Windows.Forms.TabPage Gedistileerd;
+        private System.Windows.Forms.TabPage Koffiethee;
+        private System.Windows.Forms.FlowLayoutPanel FLPLunchHoofd;
+        private System.Windows.Forms.FlowLayoutPanel FLPLunchVoor;
+        private System.Windows.Forms.FlowLayoutPanel FLPLucnhNa;
+        private System.Windows.Forms.FlowLayoutPanel FLPDinerVoor;
+        private System.Windows.Forms.FlowLayoutPanel FLPDinerTussen;
+        private System.Windows.Forms.FlowLayoutPanel FLPDinerHoofd;
+        private System.Windows.Forms.FlowLayoutPanel FLPDinerNa;
+        private System.Windows.Forms.FlowLayoutPanel FLPDrankFris;
+        private System.Windows.Forms.FlowLayoutPanel FLPDrankBier;
+        private System.Windows.Forms.FlowLayoutPanel FLPDrankWijn;
+        private System.Windows.Forms.FlowLayoutPanel FLPDrankGedis;
+        private System.Windows.Forms.FlowLayoutPanel FLPDrankKoffthee;
     }
 }
