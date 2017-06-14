@@ -61,5 +61,13 @@ namespace UI
                 item.Remove();
             }
         }
+
+        private void btn_Loguit_Click(object sender, EventArgs e)
+        {
+            Form form = lv_KokBarman.FindForm();
+            form.Close();
+            HandheldLogin handheldlogin = new HandheldLogin();
+            handheldlogin.Show();
+        }
     }
 }
