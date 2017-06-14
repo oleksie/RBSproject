@@ -41,9 +41,19 @@ namespace UI
                     switch (medewerker.rol)
                     {
                         case (Rol) 1:
+                            this.Hide();
                             HandheldTafels handheldTafels = new HandheldTafels(medewerker);
                             handheldTafels.Show();
                             break;
+                        case (Rol)2:
+                        case (Rol)3:
+                            this.Hide();
+                            BasisKokBar basisKokBar = new BasisKokBar(medewerker);
+                            basisKokBar.Show();
+                            break;
+                        // rol 4 is voor eigenaar en die wordt niet geïmplementeerd
+                        //case (Rol)4:
+                        //    break;
                     }
                 }
                 catch

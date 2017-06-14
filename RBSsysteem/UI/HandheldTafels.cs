@@ -15,9 +15,9 @@ namespace UI
     public partial class HandheldTafels : BasisHandheld
     {
         
-        public HandheldTafels(Medewerker medewerker)
+        public HandheldTafels(Medewerker m)
         {
-            Medewerker medewerkerHhT = medewerker;
+            Medewerker medewerker = m;
             InitializeComponent();
             lblPersoonlijkNummer.Text += medewerker.inlognummer;
         }
