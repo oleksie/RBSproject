@@ -29,13 +29,16 @@ namespace UI
             lv_KokBarman.Columns.Add("Status", 100);
             lv_KokBarman.Columns.Add("Tijd Opgenomen", 100);
 
-            List<ListViewItem> bestellinglist = BarKok.Bestellinglist();
-            
+            List<ListViewItem> bestellinglist = BarKok.BestellinglistGerechten();
+            foreach (ListViewItem item in bestellinglist)
+            {
+
+            }
             for (int i = 0; i < bestellinglist.Count; i++)
             {
                 lv_KokBarman.Items.Add(bestellinglist[i]);
             }
-
+             
         }
 
         private void Lbl_Tijd_Click(object sender, EventArgs e)
@@ -52,11 +55,9 @@ namespace UI
         {
             foreach(ListViewItem item in lv_KokBarman.SelectedItems)
             {
-                if (item.Checked == true)
-                {
-                    BarKok.Updatebestelitem(item);
-                    item.Remove();
-                }
+                int bestelitemid = Convert.ToInt32(item.SubItems[0].Text);
+                BarKok.Updatebestelitem(bestelitemid);
+                item.Remove();
             }
         }
     }
