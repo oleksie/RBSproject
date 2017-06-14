@@ -66,8 +66,8 @@ namespace UI
         {
             Form form = lv_KokBarman.FindForm();
             form.Close();
-            HandheldLogin handheldlogin = new HandheldLogin();
-            handheldlogin.Show();
+            HandheldLogin login = (HandheldLogin)Application.OpenForms[0];
+            login.Show();
         }
     }
 }
