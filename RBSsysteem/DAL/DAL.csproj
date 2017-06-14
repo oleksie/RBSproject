@@ -42,10 +42,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DALConnection.cs" />
+    <Compile Include="GetBestellingDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{b161ea32-fab5-4cdf-9dc9-d27c92e9d00d}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

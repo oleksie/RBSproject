@@ -49,7 +49,7 @@
             this.Lbl_Tijd.AutoSize = true;
             this.Lbl_Tijd.Location = new System.Drawing.Point(1065, 125);
             this.Lbl_Tijd.Name = "Lbl_Tijd";
-            this.Lbl_Tijd.Size = new System.Drawing.Size(0, 17);
+            this.Lbl_Tijd.Size = new System.Drawing.Size(0, 13);
             this.Lbl_Tijd.TabIndex = 1;
             this.Lbl_Tijd.Click += new System.EventHandler(this.Lbl_Tijd_Click);
             // 
@@ -57,11 +57,12 @@
             // 
             this.Label1.AutoSize = true;
             this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label1.Location = new System.Drawing.Point(960, 52);
+            this.Label1.Location = new System.Drawing.Point(925, 52);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(93, 32);
+            this.Label1.Size = new System.Drawing.Size(70, 26);
             this.Label1.TabIndex = 2;
             this.Label1.Text = "label1";
+            this.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // BasisKokBar
             // 

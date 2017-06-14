@@ -170,9 +170,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{d2d52cac-cf17-460b-a66b-0abda7250776}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logica\Logica.csproj">
       <Project>{9279efea-7d18-4d17-b692-1da78069da9a}</Project>
       <Name>Logica</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{b161ea32-fab5-4cdf-9dc9-d27c92e9d00d}</Project>
+      <Name>Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\StyleGuide\StyleGuide.csproj">
       <Project>{75cd7662-2a51-457c-9bed-82e0a7d3221a}</Project>
