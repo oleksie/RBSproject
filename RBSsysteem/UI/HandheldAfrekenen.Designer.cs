@@ -50,6 +50,7 @@
             this.Btn_Afrekenen.TabIndex = 2;
             this.Btn_Afrekenen.Text = "Afrekenen";
             this.Btn_Afrekenen.UseVisualStyleBackColor = true;
+            this.Btn_Afrekenen.Click += new System.EventHandler(this.Btn_Afrekenen_Click);
             // 
             // radioButton1
             // 
@@ -92,6 +93,7 @@
             this.Btn_AfrekenenTerug.TabIndex = 7;
             this.Btn_AfrekenenTerug.Text = "Terug";
             this.Btn_AfrekenenTerug.UseVisualStyleBackColor = true;
+            this.Btn_AfrekenenTerug.Click += new System.EventHandler(this.Btn_AfrekenenTerug_Click);
             // 
             // groupBox2
             // 
@@ -152,6 +154,7 @@
             // 
             // listView1
             // 
+            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.listView1.Location = new System.Drawing.Point(57, 148);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(626, 503);

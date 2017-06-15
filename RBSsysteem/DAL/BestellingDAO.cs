@@ -12,7 +12,7 @@ namespace DAL
     public class BestellingDAO
     {
         private SqlConnection DBConnectie;
-
+        
         public List<Bestelling> GetBestelling()
         {
             List<Bestelling> lijstbestellingen = new List<Bestelling>();

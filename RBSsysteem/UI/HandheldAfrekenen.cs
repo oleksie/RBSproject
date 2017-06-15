@@ -64,23 +64,35 @@ namespace UI
             listView1.Columns.Add("Aantal", 156);
             listView1.Columns.Add("Naam", 156); 
             listView1.Columns.Add("Prijs", 156);
-            listView1.Columns.Add("Wijziging", 156);
-            Lbl_TafelNr.Text = aantal.ToString();
+            listView1.Columns.Add("Wijziging", 154);
 
-            for (int i = 0; i < lijst.Count(); i++)
+            ListViewItem leeg = new ListViewItem(" ");
+            leeg.SubItems.Add(" ");
+            leeg.SubItems.Add(" ");
+            leeg.SubItems.Add(" ");
+            listView1.Items.Add(leeg);
+
+            foreach (Bestelling bestelling in lijst)
             {
-                ListViewItem item = new ListViewItem("kanker");
-                item.SubItems.Add(lijst[i].aantal.ToString());
+
+                ListViewItem item = new ListViewItem(bestelling.aantal.ToString());
+                item.SubItems.Add(bestelling.naam);
+                item.SubItems.Add(bestelling.prijs.ToString());
+                item.SubItems.Add("wijzig").Tag = bestelling.tafelId;
                 listView1.Items.Add(item);
-                Lbl_PersoonlijkNr.Text = lijst[i].naam;
             }
-                
-            ////listView1.FullRowSelect = true;
+            
+            //listView1.FullRowSelect = true;
 
             ////listView1.Columns.Add("iabsd");
             ////listView1.Columns.Add("asdfasd");
             ////listView1.Columns.Add("asdasda");
 
+        }
+
+        private void ListView1_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void Lvi_Load(object sender, EventArgs e)
@@ -102,6 +114,19 @@ namespace UI
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void Btn_AfrekenenTerug_Click(object sender, EventArgs e)
+        {
+            Bestellen bestellen = new UI.Bestellen();
+
+            bestellen.Show();
+        }
+
+        private void Btn_Afrekenen_Click(object sender, EventArgs e)
+        {
+            
 
         }
     }
