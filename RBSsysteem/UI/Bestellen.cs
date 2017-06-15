@@ -14,6 +14,9 @@ namespace UI
 {
     public partial class Bestellen : StyleGuide.BasisHandheldForm
     {
+        MenuItemService actieButton = new MenuItemService();
+
+        public int tafelnr;
         public Bestellen()
         {
             InitializeComponent();
@@ -29,9 +32,19 @@ namespace UI
 
         private void button4_Click(object sender, EventArgs e)
         {
-            HandheldLogin hee1 = new HandheldLogin();
-            hee1.Show();
-            this.Hide();
+            if (this.ListViewtje.Items.Count != 0)
+            {
+                if ((MessageBox.Show("Weet je zeker dat je wilt verlaten?", "Naar overzicht tafels?",
+                     MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                     MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
+                {
+                    this.ListViewtje.Clear();
+                    HandheldLogin hee1 = new HandheldLogin();
+                    hee1.Show();
+                    this.Hide();
+                }
+            }
+            
         }
 
         private void ShowLunchStart()
@@ -69,8 +82,16 @@ namespace UI
 
         public void button_Click(object sender, EventArgs e)
         {
-            MenuItemService actieButton = new MenuItemService();
-            actieButton.MenuItemNaarList(this.ListViewtje, (sender as Button));
+            HandheldPopUpBestel aantalItem = new HandheldPopUpBestel();
+            aantalItem.ShowDialog();
+
+            if (aantalItem.ok)
+            {
+                
+                ListviewBestellen item = actieButton.MenuItemNaarList(sender as Button, aantalItem.aantal, aantalItem.opmerking);
+
+                actieButton.MenuItemNaarListView(this.ListViewtje,item);
+            }
         }
 
         private void CategorieLunch_SelectedIndexChanged(Object sender, EventArgs e)
@@ -188,6 +209,29 @@ namespace UI
                 {
                     x.Click += new EventHandler(button_Click);
                 }
+            }
+        }
+
+        private void btn_afrondenHuidig_Click(object sender, EventArgs e)
+        {
+            if ((MessageBox.Show("De bestelling wordt nu opgeslagen.", "Is de bestelling compleet?",
+                     MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                     MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
+            {
+                BestellingService bestelling = new BestellingService();
+                BestelItemService gebruik = new BestelItemService();
+                if (String.IsNullOrEmpty(gebruik.bestellingID.ToString()))
+                {
+                    bestelling.MaakNieuweBestelling();
+                    gebruik.VerwerkNieuweBestelling(this.ListViewtje);
+                }
+                else
+                {
+                    bestelling.MaakNieuweBestelling();
+                    gebruik.VerwerkHuidigeBestelling(this.ListViewtje);
+                }
+
+                this.ListViewtje.Clear();
             }
         }
     }

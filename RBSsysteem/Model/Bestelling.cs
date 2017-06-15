@@ -8,17 +8,25 @@ namespace Model
 {
     public class Bestelling
     {
+        public int bestelling_id;
+        public string commentaarKlant;
+        public int medewerkerid;
         public int tafelId;
         public int aantal;
         public string naam;
         public double prijs;
 
-        public  (int aantal, int tafelId,string naam, double prijs)
+        public Bestelling(int aantal, int tafelId, string naam, double prijs)
         {
             this.tafelId = tafelId;
             this.aantal = aantal;
             this.naam = naam;
             this.prijs = prijs;
+        }
+
+        public Bestelling()
+        {
+
         }
     }
 }

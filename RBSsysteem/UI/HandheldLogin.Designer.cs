@@ -82,7 +82,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtInlognummer);
             this.Name = "HandheldLogin";
-            this.Text = "HandheldLogin";
+            this.Text = "7";
             this.Controls.SetChildIndex(this.txtInlognummer, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.LoginAccept, 0);

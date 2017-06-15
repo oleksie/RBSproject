@@ -9,7 +9,7 @@ using Model;
 
 namespace DAL
 {
-    class TafelDAO
+    public class TafelDAO
     {
         private SqlConnection DBConnectie;
 
@@ -29,15 +29,11 @@ namespace DAL
             SqlCommand command = new SqlCommand("SELECT * FROM Tafel", DBConnectie);
 
             SqlDataReader reader = command.ExecuteReader();
-
-            // controleer of er ten minste één record is terug gestuurd
-            if (!reader.Read())
-                return null;
-
+            
             // vul tafels list met resultaten
             while (reader.Read())
             {
-                Tafel tafel = new Tafel(reader.GetInt32(0), reader.GetInt32(1), reader.GetString(2));
+                Tafel tafel = new Tafel(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2));
                 tafels.Add(tafel);
             }
 

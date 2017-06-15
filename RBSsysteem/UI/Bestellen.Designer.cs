@@ -31,25 +31,33 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.ListViewtje = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ListColomNaamItem = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ListColomAantalItem = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ListColomOpmerkingItem = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ListColomPrijsItem = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ListColomNaamID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.CategorieDranken = new System.Windows.Forms.TabControl();
             this.Frisdrank = new System.Windows.Forms.TabPage();
+            this.FLPDrankFris = new System.Windows.Forms.FlowLayoutPanel();
             this.Bier = new System.Windows.Forms.TabPage();
+            this.FLPDrankBier = new System.Windows.Forms.FlowLayoutPanel();
             this.Wijn = new System.Windows.Forms.TabPage();
+            this.FLPDrankWijn = new System.Windows.Forms.FlowLayoutPanel();
             this.Gedistileerd = new System.Windows.Forms.TabPage();
+            this.FLPDrankGedis = new System.Windows.Forms.FlowLayoutPanel();
             this.Koffiethee = new System.Windows.Forms.TabPage();
+            this.FLPDrankKoffthee = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.CategorieDiner = new System.Windows.Forms.TabControl();
             this.VoorgerechtDiner = new System.Windows.Forms.TabPage();
+            this.FLPDinerVoor = new System.Windows.Forms.FlowLayoutPanel();
             this.TussengerechtDiner = new System.Windows.Forms.TabPage();
+            this.FLPDinerTussen = new System.Windows.Forms.FlowLayoutPanel();
             this.HoofdgerechtDiner = new System.Windows.Forms.TabPage();
+            this.FLPDinerHoofd = new System.Windows.Forms.FlowLayoutPanel();
             this.NagerechtDiner = new System.Windows.Forms.TabPage();
+            this.FLPDinerNa = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.CategorieLunch = new System.Windows.Forms.TabControl();
             this.VoorgerechtLunch = new System.Windows.Forms.TabPage();
@@ -59,15 +67,7 @@
             this.NagerechtLunch = new System.Windows.Forms.TabPage();
             this.FLPLucnhNa = new System.Windows.Forms.FlowLayoutPanel();
             this.MenuKaart = new System.Windows.Forms.TabControl();
-            this.FLPDinerVoor = new System.Windows.Forms.FlowLayoutPanel();
-            this.FLPDinerTussen = new System.Windows.Forms.FlowLayoutPanel();
-            this.FLPDinerHoofd = new System.Windows.Forms.FlowLayoutPanel();
-            this.FLPDinerNa = new System.Windows.Forms.FlowLayoutPanel();
-            this.FLPDrankFris = new System.Windows.Forms.FlowLayoutPanel();
-            this.FLPDrankBier = new System.Windows.Forms.FlowLayoutPanel();
-            this.FLPDrankWijn = new System.Windows.Forms.FlowLayoutPanel();
-            this.FLPDrankGedis = new System.Windows.Forms.FlowLayoutPanel();
-            this.FLPDrankKoffthee = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_afrondenHuidig = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.CategorieDranken.SuspendLayout();
@@ -92,6 +92,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btn_afrondenHuidig);
             this.panel1.Controls.Add(this.ListViewtje);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.MenuKaart);
@@ -118,12 +119,11 @@
             // ListViewtje
             // 
             this.ListViewtje.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6});
+            this.ListColomNaamItem,
+            this.ListColomAantalItem,
+            this.ListColomOpmerkingItem,
+            this.ListColomPrijsItem,
+            this.ListColomNaamID});
             this.ListViewtje.Location = new System.Drawing.Point(87, 588);
             this.ListViewtje.Name = "ListViewtje";
             this.ListViewtje.Size = new System.Drawing.Size(571, 303);
@@ -132,24 +132,30 @@
             this.ListViewtje.UseCompatibleStateImageBehavior = false;
             this.ListViewtje.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader1
+            // ListColomNaamItem
             // 
-            this.columnHeader1.Text = "Naam";
-            this.columnHeader1.Width = 44;
+            this.ListColomNaamItem.Text = "Naam Item";
+            this.ListColomNaamItem.Width = 117;
             // 
-            // columnHeader2
+            // ListColomAantalItem
             // 
-            this.columnHeader2.Text = "aantal";
-            this.columnHeader2.Width = 42;
+            this.ListColomAantalItem.Text = "Aantal";
+            this.ListColomAantalItem.Width = 42;
             // 
-            // columnHeader3
+            // ListColomOpmerkingItem
             // 
-            this.columnHeader3.Text = "Opmerkingen";
-            this.columnHeader3.Width = 81;
+            this.ListColomOpmerkingItem.Text = "Opmerkingen";
+            this.ListColomOpmerkingItem.Width = 285;
             // 
-            // columnHeader4
+            // ListColomPrijsItem
             // 
-            this.columnHeader4.Width = 89;
+            this.ListColomPrijsItem.Text = "Prijs";
+            this.ListColomPrijsItem.Width = 79;
+            // 
+            // ListColomNaamID
+            // 
+            this.ListColomNaamID.Text = "id";
+            this.ListColomNaamID.Width = 44;
             // 
             // tabPage3
             // 
@@ -188,6 +194,13 @@
             this.Frisdrank.Text = "Frisdrank";
             this.Frisdrank.UseVisualStyleBackColor = true;
             // 
+            // FLPDrankFris
+            // 
+            this.FLPDrankFris.Location = new System.Drawing.Point(53, 28);
+            this.FLPDrankFris.Name = "FLPDrankFris";
+            this.FLPDrankFris.Size = new System.Drawing.Size(464, 235);
+            this.FLPDrankFris.TabIndex = 4;
+            // 
             // Bier
             // 
             this.Bier.Controls.Add(this.FLPDrankBier);
@@ -198,6 +211,13 @@
             this.Bier.TabIndex = 1;
             this.Bier.Text = "Bier";
             this.Bier.UseVisualStyleBackColor = true;
+            // 
+            // FLPDrankBier
+            // 
+            this.FLPDrankBier.Location = new System.Drawing.Point(53, 28);
+            this.FLPDrankBier.Name = "FLPDrankBier";
+            this.FLPDrankBier.Size = new System.Drawing.Size(464, 235);
+            this.FLPDrankBier.TabIndex = 4;
             // 
             // Wijn
             // 
@@ -210,6 +230,13 @@
             this.Wijn.Text = "Wijn";
             this.Wijn.UseVisualStyleBackColor = true;
             // 
+            // FLPDrankWijn
+            // 
+            this.FLPDrankWijn.Location = new System.Drawing.Point(53, 28);
+            this.FLPDrankWijn.Name = "FLPDrankWijn";
+            this.FLPDrankWijn.Size = new System.Drawing.Size(464, 235);
+            this.FLPDrankWijn.TabIndex = 4;
+            // 
             // Gedistileerd
             // 
             this.Gedistileerd.Controls.Add(this.FLPDrankGedis);
@@ -221,6 +248,13 @@
             this.Gedistileerd.Text = "Gedistileerd";
             this.Gedistileerd.UseVisualStyleBackColor = true;
             // 
+            // FLPDrankGedis
+            // 
+            this.FLPDrankGedis.Location = new System.Drawing.Point(53, 28);
+            this.FLPDrankGedis.Name = "FLPDrankGedis";
+            this.FLPDrankGedis.Size = new System.Drawing.Size(464, 235);
+            this.FLPDrankGedis.TabIndex = 4;
+            // 
             // Koffiethee
             // 
             this.Koffiethee.Controls.Add(this.FLPDrankKoffthee);
@@ -231,6 +265,13 @@
             this.Koffiethee.TabIndex = 4;
             this.Koffiethee.Text = "Koffie/Thee";
             this.Koffiethee.UseVisualStyleBackColor = true;
+            // 
+            // FLPDrankKoffthee
+            // 
+            this.FLPDrankKoffthee.Location = new System.Drawing.Point(53, 28);
+            this.FLPDrankKoffthee.Name = "FLPDrankKoffthee";
+            this.FLPDrankKoffthee.Size = new System.Drawing.Size(464, 235);
+            this.FLPDrankKoffthee.TabIndex = 4;
             // 
             // tabPage2
             // 
@@ -268,6 +309,13 @@
             this.VoorgerechtDiner.Text = "Voorgerecht";
             this.VoorgerechtDiner.UseVisualStyleBackColor = true;
             // 
+            // FLPDinerVoor
+            // 
+            this.FLPDinerVoor.Location = new System.Drawing.Point(53, 28);
+            this.FLPDinerVoor.Name = "FLPDinerVoor";
+            this.FLPDinerVoor.Size = new System.Drawing.Size(464, 235);
+            this.FLPDinerVoor.TabIndex = 3;
+            // 
             // TussengerechtDiner
             // 
             this.TussengerechtDiner.Controls.Add(this.FLPDinerTussen);
@@ -278,6 +326,13 @@
             this.TussengerechtDiner.TabIndex = 1;
             this.TussengerechtDiner.Text = "Tussengerecht";
             this.TussengerechtDiner.UseVisualStyleBackColor = true;
+            // 
+            // FLPDinerTussen
+            // 
+            this.FLPDinerTussen.Location = new System.Drawing.Point(53, 28);
+            this.FLPDinerTussen.Name = "FLPDinerTussen";
+            this.FLPDinerTussen.Size = new System.Drawing.Size(464, 235);
+            this.FLPDinerTussen.TabIndex = 3;
             // 
             // HoofdgerechtDiner
             // 
@@ -290,6 +345,13 @@
             this.HoofdgerechtDiner.Text = "Hoofdgerecht";
             this.HoofdgerechtDiner.UseVisualStyleBackColor = true;
             // 
+            // FLPDinerHoofd
+            // 
+            this.FLPDinerHoofd.Location = new System.Drawing.Point(53, 28);
+            this.FLPDinerHoofd.Name = "FLPDinerHoofd";
+            this.FLPDinerHoofd.Size = new System.Drawing.Size(464, 235);
+            this.FLPDinerHoofd.TabIndex = 3;
+            // 
             // NagerechtDiner
             // 
             this.NagerechtDiner.Controls.Add(this.FLPDinerNa);
@@ -300,6 +362,13 @@
             this.NagerechtDiner.TabIndex = 3;
             this.NagerechtDiner.Text = "Nagerecht";
             this.NagerechtDiner.UseVisualStyleBackColor = true;
+            // 
+            // FLPDinerNa
+            // 
+            this.FLPDinerNa.Location = new System.Drawing.Point(53, 28);
+            this.FLPDinerNa.Name = "FLPDinerNa";
+            this.FLPDinerNa.Size = new System.Drawing.Size(464, 235);
+            this.FLPDinerNa.TabIndex = 3;
             // 
             // tabPage1
             // 
@@ -392,68 +461,15 @@
             this.MenuKaart.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MenuKaart.TabIndex = 1;
             // 
-            // FLPDinerVoor
+            // btn_afrondenHuidig
             // 
-            this.FLPDinerVoor.Location = new System.Drawing.Point(53, 28);
-            this.FLPDinerVoor.Name = "FLPDinerVoor";
-            this.FLPDinerVoor.Size = new System.Drawing.Size(464, 235);
-            this.FLPDinerVoor.TabIndex = 3;
-            // 
-            // FLPDinerTussen
-            // 
-            this.FLPDinerTussen.Location = new System.Drawing.Point(53, 28);
-            this.FLPDinerTussen.Name = "FLPDinerTussen";
-            this.FLPDinerTussen.Size = new System.Drawing.Size(464, 235);
-            this.FLPDinerTussen.TabIndex = 3;
-            // 
-            // FLPDinerHoofd
-            // 
-            this.FLPDinerHoofd.Location = new System.Drawing.Point(53, 28);
-            this.FLPDinerHoofd.Name = "FLPDinerHoofd";
-            this.FLPDinerHoofd.Size = new System.Drawing.Size(464, 235);
-            this.FLPDinerHoofd.TabIndex = 3;
-            // 
-            // FLPDinerNa
-            // 
-            this.FLPDinerNa.Location = new System.Drawing.Point(53, 28);
-            this.FLPDinerNa.Name = "FLPDinerNa";
-            this.FLPDinerNa.Size = new System.Drawing.Size(464, 235);
-            this.FLPDinerNa.TabIndex = 3;
-            // 
-            // FLPDrankFris
-            // 
-            this.FLPDrankFris.Location = new System.Drawing.Point(53, 28);
-            this.FLPDrankFris.Name = "FLPDrankFris";
-            this.FLPDrankFris.Size = new System.Drawing.Size(464, 235);
-            this.FLPDrankFris.TabIndex = 4;
-            // 
-            // FLPDrankBier
-            // 
-            this.FLPDrankBier.Location = new System.Drawing.Point(53, 28);
-            this.FLPDrankBier.Name = "FLPDrankBier";
-            this.FLPDrankBier.Size = new System.Drawing.Size(464, 235);
-            this.FLPDrankBier.TabIndex = 4;
-            // 
-            // FLPDrankWijn
-            // 
-            this.FLPDrankWijn.Location = new System.Drawing.Point(53, 28);
-            this.FLPDrankWijn.Name = "FLPDrankWijn";
-            this.FLPDrankWijn.Size = new System.Drawing.Size(464, 235);
-            this.FLPDrankWijn.TabIndex = 4;
-            // 
-            // FLPDrankGedis
-            // 
-            this.FLPDrankGedis.Location = new System.Drawing.Point(53, 28);
-            this.FLPDrankGedis.Name = "FLPDrankGedis";
-            this.FLPDrankGedis.Size = new System.Drawing.Size(464, 235);
-            this.FLPDrankGedis.TabIndex = 4;
-            // 
-            // FLPDrankKoffthee
-            // 
-            this.FLPDrankKoffthee.Location = new System.Drawing.Point(53, 28);
-            this.FLPDrankKoffthee.Name = "FLPDrankKoffthee";
-            this.FLPDrankKoffthee.Size = new System.Drawing.Size(464, 235);
-            this.FLPDrankKoffthee.TabIndex = 4;
+            this.btn_afrondenHuidig.Location = new System.Drawing.Point(513, 919);
+            this.btn_afrondenHuidig.Name = "btn_afrondenHuidig";
+            this.btn_afrondenHuidig.Size = new System.Drawing.Size(145, 23);
+            this.btn_afrondenHuidig.TabIndex = 5;
+            this.btn_afrondenHuidig.Text = "Afronden huidige bestelling";
+            this.btn_afrondenHuidig.UseVisualStyleBackColor = true;
+            this.btn_afrondenHuidig.Click += new System.EventHandler(this.btn_afrondenHuidig_Click);
             // 
             // Bestellen
             // 
@@ -489,13 +505,10 @@
         #endregion
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ListView ListViewtje;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader ListColomNaamItem;
+        private System.Windows.Forms.ColumnHeader ListColomAantalItem;
+        private System.Windows.Forms.ColumnHeader ListColomOpmerkingItem;
+        private System.Windows.Forms.ColumnHeader ListColomPrijsItem;
         private System.Windows.Forms.TabControl MenuKaart;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabControl CategorieLunch;
@@ -527,5 +540,8 @@
         private System.Windows.Forms.FlowLayoutPanel FLPDrankWijn;
         private System.Windows.Forms.FlowLayoutPanel FLPDrankGedis;
         private System.Windows.Forms.FlowLayoutPanel FLPDrankKoffthee;
+        private System.Windows.Forms.Button btn_afrondenHuidig;
+        private System.Windows.Forms.ColumnHeader ListColomNaamID;
+        public System.Windows.Forms.ListView ListViewtje;
     }
 }
