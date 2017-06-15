@@ -16,6 +16,7 @@ namespace UI
     {
         MenuItemService actieButton = new MenuItemService();
 
+        public int tafelnr;
         public Bestellen()
         {
             InitializeComponent();

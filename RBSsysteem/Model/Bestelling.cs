@@ -16,7 +16,7 @@ namespace Model
         public string naam;
         public double prijs;
 
-        public Bestelling(int aantal, int tafelId,string naam, double prijs)
+        public Bestelling(int aantal, int tafelId, string naam, double prijs)
         {
             this.tafelId = tafelId;
             this.aantal = aantal;

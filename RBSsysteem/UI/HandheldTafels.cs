@@ -15,11 +15,47 @@ namespace UI
     public partial class HandheldTafels : BasisHandheld
     {
         
-        public HandheldTafels(Medewerker m)
+        public HandheldTafels(Medewerker m, List<Tafel> tafels)
         {
-            Medewerker medewerker = m;
+            
             InitializeComponent();
+            Medewerker medewerker = m;
             lblPersoonlijkNummer.Text += medewerker.inlognummer;
+            int i = 1;
+
+            foreach (Tafel tafel in tafels)
+            {
+                RoundButton tafelButton = new RoundButton();
+                tafelButton.Tag = tafel.tafelId;
+                switch (tafel.status)
+                {
+                    case "vrij":
+                        tafelButton.BackColor = Color.Green;
+                        break;
+                    case "bezet":
+                        tafelButton.BackColor = Color.Red;
+                        break;
+                }
+
+                if (i % 2 != 0)
+                {
+                    tafelButton.Margin = new Padding(0, 0, 70, 0);
+                }
+
+                tafelButton.Click += TafelButton_Click;
+
+                flowLayoutPanel1.Controls.Add(tafelButton);
+                i++;
+            }
+        }
+
+        private void TafelButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            int clickedTafelId = 1;
+            Bestellen bestellen = new Bestellen();
+            bestellen.tafelnr = clickedTafelId;
+            bestellen.Show();
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -98,9 +134,7 @@ namespace UI
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-            RoundButton testButton = new RoundButton();
             
-            flowLayoutPanel1.Controls.Add(testButton);
         }
     }
 }
