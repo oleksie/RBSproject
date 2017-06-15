@@ -219,6 +219,7 @@ namespace UI
                 }
                 else
                 {
+                    bestelling.MaakNieuweBestelling();
                     gebruik.VerwerkHuidigeBestelling(this.ListViewtje);
                 }
 

@@ -9,10 +9,8 @@ namespace Model
     public class Bestelling
     {
         public int bestelling_id;
-        public Tafel tafel;
-        public Medewerker medewerker;
-        public double totaalprijs;
         public string commentaarKlant;
+        public int medewerkerid;
         public int tafelId;
         public int aantal;
         public string naam;
@@ -24,6 +22,11 @@ namespace Model
             this.aantal = aantal;
             this.naam = naam;
             this.prijs = prijs;
+        }
+
+        public Bestelling()
+        {
+
         }
     }
 }

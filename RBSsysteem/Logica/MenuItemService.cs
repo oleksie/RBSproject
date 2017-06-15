@@ -11,6 +11,7 @@ namespace Logica
 {
     public class MenuItemService
     {
+        public string buttonNaam = "";
         public MenuItemService()
         {
 
@@ -27,12 +28,13 @@ namespace Logica
 
             if (tab.SelectedTab.Name == "HoofdgerechtLunch")
             {
-                List<Model.MenuItem> menuItemsLunchVoor = menuItem.GetSpecefiekegerechtItems(1);
+                List<Model.MenuItem> menuItemsLunchVoor = menuItem.GetSpecefiekegerechtItems(2);
 
                 foreach (Model.MenuItem x in menuItemsLunchVoor)
                 {
+                    buttonNaam = x.Naam;
                     button = new Button();
-                    button.Text = x.Naam; // + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
+                    button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
                     button.Width = 200;
                     button.Height = 100;
 
@@ -44,12 +46,16 @@ namespace Logica
             }
             else if (tab.SelectedTab.Name == "VoorgerechtLunch")
             {
-                List<Model.MenuItem> menuItemsLunchHoofd = menuItem.GetSpecefiekegerechtItems(2);
+                List<Model.MenuItem> menuItemsLunchHoofd = menuItem.GetSpecefiekegerechtItems(1);
 
                 foreach (Model.MenuItem x in menuItemsLunchHoofd)
                 {
+                    buttonNaam = x.Naam;
                     button = new Button();
-                    button.Text = x.Naam;
+                    button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
+                    button.Width = 200;
+                    button.Height = 100;
+
 
                     panel.Controls.Add(button);
                     btnList.Add(button);
@@ -62,8 +68,11 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsLunchNa)
                 {
+                    buttonNaam = x.Naam;
                     button = new Button();
-                    button.Text = x.Naam;
+                    button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
+                    button.Width = 200;
+                    button.Height = 100;
 
                     panel.Controls.Add(button);
                     btnList.Add(button);
@@ -76,8 +85,11 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsDinerVoor)
                 {
+                    buttonNaam = x.Naam;
                     button = new Button();
-                    button.Text = x.Naam;
+                    button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
+                    button.Width = 200;
+                    button.Height = 100;
 
                     panel.Controls.Add(button);
                     btnList.Add(button);
@@ -90,8 +102,11 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsDinerTussen)
                 {
+                    buttonNaam = x.Naam;
                     button = new Button();
-                    button.Text = x.Naam;
+                    button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
+                    button.Width = 200;
+                    button.Height = 100;
 
                     panel.Controls.Add(button);
                     btnList.Add(button);
@@ -104,8 +119,11 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsDinerHoofd)
                 {
+                    buttonNaam = x.Naam;
                     button = new Button();
-                    button.Text = x.Naam;
+                    button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
+                    button.Width = 200;
+                    button.Height = 100;
 
                     panel.Controls.Add(button);
                     btnList.Add(button);
@@ -118,8 +136,11 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsDinerNa)
                 {
+                    buttonNaam = x.Naam;
                     button = new Button();
-                    button.Text = x.Naam;
+                    button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
+                    button.Width = 200;
+                    button.Height = 100;
 
                     panel.Controls.Add(button);
                     btnList.Add(button);
@@ -132,8 +153,11 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsFris)
                 {
+                    buttonNaam = x.Naam;
                     button = new Button();
-                    button.Text = x.Naam;
+                    button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
+                    button.Width = 200;
+                    button.Height = 100;
 
                     panel.Controls.Add(button);
                     btnList.Add(button);
@@ -146,8 +170,11 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsBier)
                 {
+                    buttonNaam = x.Naam;
                     button = new Button();
-                    button.Text = x.Naam;
+                    button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
+                    button.Width = 200;
+                    button.Height = 100;
 
                     panel.Controls.Add(button);
                     btnList.Add(button);
@@ -160,8 +187,11 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsWijn)
                 {
+                    buttonNaam = x.Naam;
                     button = new Button();
-                    button.Text = x.Naam;
+                    button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
+                    button.Width = 200;
+                    button.Height = 100;
 
                     panel.Controls.Add(button);
                     btnList.Add(button);
@@ -174,8 +204,11 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsGedis)
                 {
+                    buttonNaam = x.Naam;
                     button = new Button();
-                    button.Text = x.Naam;
+                    button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
+                    button.Width = 200;
+                    button.Height = 100;
 
                     panel.Controls.Add(button);
                     btnList.Add(button);
@@ -188,8 +221,11 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsKoffthee)
                 {
+                    buttonNaam = x.Naam;
                     button = new Button();
-                    button.Text = x.Naam;
+                    button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
+                    button.Width = 200;
+                    button.Height = 100;
 
                     panel.Controls.Add(button);
                     btnList.Add(button);
@@ -204,7 +240,7 @@ namespace Logica
             List<Model.MenuItem> menuItems = menuItem.GetMenuItems();
             foreach (Model.MenuItem x in menuItems)
             {
-                if (button.Text == x.Naam)
+                if (buttonNaam == x.Naam)
                 {
                     ListViewItem MenuItems = new ListViewItem(x.Naam);
                     MenuItems.SubItems.Add(aantal.ToString());

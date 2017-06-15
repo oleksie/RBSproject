@@ -6,12 +6,18 @@ using System.Threading.Tasks;
 using System;
 using Model;
 using System.Configuration;
+using System.Data;
 
 namespace DAL
 {
     public class BestellingDAO
     {
         private SqlConnection DBConnectie;
+
+        public BestellingDAO()
+        {
+
+        }
 
         public List<Bestelling> GetBestelling()
         {
@@ -42,30 +48,8 @@ namespace DAL
             reader.Close();
             return lijstbestellingen;
         }
-    }
-}
 
-
- 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Model;
-using System.Data.SqlClient;
-using System.Data;
-
-namespace DAL
-{
-    public class BestellingDAO
-    {
-        private SqlConnection DBConnectie;
-
-        public BestellingDAO()
-        {
-
-        }
+        
 
         public void PlaatsBestelling(Bestelling bestelling)
         {
@@ -85,13 +69,13 @@ namespace DAL
             IdParam1.Value = bestelling.commentaarKlant;
 
             command.Parameters.Add(IdParam2);
-            IdParam2.Value = bestelling.tafel.tafel_id;
+            IdParam2.Value = bestelling.tafelId;
 
             command.Parameters.Add(IdParam3);
-            IdParam3.Value = bestelling.medewerker.medewerkerId;
+            IdParam3.Value = bestelling.medewerkerid;
 
             command.Parameters.Add(IdParam4);
-            IdParam4.Value = bestelling.totaalprijs;
+            IdParam4.Value = bestelling.prijs;
 
             command.Prepare();
 

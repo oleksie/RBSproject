@@ -178,6 +178,7 @@ namespace DAL
 
             return totaalPrijs;
         }
+
         public void UndoStatus(int id)
         {
             SqlConnection connection = dbConnection.MaakConnectieDB("writer");
