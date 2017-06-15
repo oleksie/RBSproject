@@ -14,7 +14,7 @@ namespace Logica
 {
     public class BarmanKok
     {
-
+        
         BestellingItemDAO bestelitemconnect = new BestellingItemDAO();
         public List<ListViewItem> BestellinglistGerechten()
         {
@@ -75,5 +75,9 @@ namespace Logica
            bestelitemconnect.UpdateStatus(bestelitemid);
         }
 
+        public void Undobestelitem(int bestelitemid)
+        {
+            bestelitemconnect.UndoStatus(bestelitemid)
+        }
     }
 }
