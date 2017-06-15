@@ -24,8 +24,6 @@ namespace Logica
         {
             panel.Controls.Clear();
 
-            //MenuItemDAO menuItem = new MenuItemDAO();
-
             List<Button> btnList = new List<Button>();
             Button button = null;
 
