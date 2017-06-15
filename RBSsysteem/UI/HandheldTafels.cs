@@ -15,11 +15,14 @@ namespace UI
     public partial class HandheldTafels : BasisHandheld
     {
         
-        public HandheldTafels(Medewerker m)
+        public HandheldTafels(Medewerker m, List<Tafel> tafels)
         {
             Medewerker medewerker = m;
             InitializeComponent();
             lblPersoonlijkNummer.Text += medewerker.inlognummer;
+
+            RoundButton testButton = new RoundButton();
+            flowLayoutPanel1.Controls.Add(testButton);
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -98,9 +101,7 @@ namespace UI
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-            RoundButton testButton = new RoundButton();
             
-            flowLayoutPanel1.Controls.Add(testButton);
         }
     }
 }

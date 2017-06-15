@@ -9,7 +9,7 @@ using Model;
 
 namespace DAL
 {
-    class TafelDAO
+    public class TafelDAO
     {
         private SqlConnection DBConnectie;
 

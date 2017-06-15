@@ -15,6 +15,8 @@ namespace UI
             grPath.AddEllipse(0, 0, ClientSize.Width, ClientSize.Height);
             this.Region = new System.Drawing.Region(grPath);
             base.OnPaint(e);
+            this.Height = 100;
+            this.Width = 100;
         }
     }
 
