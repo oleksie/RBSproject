@@ -53,7 +53,7 @@ namespace UI
             //columnHeader3.Width = 156;
             //columnHeader4.Width = 156;
             List<Bestelling> lijst = new List<Bestelling>();
-            lijst = GetBestellingDAO.Getbestelling();
+            //lijst = GetBestellingDAO.Getbestelling();
 
             int aantal = lijst.Count();
             ListView c = new ListView();
