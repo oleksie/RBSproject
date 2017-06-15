@@ -118,5 +118,65 @@ namespace DAL
 
             connection.Close(); ;
         }
+
+        public void PlaatsBestellingItem(BestellingItem item)
+        {
+            SqlConnection connection = dbConnection.MaakConnectieDB("Writer");
+            connection.Open();
+
+            SqlCommand command = new SqlCommand("INSERT INTO BestelItem (bestelling_id, menuitem_id, opmerkingen, aantal, status, tijd_opgenomen) VALUES (@bestellingID, @menuitemID, @commentaar, @aantal ,@status, @tijdopgenomen)", connection);
+
+            SqlParameter IdParam1 = new SqlParameter("@bestellingiD", SqlDbType.Int);
+            SqlParameter IdParam2 = new SqlParameter("@menuitemID", SqlDbType.Int);
+            SqlParameter IdParam3 = new SqlParameter("@commentaar", SqlDbType.NVarChar, -1);
+            SqlParameter IdParam4 = new SqlParameter("@aantal", SqlDbType.Int);
+            SqlParameter IdParam5 = new SqlParameter("@status", SqlDbType.NVarChar, 50);
+            SqlParameter IdParam6 = new SqlParameter("@tijdopgenomen", SqlDbType.DateTime);
+
+            command.Parameters.Add(IdParam1);
+            IdParam1.Value = item.bestellingID;
+
+            command.Parameters.Add(IdParam2);
+            IdParam2.Value = item.menuitemid;
+
+            command.Parameters.Add(IdParam3);
+            IdParam3.Value = item.commentaar;
+
+            command.Parameters.Add(IdParam4);
+            IdParam4.Value = item.aantal;
+
+            command.Parameters.Add(IdParam5);
+            IdParam5.Value = item.status;
+
+            command.Parameters.Add(IdParam6);
+            IdParam6.Value = item.tijdOpgenomen;
+
+            command.Prepare();
+
+            command.ExecuteNonQuery();
+
+            connection.Close();
+        }
+
+        public int GetTotaalPrijs(int bestellingid)
+        {
+            SqlConnection connection = dbConnection.MaakConnectieDB("Reader");
+            connection.Open();
+
+            SqlCommand command = new SqlCommand("SELECT (prijs * aantal) FROM MenuItem INNER JOIN BestelItem ON BestelItem.menuitemid = MenuItem.menuitemid WHERE bestellingid = @bestellingid", connection);
+
+            SqlDataReader reader = command.ExecuteReader();
+            int totaalPrijs = 0;
+
+            while (reader.Read())
+            {
+                totaalPrijs = totaalPrijs + reader.GetInt32(0);
+            }
+
+            connection.Close();
+            reader.Close();
+
+            return totaalPrijs;
+        }
     }
 }

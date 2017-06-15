@@ -32,8 +32,9 @@ namespace Logica
                 foreach (Model.MenuItem x in menuItemsLunchVoor)
                 {
                     button = new Button();
-                    button.Text = x.Naam;
+                    button.Text = x.Naam; // + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
                     button.Width = 200;
+                    button.Height = 100;
 
                     btnList.Add(button);
                     panel.Controls.Add(button);
@@ -195,36 +196,21 @@ namespace Logica
                 }
                 return btnList;
             }
-
-            //foreach (Model.MenuItem x in menuItems)
-            //{
-
-            // ListViewItem MenuItems = new ListViewItem(x.ID.ToString());
-            //MenuItems.SubItems.Add(x.CategorieID.ToString());
-            //MenuItems.SubItems.Add(x.Voorraad.ToString());
-            //MenuItems.SubItems.Add(x.Naam);
-            //MenuItems.SubItems.Add(x.Prijs.ToString());
-            //MenuItems.SubItems.Add(x.Omschrijving);
-            //list.Items.Add(MenuItems);
-            //}
-
-            return btnList;
         }
 
-        public void MenuItemNaarList(ListView list, Button button)
+        public void MenuItemNaarList(ListView list, Button button, int aantal, string opmerking)
         {
             MenuItemDAO menuItem = new MenuItemDAO();
-            List<Model.MenuItem> menuItemsKoffthee = menuItem.GetMenuItems();
-            foreach (Model.MenuItem x in menuItemsKoffthee)
+            List<Model.MenuItem> menuItems = menuItem.GetMenuItems();
+            foreach (Model.MenuItem x in menuItems)
             {
                 if (button.Text == x.Naam)
                 {
-                    ListViewItem MenuItems = new ListViewItem(x.ID.ToString());
-                    MenuItems.SubItems.Add(x.CategorieID.ToString());
-                    MenuItems.SubItems.Add(x.Voorraad.ToString());
-                    MenuItems.SubItems.Add(x.Naam);
-                    MenuItems.SubItems.Add(x.Prijs.ToString());
-                    MenuItems.SubItems.Add(x.Omschrijving);
+                    ListViewItem MenuItems = new ListViewItem(x.Naam);
+                    MenuItems.SubItems.Add(aantal.ToString());
+                    MenuItems.SubItems.Add(opmerking);
+                    MenuItems.SubItems.Add((x.Prijs * aantal).ToString());
+                    MenuItems.SubItems.Add(x.ID.ToString());
                     list.Items.Add(MenuItems);
                 }
             }

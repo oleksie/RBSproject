@@ -11,7 +11,8 @@ namespace Model
         public int bestelling_id;
         public Tafel tafel;
         public Medewerker medewerker;
-        public float totaalprijs;
+        public double totaalprijs;
+        public string commentaarKlant;
 
 
         public Bestelling()
