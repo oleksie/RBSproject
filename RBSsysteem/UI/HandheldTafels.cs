@@ -52,7 +52,7 @@ namespace UI
         private void TafelButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            //int clickedTafelId = ;
+            int clickedTafelId = 1;
             Bestellen bestellen = new Bestellen();
             bestellen.tafelnr = clickedTafelId;
             bestellen.Show();
