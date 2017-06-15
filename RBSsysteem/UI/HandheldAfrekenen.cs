@@ -65,13 +65,16 @@ namespace UI
             listView1.Columns.Add("Naam", 156); 
             listView1.Columns.Add("Prijs", 156);
             listView1.Columns.Add("Wijziging", 156);
+            Lbl_TafelNr.Text = aantal.ToString();
 
-            foreach (Bestelling bestelling in lijst)
+            for (int i = 0; i < lijst.Count(); i++)
             {
-                ListViewItem item = new ListViewItem(bestelling.aantal.ToString());
+                ListViewItem item = new ListViewItem("kanker");
+                item.SubItems.Add(lijst[i].aantal.ToString());
                 listView1.Items.Add(item);
-                Lbl_PersoonlijkNr.Text = bestelling.aantal.ToString();
+                Lbl_PersoonlijkNr.Text = lijst[i].naam;
             }
+                
             ////listView1.FullRowSelect = true;
 
             ////listView1.Columns.Add("iabsd");

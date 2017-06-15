@@ -18,9 +18,9 @@ namespace Logica
         public List<Bestelling> GetBestelling()
         {
             BestellingDAO bestellingDAO = new BestellingDAO();
-            List<Bestelling> bestellingen = bestellingDAO.GetBestelling();
+            return bestellingDAO.GetBestelling();
 
-            return bestellingen;
+            //return bestellingen;
         }
     }
 }

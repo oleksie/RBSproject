@@ -11,37 +11,34 @@ namespace DAL
 {
     public class BestellingDAO
     {
+        private SqlConnection DBConnectie;
+
         public List<Bestelling> GetBestelling()
         {
+            List<Bestelling> lijstbestellingen = new List<Bestelling>();
             string sqlquery = "SELECT aantal, Bestelling.tafel_id, MenuItem.naam, MenuItem.prijs FROM Bestelling JOIN BestelItem ON BestelItem.bestelling_id = Bestelling.bestelling_id JOIN MenuItem ON BestelItem.menuitem_id = MenuItem.menuitem_id";
 
-            string connString = ConfigurationManager.ConnectionStrings["Reader"].ConnectionString;
-            SqlConnection connect = new SqlConnection(connString);
-            connect.Open();
+            DALConnection connectie = new DALConnection();
+            DBConnectie = connectie.MaakConnectieDB("Reader");
+            SqlCommand command = new SqlCommand(sqlquery, DBConnectie);
+            command.Prepare();
+            DBConnectie.Open();
 
-            SqlCommand sqlCmnd = new SqlCommand(sqlquery, connect);
+            SqlDataReader reader = command.ExecuteReader();
 
-
-            sqlCmnd.Prepare();
-
-            SqlDataReader reader = sqlCmnd.ExecuteReader();
-
-            List<Bestelling> lijstbestellingen = new List<Bestelling>();
-            if (!reader.Read())
-                return null;
             while (reader.Read())
             {
                 int aantal = reader.GetInt32(0);
                 int tafelId = reader.GetInt32(1);
                 string naam = reader.GetString(2);
-                float prijs = reader.GetFloat(3);
+                double prijs = reader.GetDouble(3);
 
                 Bestelling bestelling = new Bestelling(aantal, tafelId, naam, prijs);
 
                 lijstbestellingen.Add(bestelling);
             }
 
-            connect.Close();
+            DBConnectie.Close();
             reader.Close();
             return lijstbestellingen;
         }
