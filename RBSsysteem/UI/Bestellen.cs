@@ -14,6 +14,8 @@ namespace UI
 {
     public partial class Bestellen : StyleGuide.BasisHandheldForm
     {
+        MenuItemService actieButton = new MenuItemService();
+
         public Bestellen()
         {
             InitializeComponent();
@@ -82,8 +84,13 @@ namespace UI
             HandheldPopUpBestel aantalItem = new HandheldPopUpBestel();
             aantalItem.ShowDialog();
 
-            MenuItemService actieButton = new MenuItemService();
-            actieButton.MenuItemNaarList(this.ListViewtje, (sender as Button), aantalItem.aantal, aantalItem.opmerking);
+            if (aantalItem.ok)
+            {
+                
+                ListviewBestellen item = actieButton.MenuItemNaarList(sender as Button, aantalItem.aantal, aantalItem.opmerking);
+
+                actieButton.MenuItemNaarListView(this.ListViewtje,item);
+            }
         }
 
         private void CategorieLunch_SelectedIndexChanged(Object sender, EventArgs e)

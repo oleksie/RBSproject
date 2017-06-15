@@ -150,8 +150,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox Txt_HandheldPopUpBetselAantal;
-        private System.Windows.Forms.Button Btn_HandheldPopUpBestelOk;
         private System.Windows.Forms.Button Btn_HandheldPopUpBestelTerug;
         private System.Windows.Forms.RichTextBox txt_opmerkingen;
+        public System.Windows.Forms.Button Btn_HandheldPopUpBestelOk;
     }
 }

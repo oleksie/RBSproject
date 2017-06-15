@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 using Model;
 using DAL;
 using System.Windows.Forms;
+using System.Data;
 
 namespace Logica
 {
     public class MenuItemService
     {
-        public string buttonNaam = "";
+        List<ListviewBestellen> listVoorListview = new List<ListviewBestellen>();
+        MenuItemDAO menuItem = new MenuItemDAO();
+
         public MenuItemService()
         {
 
@@ -21,7 +24,7 @@ namespace Logica
         {
             panel.Controls.Clear();
 
-            MenuItemDAO menuItem = new MenuItemDAO();
+            //MenuItemDAO menuItem = new MenuItemDAO();
 
             List<Button> btnList = new List<Button>();
             Button button = null;
@@ -32,8 +35,8 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsLunchVoor)
                 {
-                    buttonNaam = x.Naam;
                     button = new Button();
+                    button.Tag = x.Naam;
                     button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
                     button.Width = 200;
                     button.Height = 100;
@@ -50,8 +53,8 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsLunchHoofd)
                 {
-                    buttonNaam = x.Naam;
                     button = new Button();
+                    button.Tag = x.Naam;
                     button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
                     button.Width = 200;
                     button.Height = 100;
@@ -68,8 +71,8 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsLunchNa)
                 {
-                    buttonNaam = x.Naam;
                     button = new Button();
+                    button.Tag = x.Naam;
                     button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
                     button.Width = 200;
                     button.Height = 100;
@@ -85,8 +88,8 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsDinerVoor)
                 {
-                    buttonNaam = x.Naam;
                     button = new Button();
+                    button.Tag = x.Naam;
                     button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
                     button.Width = 200;
                     button.Height = 100;
@@ -102,8 +105,8 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsDinerTussen)
                 {
-                    buttonNaam = x.Naam;
                     button = new Button();
+                    button.Tag = x.Naam;
                     button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
                     button.Width = 200;
                     button.Height = 100;
@@ -119,8 +122,8 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsDinerHoofd)
                 {
-                    buttonNaam = x.Naam;
                     button = new Button();
+                    button.Tag = x.Naam;
                     button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
                     button.Width = 200;
                     button.Height = 100;
@@ -136,8 +139,8 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsDinerNa)
                 {
-                    buttonNaam = x.Naam;
                     button = new Button();
+                    button.Tag = x.Naam;
                     button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
                     button.Width = 200;
                     button.Height = 100;
@@ -153,8 +156,8 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsFris)
                 {
-                    buttonNaam = x.Naam;
                     button = new Button();
+                    button.Tag = x.Naam;
                     button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
                     button.Width = 200;
                     button.Height = 100;
@@ -170,8 +173,8 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsBier)
                 {
-                    buttonNaam = x.Naam;
                     button = new Button();
+                    button.Tag = x.Naam;
                     button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
                     button.Width = 200;
                     button.Height = 100;
@@ -187,8 +190,8 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsWijn)
                 {
-                    buttonNaam = x.Naam;
                     button = new Button();
+                    button.Tag = x.Naam;
                     button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
                     button.Width = 200;
                     button.Height = 100;
@@ -204,8 +207,8 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsGedis)
                 {
-                    buttonNaam = x.Naam;
                     button = new Button();
+                    button.Tag = x.Naam;
                     button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
                     button.Width = 200;
                     button.Height = 100;
@@ -221,8 +224,8 @@ namespace Logica
 
                 foreach (Model.MenuItem x in menuItemsKoffthee)
                 {
-                    buttonNaam = x.Naam;
                     button = new Button();
+                    button.Tag = x.Naam;
                     button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
                     button.Width = 200;
                     button.Height = 100;
@@ -234,22 +237,117 @@ namespace Logica
             }
         }
 
-        public void MenuItemNaarList(ListView list, Button button, int aantal, string opmerking)
+        public ListviewBestellen MenuItemNaarList(Button button, int aantal, string opmerking)
         {
-            MenuItemDAO menuItem = new MenuItemDAO();
             List<Model.MenuItem> menuItems = menuItem.GetMenuItems();
+
+            ListviewBestellen item = new ListviewBestellen();
+
             foreach (Model.MenuItem x in menuItems)
             {
-                if (buttonNaam == x.Naam)
+                if (x.Naam == button.Tag.ToString())
                 {
-                    ListViewItem MenuItems = new ListViewItem(x.Naam);
-                    MenuItems.SubItems.Add(aantal.ToString());
-                    MenuItems.SubItems.Add(opmerking);
-                    MenuItems.SubItems.Add((x.Prijs * aantal).ToString());
-                    MenuItems.SubItems.Add(x.ID.ToString());
-                    list.Items.Add(MenuItems);
+                    item.naam = x.Naam;
+                    item.aantal = aantal;
+                    item.opmerking = opmerking;
+                    item.itemPrijs = x.Prijs;
+                    item.prijs = (x.Prijs * aantal);
+                    item.id = x.ID;
                 }
             }
+            return item;
+        }
+
+        public void MenuItemNaarListView(ListView list, ListviewBestellen item)
+        {
+            list.Items.Clear();
+            bool itemIsInList = false;
+
+            foreach (ListviewBestellen x in listVoorListview)
+            {
+                if (item.naam == x.naam && string.IsNullOrEmpty(x.opmerking) && string.IsNullOrEmpty(item.opmerking))
+                {
+                    itemIsInList = true;
+                    int aantalWijzig = x.aantal;
+                    aantalWijzig = aantalWijzig + item.aantal;
+                    x.aantal = aantalWijzig;
+
+                    x.prijs = (x.itemPrijs * aantalWijzig);
+                    break;
+                }
+            }
+
+            if (itemIsInList == false)
+            {
+                listVoorListview.Add(item);
+            }
+
+
+            foreach (ListviewBestellen x in listVoorListview)
+            {
+                ListViewItem MenuItems = new ListViewItem(x.naam);
+                MenuItems.SubItems.Add(x.aantal.ToString());
+                MenuItems.SubItems.Add(x.opmerking);
+                MenuItems.SubItems.Add(x.prijs.ToString());
+                MenuItems.SubItems.Add(x.id.ToString());
+
+                list.Items.Add(MenuItems);
+            }
+
+            /*MenuItemDAO menuItem = new MenuItemDAO();
+            List<Model.MenuItem> menuItems = menuItem.GetMenuItems();
+
+            foreach (Model.MenuItem x in menuItems)
+            {
+                foreach (DataRowView item in list.Items)
+                {
+                    if (item.DataView[0].Row.ToString() == x.Naam)
+                    {
+                        if ((string)button.Tag == x.Naam)
+                        {
+                            int aantalWijzig = int.Parse(list.Items[i].SubItems[1].Text);
+                            aantalWijzig = aantalWijzig + aantal;
+                            list.Items[i].SubItems[1].Text = aantalWijzig.ToString();
+
+                            string opmerkingWijzig = list.Items[i].SubItems[2].Text;
+                            opmerkingWijzig = opmerkingWijzig + opmerking;
+                            list.Items[i].SubItems[2].Text = opmerkingWijzig;
+
+                            ListViewItem MenuItems = new ListViewItem(x.Naam);
+                            MenuItems.SubItems.Add(aantal.ToString());
+                            MenuItems.SubItems.Add(opmerking);
+                            MenuItems.SubItems.Add((x.Prijs * aantal).ToString());
+                            MenuItems.SubItems.Add(x.ID.ToString());
+
+                            list.Items.Add(MenuItems);
+                        }
+                    }
+                    else
+                    {
+                        if ((string)button.Tag == x.Naam)
+                        {
+                            ListViewItem MenuItems = new ListViewItem(x.Naam);
+                            MenuItems.SubItems.Add(aantal.ToString());
+                            MenuItems.SubItems.Add(opmerking);
+                            MenuItems.SubItems.Add((x.Prijs * aantal).ToString());
+                            MenuItems.SubItems.Add(x.ID.ToString());
+
+                            list.Items.Add(MenuItems);
+                        }
+                    //}
+                //}
+                //for (int i = 0; i < list.Items.Count; i++)
+                //{
+                    //if (list.Items[0].SubItems[0].Text == x.Naam)
+                    //{
+                        
+                    //}
+                    //else
+                    //{
+                        
+                    //}
+                //}
+            }*/
         }
     }
 }

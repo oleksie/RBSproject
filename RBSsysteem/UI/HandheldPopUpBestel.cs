@@ -15,6 +15,7 @@ namespace UI
     {
         public int aantal = 1;
         public string opmerking = "";
+        public bool ok = true;
         public HandheldPopUpBestel()
         {
             InitializeComponent();
@@ -39,7 +40,7 @@ namespace UI
 
         }
 
-        private void Btn_HandheldPopUpBestelUp_Click(object sender, EventArgs e)
+        public void Btn_HandheldPopUpBestelUp_Click(object sender, EventArgs e)
         {
             int aantalint = int.Parse(this.Txt_HandheldPopUpBetselAantal.Text);
             aantalint++;
@@ -60,12 +61,14 @@ namespace UI
 
         private void Btn_HandheldPopUpBestelTerug_Click(object sender, EventArgs e)
         {
+            ok = false;
             Bestellen bestelscherm = new Bestellen();
             this.Close();
         }
 
         private void Btn_HandheldPopUpBestelOk_Click(object sender, EventArgs e)
         {
+            ok = true;
             aantal = int.Parse(this.Txt_HandheldPopUpBetselAantal.Text);
             opmerking = this.txt_opmerkingen.Text;
             this.Close();
