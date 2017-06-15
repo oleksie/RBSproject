@@ -8,13 +8,20 @@ namespace Model
 {
     public class Tafel
     {
-        public int tafel_id;
-        public string status;
-        public int capaciteit;
+        private int tafelId;
+        private int capaciteit;
+        private string status;
 
         public Tafel()
         {
 
+        }
+
+        public Tafel(int tafelId, int capaciteit, string status)
+        {
+            this.tafelId = tafelId;
+            this.capaciteit = capaciteit;
+            this.status = status;
         }
     }
 }

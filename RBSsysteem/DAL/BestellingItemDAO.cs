@@ -178,5 +178,29 @@ namespace DAL
 
             return totaalPrijs;
         }
+        public void UndoStatus(int id)
+        {
+            SqlConnection connection = dbConnection.MaakConnectieDB("writer");
+
+            connection.Open();
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append("Update BESTELITEM SET status = 'in bereiding' where bestelitem_id = @id");
+
+            SqlParameter BestelIDParam = new SqlParameter("@id", SqlDbType.Int, 32);
+
+            String sql = sb.ToString();
+
+            SqlCommand command = new SqlCommand(sql, connection);
+
+            command.Parameters.Add(BestelIDParam);
+
+            BestelIDParam.Value = id;
+            command.Prepare();
+            command.ExecuteNonQuery();
+
+            connection.Close(); ;
+        }
+
     }
 }

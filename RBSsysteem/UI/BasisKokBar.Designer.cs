@@ -34,6 +34,7 @@
             this.Label1 = new System.Windows.Forms.Label();
             this.lv_KokBarman = new System.Windows.Forms.ListView();
             this.btn_Loguit = new System.Windows.Forms.Button();
+            this.btn_Undo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,11 +60,12 @@
             // 
             this.Label1.AutoSize = true;
             this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label1.Location = new System.Drawing.Point(960, 52);
+            this.Label1.Location = new System.Drawing.Point(925, 52);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(70, 26);
             this.Label1.TabIndex = 2;
             this.Label1.Text = "label1";
+            this.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lv_KokBarman
             // 
@@ -84,11 +86,21 @@
             this.btn_Loguit.UseVisualStyleBackColor = true;
             this.btn_Loguit.Click += new System.EventHandler(this.btn_Loguit_Click);
             // 
+            // btn_Undo
+            // 
+            this.btn_Undo.Location = new System.Drawing.Point(110, 13);
+            this.btn_Undo.Name = "btn_Undo";
+            this.btn_Undo.Size = new System.Drawing.Size(85, 73);
+            this.btn_Undo.TabIndex = 5;
+            this.btn_Undo.Text = "Undo";
+            this.btn_Undo.UseVisualStyleBackColor = true;
+            // 
             // BasisKokBar
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1354, 733);
+            this.Controls.Add(this.btn_Undo);
             this.Controls.Add(this.btn_Loguit);
             this.Controls.Add(this.lv_KokBarman);
             this.Controls.Add(this.Label1);
@@ -110,5 +122,6 @@
         private System.Windows.Forms.Label Label1;
         private System.Windows.Forms.ListView lv_KokBarman;
         private System.Windows.Forms.Button btn_Loguit;
+        private System.Windows.Forms.Button btn_Undo;
     }
 }

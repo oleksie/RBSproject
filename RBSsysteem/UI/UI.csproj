@@ -114,6 +114,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoundButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="BasisHandheld.resx">
       <DependentUpon>BasisHandheld.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,6 +173,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{d2d52cac-cf17-460b-a66b-0abda7250776}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logica\Logica.csproj">
       <Project>{9279efea-7d18-4d17-b692-1da78069da9a}</Project>
       <Name>Logica</Name>
