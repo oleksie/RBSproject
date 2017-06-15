@@ -8,13 +8,13 @@ namespace Model
 {
     public class Bestelling
     {
-        public int tafel_id;
+        public int tafelId;
         public int  aantal;
         public string naam;
-        public int prijs;
-        public Bestelling(int aantal, int tafel_id,string naam, int prijs)
+        public float prijs;
+        public Bestelling(int aantal, int tafelId,string naam, float prijs)
         {
-            this.tafel_id = tafel_id;
+            this.tafelId = tafelId;
             this.aantal = aantal;
             this.naam = naam;
             this.prijs = prijs;

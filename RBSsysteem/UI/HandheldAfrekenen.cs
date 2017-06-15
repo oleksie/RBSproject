@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
-using DAL;
+using Logica;
+
 namespace UI
 {
     public partial class HandheldAfrekenen : BasisHandheld
@@ -52,19 +53,25 @@ namespace UI
             //columnHeader2.Width = 156;
             //columnHeader3.Width = 156;
             //columnHeader4.Width = 156;
-            List<Bestelling> lijst = new List<Bestelling>();
-            //lijst = GetBestellingDAO.Getbestelling();
+            BestellingService bestellingService = new BestellingService();
+            List<Bestelling> lijst = bestellingService.GetBestelling();
 
             int aantal = lijst.Count();
-            ListView c = new ListView();
-            c.Height = 100;
-            c.Width = 52;
-            c.View = View.Details;
-            c.Columns.Add("DrankId", 50);
-            c.Columns.Add("Naam", 100);
-            c.Columns.Add("Voorraad", 75);
-            c.Columns.Add("Prijs", 50);
             
+            //listView1.Height = 500;
+            //listView1.Width = 500;
+            listView1.View = View.Details;
+            listView1.Columns.Add("Aantal", 156);
+            listView1.Columns.Add("Naam", 156); 
+            listView1.Columns.Add("Prijs", 156);
+            listView1.Columns.Add("Wijziging", 156);
+
+            foreach (Bestelling bestelling in lijst)
+            {
+                ListViewItem item = new ListViewItem(bestelling.aantal.ToString());
+                listView1.Items.Add(item);
+                Lbl_PersoonlijkNr.Text = bestelling.aantal.ToString();
+            }
             ////listView1.FullRowSelect = true;
 
             ////listView1.Columns.Add("iabsd");
