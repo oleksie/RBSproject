@@ -7,19 +7,15 @@ using System;
 using Model;
 using System.Configuration;
 
-
 namespace DAL
 {
-    public class GetBestellingDAO
+    public class BestellingDAO
     {
-
-
-        public static List<Bestelling> Getbestelling()
+        public List<Bestelling> GetBestelling()
         {
+            string sqlquery = "SELECT aantal, Bestelling.tafel_id, MenuItem.naam, MenuItem.prijs FROM Bestelling JOIN BestelItem ON BestelItem.bestelling_id = Bestelling.bestelling_id JOIN MenuItem ON BestelItem.menuitem_id = MenuItem.menuitem_id";
 
-            string sqlquery = "SELECT aantal,Bestelling.tafel_id,MenuItem.naam, MenuItem.prijs FROM Bestelling join BestelItem ON BestelItem.bestelling_id = Bestelling.bestelling_id join MenuItem ON BestelItem.menuitem_id = MenuItem.menuitem_id";
-
-            string connString = ConfigurationManager.ConnectionStrings["reader"].ConnectionString;
+            string connString = ConfigurationManager.ConnectionStrings["Reader"].ConnectionString;
             SqlConnection connect = new SqlConnection(connString);
             connect.Open();
 
@@ -31,19 +27,20 @@ namespace DAL
             SqlDataReader reader = sqlCmnd.ExecuteReader();
 
             List<Bestelling> lijstbestellingen = new List<Bestelling>();
-
+            if (!reader.Read())
+                return null;
             while (reader.Read())
             {
                 int aantal = reader.GetInt32(0);
-                int tafel_id = reader.GetInt32(1);
+                int tafelId = reader.GetInt32(1);
                 string naam = reader.GetString(2);
-                int prijs = reader.GetInt32(3);
+                float prijs = reader.GetFloat(3);
 
-                Model.Bestelling bestelling = new Bestelling(aantal, tafel_id, naam, prijs);
+                Bestelling bestelling = new Bestelling(aantal, tafelId, naam, prijs);
 
                 lijstbestellingen.Add(bestelling);
             }
-            
+
             connect.Close();
             reader.Close();
             return lijstbestellingen;
