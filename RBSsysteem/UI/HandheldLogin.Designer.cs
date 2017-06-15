@@ -56,6 +56,7 @@
             // 
             // txtInlognummer
             // 
+            this.txtInlognummer.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInlognummer.Location = new System.Drawing.Point(235, 262);
             this.txtInlognummer.Name = "txtInlognummer";
             this.txtInlognummer.Size = new System.Drawing.Size(273, 96);
