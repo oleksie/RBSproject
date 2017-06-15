@@ -14,6 +14,7 @@ namespace UI
 {
     public partial class BasisKokBar : Form
     {
+        private int lastdeleteditem;
         BarmanKok BarKok = new BarmanKok();
         public BasisKokBar(Medewerker m)
         {
@@ -54,10 +55,10 @@ namespace UI
 
         private void lv_KokBarman_ItemActivate(object sender, EventArgs e)
         {
-            foreach(ListViewItem item in lv_KokBarman.SelectedItems)
+            foreach (ListViewItem item in lv_KokBarman.SelectedItems)
             {
-                int bestelitemid = Convert.ToInt32(item.SubItems[0].Text);
-                BarKok.Updatebestelitem(bestelitemid);
+                lastdeleteditem = Convert.ToInt32(item.SubItems[0].Text);
+                BarKok.Updatebestelitem(lastdeleteditem);
                 item.Remove();
             }
         }
@@ -68,6 +69,10 @@ namespace UI
             form.Close();
             HandheldLogin login = (HandheldLogin)Application.OpenForms["HandheldLogin"];
             login.Show();
+        }
+        private void btn_Undo_Click(object sender, EventArgs e)
+        {
+            BarKok.Undobestelitem(lastdeleteditem);
         }
     }
 }
