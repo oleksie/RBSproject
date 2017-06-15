@@ -44,10 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BestellingDAO.cs" />
     <Compile Include="CategorieDAO.cs" />
     <Compile Include="BestellingItemDAO.cs" />
     <Compile Include="DALConnection.cs" />
-    <Compile Include="BestellingDAO.cs" />
     <Compile Include="MedewerkerDAO.cs" />
     <Compile Include="MenuItemDAO.cs" />
     <Compile Include="MenukaartDAO.cs" />

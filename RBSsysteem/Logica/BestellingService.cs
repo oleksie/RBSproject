@@ -10,6 +10,9 @@ namespace Logica
 {
     public class BestellingService
     {
+        public int tafelnr = 1;
+        public int medewerkerid = 2;
+
         public BestellingService()
         {
 
@@ -21,6 +24,21 @@ namespace Logica
             return bestellingDAO.GetBestelling();
 
             //return bestellingen;
+        }
+
+        public void MaakNieuweBestelling()
+        {
+            BestellingItemDAO bestellingPrijs = new BestellingItemDAO();
+
+            Bestelling bestellingInfo = new Bestelling();
+
+            bestellingInfo.medewerkerid= medewerkerid;
+            bestellingInfo.commentaarKlant = "";
+            bestellingInfo.tafelId= tafelnr;
+            bestellingInfo.prijs= 0;
+
+            BestellingDAO bestelling = new BestellingDAO();
+            bestelling.PlaatsBestelling(bestellingInfo);
         }
     }
 }
