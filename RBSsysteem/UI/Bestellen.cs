@@ -14,6 +14,7 @@ namespace UI
 {
     public partial class Bestellen : StyleGuide.BasisHandheldForm
     {
+        public int tafelnr;
         public Bestellen()
         {
             InitializeComponent();
