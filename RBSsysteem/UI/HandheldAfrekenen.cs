@@ -48,7 +48,7 @@ namespace UI
 
             ////ListView listView1 = new ListView();
             ////listView1.View = View.Details;
-            //listView1.GridLines = true;
+            listView1.GridLines = true;
             //columnHeader1.Width = 156;
             //columnHeader2.Width = 156;
             //columnHeader3.Width = 156;

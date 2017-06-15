@@ -46,7 +46,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(750, 977);
+            this.ClientSize = new System.Drawing.Size(752, 985);
             this.Controls.Add(this.pictureBox1);
             this.Name = "BasisHandheld";
             this.Text = "BaisisHandheld";

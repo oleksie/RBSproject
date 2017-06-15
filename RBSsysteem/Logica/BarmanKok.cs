@@ -77,7 +77,7 @@ namespace Logica
 
         public void Undobestelitem(int bestelitemid)
         {
-            bestelitemconnect.UndoStatus(bestelitemid)
+            bestelitemconnect.UndoStatus(bestelitemid);
         }
     }
 }
