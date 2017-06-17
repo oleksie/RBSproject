@@ -17,7 +17,8 @@ namespace UI
         MenuItemService actieButton = new MenuItemService();
         HandheldTafels naarTafelOverzicht = new HandheldTafels();
 
-        public int tafelnr;
+        public int tafelnr = 0;
+        public int medewerkerid = 0;
         public Bestellen()
         {
             InitializeComponent();
