@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HandheldTafels));
-            this.lblPersoonlijkNummer = new System.Windows.Forms.Label();
+            this.lblPersooneelsNummer = new System.Windows.Forms.Label();
             this.Btn_TafelsLoguit = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
-            // lblPersoonlijkNummer
+            // lblPersooneelsNummer
             // 
-            this.lblPersoonlijkNummer.AutoSize = true;
-            this.lblPersoonlijkNummer.Location = new System.Drawing.Point(12, 12);
-            this.lblPersoonlijkNummer.Name = "lblPersoonlijkNummer";
-            this.lblPersoonlijkNummer.Size = new System.Drawing.Size(104, 13);
-            this.lblPersoonlijkNummer.TabIndex = 23;
-            this.lblPersoonlijkNummer.Text = "Persoonlijk nummer: ";
+            this.lblPersooneelsNummer.AutoSize = true;
+            this.lblPersooneelsNummer.Location = new System.Drawing.Point(12, 12);
+            this.lblPersooneelsNummer.Name = "lblPersooneelsNummer";
+            this.lblPersooneelsNummer.Size = new System.Drawing.Size(108, 13);
+            this.lblPersooneelsNummer.TabIndex = 23;
+            this.lblPersooneelsNummer.Text = "Persooneelsnummer: ";
             // 
             // Btn_TafelsLoguit
             // 
@@ -69,12 +69,12 @@
             this.ClientSize = new System.Drawing.Size(750, 977);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.Btn_TafelsLoguit);
-            this.Controls.Add(this.lblPersoonlijkNummer);
+            this.Controls.Add(this.lblPersooneelsNummer);
             this.DoubleBuffered = true;
             this.Name = "HandheldTafels";
             this.Text = "HandheldTafels";
             this.Load += new System.EventHandler(this.HandheldTafels_Load);
-            this.Controls.SetChildIndex(this.lblPersoonlijkNummer, 0);
+            this.Controls.SetChildIndex(this.lblPersooneelsNummer, 0);
             this.Controls.SetChildIndex(this.Btn_TafelsLoguit, 0);
             this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
             this.ResumeLayout(false);
@@ -83,7 +83,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lblPersoonlijkNummer;
+        private System.Windows.Forms.Label lblPersooneelsNummer;
         private System.Windows.Forms.Button Btn_TafelsLoguit;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }

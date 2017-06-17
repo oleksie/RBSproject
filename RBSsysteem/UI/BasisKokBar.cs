@@ -103,5 +103,11 @@ namespace UI
                 lv_KokBarman.Items.Add(bestellinglist[i]);
             }
         }
+        
+        private void BasisKokBar_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
+        {
+            HandheldLogin login = (HandheldLogin)Application.OpenForms["HandheldLogin"];
+            login.Show();
+        }
     }
 }

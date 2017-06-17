@@ -36,6 +36,7 @@
             // 
             // LoginAccept
             // 
+            this.LoginAccept.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoginAccept.Location = new System.Drawing.Point(235, 479);
             this.LoginAccept.Name = "LoginAccept";
             this.LoginAccept.Size = new System.Drawing.Size(273, 105);
@@ -47,10 +48,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label1.Location = new System.Drawing.Point(298, 165);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(258, 201);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 25);
+            this.label1.Size = new System.Drawing.Size(227, 42);
             this.label1.TabIndex = 5;
             this.label1.Text = "Uw nummer:";
             // 

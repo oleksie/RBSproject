@@ -19,6 +19,8 @@ namespace UI
 
         public int tafelnr = 0;
         public int medewerkerid = 0;
+        private int tafelNummer;
+        private Medewerker medewerker;
         public Bestellen()
         {
             InitializeComponent();
@@ -30,6 +32,15 @@ namespace UI
             CategorieLunch.SelectedIndexChanged += CategorieLunch_SelectedIndexChanged;
             CategorieDiner.SelectedIndexChanged += CategorieDiner_SelectedIndexChanged;
             CategorieDranken.SelectedIndexChanged += CategorieDranken_SelectedIndexChanged;
+        }
+
+        public Bestellen(Medewerker medewerker, int tafelNummer) : this()
+        {
+            this.medewerker = medewerker;
+            this.tafelNummer = tafelNummer;
+
+            lblPersoneelsNummer.Text += medewerker.inlognummer.ToString();
+            lblTafelNummer.Text += tafelNummer.ToString();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -244,6 +255,12 @@ namespace UI
 
                 this.ListViewtje.Clear();
             }
+        }
+
+        private void Bestellen_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
+        {
+            HandheldLogin login = (HandheldLogin)Application.OpenForms["HandheldLogin"];
+            login.Show();
         }
     }
 }

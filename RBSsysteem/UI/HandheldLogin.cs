@@ -40,7 +40,6 @@ namespace UI
                     TafelService tafelService = new TafelService();
                     List<Tafel> tafels = tafelService.GetTafels();
 
-                    lblLoginError.Text = medewerker.naam;
                     switch (medewerker.rol)
                     {
                         case (Rol) 1:
