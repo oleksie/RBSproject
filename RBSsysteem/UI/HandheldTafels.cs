@@ -14,17 +14,17 @@ namespace UI
 {
     public partial class HandheldTafels : BasisHandheld
     {
+        private Medewerker medewerker;
         public HandheldTafels()
         {
 
         }
-        
-        public HandheldTafels(Medewerker m, List<Tafel> tafels)
+
+        public HandheldTafels(Medewerker medewerker, List<Tafel> tafels)
         {
-            
             InitializeComponent();
-            Medewerker medewerker = m;
-            lblPersoonlijkNummer.Text += medewerker.inlognummer;
+            this.medewerker = medewerker;
+            lblPersooneelsNummer.Text += medewerker.inlognummer;
             int i = 1;
 
             foreach (Tafel tafel in tafels)
@@ -55,10 +55,10 @@ namespace UI
 
         private void TafelButton_Click(object sender, EventArgs e)
         {
-            //this.Hide();
-            //int clickedTafelId = sender;
-            //Bestellen bestellen = new Bestellen(clickedTafelId);
-            //bestellen.Show();
+            this.Hide();
+            int clickedTafelId = (int) (sender as RoundButton).Tag;
+            Bestellen bestellen = new Bestellen(medewerker, clickedTafelId);
+            bestellen.Show();
         }
 
         private void HandheldTafels_Load(object sender, EventArgs e)

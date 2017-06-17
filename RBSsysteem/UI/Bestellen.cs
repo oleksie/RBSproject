@@ -17,7 +17,8 @@ namespace UI
         MenuItemService actieButton = new MenuItemService();
         HandheldTafels naarTafelOverzicht = new HandheldTafels();
 
-        public int tafelnr;
+        private int tafelNummer;
+        private Medewerker medewerker;
         public Bestellen()
         {
             InitializeComponent();
@@ -29,6 +30,15 @@ namespace UI
             CategorieLunch.SelectedIndexChanged += CategorieLunch_SelectedIndexChanged;
             CategorieDiner.SelectedIndexChanged += CategorieDiner_SelectedIndexChanged;
             CategorieDranken.SelectedIndexChanged += CategorieDranken_SelectedIndexChanged;
+        }
+
+        public Bestellen(Medewerker medewerker, int tafelNummer) : this()
+        {
+            this.medewerker = medewerker;
+            this.tafelNummer = tafelNummer;
+
+            lblPersoneelsNummer.Text += medewerker.inlognummer.ToString();
+            lblTafelNummer.Text += tafelNummer.ToString();
         }
 
         private void button4_Click(object sender, EventArgs e)

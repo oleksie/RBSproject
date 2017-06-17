@@ -68,6 +68,8 @@
             this.FLPLucnhNa = new System.Windows.Forms.FlowLayoutPanel();
             this.MenuKaart = new System.Windows.Forms.TabControl();
             this.btn_afrondenHuidig = new System.Windows.Forms.Button();
+            this.lblTafelNummer = new System.Windows.Forms.Label();
+            this.lblPersoneelsNummer = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.CategorieDranken.SuspendLayout();
@@ -93,6 +95,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblPersoneelsNummer);
+            this.panel1.Controls.Add(this.lblTafelNummer);
             this.panel1.Controls.Add(this.btn_afrondenHuidig);
             this.panel1.Controls.Add(this.ListViewtje);
             this.panel1.Controls.Add(this.button4);
@@ -472,6 +476,24 @@
             this.btn_afrondenHuidig.UseVisualStyleBackColor = true;
             this.btn_afrondenHuidig.Click += new System.EventHandler(this.btn_afrondenHuidig_Click);
             // 
+            // lblTafelNummer
+            // 
+            this.lblTafelNummer.AutoSize = true;
+            this.lblTafelNummer.Location = new System.Drawing.Point(28, 45);
+            this.lblTafelNummer.Name = "lblTafelNummer";
+            this.lblTafelNummer.Size = new System.Drawing.Size(74, 13);
+            this.lblTafelNummer.TabIndex = 6;
+            this.lblTafelNummer.Text = "Tafelnummer: ";
+            // 
+            // lblPersoneelsNummer
+            // 
+            this.lblPersoneelsNummer.AutoSize = true;
+            this.lblPersoneelsNummer.Location = new System.Drawing.Point(30, 20);
+            this.lblPersoneelsNummer.Name = "lblPersoneelsNummer";
+            this.lblPersoneelsNummer.Size = new System.Drawing.Size(102, 13);
+            this.lblPersoneelsNummer.TabIndex = 7;
+            this.lblPersoneelsNummer.Text = "Personeelsnummer: ";
+            // 
             // Bestellen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -480,6 +502,7 @@
             this.Name = "Bestellen";
             this.Text = "Bestellen";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.CategorieDranken.ResumeLayout(false);
             this.Frisdrank.ResumeLayout(false);
@@ -544,5 +567,8 @@
         private System.Windows.Forms.Button btn_afrondenHuidig;
         private System.Windows.Forms.ColumnHeader ListColomNaamID;
         public System.Windows.Forms.ListView ListViewtje;
+        private System.Windows.Forms.Label lblTafelNummer;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblPersoneelsNummer;
     }
 }
