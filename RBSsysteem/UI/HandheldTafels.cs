@@ -37,7 +37,10 @@ namespace UI
                         tafelButton.BackColor = Color.Green;
                         break;
                     case "bezet":
-                        tafelButton.BackColor = Color.Red;
+                        if (tafel.bezetDoor == medewerker.inlognummer)
+                            tafelButton.BackColor = Color.Orange;
+                        else
+                            tafelButton.BackColor = Color.Red;
                         break;
                 }
 
@@ -55,6 +58,9 @@ namespace UI
 
         private void TafelButton_Click(object sender, EventArgs e)
         {
+            RoundButton clickedRoundButton = (sender as RoundButton);
+
+
             this.Hide();
             int clickedTafelId = (int) (sender as RoundButton).Tag;
             Bestellen bestellen = new Bestellen(medewerker, clickedTafelId);
@@ -83,6 +89,8 @@ namespace UI
         private void HandheldTafels_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
         {
             HandheldLogin login = (HandheldLogin)Application.OpenForms["HandheldLogin"];
+            Control[] txtInlognummer = login.Controls.Find("txtInlognummer", false);
+            txtInlognummer[0].Text = "";
             login.Show();
         }
     }

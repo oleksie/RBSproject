@@ -58,9 +58,10 @@ namespace UI
                         //    break;
                     }
                 }
-                catch
+                catch (Exception exc)
                 {
-                    lblLoginError.Text = "Inlognummer bestaat niet.";
+                    lblLoginError.Text = "Inlognummer bestaat niet. \n";
+                    lblLoginError.Text += exc.Message;
                 }
             }
         }

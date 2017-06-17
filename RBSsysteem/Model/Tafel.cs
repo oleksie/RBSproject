@@ -11,17 +11,19 @@ namespace Model
         public int tafelId { get; set; }
         public string status { get; set; }
         public int capaciteit { get; set; }
+        public int bezetDoor { get; set; }
 
         public Tafel()
         {
 
         }
 
-        public Tafel(int tafelId, string status, int capaciteit)
+        public Tafel(int tafelId, string status, int capaciteit, int bezetDoor)
         {
             this.tafelId = tafelId;
             this.status = status;
             this.capaciteit = capaciteit;
+            this.bezetDoor = bezetDoor;
         }
     }
 }
