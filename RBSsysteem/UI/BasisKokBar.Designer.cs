@@ -34,7 +34,8 @@
             this.Label1 = new System.Windows.Forms.Label();
             this.lv_KokBarman = new System.Windows.Forms.ListView();
             this.btn_Loguit = new System.Windows.Forms.Button();
-            this.btn_Undo = new System.Windows.Forms.Button();
+            this.btn_inBereiding = new System.Windows.Forms.Button();
+            this.btn_bereid = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,21 +87,33 @@
             this.btn_Loguit.UseVisualStyleBackColor = true;
             this.btn_Loguit.Click += new System.EventHandler(this.btn_Loguit_Click);
             // 
-            // btn_Undo
+            // btn_inBereiding
             // 
-            this.btn_Undo.Location = new System.Drawing.Point(110, 13);
-            this.btn_Undo.Name = "btn_Undo";
-            this.btn_Undo.Size = new System.Drawing.Size(85, 73);
-            this.btn_Undo.TabIndex = 5;
-            this.btn_Undo.Text = "Undo";
-            this.btn_Undo.UseVisualStyleBackColor = true;
+            this.btn_inBereiding.Location = new System.Drawing.Point(1186, 12);
+            this.btn_inBereiding.Name = "btn_inBereiding";
+            this.btn_inBereiding.Size = new System.Drawing.Size(75, 66);
+            this.btn_inBereiding.TabIndex = 6;
+            this.btn_inBereiding.Text = "In Bereiding";
+            this.btn_inBereiding.UseVisualStyleBackColor = true;
+            this.btn_inBereiding.Click += new System.EventHandler(this.btn_inBereiding_Click);
+            // 
+            // btn_bereid
+            // 
+            this.btn_bereid.Location = new System.Drawing.Point(1267, 12);
+            this.btn_bereid.Name = "btn_bereid";
+            this.btn_bereid.Size = new System.Drawing.Size(75, 66);
+            this.btn_bereid.TabIndex = 7;
+            this.btn_bereid.Text = "Bereid";
+            this.btn_bereid.UseVisualStyleBackColor = true;
+            this.btn_bereid.Click += new System.EventHandler(this.btn_bereid_Click);
             // 
             // BasisKokBar
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1354, 733);
-            this.Controls.Add(this.btn_Undo);
+            this.Controls.Add(this.btn_bereid);
+            this.Controls.Add(this.btn_inBereiding);
             this.Controls.Add(this.btn_Loguit);
             this.Controls.Add(this.lv_KokBarman);
             this.Controls.Add(this.Label1);
@@ -122,6 +135,7 @@
         private System.Windows.Forms.Label Label1;
         private System.Windows.Forms.ListView lv_KokBarman;
         private System.Windows.Forms.Button btn_Loguit;
-        private System.Windows.Forms.Button btn_Undo;
+        private System.Windows.Forms.Button btn_inBereiding;
+        private System.Windows.Forms.Button btn_bereid;
     }
 }

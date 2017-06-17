@@ -115,5 +115,45 @@ namespace DAL
 
             return id;
         }
+        //voor anne
+        public List<Bestelling> GetTafel()
+        {
+            DALConnection connectie = new DALConnection();
+            DBConnectie = connectie.MaakConnectieDB("Reader");
+
+            DBConnectie.Open();
+            List<Bestelling> bestellingList = new List<Bestelling>();
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append("select BestelItem.bestelitem_id, Bestelling.bestelling_id,Bestelling.commentaar_klant,Bestelling.medewerker_id,Bestelling.tafel_id,Bestelling.totaal_prijs from BestelItem inner join MenuItem on BestelItem.menuitem_id = MenuItem.menuitem_id inner join Bestelling on BestelItem.bestelling_id=Bestelling.bestelling_id;");
+
+            String sql = sb.ToString();
+
+            SqlCommand command = new SqlCommand(sql, DBConnectie);
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                int bestellingid = reader.GetInt32(1);
+                string commentaar = reader.GetString(2);
+                int medewerkerid = reader.GetInt32(3);
+                int tafel = reader.GetInt32(4);
+
+                Bestelling bestelling = new Bestelling(0, 0, "0",0);//kan ook gewoon die dingen hieronder hier doen natuurlijk
+
+                bestelling.bestelling_id = bestellingid;
+                bestelling.commentaarKlant = commentaar;
+                bestelling.medewerkerid = medewerkerid;
+                //bestelling.aantal = aantal;
+                //bestelling.prijs = prijs;
+                bestelling.tafelId = tafel;
+
+                bestellingList.Add(bestelling);
+            }
+
+            DBConnectie.Close();
+            reader.Close();
+            return bestellingList;
+        }
     }
 }

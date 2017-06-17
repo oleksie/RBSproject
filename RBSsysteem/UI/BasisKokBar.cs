@@ -14,12 +14,14 @@ namespace UI
 {
     public partial class BasisKokBar : Form
     {
-        private int lastdeleteditem;
         BarmanKok BarKok = new BarmanKok();
+        private Medewerker medewerker;
+        private string filter;
         public BasisKokBar(Medewerker m)
         {
             List<ListViewItem> bestellinglist = new List<ListViewItem>();
-            Medewerker medewerker = m;
+            medewerker = m;
+            filter = "in bereiding";
             InitializeComponent();
             lv_KokBarman.View = View.Details;
             lv_KokBarman.GridLines = true;
@@ -32,20 +34,21 @@ namespace UI
             lv_KokBarman.Columns.Add("Commentaar", 200);
             lv_KokBarman.Columns.Add("Status", 100);
             lv_KokBarman.Columns.Add("Tijd Opgenomen", 100);
-            if (m.rol == Rol.Kok)
-            { bestellinglist = BarKok.BestellinglistGerechten(); }
-            else if (m.rol == Rol.Barman)
-            { bestellinglist = BarKok.BestellinglistDrank(); }
+            lv_KokBarman.Columns.Add("Tafel", 100);
+            if (medewerker.rol == Rol.Kok)
+            { bestellinglist = BarKok.BestellinglistGerechten(filter); }
+            else if (medewerker.rol == Rol.Barman)
+            { bestellinglist = BarKok.BestellinglistDrank(filter); }
             for (int i = 0; i < bestellinglist.Count; i++)
             {
                 lv_KokBarman.Items.Add(bestellinglist[i]);
             }
-             
+
         }
 
         private void Lbl_Tijd_Click(object sender, EventArgs e)
         {
-         
+
         }
 
         private void BasisKokBar_Load(object sender, EventArgs e)
@@ -57,7 +60,7 @@ namespace UI
         {
             foreach (ListViewItem item in lv_KokBarman.SelectedItems)
             {
-                lastdeleteditem = Convert.ToInt32(item.SubItems[0].Text);
+                int lastdeleteditem = Convert.ToInt32(item.SubItems[0].Text);
                 BarKok.Updatebestelitem(lastdeleteditem);
                 item.Remove();
             }
@@ -70,9 +73,35 @@ namespace UI
             HandheldLogin login = (HandheldLogin)Application.OpenForms["HandheldLogin"];
             login.Show();
         }
-        private void btn_Undo_Click(object sender, EventArgs e)
+
+        private void btn_inBereiding_Click(object sender, EventArgs e)
         {
-            BarKok.Undobestelitem(lastdeleteditem);
+            filter = "in bereiding";
+            List<ListViewItem> bestellinglist = new List<ListViewItem>();
+            lv_KokBarman.Items.Clear();
+            if (medewerker.rol == Rol.Kok)
+            { bestellinglist = BarKok.BestellinglistGerechten(filter); }
+            else if (medewerker.rol == Rol.Barman)
+            { bestellinglist = BarKok.BestellinglistDrank(filter); }
+            for (int i = 0; i < bestellinglist.Count; i++)
+            {
+                lv_KokBarman.Items.Add(bestellinglist[i]);
+            }
+        }
+
+        private void btn_bereid_Click(object sender, EventArgs e)
+        {
+            filter = "bereid";
+            List<ListViewItem> bestellinglist = new List<ListViewItem>();
+            lv_KokBarman.Items.Clear();
+            if (medewerker.rol == Rol.Kok)
+            { bestellinglist = BarKok.BestellinglistGerechten(filter); }
+            else if (medewerker.rol == Rol.Barman)
+            { bestellinglist = BarKok.BestellinglistDrank(filter); }
+            for (int i = 0; i < bestellinglist.Count; i++)
+            {
+                lv_KokBarman.Items.Add(bestellinglist[i]);
+            }
         }
     }
 }

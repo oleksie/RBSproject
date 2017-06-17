@@ -27,7 +27,7 @@ namespace DAL
             connection.Open();
             StringBuilder sb = new StringBuilder();
 
-            sb.Append("select BestelItem.bestelitem_id,BestelItem.menuitem_id,BestelItem.opmerkingen,BestelItem.aantal,BestelItem.status,BestelItem.tijd_opgenomen,MenuItem.naam from BestelItem inner join MenuItem on BestelItem.menuitem_id = MenuItem.menuitem_id; ");
+            sb.Append("select BestelItem.bestelitem_id,BestelItem.menuitem_id,BestelItem.opmerkingen,BestelItem.aantal,BestelItem.status,BestelItem.tijd_opgenomen,MenuItem.naam,MenuItem.categorie_id,Bestelling.tafel_id from BestelItem inner join MenuItem on BestelItem.menuitem_id = MenuItem.menuitem_id inner join Bestelling on BestelItem.bestelling_id=Bestelling.bestelling_id;");
 
             String sql = sb.ToString();
 
@@ -36,24 +36,24 @@ namespace DAL
 
             while (reader.Read())
             {
-                int bestellingID = reader.GetInt32(0);
-                int menuitemID = reader.GetInt32(1);
-                string opmerkingen = reader.GetString(2);
-                int aantal = reader.GetInt32(3);
-                string status = reader.GetString(4);
-                DateTime tijdOpgenomen = reader.GetDateTime(5);
-                string naam = reader.GetString(6);
+                int bestellingitemID = reader.GetInt32(0);
+                int bestellingID = reader.GetInt32(1);
+                int menuitemID = reader.GetInt32(2);
+                string opmerkingen = reader.GetString(3);
+                int aantal = reader.GetInt32(4);
+                string status = reader.GetString(5);
+                DateTime tijdOpgenomen = reader.GetDateTime(6);
 
 
                 BestellingItem bestellingitem = new BestellingItem();
 
-                bestellingitem.bestelitemID = bestellingID;
-                //bestellingitem.menuitem = menuitemID;
+                bestellingitem.bestelitemID = bestellingitemID;
+                bestellingitem.menuitemid = menuitemID;
+                bestellingitem.bestellingID = bestellingID;
                 bestellingitem.commentaar = opmerkingen;
                 bestellingitem.aantal = aantal;
                 bestellingitem.status = status;
                 bestellingitem.tijdOpgenomen = tijdOpgenomen;
-                //bestellingitem.menuitem.Naam = naam;
 
                 bestellingItemList.Add(bestellingitem);
             }
