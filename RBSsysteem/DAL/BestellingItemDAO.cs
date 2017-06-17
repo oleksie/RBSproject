@@ -158,25 +158,22 @@ namespace DAL
             connection.Close();
         }
 
-        public int GetTotaalPrijs(int bestellingid)
+        public void vulTotaalPrijs(int bestellingid)
         {
-            SqlConnection connection = dbConnection.MaakConnectieDB("Reader");
+            SqlConnection connection = dbConnection.MaakConnectieDB("Writer");
             connection.Open();
 
-            SqlCommand command = new SqlCommand("SELECT (prijs * aantal) FROM MenuItem INNER JOIN BestelItem ON BestelItem.menuitemid = MenuItem.menuitemid WHERE bestellingid = @bestellingid", connection);
+            SqlCommand command = new SqlCommand("INSERT INTO Bestelling (totaal_prijs) VALUES SELECT (prijs * aantal) FROM BestelItem WHERE bestelling_id = @bestellingid))", connection);
 
-            SqlDataReader reader = command.ExecuteReader();
-            int totaalPrijs = 0;
+            SqlParameter IdParam1 = new SqlParameter("@bestellingid", SqlDbType.Int);
+            command.Parameters.Add(IdParam1);
+            IdParam1.Value = bestellingid;
 
-            while (reader.Read())
-            {
-                totaalPrijs = totaalPrijs + reader.GetInt32(0);
-            }
+            command.Prepare();
+
+            command.ExecuteNonQuery();
 
             connection.Close();
-            reader.Close();
-
-            return totaalPrijs;
         }
 
         public void UndoStatus(int id)

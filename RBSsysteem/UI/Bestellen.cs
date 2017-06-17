@@ -16,6 +16,7 @@ namespace UI
     {
         MenuItemService actieButton = new MenuItemService();
         HandheldTafels naarTafelOverzicht = new HandheldTafels();
+        List<ListviewBestellen> listVoorDB;
 
         public int bestellingID;
         private int tafelNummer;
@@ -115,8 +116,8 @@ namespace UI
             {
                 
                 ListviewBestellen item = actieButton.MenuItemNaarList(sender as Button, aantalItem.aantal, aantalItem.opmerking);
+                listVoorDB = actieButton.MenuItemNaarListView(this.ListViewtje, item);
 
-                actieButton.MenuItemNaarListView(this.ListViewtje,item);
             }
         }
 
@@ -246,22 +247,25 @@ namespace UI
                 return;
             }
 
+            //throw new Exception("id is hopelijk niks: " + bestellingID);
+
             if ((MessageBox.Show("Is de bestelling compleet?", "De bestelling wordt nu opgeslagen.",
                      MessageBoxButtons.YesNo, MessageBoxIcon.Question,
                      MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
             {
-                //if (String.IsNullOrEmpty(bestellingID.ToString()))
-                //{
+                if (bestellingID == 0)
+                {
                     bestelling.MaakNieuweBestelling(medewerker, tafelNummer);
                     tafel.TafelOpBezetZetten(tafelNummer);
                     bestellingID = bestelling.GetBestellingID(medewerker, tafelNummer);
-                    gebruik.VerwerkNieuweBestelling(bestellingID);
-                //}
-                /*else
+                    gebruik.VerwerkNieuweBestelling(bestellingID, listVoorDB);
+                    actieButton.listVoorListview.Clear();
+                }
+                else
                 {
-                    bestelling.MaakNieuweBestelling();
-                    gebruik.VerwerkHuidigeBestelling(this.ListViewtje);
-                }*/
+                    gebruik.VerwerkHuidigeBestelling(bestellingID, listVoorDB);
+                    actieButton.listVoorListview.Clear();
+                }
 
                 this.ListViewtje.Items.Clear();
             }

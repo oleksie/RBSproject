@@ -256,7 +256,7 @@ namespace Logica
             return item;
         }
 
-        public void MenuItemNaarListView(ListView list, ListviewBestellen item)
+        public List<ListviewBestellen> MenuItemNaarListView(ListView list, ListviewBestellen item)
         {
             list.Items.Clear();
             bool itemIsInList = false;
@@ -280,9 +280,6 @@ namespace Logica
                 listVoorListview.Add(item);
             }
 
-            List<ListviewBestellen> listVoorDB = listVoorListview;
-            BestelItemService listmetitems = new BestelItemService(listVoorDB);
-
             foreach (ListviewBestellen x in listVoorListview)
             {
                 ListViewItem MenuItems = new ListViewItem(x.naam);
@@ -293,6 +290,8 @@ namespace Logica
 
                 list.Items.Add(MenuItems);
             }
+
+            return listVoorListview;
 
             /*MenuItemDAO menuItem = new MenuItemDAO();
             List<Model.MenuItem> menuItems = menuItem.GetMenuItems();

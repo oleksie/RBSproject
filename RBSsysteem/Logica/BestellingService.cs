@@ -11,6 +11,8 @@ namespace Logica
     public class BestellingService
     {
         List<ListviewBestellen> listvoorDB = new List<ListviewBestellen>();
+        BestellingDAO bestelling = new BestellingDAO();
+        MenuItemService getListMetItems = new MenuItemService();
 
         public BestellingService()
         {
@@ -27,7 +29,7 @@ namespace Logica
 
         public void MaakNieuweBestelling(Medewerker medewerker, int tafelnr)
         {
-            MenuItemService getListMetItems = new MenuItemService();
+            
 
             listvoorDB = getListMetItems.listVoorListview;
 
@@ -49,7 +51,7 @@ namespace Logica
             bestellingInfo.fooi = 0;
             bestellingInfo.totaalprijs = totaalprijs;
 
-            BestellingDAO bestelling = new BestellingDAO();
+            
             bestelling.PlaatsBestelling(bestellingInfo);
         }
 
