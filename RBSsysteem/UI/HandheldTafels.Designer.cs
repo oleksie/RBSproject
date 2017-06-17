@@ -33,6 +33,7 @@
             this.Btn_TafelsLoguit = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
+            this.FormClosing += HandheldTafels_FormClosing;
             // 
             // lblPersooneelsNummer
             // 
