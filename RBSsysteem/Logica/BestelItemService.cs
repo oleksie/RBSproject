@@ -11,20 +11,41 @@ namespace Logica
 {
     public class BestelItemService
     {
-        public int bestellingID;
+        MenuItemService getListMetItems = new MenuItemService();
+        List<ListviewBestellen> listvoorDB;
 
         public BestelItemService()
         {
 
         }
 
-        public void VerwerkNieuweBestelling(ListView list)
+        public BestelItemService(List<ListviewBestellen> list)
         {
-            BestellingService bestelling = new BestellingService();
+            this.listvoorDB = list;
+        }
 
-            BestellingDAO huidigeBestelling = new BestellingDAO();
-            bestellingID = huidigeBestelling.GetHuidigeBestellingID(bestelling.medewerkerid, bestelling.tafelnr);
+        public void VerwerkNieuweBestelling(int bestellingID)
+        {
+            BestellingItem besteldeItem = new BestellingItem();
+            BestellingItemDAO itemNaarDB = new BestellingItemDAO();
 
+            
+
+            foreach (ListviewBestellen x in listvoorDB)
+            {
+                besteldeItem.bestellingID = bestellingID;
+                besteldeItem.aantal = x.aantal;
+                besteldeItem.commentaar = x.opmerking;
+                besteldeItem.menuitemid = x.id;
+                besteldeItem.status = "besteld";
+                besteldeItem.tijdOpgenomen = DateTime.Now;
+
+                itemNaarDB.PlaatsBestellingItem(besteldeItem);
+            }
+        }
+
+        /*public void VerwerkHuidigeBestelling(int bestellingID)
+        {
             BestellingItem besteldeItem = new BestellingItem();
             BestellingItemDAO itemNaarDB = new BestellingItemDAO();
 
@@ -42,27 +63,6 @@ namespace Logica
 
                 itemNaarDB.PlaatsBestellingItem(besteldeItem);
             }
-        }
-
-        public void VerwerkHuidigeBestelling(ListView list)
-        {
-            BestellingItem besteldeItem = new BestellingItem();
-            BestellingItemDAO itemNaarDB = new BestellingItemDAO();
-
-            foreach (ListViewItem x in list.Items)
-            {
-                for (int i = 0; i < x.SubItems.Count; i++)
-                {
-                    besteldeItem.bestelitemID = bestellingID;
-                    besteldeItem.aantal = int.Parse(x.SubItems[1].Text); ;
-                    besteldeItem.commentaar = x.SubItems[2].Text;
-                    besteldeItem.menuitemid = int.Parse(x.SubItems[4].Text);
-                    besteldeItem.status = "besteld";
-                    besteldeItem.tijdOpgenomen = DateTime.Now;
-                }
-
-                itemNaarDB.PlaatsBestellingItem(besteldeItem);
-            }
-        }
+        }*/
     }
 }

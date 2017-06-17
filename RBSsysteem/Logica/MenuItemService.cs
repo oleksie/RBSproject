@@ -12,7 +12,7 @@ namespace Logica
 {
     public class MenuItemService
     {
-        List<ListviewBestellen> listVoorListview = new List<ListviewBestellen>();
+        public List<ListviewBestellen> listVoorListview = new List<ListviewBestellen>();
         MenuItemDAO menuItem = new MenuItemDAO();
 
         public MenuItemService()
@@ -280,6 +280,8 @@ namespace Logica
                 listVoorListview.Add(item);
             }
 
+            List<ListviewBestellen> listVoorDB = listVoorListview;
+            BestelItemService listmetitems = new BestelItemService(listVoorDB);
 
             foreach (ListviewBestellen x in listVoorListview)
             {

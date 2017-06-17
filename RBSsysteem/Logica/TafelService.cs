@@ -23,5 +23,11 @@ namespace Logica
 
             return tafels;
         }
+
+        public void TafelOpBezetZetten(int tafelnr)
+        {
+            TafelDAO tafelDAO = new TafelDAO();
+            tafelDAO.TafelBezetInDB(tafelnr);
+        }
     }
 }

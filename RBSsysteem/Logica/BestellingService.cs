@@ -10,8 +10,7 @@ namespace Logica
 {
     public class BestellingService
     {
-        public int tafelnr = 1;
-        public int medewerkerid = 2;
+        List<ListviewBestellen> listvoorDB = new List<ListviewBestellen>();
 
         public BestellingService()
         {
@@ -26,19 +25,40 @@ namespace Logica
             //return bestellingen;
         }
 
-        public void MaakNieuweBestelling()
+        public void MaakNieuweBestelling(Medewerker medewerker, int tafelnr)
         {
-            BestellingItemDAO bestellingPrijs = new BestellingItemDAO();
+            MenuItemService getListMetItems = new MenuItemService();
 
+            listvoorDB = getListMetItems.listVoorListview;
+
+            double totaalprijs = 0;
+            string naam = "";
+            foreach (ListviewBestellen x in listvoorDB)
+            {
+                totaalprijs = totaalprijs + x.prijs;
+                naam = x.naam;
+                
+            }
             Bestelling bestellingInfo = new Bestelling();
 
-            bestellingInfo.medewerkerid= medewerkerid;
             bestellingInfo.commentaarKlant = "";
+            bestellingInfo.medewerkerid = medewerker.medewerkerId;
+            bestellingInfo.betaald = "nee";
+            bestellingInfo.btw = totaalprijs * 0.21;
             bestellingInfo.tafelId= tafelnr;
-            bestellingInfo.prijs= 0;
+            bestellingInfo.fooi = 0;
+            bestellingInfo.totaalprijs = totaalprijs;
 
             BestellingDAO bestelling = new BestellingDAO();
             bestelling.PlaatsBestelling(bestellingInfo);
+        }
+
+        public int GetBestellingID(Medewerker medewerker, int tafelnr)
+        {
+            BestellingDAO bestelling = new BestellingDAO();
+            int bestellingID = bestelling.GetHuidigeBestellingID(medewerker.medewerkerId, tafelnr);
+
+            return bestellingID;
         }
     }
 }

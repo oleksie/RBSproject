@@ -39,9 +39,9 @@ namespace DAL
                 string naam = reader.GetString(2);
                 double prijs = reader.GetDouble(3);
 
-                Bestelling bestelling = new Bestelling(aantal, tafelId, naam, prijs);
+                //Bestelling bestelling = new Bestelling(aantal, tafelId, naam, prijs);
 
-                lijstbestellingen.Add(bestelling);
+                //lijstbestellingen.Add(bestelling);
             }
 
             DBConnectie.Close();
@@ -58,12 +58,15 @@ namespace DAL
 
             DBConnectie.Open();
 
-            SqlCommand command = new SqlCommand("INSERT INTO Bestelling (commentaar_klant, tafel_id, medewerker_id, totaal_prijs) VALUES (@commentaar, @tafelnr, @medewerkerid, @totaalprijs)", DBConnectie);
+            SqlCommand command = new SqlCommand("INSERT INTO Bestelling (commentaar_klant, tafel_id, medewerker_id, totaal_prijs, betaald, btw, fooi) VALUES (@commentaar, @tafelnr, @medewerkerid, @totaalprijs, @betaald, @btw, @fooi)", DBConnectie);
 
             SqlParameter IdParam1 = new SqlParameter("@commentaar", SqlDbType.NVarChar, -1);
             SqlParameter IdParam2 = new SqlParameter("@tafelnr", SqlDbType.Int);
             SqlParameter IdParam3 = new SqlParameter("@medewerkerid", SqlDbType.Int);
             SqlParameter IdParam4 = new SqlParameter("@totaalprijs", SqlDbType.Float);
+            SqlParameter IdParam5 = new SqlParameter("@betaald", SqlDbType.NVarChar, 50);
+            SqlParameter IdParam6 = new SqlParameter("@btw", SqlDbType.Float);
+            SqlParameter IdParam7 = new SqlParameter("@fooi", SqlDbType.Float);
 
             command.Parameters.Add(IdParam1);
             IdParam1.Value = bestelling.commentaarKlant;
@@ -75,7 +78,16 @@ namespace DAL
             IdParam3.Value = bestelling.medewerkerid;
 
             command.Parameters.Add(IdParam4);
-            IdParam4.Value = bestelling.prijs;
+            IdParam4.Value = bestelling.totaalprijs;
+
+            command.Parameters.Add(IdParam5);
+            IdParam5.Value = bestelling.betaald;
+
+            command.Parameters.Add(IdParam6);
+            IdParam6.Value = bestelling.btw;
+
+            command.Parameters.Add(IdParam7);
+            IdParam7.Value = bestelling.fooi;
 
             command.Prepare();
 
@@ -139,7 +151,7 @@ namespace DAL
                 int medewerkerid = reader.GetInt32(3);
                 int tafel = reader.GetInt32(4);
 
-                Bestelling bestelling = new Bestelling(0, 0, "0",0);//kan ook gewoon die dingen hieronder hier doen natuurlijk
+                /*Bestelling bestelling = new Bestelling(0, 0, "0",0);//kan ook gewoon die dingen hieronder hier doen natuurlijk
 
                 bestelling.bestelling_id = bestellingid;
                 bestelling.commentaarKlant = commentaar;
@@ -148,7 +160,7 @@ namespace DAL
                 //bestelling.prijs = prijs;
                 bestelling.tafelId = tafel;
 
-                bestellingList.Add(bestelling);
+                bestellingList.Add(bestelling);*/
             }
 
             DBConnectie.Close();

@@ -17,10 +17,14 @@ namespace UI
         MenuItemService actieButton = new MenuItemService();
         HandheldTafels naarTafelOverzicht = new HandheldTafels();
 
-        public int tafelnr = 0;
-        public int medewerkerid = 0;
+        public int bestellingID;
         private int tafelNummer;
         private Medewerker medewerker;
+
+        BestellingService bestelling = new BestellingService();
+        BestelItemService gebruik = new BestelItemService();
+        TafelService tafel = new TafelService();
+
         public Bestellen()
         {
             InitializeComponent();
@@ -236,24 +240,30 @@ namespace UI
 
         private void btn_afrondenHuidig_Click(object sender, EventArgs e)
         {
+            if (this.ListViewtje.Items.Count == 0)
+            {
+                MessageBox.Show("De huidige bestelling is nog leeg.", "Let op!");
+                return;
+            }
+
             if ((MessageBox.Show("Is de bestelling compleet?", "De bestelling wordt nu opgeslagen.",
                      MessageBoxButtons.YesNo, MessageBoxIcon.Question,
                      MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
             {
-                BestellingService bestelling = new BestellingService();
-                BestelItemService gebruik = new BestelItemService();
-                if (String.IsNullOrEmpty(gebruik.bestellingID.ToString()))
-                {
-                    bestelling.MaakNieuweBestelling();
-                    gebruik.VerwerkNieuweBestelling(this.ListViewtje);
-                }
-                else
+                //if (String.IsNullOrEmpty(bestellingID.ToString()))
+                //{
+                    bestelling.MaakNieuweBestelling(medewerker, tafelNummer);
+                    tafel.TafelOpBezetZetten(tafelNummer);
+                    bestellingID = bestelling.GetBestellingID(medewerker, tafelNummer);
+                    gebruik.VerwerkNieuweBestelling(bestellingID);
+                //}
+                /*else
                 {
                     bestelling.MaakNieuweBestelling();
                     gebruik.VerwerkHuidigeBestelling(this.ListViewtje);
-                }
+                }*/
 
-                this.ListViewtje.Clear();
+                this.ListViewtje.Items.Clear();
             }
         }
 

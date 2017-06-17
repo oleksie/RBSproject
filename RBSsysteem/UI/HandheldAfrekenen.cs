@@ -72,7 +72,7 @@ namespace UI
             leeg.SubItems.Add(" ");
             listView1.Items.Add(leeg);
 
-            foreach (Bestelling bestelling in lijst)
+            /*foreach (Bestelling bestelling in lijst)
             {
 
                 ListViewItem item = new ListViewItem(bestelling.aantal.ToString());
@@ -80,7 +80,7 @@ namespace UI
                 item.SubItems.Add(bestelling.prijs.ToString());
                 item.SubItems.Add("wijzig").Tag = bestelling.tafelId;
                 listView1.Items.Add(item);
-            }
+            }*/
             
             //listView1.FullRowSelect = true;
 
