@@ -38,6 +38,7 @@
             this.btn_bereid = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            this.FormClosing += BasisKokBar_FormClosing;
             // 
             // pictureBox1
             // 

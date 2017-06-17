@@ -51,74 +51,13 @@ namespace UI
 
         private void TafelButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            int clickedTafelId = 1;
-            Bestellen bestellen = new Bestellen();
-            bestellen.tafelnr = clickedTafelId;
-            bestellen.Show();
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Tafel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void roundButton7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void roundButton8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void roundButton9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void roundButton2_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void roundButton9_Click_1(object sender, EventArgs e)
-        {
-
+            //this.Hide();
+            //int clickedTafelId = sender;
+            //Bestellen bestellen = new Bestellen(clickedTafelId);
+            //bestellen.Show();
         }
 
         private void HandheldTafels_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void roundButton6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void roundButton10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void roundButton3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
         {
 
         }
@@ -135,6 +74,12 @@ namespace UI
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
             
+        }
+
+        private void HandheldTafels_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
+        {
+            HandheldLogin login = (HandheldLogin)Application.OpenForms["HandheldLogin"];
+            login.Show();
         }
     }
 }

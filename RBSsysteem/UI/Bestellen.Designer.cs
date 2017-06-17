@@ -89,6 +89,7 @@
             this.NagerechtLunch.SuspendLayout();
             this.MenuKaart.SuspendLayout();
             this.SuspendLayout();
+            this.FormClosing += Bestellen_FormClosing;
             // 
             // panel1
             // 

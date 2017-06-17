@@ -234,5 +234,11 @@ namespace UI
                 this.ListViewtje.Clear();
             }
         }
+
+        private void Bestellen_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
+        {
+            HandheldLogin login = (HandheldLogin)Application.OpenForms["HandheldLogin"];
+            login.Show();
+        }
     }
 }
