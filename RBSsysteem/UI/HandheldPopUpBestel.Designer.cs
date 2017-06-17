@@ -36,11 +36,12 @@
             this.Btn_HandheldPopUpBestelOk = new System.Windows.Forms.Button();
             this.Btn_HandheldPopUpBestelTerug = new System.Windows.Forms.Button();
             this.txt_opmerkingen = new System.Windows.Forms.RichTextBox();
+            this.selectedItemNaam = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Btn_HandheldPopUpBestelUp
             // 
-            this.Btn_HandheldPopUpBestelUp.Location = new System.Drawing.Point(155, 46);
+            this.Btn_HandheldPopUpBestelUp.Location = new System.Drawing.Point(155, 89);
             this.Btn_HandheldPopUpBestelUp.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_HandheldPopUpBestelUp.Name = "Btn_HandheldPopUpBestelUp";
             this.Btn_HandheldPopUpBestelUp.Size = new System.Drawing.Size(79, 52);
@@ -51,7 +52,7 @@
             // 
             // Btn_HandheldPopUpBetselDown
             // 
-            this.Btn_HandheldPopUpBetselDown.Location = new System.Drawing.Point(250, 46);
+            this.Btn_HandheldPopUpBetselDown.Location = new System.Drawing.Point(250, 89);
             this.Btn_HandheldPopUpBetselDown.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_HandheldPopUpBetselDown.Name = "Btn_HandheldPopUpBetselDown";
             this.Btn_HandheldPopUpBetselDown.Size = new System.Drawing.Size(84, 52);
@@ -63,7 +64,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 66);
+            this.label1.Location = new System.Drawing.Point(30, 109);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 13);
@@ -74,7 +75,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 149);
+            this.label2.Location = new System.Drawing.Point(30, 192);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 13);
@@ -84,7 +85,7 @@
             // 
             // Txt_HandheldPopUpBetselAantal
             // 
-            this.Txt_HandheldPopUpBetselAantal.Location = new System.Drawing.Point(88, 63);
+            this.Txt_HandheldPopUpBetselAantal.Location = new System.Drawing.Point(88, 106);
             this.Txt_HandheldPopUpBetselAantal.Margin = new System.Windows.Forms.Padding(2);
             this.Txt_HandheldPopUpBetselAantal.Name = "Txt_HandheldPopUpBetselAantal";
             this.Txt_HandheldPopUpBetselAantal.Size = new System.Drawing.Size(29, 20);
@@ -93,7 +94,7 @@
             // 
             // Btn_HandheldPopUpBestelOk
             // 
-            this.Btn_HandheldPopUpBestelOk.Location = new System.Drawing.Point(250, 212);
+            this.Btn_HandheldPopUpBestelOk.Location = new System.Drawing.Point(250, 255);
             this.Btn_HandheldPopUpBestelOk.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_HandheldPopUpBestelOk.Name = "Btn_HandheldPopUpBestelOk";
             this.Btn_HandheldPopUpBestelOk.Size = new System.Drawing.Size(83, 52);
@@ -104,7 +105,7 @@
             // 
             // Btn_HandheldPopUpBestelTerug
             // 
-            this.Btn_HandheldPopUpBestelTerug.Location = new System.Drawing.Point(32, 212);
+            this.Btn_HandheldPopUpBestelTerug.Location = new System.Drawing.Point(32, 255);
             this.Btn_HandheldPopUpBestelTerug.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_HandheldPopUpBestelTerug.Name = "Btn_HandheldPopUpBestelTerug";
             this.Btn_HandheldPopUpBestelTerug.Size = new System.Drawing.Size(83, 52);
@@ -115,18 +116,28 @@
             // 
             // txt_opmerkingen
             // 
-            this.txt_opmerkingen.Location = new System.Drawing.Point(155, 121);
+            this.txt_opmerkingen.Location = new System.Drawing.Point(155, 164);
             this.txt_opmerkingen.Margin = new System.Windows.Forms.Padding(2);
             this.txt_opmerkingen.Name = "txt_opmerkingen";
             this.txt_opmerkingen.Size = new System.Drawing.Size(180, 79);
             this.txt_opmerkingen.TabIndex = 2;
             this.txt_opmerkingen.Text = "";
             // 
+            // selectedItemNaam
+            // 
+            this.selectedItemNaam.AutoSize = true;
+            this.selectedItemNaam.Location = new System.Drawing.Point(163, 29);
+            this.selectedItemNaam.Name = "selectedItemNaam";
+            this.selectedItemNaam.Size = new System.Drawing.Size(42, 13);
+            this.selectedItemNaam.TabIndex = 9;
+            this.selectedItemNaam.Text = "HALLO";
+            // 
             // HandheldPopUpBestel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(370, 274);
+            this.ClientSize = new System.Drawing.Size(370, 326);
+            this.Controls.Add(this.selectedItemNaam);
             this.Controls.Add(this.Btn_HandheldPopUpBestelTerug);
             this.Controls.Add(this.Btn_HandheldPopUpBestelOk);
             this.Controls.Add(this.Txt_HandheldPopUpBetselAantal);
@@ -153,5 +164,6 @@
         private System.Windows.Forms.Button Btn_HandheldPopUpBestelTerug;
         private System.Windows.Forms.RichTextBox txt_opmerkingen;
         public System.Windows.Forms.Button Btn_HandheldPopUpBestelOk;
+        public System.Windows.Forms.Label selectedItemNaam;
     }
 }

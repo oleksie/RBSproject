@@ -14,6 +14,10 @@ namespace UI
 {
     public partial class HandheldTafels : BasisHandheld
     {
+        public HandheldTafels()
+        {
+
+        }
         
         public HandheldTafels(Medewerker m, List<Tafel> tafels)
         {

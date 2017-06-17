@@ -15,6 +15,7 @@ namespace UI
     public partial class Bestellen : StyleGuide.BasisHandheldForm
     {
         MenuItemService actieButton = new MenuItemService();
+        HandheldTafels naarTafelOverzicht = new HandheldTafels();
 
         public int tafelnr;
         public Bestellen()
@@ -38,11 +39,17 @@ namespace UI
                      MessageBoxButtons.YesNo, MessageBoxIcon.Question,
                      MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
                 {
-                    this.ListViewtje.Clear();
-                    HandheldLogin hee1 = new HandheldLogin();
-                    hee1.Show();
+                    this.ListViewtje.Items.Clear();
                     this.Hide();
+                    naarTafelOverzicht.Show();
+                    
                 }
+            }
+            else
+            {
+                this.Hide();
+                naarTafelOverzicht.Show();
+                
             }
             
         }
@@ -82,7 +89,10 @@ namespace UI
 
         public void button_Click(object sender, EventArgs e)
         {
+            Button btn = new Button();
+            btn = sender as Button;
             HandheldPopUpBestel aantalItem = new HandheldPopUpBestel();
+            aantalItem.selectedItemNaam.Text = btn.Tag.ToString();
             aantalItem.ShowDialog();
 
             if (aantalItem.ok)
@@ -214,7 +224,7 @@ namespace UI
 
         private void btn_afrondenHuidig_Click(object sender, EventArgs e)
         {
-            if ((MessageBox.Show("De bestelling wordt nu opgeslagen.", "Is de bestelling compleet?",
+            if ((MessageBox.Show("Is de bestelling compleet?", "De bestelling wordt nu opgeslagen.",
                      MessageBoxButtons.YesNo, MessageBoxIcon.Question,
                      MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
             {
