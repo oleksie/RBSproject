@@ -82,7 +82,7 @@
             // 
             this.btn_Loguit.Location = new System.Drawing.Point(13, 13);
             this.btn_Loguit.Name = "btn_Loguit";
-            this.btn_Loguit.Size = new System.Drawing.Size(90, 73);
+            this.btn_Loguit.Size = new System.Drawing.Size(117, 73);
             this.btn_Loguit.TabIndex = 4;
             this.btn_Loguit.Text = "Uitloggen";
             this.btn_Loguit.UseVisualStyleBackColor = true;
@@ -90,9 +90,9 @@
             // 
             // btn_inBereiding
             // 
-            this.btn_inBereiding.Location = new System.Drawing.Point(1186, 12);
+            this.btn_inBereiding.Location = new System.Drawing.Point(1114, 12);
             this.btn_inBereiding.Name = "btn_inBereiding";
-            this.btn_inBereiding.Size = new System.Drawing.Size(75, 66);
+            this.btn_inBereiding.Size = new System.Drawing.Size(111, 66);
             this.btn_inBereiding.TabIndex = 6;
             this.btn_inBereiding.Text = "In Bereiding";
             this.btn_inBereiding.UseVisualStyleBackColor = true;
@@ -100,9 +100,9 @@
             // 
             // btn_bereid
             // 
-            this.btn_bereid.Location = new System.Drawing.Point(1267, 12);
+            this.btn_bereid.Location = new System.Drawing.Point(1231, 12);
             this.btn_bereid.Name = "btn_bereid";
-            this.btn_bereid.Size = new System.Drawing.Size(75, 66);
+            this.btn_bereid.Size = new System.Drawing.Size(111, 66);
             this.btn_bereid.TabIndex = 7;
             this.btn_bereid.Text = "Bereid";
             this.btn_bereid.UseVisualStyleBackColor = true;
@@ -111,7 +111,7 @@
             // lbl_medewerkerInfo
             // 
             this.lbl_medewerkerInfo.AutoSize = true;
-            this.lbl_medewerkerInfo.Location = new System.Drawing.Point(110, 13);
+            this.lbl_medewerkerInfo.Location = new System.Drawing.Point(136, 13);
             this.lbl_medewerkerInfo.Name = "lbl_medewerkerInfo";
             this.lbl_medewerkerInfo.Size = new System.Drawing.Size(35, 13);
             this.lbl_medewerkerInfo.TabIndex = 8;

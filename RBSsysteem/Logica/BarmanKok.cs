@@ -14,22 +14,25 @@ namespace Logica
 {
     public class BarmanKok
     {
-        
+        //maakt de verschillende connecties aan
         BestellingItemDAO bestelitemconnect = new BestellingItemDAO();
         BestellingDAO bestellingconnect = new BestellingDAO();
         MenuItemDAO menuitemconnect = new MenuItemDAO();
         public List<ListViewItem> BestellinglistGerechten(string filter)
         {
+            //maakt de verschillende lists aan waarin we items gaan plaatsen
             List<BestellingItem> currentbestelling = new List<BestellingItem>();
             List<Model.MenuItem> currentmenuitem = new List<Model.MenuItem>();
             List<Bestelling> currentbestelingtafel = new List<Bestelling>();
             List<ListViewItem> listview = new List<ListViewItem>();
-
+            // item om te vullen en arr om te vullen ter hulp aan listviewbuilding
             ListViewItem item = new ListViewItem();
             string[] arr = new string[7];
+            //vult lists
             currentbestelling = bestelitemconnect.GetAll();
             currentmenuitem = menuitemconnect.GetNaamCategorie();
             currentbestelingtafel = bestellingconnect.GetTafel();
+            //vult listview list op basis van criteria
             for (int i = 0; i < currentbestelling.Count; i++)
             {
                 if (currentmenuitem[i].CategorieID <= 7)
@@ -65,6 +68,7 @@ namespace Logica
         }
         public List<ListViewItem> BestellinglistDrank(string filter)
         {
+            //zie comments hierboven voor uitleg
             List<BestellingItem> currentbestelling = new List<BestellingItem>();
             List<Model.MenuItem> currentmenuitem = new List<Model.MenuItem>();
             List<Bestelling> currentbestelingtafel = new List<Bestelling>();
@@ -73,7 +77,7 @@ namespace Logica
             ListViewItem item = new ListViewItem();
             string[] arr = new string[7];
             currentbestelling = bestelitemconnect.GetAll();
-            currentmenuitem = bestelitemconnect.GetNaamCategorie();
+            currentmenuitem = menuitemconnect.GetNaamCategorie();
             currentbestelingtafel = bestellingconnect.GetTafel();
             for (int i = 0; i < currentbestelling.Count; i++)
             {
@@ -111,11 +115,7 @@ namespace Logica
         {
             bestelitemconnect.UpdateStatus(bestelitemid);
         }
-
-        public void Undobestelitem(int bestelitemid)
-        {
-            bestelitemconnect.UndoStatus(bestelitemid);
-        }
+        
     }
 }
 

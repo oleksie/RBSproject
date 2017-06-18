@@ -63,38 +63,6 @@ namespace DAL
             return bestellingItemList;
         }
 
-        public List<MenuItem> GetNaamCategorie()
-        {
-            SqlConnection connection = dbConnection.MaakConnectieDB("reader");
-            List<MenuItem> menuItemList = new List<MenuItem>();
-
-            connection.Open();
-            StringBuilder sb = new StringBuilder();
-
-            sb.Append("select BestelItem.bestelitem_id,BestelItem.menuitem_id,BestelItem.opmerkingen,BestelItem.aantal,BestelItem.status,BestelItem.tijd_opgenomen,MenuItem.naam,MenuItem.categorie_id from BestelItem inner join MenuItem on BestelItem.menuitem_id = MenuItem.menuitem_id; ");
-
-            String sql = sb.ToString();
-
-            SqlCommand command = new SqlCommand(sql, connection);
-            SqlDataReader reader = command.ExecuteReader();
-
-            while (reader.Read())
-            {
-                string naam = reader.GetString(6);
-                int id = reader.GetInt32(7);
-
-
-                MenuItem menuitem = new MenuItem();
-                menuitem.Naam = naam;
-                menuitem.CategorieID = id;
-
-                menuItemList.Add(menuitem);
-            }
-
-            connection.Close();
-            reader.Close();
-            return menuItemList;
-        }
         public void UpdateStatus(int id)
         {
             SqlConnection connection = dbConnection.MaakConnectieDB("writer");
@@ -175,30 +143,6 @@ namespace DAL
 
             connection.Close();
         }
-
-        public void UndoStatus(int id)
-        {
-            SqlConnection connection = dbConnection.MaakConnectieDB("writer");
-
-            connection.Open();
-            StringBuilder sb = new StringBuilder();
-
-            sb.Append("Update BESTELITEM SET status = 'in bereiding' where bestelitem_id = @id");
-
-            SqlParameter BestelIDParam = new SqlParameter("@id", SqlDbType.Int, 32);
-
-            String sql = sb.ToString();
-
-            SqlCommand command = new SqlCommand(sql, connection);
-
-            command.Parameters.Add(BestelIDParam);
-
-            BestelIDParam.Value = id;
-            command.Prepare();
-            command.ExecuteNonQuery();
-
-            connection.Close(); ;
-        }
-
+        
     }
 }
