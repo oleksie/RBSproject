@@ -14,10 +14,11 @@ namespace UI
 {
     public partial class BasisKokBar : Form
     {
-        BarmanKok BarKok = new BarmanKok();
+        
+        private BarmanKok BarKok = new BarmanKok();
         private Medewerker medewerker;
         private string filter;
-        List<ListViewItem> bestellinglist = new List<ListViewItem>();
+        private List<ListViewItem> bestellinglist = new List<ListViewItem>();
         public BasisKokBar(Medewerker m)
         {
             medewerker = m;
@@ -27,13 +28,16 @@ namespace UI
             lv_KokBarman.GridLines = true;
             lv_KokBarman.FullRowSelect = true;
             lv_KokBarman.CheckBoxes = true;
+            lv_KokBarman.Font = new Font("Arial", 20);
+            
+            lbl_medewerkerInfo.Text = Convert.ToString(medewerker.rol);
 
             lv_KokBarman.Columns.Add("Check", 20);
-            lv_KokBarman.Columns.Add("Menu", 200);
+            lv_KokBarman.Columns.Add("Menu", 400);
             lv_KokBarman.Columns.Add("Aantal", 100);
-            lv_KokBarman.Columns.Add("Commentaar", 200);
+            lv_KokBarman.Columns.Add("Commentaar", 300);
             lv_KokBarman.Columns.Add("Status", 100);
-            lv_KokBarman.Columns.Add("Tijd Opgenomen", 100);
+            lv_KokBarman.Columns.Add("Tijd Opgenomen", 300);
             lv_KokBarman.Columns.Add("Tafel", 100);
             if (medewerker.rol == Rol.Kok)
             { bestellinglist = BarKok.BestellinglistGerechten(filter); }

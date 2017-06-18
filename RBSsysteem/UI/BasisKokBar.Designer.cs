@@ -36,9 +36,9 @@
             this.btn_Loguit = new System.Windows.Forms.Button();
             this.btn_inBereiding = new System.Windows.Forms.Button();
             this.btn_bereid = new System.Windows.Forms.Button();
+            this.lbl_medewerkerInfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            this.FormClosing += BasisKokBar_FormClosing;
             // 
             // pictureBox1
             // 
@@ -108,11 +108,21 @@
             this.btn_bereid.UseVisualStyleBackColor = true;
             this.btn_bereid.Click += new System.EventHandler(this.btn_bereid_Click);
             // 
+            // lbl_medewerkerInfo
+            // 
+            this.lbl_medewerkerInfo.AutoSize = true;
+            this.lbl_medewerkerInfo.Location = new System.Drawing.Point(110, 13);
+            this.lbl_medewerkerInfo.Name = "lbl_medewerkerInfo";
+            this.lbl_medewerkerInfo.Size = new System.Drawing.Size(35, 13);
+            this.lbl_medewerkerInfo.TabIndex = 8;
+            this.lbl_medewerkerInfo.Text = "label2";
+            // 
             // BasisKokBar
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1354, 733);
+            this.Controls.Add(this.lbl_medewerkerInfo);
             this.Controls.Add(this.btn_bereid);
             this.Controls.Add(this.btn_inBereiding);
             this.Controls.Add(this.btn_Loguit);
@@ -138,5 +148,6 @@
         private System.Windows.Forms.Button btn_Loguit;
         private System.Windows.Forms.Button btn_inBereiding;
         private System.Windows.Forms.Button btn_bereid;
+        private System.Windows.Forms.Label lbl_medewerkerInfo;
     }
 }
