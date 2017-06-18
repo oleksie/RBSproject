@@ -62,14 +62,14 @@ namespace UI
                 {
                     this.ListViewtje.Items.Clear();
                     this.Hide();
-                    naarTafelOverzicht.CreateTafelButtons(naarTafelOverzicht.tafels);
+                    naarTafelOverzicht.CreateTafelButtons();
                     naarTafelOverzicht.Show();
                 }
             }
             else
             {
                 this.Hide();
-                naarTafelOverzicht.CreateTafelButtons(naarTafelOverzicht.tafels);
+                naarTafelOverzicht.CreateTafelButtons();
                 naarTafelOverzicht.Show();
             }
         }

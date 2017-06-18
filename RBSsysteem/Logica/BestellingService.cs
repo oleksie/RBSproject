@@ -5,12 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Model;
 using DAL;
+using Logica;
 
 namespace Logica
 {
     public class BestellingService
     {
+        
         List<ListviewBestellen> listvoorDB = new List<ListviewBestellen>();
+        
         BestellingDAO bestelling = new BestellingDAO();
         MenuItemService getListMetItems = new MenuItemService();
 
@@ -31,7 +34,7 @@ namespace Logica
         {
             
 
-            listvoorDB = getListMetItems.listVoorListview;
+            //Getlist.listvoorDB = getListMetItems.listVoorListview;
 
             double totaalprijs = 0;
             string naam = "";

@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Afreken.cs" />
     <Compile Include="Bestelling.cs" />
     <Compile Include="BestellingItem.cs" />
     <Compile Include="Categorie.cs" />

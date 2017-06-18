@@ -58,9 +58,15 @@ namespace UI
             //columnHeader3.Width = 156;
             //columnHeader4.Width = 156;
             BestellingService bestellingService = new BestellingService();
-            List<Bestelling> lijst = bestellingService.GetBestelling();
+            List<Bestelling> lijs = bestellingService.GetBestelling();
+            Afreken afreken = new Afreken();
+            
 
-            int aantal = lijst.Count();
+
+           
+           
+
+
             
             //listView1.Height = 500;
             //listView1.Width = 500;
@@ -70,11 +76,13 @@ namespace UI
             listView1.Columns.Add("Prijs", 156);
             listView1.Columns.Add("Wijziging", 154);
 
-            ListViewItem leeg = new ListViewItem(" ");
-            leeg.SubItems.Add(" ");
-            leeg.SubItems.Add(" ");
+            ListViewItem leeg = new ListViewItem(afreken.Aantal.ToString());
+            leeg.SubItems.Add(afreken.Naam);
+            leeg.SubItems.Add(afreken.Prijs.ToString());
             leeg.SubItems.Add(" ");
             listView1.Items.Add(leeg);
+          
+
 
             /*foreach (Bestelling bestelling in lijst)
             {
@@ -85,7 +93,7 @@ namespace UI
                 item.SubItems.Add("wijzig").Tag = bestelling.tafelId;
                 listView1.Items.Add(item);
             }*/
-            
+
             //listView1.FullRowSelect = true;
 
             ////listView1.Columns.Add("iabsd");
@@ -124,7 +132,7 @@ namespace UI
         private void Btn_AfrekenenTerug_Click(object sender, EventArgs e)
         {
             Bestellen bestellen = new UI.Bestellen();
-
+            this.Hide();
             bestellen.Show();
         }
 

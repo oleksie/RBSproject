@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AfrekenDAO.cs" />
     <Compile Include="BestellingDAO.cs" />
     <Compile Include="CategorieDAO.cs" />
     <Compile Include="BestellingItemDAO.cs" />
