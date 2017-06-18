@@ -15,7 +15,7 @@ namespace UI
 {
     public partial class HandheldAfrekenen : BasisHandheld
     {
-        public HandheldAfrekenen()
+        public HandheldAfrekenen(int bestellingID, int inlognummer, int tafelNummer)
         {
             InitializeComponent();
             // Startpositie voor het scherm meegeven
