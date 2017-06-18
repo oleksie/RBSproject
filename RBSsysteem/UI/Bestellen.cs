@@ -257,7 +257,7 @@ namespace UI
                 if (bestellingID == 0)
                 {
                     bestelling.MaakNieuweBestelling(medewerker, tafelNummer);
-                    tafel.TafelOpBezetZetten(tafelNummer);
+                    tafel.TafelOpBezetZetten(medewerker.inlognummer, tafelNummer);
                     bestellingID = bestelling.GetBestellingID(medewerker, tafelNummer);
                     gebruik.VerwerkNieuweBestelling(bestellingID, listVoorDB);
                     actieButton.listVoorListview.Clear();
