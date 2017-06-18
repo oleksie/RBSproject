@@ -12,7 +12,7 @@ namespace DAL
 {
     public class AfrekenDAO
     {
-        private SqlConnection DBConnectie;
+        /*private SqlConnection DBConnectie;
 
         public AfrekenDAO()
         {
@@ -103,7 +103,7 @@ namespace DAL
             DBConnectie.Close();
             reader.Close();
             return lijstAfreken;
-        }
+        }*/
 
 
     }

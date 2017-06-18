@@ -61,7 +61,7 @@ namespace UI
             //BestellingService bestellingService = new BestellingService();
             //List<Bestelling> lijs = bestellingService.GetBestelling();
             List<Afreken> lijst = new List<Afreken>();
-            lijst = AfrekenService.GetAfreken();
+            //lijst = AfrekenService.GetAfreken();
 
 
             //Afreken afreken = new Afreken();

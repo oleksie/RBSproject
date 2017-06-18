@@ -107,7 +107,7 @@ namespace DAL
 
             DBConnectie.Open();
 
-            SqlCommand command = new SqlCommand("SELECT bestelling_id FROM Bestelling INNER JOIN Tafel ON Tafel.tafel_id = Bestelling.tafel_id WHERE Bestelling.medewerker_id = @medewerkerid AND Tafel.tafel_id = @tafelnr AND Tafel.status = 'bezet'", DBConnectie);
+            SqlCommand command = new SqlCommand("SELECT bestelling_id FROM Bestelling WHERE medewerker_id = @medewerkerid AND tafel_id = @tafelnr AND betaald = 'nee'", DBConnectie);
 
             SqlParameter IdParam1 = new SqlParameter("@medewerkerid", SqlDbType.Int);
             command.Parameters.Add(IdParam1);

@@ -10,12 +10,12 @@ namespace Logica
    public class AfrekenService
 
     {
-        public static List<Afreken> GetAfreken()
+        /*public static List<Afreken> GetAfreken()
         {
         AfrekenDAO afrekenDAO = new AfrekenDAO();
         List<Afreken> afreken = AfrekenDAO.GetAfreken();
         return afreken;
-            }
+            }*/
 
 
   }

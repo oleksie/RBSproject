@@ -292,61 +292,11 @@ namespace Logica
             }
 
             return listVoorListview;
+        }
 
-            /*MenuItemDAO menuItem = new MenuItemDAO();
-            List<Model.MenuItem> menuItems = menuItem.GetMenuItems();
-
-            foreach (Model.MenuItem x in menuItems)
-            {
-                foreach (DataRowView item in list.Items)
-                {
-                    if (item.DataView[0].Row.ToString() == x.Naam)
-                    {
-                        if ((string)button.Tag == x.Naam)
-                        {
-                            int aantalWijzig = int.Parse(list.Items[i].SubItems[1].Text);
-                            aantalWijzig = aantalWijzig + aantal;
-                            list.Items[i].SubItems[1].Text = aantalWijzig.ToString();
-
-                            string opmerkingWijzig = list.Items[i].SubItems[2].Text;
-                            opmerkingWijzig = opmerkingWijzig + opmerking;
-                            list.Items[i].SubItems[2].Text = opmerkingWijzig;
-
-                            ListViewItem MenuItems = new ListViewItem(x.Naam);
-                            MenuItems.SubItems.Add(aantal.ToString());
-                            MenuItems.SubItems.Add(opmerking);
-                            MenuItems.SubItems.Add((x.Prijs * aantal).ToString());
-                            MenuItems.SubItems.Add(x.ID.ToString());
-
-                            list.Items.Add(MenuItems);
-                        }
-                    }
-                    else
-                    {
-                        if ((string)button.Tag == x.Naam)
-                        {
-                            ListViewItem MenuItems = new ListViewItem(x.Naam);
-                            MenuItems.SubItems.Add(aantal.ToString());
-                            MenuItems.SubItems.Add(opmerking);
-                            MenuItems.SubItems.Add((x.Prijs * aantal).ToString());
-                            MenuItems.SubItems.Add(x.ID.ToString());
-
-                            list.Items.Add(MenuItems);
-                        }
-                    //}
-                //}
-                //for (int i = 0; i < list.Items.Count; i++)
-                //{
-                    //if (list.Items[0].SubItems[0].Text == x.Naam)
-                    //{
-                        
-                    //}
-                    //else
-                    //{
-                        
-                    //}
-                //}
-            }*/
+        public void UpdateVoorraad(List<ListviewBestellen> list)
+        {
+            menuItem.UpdateVoorraad(list);
         }
     }
 }
