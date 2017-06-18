@@ -49,7 +49,7 @@ namespace UI
 
         private void Btn_AfrekenenTerug_Click(object sender, EventArgs e)
         {
-            Bestellen bestellen = new UI.Bestellen();
+            Bestellen bestellen = (Bestellen)Application.OpenForms["Bestellen"];
             this.Hide();
             bestellen.Show();
         }

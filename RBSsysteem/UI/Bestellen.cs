@@ -290,6 +290,7 @@ namespace UI
         private void button1_Click(object sender, EventArgs e)
         {
             HandheldAfrekenen afrekenen = new HandheldAfrekenen(bestellingID, medewerker, tafelNummer);
+            this.Hide();
             afrekenen.Show();
         }
     }
