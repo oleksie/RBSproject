@@ -35,6 +35,7 @@ namespace Logica
             }
 
             itemNaarDB.vulTotaalPrijs(bestellingID, list);
+            itemNaarDB.vulBTW(bestellingID, list);
         }
 
         public void VerwerkHuidigeBestelling(int bestellingID, List<ListviewBestellen> list)
@@ -51,6 +52,7 @@ namespace Logica
                 itemNaarDB.PlaatsBestellingItem(besteldeItem);
             }
             itemNaarDB.vulTotaalPrijs(bestellingID, list);
+            itemNaarDB.vulBTW(bestellingID, list);
         }
     }
 }

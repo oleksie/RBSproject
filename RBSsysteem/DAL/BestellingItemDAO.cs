@@ -151,9 +151,24 @@ namespace DAL
 
                 connection.Close();
             }
-            
+        }
 
-            
+        public void vulBTW(int bestellingid, List<ListviewBestellen> list)
+        {
+            SqlConnection connection = dbConnection.MaakConnectieDB("Writer");
+            connection.Open();
+
+            SqlCommand command = new SqlCommand("UPDATE Bestelling SET btw = totaal_prijs * 0.21 WHERE bestelling_id = @bestellingid", connection);
+
+            SqlParameter IdParam1 = new SqlParameter("@bestellingid", SqlDbType.Int);
+            command.Parameters.Add(IdParam1);
+            IdParam1.Value = bestellingid;
+
+            command.Prepare();
+
+            command.ExecuteNonQuery();
+
+            connection.Close();
         }
         
     }
