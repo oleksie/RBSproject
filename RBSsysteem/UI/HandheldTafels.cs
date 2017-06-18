@@ -9,19 +9,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using Model;
+using Logica;
 
 namespace UI
 {
     public partial class HandheldTafels : BasisHandheld
     {
         private Medewerker medewerker;
-        public List<Tafel> tafels;
+        private List<Tafel> tafels;
         public HandheldTafels()
         {
 
         }
 
-        public HandheldTafels(Medewerker medewerker, List<Tafel> tafels)
+        public HandheldTafels(Medewerker medewerker)
         {
             InitializeComponent();
             // Startpositie voor het scherm meegeven
@@ -30,13 +31,12 @@ namespace UI
             this.FormClosing += HandheldTafels_FormClosing;
 
             // Tafels list en medewerker object vullen
-            this.tafels = tafels;
             this.medewerker = medewerker;
 
             lblPersooneelsNummer.Text += medewerker.inlognummer;
 
             // Maak tafel buttons aan met de CreateTafelButtons methode, krijgt List<Tafel> tafels mee als parameter
-            CreateTafelButtons(tafels);
+            CreateTafelButtons();
         }
 
         private void TafelButton_Click(object sender, EventArgs e)
@@ -81,9 +81,13 @@ namespace UI
             login.Show();
         }
 
-        public void CreateTafelButtons(List<Tafel> tafels)
+        public void CreateTafelButtons()
         {
             pnlTafelOverzicht.Controls.Clear();
+
+            TafelService tafelService = new TafelService();
+            tafels = tafelService.GetTafels();
+
             int i = 1;
             // Tafel buttons aanmaken en opmaken
             foreach (Tafel tafel in tafels)

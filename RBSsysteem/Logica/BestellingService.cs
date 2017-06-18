@@ -34,7 +34,7 @@ namespace Logica
         {
             
 
-            Getlist.listvoorDB = getListMetItems.listVoorListview;
+            //Getlist.listvoorDB = getListMetItems.listVoorListview;
 
             double totaalprijs = 0;
             string naam = "";
