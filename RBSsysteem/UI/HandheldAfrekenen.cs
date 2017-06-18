@@ -17,6 +17,10 @@ namespace UI
         public HandheldAfrekenen()
         {
             InitializeComponent();
+            // Startpositie voor het scherm meegeven
+            this.StartPosition = FormStartPosition.CenterScreen;
+            // Eventhandler voor als het scherm wordt gesloten (bijv. door middel van kruisje)
+            this.FormClosing += HandheldAfrekenen_FormClosing;
             //ColumnHeader columnHeader1 = new ColumnHeader();
             //ColumnHeader columnHeader2 = new ColumnHeader();
             //ColumnHeader columnHeader3 = new ColumnHeader();
@@ -136,6 +140,14 @@ namespace UI
         {
             
 
+        }
+
+        private void HandheldAfrekenen_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
+        {
+            HandheldLogin login = (HandheldLogin)Application.OpenForms["HandheldLogin"];
+            Control[] txtInlognummer = login.Controls.Find("txtInlognummer", false);
+            txtInlognummer[0].Text = "";
+            login.Show();
         }
     }
 }

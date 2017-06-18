@@ -24,10 +24,10 @@ namespace Logica
             return tafels;
         }
 
-        public void TafelOpBezetZetten(int tafelnr)
+        public void TafelOpBezetZetten(int inlognummer, int tafelnr)
         {
             TafelDAO tafelDAO = new TafelDAO();
-            tafelDAO.TafelBezetInDB(tafelnr);
+            tafelDAO.TafelBezetInDB(inlognummer, tafelnr);
         }
     }
 }

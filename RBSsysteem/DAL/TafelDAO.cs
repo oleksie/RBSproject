@@ -43,19 +43,23 @@ namespace DAL
             return tafels;
         }
 
-        public void TafelBezetInDB(int tafelnr)
+        public void TafelBezetInDB(int inlognummer, int tafelnr)
         {
             DALConnection connectie = new DALConnection();
             DBConnectie = connectie.MaakConnectieDB("Writer");
 
             DBConnectie.Open();
 
-            SqlCommand command = new SqlCommand("UPDATE Tafel SET status = 'bezet' WHERE tafel_id = @tafelnr; ", DBConnectie);
+            SqlCommand command = new SqlCommand("UPDATE Tafel SET status = 'bezet', bezet_door = @inlognummer WHERE tafel_id = @tafelnr; ", DBConnectie);
 
-            SqlParameter IdParam1 = new SqlParameter("@tafelnr", SqlDbType.Int);
+            SqlParameter IdParam1 = new SqlParameter("@inlognummer", SqlDbType.Int);
+            SqlParameter IdParam2 = new SqlParameter("@tafelnr", SqlDbType.Int);
 
             command.Parameters.Add(IdParam1);
-            IdParam1.Value = tafelnr;
+            command.Parameters.Add(IdParam2);
+
+            IdParam1.Value = inlognummer;
+            IdParam2.Value = tafelnr;
 
             command.Prepare();
 

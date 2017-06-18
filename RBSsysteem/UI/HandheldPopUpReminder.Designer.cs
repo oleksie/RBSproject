@@ -58,12 +58,13 @@
             // Btn_HandheldPopUpReminderTerug
             // 
             this.Btn_HandheldPopUpReminderTerug.Location = new System.Drawing.Point(68, 158);
-            this.Btn_HandheldPopUpReminderTerug.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Btn_HandheldPopUpReminderTerug.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_HandheldPopUpReminderTerug.Name = "Btn_HandheldPopUpReminderTerug";
             this.Btn_HandheldPopUpReminderTerug.Size = new System.Drawing.Size(235, 80);
             this.Btn_HandheldPopUpReminderTerug.TabIndex = 5;
             this.Btn_HandheldPopUpReminderTerug.Text = "Terug";
             this.Btn_HandheldPopUpReminderTerug.UseVisualStyleBackColor = true;
+            this.Btn_HandheldPopUpReminderTerug.Click += new System.EventHandler(this.Btn_HandheldPopUpReminderTerug_Click);
             // 
             // HandheldPopUpReminder
             // 
@@ -73,7 +74,7 @@
             this.Controls.Add(this.Btn_HandheldPopUpReminderTerug);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "HandheldPopUpReminder";
             this.Text = "HandheldPopUpReminder";
             this.ResumeLayout(false);

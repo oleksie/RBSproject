@@ -58,7 +58,7 @@ namespace DAL
 
             DBConnectie.Open();
 
-            SqlCommand command = new SqlCommand("INSERT INTO Bestelling (commentaar_klant, tafel_id, medewerker_id, totaal_prijs, betaald, btw, fooi) VALUES (@commentaar, @tafelnr, @medewerkerid, @totaalprijs, @betaald, @btw, @fooi)", DBConnectie);
+            SqlCommand command = new SqlCommand("INSERT INTO Bestelling (commentaar_klant, tafel_id, medewerker_id, totaal_prijs, betaald, btw, fooi, betaalwijze) VALUES (@commentaar, @tafelnr, @medewerkerid, @totaalprijs, @betaald, @btw, @fooi, @betaalwijze)", DBConnectie);
 
             SqlParameter IdParam1 = new SqlParameter("@commentaar", SqlDbType.NVarChar, -1);
             SqlParameter IdParam2 = new SqlParameter("@tafelnr", SqlDbType.Int);
@@ -67,6 +67,7 @@ namespace DAL
             SqlParameter IdParam5 = new SqlParameter("@betaald", SqlDbType.NVarChar, 50);
             SqlParameter IdParam6 = new SqlParameter("@btw", SqlDbType.Float);
             SqlParameter IdParam7 = new SqlParameter("@fooi", SqlDbType.Float);
+            SqlParameter IdParam8 = new SqlParameter("@betaalwijze", SqlDbType.NVarChar, 50);
 
             command.Parameters.Add(IdParam1);
             IdParam1.Value = bestelling.commentaarKlant;
@@ -88,6 +89,9 @@ namespace DAL
 
             command.Parameters.Add(IdParam7);
             IdParam7.Value = bestelling.fooi;
+
+            command.Parameters.Add(IdParam8);
+            IdParam8.Value = bestelling.betaalWijze;
 
             command.Prepare();
 
