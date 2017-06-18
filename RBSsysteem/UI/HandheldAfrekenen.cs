@@ -37,14 +37,14 @@ namespace UI
             bestelling.GetBTW(bestellingID, this.txtBTW);
         }
 
-        public HandheldAfrekenen(int bestellingid, Medewerker medewerker, int tafelnr)
+        public HandheldAfrekenen(int bestellingid, Medewerker medewerker, int tafelnr) : this()
         {
             this.bestellingID = bestellingid;
             this.medewerker = medewerker;
             this.tafelNummer = tafelnr;
 
-            //lblpnr.Text += medewerker.inlognummer.ToString();
-            //lbltnr.Text += tafelnr.ToString();
+            lblpnr.Text += medewerker.inlognummer.ToString();
+            lbltnr.Text += tafelnr.ToString();
         }
 
         private void Btn_AfrekenenTerug_Click(object sender, EventArgs e)
