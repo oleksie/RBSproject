@@ -62,16 +62,14 @@ namespace UI
                 {
                     this.ListViewtje.Items.Clear();
                     this.Hide();
-                    Control[] pnl = naarTafelOverzicht.Controls.Find("pnlTafelOverzicht", false);
-                    pnl[0].Refresh();
+                    naarTafelOverzicht.CreateTafelButtons(naarTafelOverzicht.tafels);
                     naarTafelOverzicht.Show();
                 }
             }
             else
             {
                 this.Hide();
-                Control[] pnl = naarTafelOverzicht.Controls.Find("pnlTafelOverzicht", false);
-                pnl[0].Refresh();
+                naarTafelOverzicht.CreateTafelButtons(naarTafelOverzicht.tafels);
                 naarTafelOverzicht.Show();
             }
         }
