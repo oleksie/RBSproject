@@ -15,12 +15,10 @@ namespace UI
 {
     public partial class HandheldTafels : BasisHandheld
     {
+        // ALEX GEMAAKT
+        private int huidigeBestellingID;
         private Medewerker medewerker;
         private List<Tafel> tafels;
-        public HandheldTafels()
-        {
-
-        }
 
         public HandheldTafels(Medewerker medewerker)
         {
@@ -41,10 +39,12 @@ namespace UI
 
         private void TafelButton_Click(object sender, EventArgs e)
         {
+            // Zet de geklikte button in een RoundButton object
             RoundButton clickedRoundButton = (sender as RoundButton);
-            int clickedTafelId = (int)clickedRoundButton.Tag;
-            Tafel tafel = tafels[clickedTafelId - 1];
+            int clickedTafelId = (int) clickedRoundButton.Tag;
+            Tafel tafel = tafels[clickedTafelId - 1]; // -1 omdat list index begint bij 0 maar tafelnummers bij 1
             
+            // Controleer of en door wie een tafel bezet is
             if(tafel.status == "bezet")
             {
                 if(tafel.bezetDoor != medewerker.inlognummer)
@@ -55,14 +55,16 @@ namespace UI
                 else
                 {
                     this.Hide();
-                    Bestellen bestellen = new Bestellen(medewerker, clickedTafelId);
+                    // ALEX GEMAAKT AANGEPAST
+                    Bestellen bestellen = new Bestellen(medewerker, clickedTafelId, huidigeBestellingID);
                     bestellen.Show();
                 }
             }
             else
             {
                 this.Hide();
-                Bestellen bestellen = new Bestellen(medewerker, clickedTafelId);
+                // ALEX GEMAAKT AANGEPAST
+                Bestellen bestellen = new Bestellen(medewerker, clickedTafelId, 0);
                 bestellen.Show();
             }
         }
@@ -107,18 +109,26 @@ namespace UI
                         break;
                 }
 
+                // Geef een margin van 70 pixels aan de rechter zijde aan alle tafels met een oneven nummer
                 if (i % 2 != 0)
-                {
                     tafelButton.Margin = new Padding(0, 0, 70, 0);
-                }
 
+                // Button opmaak
                 tafelButton.Text = tafel.tafelId.ToString();
                 tafelButton.Font = new Font("Microsoft Sans Serif", 20);
+
+                // Eventhandler voor als er op een button geklikt wordt
                 tafelButton.Click += TafelButton_Click;
 
                 pnlTafelOverzicht.Controls.Add(tafelButton);
                 i++;
             }
+        }
+
+        // ALEX gemaakt 
+        public void HuidigeID(int id)
+        {
+            huidigeBestellingID = id;
         }
     }
 }

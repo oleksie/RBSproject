@@ -43,10 +43,11 @@ namespace UI
             CategorieDranken.SelectedIndexChanged += CategorieDranken_SelectedIndexChanged;
         }
 
-        public Bestellen(Medewerker medewerker, int tafelNummer) : this()
+        public Bestellen(Medewerker medewerker, int tafelNummer, int bestellingid) : this()
         {
             this.medewerker = medewerker;
             this.tafelNummer = tafelNummer;
+            this.bestellingID = bestellingid;
 
             lblPersoneelsNummer.Text += medewerker.inlognummer.ToString();
             lblTafelNummer.Text += tafelNummer.ToString();
@@ -62,13 +63,16 @@ namespace UI
                 {
                     this.ListViewtje.Items.Clear();
                     this.Hide();
+                    naarTafelOverzicht.HuidigeID(bestellingID);
                     naarTafelOverzicht.CreateTafelButtons();
                     naarTafelOverzicht.Show();
+                    
                 }
             }
             else
             {
                 this.Hide();
+                naarTafelOverzicht.HuidigeID(bestellingID);
                 naarTafelOverzicht.CreateTafelButtons();
                 naarTafelOverzicht.Show();
             }

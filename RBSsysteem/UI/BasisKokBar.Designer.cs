@@ -80,11 +80,12 @@
             // 
             // btn_Loguit
             // 
+            this.btn_Loguit.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Loguit.Location = new System.Drawing.Point(13, 13);
             this.btn_Loguit.Name = "btn_Loguit";
             this.btn_Loguit.Size = new System.Drawing.Size(117, 73);
             this.btn_Loguit.TabIndex = 4;
-            this.btn_Loguit.Text = "Uitloggen";
+            this.btn_Loguit.Text = "Loguit";
             this.btn_Loguit.UseVisualStyleBackColor = true;
             this.btn_Loguit.Click += new System.EventHandler(this.btn_Loguit_Click);
             // 
