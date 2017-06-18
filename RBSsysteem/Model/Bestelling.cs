@@ -16,6 +16,7 @@ namespace Model
         public string betaald;
         public double btw;
         public double fooi;
+        public string betaalWijze;
 
 
         public Bestelling( int tafelId, double prijs)

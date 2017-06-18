@@ -50,6 +50,7 @@ namespace Logica
             bestellingInfo.tafelId= tafelnr;
             bestellingInfo.fooi = 0;
             bestellingInfo.totaalprijs = totaalprijs;
+            bestellingInfo.betaalWijze = "";
 
             
             bestelling.PlaatsBestelling(bestellingInfo);
