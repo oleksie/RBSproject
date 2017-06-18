@@ -171,5 +171,61 @@ namespace DAL
             reader.Close();
             return bestellingList;
         }
+
+        public double GetTotaalPrijs(int bestellingid)
+        {
+            DALConnection connectie = new DALConnection();
+            DBConnectie = connectie.MaakConnectieDB("Reader");
+
+            DBConnectie.Open();
+
+            SqlCommand command = new SqlCommand("SELECT totaal_prijs FROM Bestelling WHERE bestelling_id = @bestellingid", DBConnectie);
+
+            SqlParameter IdParam1 = new SqlParameter("@bestellingid", SqlDbType.Int);
+            command.Parameters.Add(IdParam1);
+            IdParam1.Value = bestellingid;
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            double prijs = 0;
+
+            while (reader.Read())
+            {
+                prijs = reader.GetInt32(0);
+            }
+
+            reader.Close();
+            DBConnectie.Close();
+
+            return prijs;
+        }
+
+        public double GetBTW(int bestellingid)
+        {
+            DALConnection connectie = new DALConnection();
+            DBConnectie = connectie.MaakConnectieDB("Reader");
+
+            DBConnectie.Open();
+
+            SqlCommand command = new SqlCommand("SELECT btw FROM Bestelling WHERE bestelling_id = @bestellingid", DBConnectie);
+
+            SqlParameter IdParam1 = new SqlParameter("@bestellingid", SqlDbType.Int);
+            command.Parameters.Add(IdParam1);
+            IdParam1.Value = bestellingid;
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            double btw = 0;
+
+            while (reader.Read())
+            {
+                btw = reader.GetInt32(0);
+            }
+
+            reader.Close();
+            DBConnectie.Close();
+
+            return btw;
+        }
     }
 }

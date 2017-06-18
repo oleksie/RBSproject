@@ -54,5 +54,18 @@ namespace Logica
             itemNaarDB.vulTotaalPrijs(bestellingID, list);
             itemNaarDB.vulBTW(bestellingID, list);
         }
+
+        public void VulAfrekenListview(int bestellingid, ListView list)
+        {
+            List<Afreken> listMetItems =  itemNaarDB.GetAllAfrekenen(bestellingid);
+
+            foreach (Afreken x in listMetItems)
+            {
+                ListViewItem item = new ListViewItem(x.Naam);
+                item.SubItems.Add(x.Aantal.ToString());
+                item.SubItems.Add(x.Prijs.ToString());
+                list.Items.Add(item);
+            }
+        }
     }
 }

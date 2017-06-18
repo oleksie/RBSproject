@@ -15,6 +15,15 @@ namespace UI
 {
     public partial class HandheldAfrekenen : BasisHandheld
     {
+        private int bestellingID;
+        private Medewerker medewerker;
+        private int tafelNummer;
+
+        HandheldTafels naarTafelOverzicht = (HandheldTafels)Application.OpenForms["HandheldTafels"];
+
+        BestelItemService bestellingItems = new BestelItemService();
+        BestellingService bestelling = new BestellingService();
+
         public HandheldAfrekenen()
         {
             InitializeComponent();
@@ -22,58 +31,20 @@ namespace UI
             this.StartPosition = FormStartPosition.CenterScreen;
             // Eventhandler voor als het scherm wordt gesloten (bijv. door middel van kruisje)
             this.FormClosing += HandheldAfrekenen_FormClosing;
-            
-            listView1.GridLines = true;
-           
-            List<Afreken> lijst = new List<Afreken>();
-            //lijst = AfrekenService.GetAfreken();
 
-          
-            listView1.View = View.Details;
-            listView1.Columns.Add("Aantal", 156);
-            listView1.Columns.Add("Naam", 156); 
-            listView1.Columns.Add("Prijs", 156);
-            listView1.Columns.Add("Wijziging", 154);
-            ListViewItem leeg = new ListViewItem(" ");
-            leeg.SubItems.Add(" ");
-            leeg.SubItems.Add(" ");
-            leeg.SubItems.Add(" ");
-            listView1.Items.Add(leeg);
-            foreach (Model.Afreken afreken in lijst)
-            {
-
-                ListViewItem item = new ListViewItem(afreken.Aantal.ToString());
-                item.SubItems.Add(afreken.Naam);
-                item.SubItems.Add(afreken.Prijs.ToString());
-                listView1.Items.Add(item);
-            }
-  }
-
-        private void ListView1_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
+            bestellingItems.VulAfrekenListview(bestellingID, this.listAfreken);
+            bestelling.GetTotaalPrijs(bestellingID, this.txt_totaal);
+            bestelling.GetBTW(bestellingID, this.txtBTW);
         }
 
-        private void Lvi_Load(object sender, EventArgs e)
+        public HandheldAfrekenen(int bestellingid, Medewerker medewerker, int tafelnr)
         {
+            this.bestellingID = bestellingid;
+            this.medewerker = medewerker;
+            this.tafelNummer = tafelnr;
 
-        }
-
-        private void HandheldAfrekenen_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Lbl_AfrekenenPersoonNr_Click(object sender, EventArgs e)
-        {
-          
-
-   
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            //lblpnr.Text += medewerker.inlognummer.ToString();
+            //lbltnr.Text += tafelnr.ToString();
         }
 
         private void Btn_AfrekenenTerug_Click(object sender, EventArgs e)
@@ -95,31 +66,6 @@ namespace UI
             Control[] txtInlognummer = login.Controls.Find("txtInlognummer", false);
             txtInlognummer[0].Text = "";
             login.Show();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-            textBox5.Text = "";
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            //textBox2.Text =  - ;
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            textBox1.Text = "";
         }
     }
 }

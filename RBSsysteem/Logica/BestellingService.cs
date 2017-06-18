@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Model;
 using DAL;
 using Logica;
+using System.Windows.Forms;
 
 namespace Logica
 {
@@ -65,6 +66,18 @@ namespace Logica
             int bestellingID = bestelling.GetHuidigeBestellingID(medewerker.medewerkerId, tafelnr);
 
             return bestellingID;
+        }
+
+        public void GetTotaalPrijs(int bestellingid, TextBox txtprijs)
+        {
+            double prijs = bestelling.GetTotaalPrijs(bestellingid);
+            txtprijs.Text = prijs.ToString();
+        }
+
+        public void GetBTW(int bestellingid, TextBox txtbtw)
+        {
+            double btw = bestelling.GetBTW(bestellingid);
+            txtbtw.Text = btw.ToString();
         }
     }
 }

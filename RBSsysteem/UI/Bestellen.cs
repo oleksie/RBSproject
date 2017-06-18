@@ -16,6 +16,7 @@ namespace UI
     {
         MenuItemService actieButton = new MenuItemService();
         HandheldTafels naarTafelOverzicht = (HandheldTafels)Application.OpenForms["HandheldTafels"];
+
         List<ListviewBestellen> listVoorDB;
 
         public int bestellingID;
@@ -284,6 +285,12 @@ namespace UI
             Control[] txtInlognummer = login.Controls.Find("txtInlognummer", false);
             txtInlognummer[0].Text = "";
             login.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            HandheldAfrekenen afrekenen = new HandheldAfrekenen(bestellingID, medewerker, tafelNummer);
+            afrekenen.Show();
         }
     }
 }

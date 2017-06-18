@@ -34,18 +34,21 @@
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.Btn_AfrekenenTerug = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.Lbl_TafelNr = new System.Windows.Forms.Label();
-            this.Lbl_PersoonlijkNr = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lbltnr = new System.Windows.Forms.Label();
+            this.lblpnr = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.txt_fooi = new System.Windows.Forms.TextBox();
+            this.txt_klantBetaalt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_totaal = new System.Windows.Forms.TextBox();
+            this.listAfreken = new System.Windows.Forms.ListView();
+            this.columnNaam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnAantal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnPrijs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtBTW = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -105,10 +108,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.Lbl_TafelNr);
-            this.groupBox2.Controls.Add(this.Lbl_PersoonlijkNr);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.lbltnr);
+            this.groupBox2.Controls.Add(this.lblpnr);
             this.groupBox2.ForeColor = System.Drawing.Color.Cornsilk;
             this.groupBox2.Location = new System.Drawing.Point(12, 11);
             this.groupBox2.Name = "groupBox2";
@@ -117,92 +118,57 @@
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             // 
-            // Lbl_TafelNr
+            // lbltnr
             // 
-            this.Lbl_TafelNr.AutoSize = true;
-            this.Lbl_TafelNr.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Lbl_TafelNr.Location = new System.Drawing.Point(104, 39);
-            this.Lbl_TafelNr.Name = "Lbl_TafelNr";
-            this.Lbl_TafelNr.Size = new System.Drawing.Size(35, 13);
-            this.Lbl_TafelNr.TabIndex = 3;
-            this.Lbl_TafelNr.Text = "label4";
+            this.lbltnr.AutoSize = true;
+            this.lbltnr.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lbltnr.Location = new System.Drawing.Point(7, 39);
+            this.lbltnr.Name = "lbltnr";
+            this.lbltnr.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbltnr.Size = new System.Drawing.Size(74, 13);
+            this.lbltnr.TabIndex = 1;
+            this.lbltnr.Text = "Tafelnummer: ";
             // 
-            // Lbl_PersoonlijkNr
+            // lblpnr
             // 
-            this.Lbl_PersoonlijkNr.AutoSize = true;
-            this.Lbl_PersoonlijkNr.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Lbl_PersoonlijkNr.Location = new System.Drawing.Point(141, 18);
-            this.Lbl_PersoonlijkNr.Margin = new System.Windows.Forms.Padding(0);
-            this.Lbl_PersoonlijkNr.Name = "Lbl_PersoonlijkNr";
-            this.Lbl_PersoonlijkNr.Size = new System.Drawing.Size(35, 13);
-            this.Lbl_PersoonlijkNr.TabIndex = 2;
-            this.Lbl_PersoonlijkNr.Text = "label3";
-            this.Lbl_PersoonlijkNr.Click += new System.EventHandler(this.Lbl_AfrekenenPersoonNr_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(7, 39);
-            this.label2.Name = "label2";
-            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label2.Size = new System.Drawing.Size(80, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Tafel nummer : ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(6, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = " : Persoonlijk nummer";
-            // 
-            // listView1
-            // 
-            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.listView1.Location = new System.Drawing.Point(57, 148);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(626, 396);
-            this.listView1.TabIndex = 9;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.lblpnr.AutoSize = true;
+            this.lblpnr.ForeColor = System.Drawing.Color.Black;
+            this.lblpnr.Location = new System.Drawing.Point(6, 18);
+            this.lblpnr.Name = "lblpnr";
+            this.lblpnr.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblpnr.Size = new System.Drawing.Size(102, 13);
+            this.lblpnr.TabIndex = 0;
+            this.lblpnr.Text = "Personeelsnummer: ";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txt_fooi);
+            this.groupBox1.Controls.Add(this.txt_klantBetaalt);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.txt_totaal);
             this.groupBox1.Location = new System.Drawing.Point(434, 550);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 225);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // label3
+            // txt_fooi
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 38);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Totaal   ";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.txt_fooi.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
+            this.txt_fooi.Location = new System.Drawing.Point(121, 157);
+            this.txt_fooi.Name = "txt_fooi";
+            this.txt_fooi.Size = new System.Drawing.Size(73, 53);
+            this.txt_fooi.TabIndex = 9;
             // 
-            // label4
+            // txt_klantBetaalt
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 104);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Klant betaald";
+            this.txt_klantBetaalt.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
+            this.txt_klantBetaalt.Location = new System.Drawing.Point(121, 88);
+            this.txt_klantBetaalt.Name = "txt_klantBetaalt";
+            this.txt_klantBetaalt.Size = new System.Drawing.Size(73, 53);
+            this.txt_klantBetaalt.TabIndex = 8;
             // 
             // label5
             // 
@@ -213,40 +179,87 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Fooi";
             // 
-            // textBox5
+            // label4
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.textBox5.Location = new System.Drawing.Point(121, 19);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(73, 53);
-            this.textBox5.TabIndex = 4;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(19, 104);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Klant betaalt";
             // 
-            // textBox1
+            // label3
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.textBox1.Location = new System.Drawing.Point(121, 88);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(73, 53);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(19, 38);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Totaal   ";
             // 
-            // textBox2
+            // txt_totaal
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.textBox2.Location = new System.Drawing.Point(121, 157);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(73, 53);
-            this.textBox2.TabIndex = 9;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txt_totaal.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
+            this.txt_totaal.Location = new System.Drawing.Point(121, 19);
+            this.txt_totaal.Name = "txt_totaal";
+            this.txt_totaal.Size = new System.Drawing.Size(73, 53);
+            this.txt_totaal.TabIndex = 4;
+            // 
+            // listAfreken
+            // 
+            this.listAfreken.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnNaam,
+            this.columnAantal,
+            this.columnPrijs});
+            this.listAfreken.GridLines = true;
+            this.listAfreken.Location = new System.Drawing.Point(64, 117);
+            this.listAfreken.Name = "listAfreken";
+            this.listAfreken.Size = new System.Drawing.Size(619, 411);
+            this.listAfreken.TabIndex = 11;
+            this.listAfreken.UseCompatibleStateImageBehavior = false;
+            this.listAfreken.View = System.Windows.Forms.View.Details;
+            // 
+            // columnNaam
+            // 
+            this.columnNaam.Text = "Naam";
+            this.columnNaam.Width = 267;
+            // 
+            // columnAantal
+            // 
+            this.columnAantal.Text = "Aantal";
+            this.columnAantal.Width = 149;
+            // 
+            // columnPrijs
+            // 
+            this.columnPrijs.Text = "Prijs";
+            this.columnPrijs.Width = 194;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(240, 588);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(32, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "BTW";
+            // 
+            // txtBTW
+            // 
+            this.txtBTW.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
+            this.txtBTW.Location = new System.Drawing.Point(342, 569);
+            this.txtBTW.Name = "txtBTW";
+            this.txtBTW.Size = new System.Drawing.Size(73, 53);
+            this.txtBTW.TabIndex = 10;
             // 
             // HandheldAfrekenen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(752, 985);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.listAfreken);
+            this.Controls.Add(this.txtBTW);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.Btn_AfrekenenTerug);
             this.Controls.Add(this.radioButton3);
@@ -255,15 +268,16 @@
             this.Controls.Add(this.Btn_Afrekenen);
             this.Name = "HandheldAfrekenen";
             this.Text = "HandheldAfrekenen";
-            this.Load += new System.EventHandler(this.HandheldAfrekenen_Load);
             this.Controls.SetChildIndex(this.Btn_Afrekenen, 0);
             this.Controls.SetChildIndex(this.radioButton1, 0);
             this.Controls.SetChildIndex(this.radioButton2, 0);
             this.Controls.SetChildIndex(this.radioButton3, 0);
             this.Controls.SetChildIndex(this.Btn_AfrekenenTerug, 0);
             this.Controls.SetChildIndex(this.groupBox2, 0);
-            this.Controls.SetChildIndex(this.listView1, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);
+            this.Controls.SetChildIndex(this.txtBTW, 0);
+            this.Controls.SetChildIndex(this.listAfreken, 0);
+            this.Controls.SetChildIndex(this.label6, 0);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -281,17 +295,20 @@
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.Button Btn_AfrekenenTerug;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label Lbl_TafelNr;
-        private System.Windows.Forms.Label Lbl_PersoonlijkNr;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Label lbltnr;
+        private System.Windows.Forms.Label lblpnr;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txt_fooi;
+        private System.Windows.Forms.TextBox txt_klantBetaalt;
+        private System.Windows.Forms.TextBox txt_totaal;
+        private System.Windows.Forms.ListView listAfreken;
+        private System.Windows.Forms.ColumnHeader columnNaam;
+        private System.Windows.Forms.ColumnHeader columnAantal;
+        private System.Windows.Forms.ColumnHeader columnPrijs;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtBTW;
     }
 }
