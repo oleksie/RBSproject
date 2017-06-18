@@ -126,22 +126,34 @@ namespace DAL
             connection.Close();
         }
 
-        public void vulTotaalPrijs(int bestellingid)
+        public void vulTotaalPrijs(int bestellingid, List<ListviewBestellen> list)
         {
-            SqlConnection connection = dbConnection.MaakConnectieDB("Writer");
-            connection.Open();
+            
 
-            SqlCommand command = new SqlCommand("INSERT INTO Bestelling (totaal_prijs) VALUES SELECT (prijs * aantal) FROM BestelItem WHERE bestelling_id = @bestellingid))", connection);
+            foreach (ListviewBestellen x in list)
+            {
+                SqlConnection connection = dbConnection.MaakConnectieDB("Writer");
+                connection.Open();
 
-            SqlParameter IdParam1 = new SqlParameter("@bestellingid", SqlDbType.Int);
-            command.Parameters.Add(IdParam1);
-            IdParam1.Value = bestellingid;
+                SqlCommand command = new SqlCommand("UPDATE Bestelling SET totaal_prijs = totaal_prijs + @prijs WHERE bestelling_id = @bestellingid", connection);
 
-            command.Prepare();
+                SqlParameter IdParam1 = new SqlParameter("@bestellingid", SqlDbType.Int);
+                command.Parameters.Add(IdParam1);
+                IdParam1.Value = bestellingid;
 
-            command.ExecuteNonQuery();
+                SqlParameter IdParam2 = new SqlParameter("@prijs", SqlDbType.Float);
+                command.Parameters.Add(IdParam2);
+                IdParam2.Value = x.prijs;
 
-            connection.Close();
+                command.Prepare();
+
+                command.ExecuteNonQuery();
+
+                connection.Close();
+            }
+            
+
+            
         }
         
     }
