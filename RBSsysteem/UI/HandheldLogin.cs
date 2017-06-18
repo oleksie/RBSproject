@@ -38,14 +38,13 @@ namespace UI
                 {
                     LoginService loginService = new LoginService();
                     Medewerker medewerker = loginService.LoginMedewerker(inlognummer);
-                    TafelService tafelService = new TafelService();
-                    List<Tafel> tafels = tafelService.GetTafels();
+                    
 
                     switch (medewerker.rol)
                     {
                         case (Rol) 1:
                             this.Hide();
-                            HandheldTafels handheldTafels = new HandheldTafels(medewerker, tafels);
+                            HandheldTafels handheldTafels = new HandheldTafels(medewerker);
                             handheldTafels.Show();
                             break;
                         case (Rol)2:
