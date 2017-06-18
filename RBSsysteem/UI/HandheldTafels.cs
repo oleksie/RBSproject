@@ -27,6 +27,7 @@ namespace UI
             lblPersooneelsNummer.Text += medewerker.inlognummer;
             int i = 1;
 
+            // Tafel buttons aanmaken en opmaken
             foreach (Tafel tafel in tafels)
             {
                 RoundButton tafelButton = new RoundButton();
@@ -49,6 +50,8 @@ namespace UI
                     tafelButton.Margin = new Padding(0, 0, 70, 0);
                 }
 
+                tafelButton.Text = tafel.tafelId.ToString();
+                tafelButton.Font = new Font("Microsoft Sans Serif", 20);
                 tafelButton.Click += TafelButton_Click;
 
                 flowLayoutPanel1.Controls.Add(tafelButton);

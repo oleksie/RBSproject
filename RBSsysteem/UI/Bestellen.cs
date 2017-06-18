@@ -15,7 +15,7 @@ namespace UI
     public partial class Bestellen : StyleGuide.BasisHandheldForm
     {
         MenuItemService actieButton = new MenuItemService();
-        HandheldTafels naarTafelOverzicht = new HandheldTafels();
+        HandheldTafels naarTafelOverzicht = (HandheldTafels)Application.OpenForms["HandheldTafels"];
         List<ListviewBestellen> listVoorDB;
 
         public int bestellingID;
@@ -274,6 +274,8 @@ namespace UI
         private void Bestellen_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
         {
             HandheldLogin login = (HandheldLogin)Application.OpenForms["HandheldLogin"];
+            Control[] txtInlognummer = login.Controls.Find("txtInlognummer", false);
+            txtInlognummer[0].Text = "";
             login.Show();
         }
     }

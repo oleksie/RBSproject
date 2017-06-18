@@ -132,6 +132,8 @@ namespace UI
         private void BasisKokBar_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
         {
             HandheldLogin login = (HandheldLogin)Application.OpenForms["HandheldLogin"];
+            Control[] txtInlognummer = login.Controls.Find("txtInlognummer", false);
+            txtInlognummer[0].Text = "";
             login.Show();
         }
     }
