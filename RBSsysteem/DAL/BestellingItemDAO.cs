@@ -196,7 +196,7 @@ namespace DAL
             while (reader.Read())
             {
                 string naam = reader.GetString(1);
-                int aantal = reader.GetInt32(1);
+                int aantal = reader.GetInt32(0);
                 double prijs = reader.GetDouble(2);
 
                 Afreken bestellingitem = new Afreken();

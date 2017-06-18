@@ -32,9 +32,7 @@ namespace UI
             // Eventhandler voor als het scherm wordt gesloten (bijv. door middel van kruisje)
             this.FormClosing += HandheldAfrekenen_FormClosing;
 
-            bestellingItems.VulAfrekenListview(bestellingID, this.listAfreken);
-            bestelling.GetTotaalPrijs(bestellingID, this.txt_totaal);
-            bestelling.GetBTW(bestellingID, this.txtBTW);
+            
         }
 
         public HandheldAfrekenen(int bestellingid, Medewerker medewerker, int tafelnr) : this()
@@ -45,6 +43,10 @@ namespace UI
 
             lblpnr.Text += medewerker.inlognummer.ToString();
             lbltnr.Text += tafelnr.ToString();
+
+            bestellingItems.VulAfrekenListview(bestellingID, this.listAfreken);
+            bestelling.GetTotaalPrijs(bestellingID, this.txt_totaal);
+            bestelling.GetBTW(bestellingID, this.txtBTW);
         }
 
         private void Btn_AfrekenenTerug_Click(object sender, EventArgs e)

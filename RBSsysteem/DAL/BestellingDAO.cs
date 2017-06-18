@@ -191,7 +191,7 @@ namespace DAL
 
             while (reader.Read())
             {
-                prijs = reader.GetInt32(0);
+                prijs = reader.GetDouble(0);
             }
 
             reader.Close();
@@ -219,7 +219,7 @@ namespace DAL
 
             while (reader.Read())
             {
-                btw = reader.GetInt32(0);
+                btw = reader.GetDouble(0);
             }
 
             reader.Close();
