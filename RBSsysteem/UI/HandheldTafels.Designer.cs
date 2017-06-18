@@ -60,7 +60,7 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(280, 542);
             this.flowLayoutPanel1.TabIndex = 25;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
+            
             // 
             // HandheldTafels
             // 
@@ -74,7 +74,6 @@
             this.DoubleBuffered = true;
             this.Name = "HandheldTafels";
             this.Text = "HandheldTafels";
-            this.Load += new System.EventHandler(this.HandheldTafels_Load);
             this.Controls.SetChildIndex(this.lblPersooneelsNummer, 0);
             this.Controls.SetChildIndex(this.Btn_TafelsLoguit, 0);
             this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);

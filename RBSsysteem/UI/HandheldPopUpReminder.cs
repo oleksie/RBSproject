@@ -15,6 +15,12 @@ namespace UI
         public HandheldPopUpReminder()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+        }
+
+        private void Btn_HandheldPopUpReminderTerug_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

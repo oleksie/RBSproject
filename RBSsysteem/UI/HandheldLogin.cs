@@ -17,6 +17,7 @@ namespace UI
         public HandheldLogin()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void LoginAccept_Click(object sender, EventArgs e)
@@ -28,7 +29,7 @@ namespace UI
             }
             catch
             {
-                lblLoginError.Text = "U heeft een foutieve input gegeven.";
+                lblLoginError.Text = "Foutieve invoer, probeer opnieuw.";
             }
 
             if (inlognummer != 0)

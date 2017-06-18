@@ -17,6 +17,7 @@ namespace UI
         public HandheldAfrekenen()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             //ColumnHeader columnHeader1 = new ColumnHeader();
             //ColumnHeader columnHeader2 = new ColumnHeader();
             //ColumnHeader columnHeader3 = new ColumnHeader();

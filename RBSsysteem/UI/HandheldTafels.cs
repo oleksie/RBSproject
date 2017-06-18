@@ -15,6 +15,7 @@ namespace UI
     public partial class HandheldTafels : BasisHandheld
     {
         private Medewerker medewerker;
+        private List<Tafel> tafels;
         public HandheldTafels()
         {
 
@@ -23,6 +24,8 @@ namespace UI
         public HandheldTafels(Medewerker medewerker, List<Tafel> tafels)
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.tafels = tafels;
             this.medewerker = medewerker;
             lblPersooneelsNummer.Text += medewerker.inlognummer;
             int i = 1;
@@ -62,31 +65,35 @@ namespace UI
         private void TafelButton_Click(object sender, EventArgs e)
         {
             RoundButton clickedRoundButton = (sender as RoundButton);
-
-
-            this.Hide();
-            int clickedTafelId = (int) (sender as RoundButton).Tag;
-            Bestellen bestellen = new Bestellen(medewerker, clickedTafelId);
-            bestellen.Show();
-        }
-
-        private void HandheldTafels_Load(object sender, EventArgs e)
-        {
-
+            int clickedTafelId = (int)clickedRoundButton.Tag;
+            Tafel tafel = tafels[clickedTafelId - 1];
+            
+            if(tafel.status == "bezet")
+            {
+                if(tafel.bezetDoor != medewerker.inlognummer)
+                {
+                    HandheldPopUpReminder popUp = new HandheldPopUpReminder();
+                    popUp.Show();
+                }
+                else
+                {
+                    this.Hide();
+                    Bestellen bestellen = new Bestellen(medewerker, clickedTafelId);
+                    bestellen.Show();
+                }
+            }
+            else
+            {
+                this.Hide();
+                Bestellen bestellen = new Bestellen(medewerker, clickedTafelId);
+                bestellen.Show();
+            }
         }
         
         private void Btn_TafelsLoguit_Click(object sender, EventArgs e)
         {
-            // vul login met huidig geopend (maar verborgen) login form
-            HandheldLogin login = (HandheldLogin) Application.OpenForms["HandheldLogin"];
-            login.Show();
             // sluit huidig formulier
             this.Close();
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-            
         }
 
         private void HandheldTafels_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)

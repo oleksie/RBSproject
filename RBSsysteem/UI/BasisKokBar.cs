@@ -25,6 +25,7 @@ namespace UI
             medewerker = m;
             filter = "besteld";
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             //instellingen listform
             lv_KokBarman.View = View.Details;
             lv_KokBarman.GridLines = true;

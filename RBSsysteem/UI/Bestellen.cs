@@ -29,6 +29,7 @@ namespace UI
         public Bestellen()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
 
             ShowLunchStart();
             ShowDinerStart();

@@ -58,10 +58,11 @@
             // lblLoginError
             // 
             this.lblLoginError.AutoSize = true;
+            this.lblLoginError.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoginError.ForeColor = System.Drawing.Color.Red;
-            this.lblLoginError.Location = new System.Drawing.Point(245, 365);
+            this.lblLoginError.Location = new System.Drawing.Point(229, 385);
             this.lblLoginError.Name = "lblLoginError";
-            this.lblLoginError.Size = new System.Drawing.Size(0, 13);
+            this.lblLoginError.Size = new System.Drawing.Size(0, 25);
             this.lblLoginError.TabIndex = 7;
             // 
             // txtInlognummer
