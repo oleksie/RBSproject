@@ -147,7 +147,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(750, 977);
+            this.ClientSize = new System.Drawing.Size(752, 985);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pnlTafelOverzicht);
             this.Controls.Add(this.Btn_TafelsLoguit);

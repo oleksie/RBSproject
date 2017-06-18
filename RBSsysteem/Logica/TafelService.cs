@@ -11,6 +11,9 @@ namespace Logica
 {
     public class TafelService
     {
+        private BestellingItemDAO bestellingItemDAO = new BestellingItemDAO();
+        private BestellingDAO bestellingDAO = new BestellingDAO();
+        private TafelDAO tafelDAO = new TafelDAO();
         public TafelService()
         {
 
@@ -18,7 +21,6 @@ namespace Logica
 
         public List<Tafel> GetTafels()
         {
-            TafelDAO tafelDAO = new TafelDAO();
             List<Tafel> tafels = tafelDAO.GetTafels();
 
             return tafels;
@@ -26,8 +28,23 @@ namespace Logica
 
         public void TafelOpBezetZetten(int inlognummer, int tafelnr)
         {
-            TafelDAO tafelDAO = new TafelDAO();
             tafelDAO.TafelBezetInDB(inlognummer, tafelnr);
+        }
+
+        public List<BestellingItem> GetGereedBestellingItemsList(int tafelId)
+        {
+            List<BestellingItem> alleBestellingItems = bestellingItemDAO.GetAll();
+            List<Bestelling> alleBestellingen = bestellingDAO.GetBestelling();
+
+            List<BestellingItem> gereedBestellingItems = new List<BestellingItem>();
+
+            foreach (BestellingItem bestellingItem in alleBestellingItems)
+            {
+                if (bestellingItem.status == "bereid")
+                    gereedBestellingItems.Add(bestellingItem);
+            }
+
+            return gereedBestellingItems;
         }
     }
 }
