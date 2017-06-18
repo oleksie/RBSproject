@@ -227,5 +227,40 @@ namespace DAL
 
             return btw;
         }
+
+        public List<Bestelling> GetAllBestellingen()
+        {
+            List<Bestelling> bestellingen = new List<Bestelling>();
+            DALConnection connectie = new DALConnection();
+            DBConnectie = connectie.MaakConnectieDB("Reader");
+
+            DBConnectie.Open();
+
+            SqlCommand command = new SqlCommand("SELECT * FROM Bestelling", DBConnectie);
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Bestelling bestelling = new Bestelling();
+
+                bestelling.bestelling_id = reader.GetInt32(0);
+                bestelling.commentaarKlant = reader.GetString(1);
+                bestelling.tafelId = reader.GetInt32(2);
+                bestelling.medewerkerid = reader.GetInt32(3);
+                bestelling.totaalprijs = reader.GetDouble(4);
+                bestelling.betaald = reader.GetString(5);
+                bestelling.btw = reader.GetDouble(6);
+                bestelling.fooi = reader.GetDouble(7);
+                bestelling.betaalWijze = reader.GetString(8);
+
+                bestellingen.Add(bestelling);
+            }
+
+            reader.Close();
+            DBConnectie.Close();
+
+            return bestellingen;
+        }
     }
 }
