@@ -91,7 +91,6 @@
             this.NagerechtLunch.SuspendLayout();
             this.MenuKaart.SuspendLayout();
             this.SuspendLayout();
-            this.FormClosing += Bestellen_FormClosing;
             // 
             // panel1
             // 
@@ -568,7 +567,6 @@
         private System.Windows.Forms.ColumnHeader ListColomNaamID;
         public System.Windows.Forms.ListView ListViewtje;
         private System.Windows.Forms.Label lblTafelNummer;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblPersoneelsNummer;
     }
 }

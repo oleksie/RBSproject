@@ -15,7 +15,7 @@ namespace UI
     public partial class HandheldTafels : BasisHandheld
     {
         private Medewerker medewerker;
-        private List<Tafel> tafels;
+        public List<Tafel> tafels;
         public HandheldTafels()
         {
 
@@ -24,42 +24,19 @@ namespace UI
         public HandheldTafels(Medewerker medewerker, List<Tafel> tafels)
         {
             InitializeComponent();
+            // Startpositie voor het scherm meegeven
             this.StartPosition = FormStartPosition.CenterScreen;
+            // Eventhandler voor als het scherm wordt gesloten (bijv. door middel van kruisje)
+            this.FormClosing += HandheldTafels_FormClosing;
+
+            // Tafels list en medewerker object vullen
             this.tafels = tafels;
             this.medewerker = medewerker;
+
             lblPersooneelsNummer.Text += medewerker.inlognummer;
-            int i = 1;
 
-            // Tafel buttons aanmaken en opmaken
-            foreach (Tafel tafel in tafels)
-            {
-                RoundButton tafelButton = new RoundButton();
-                tafelButton.Tag = tafel.tafelId;
-                switch (tafel.status)
-                {
-                    case "vrij":
-                        tafelButton.BackColor = Color.Green;
-                        break;
-                    case "bezet":
-                        if (tafel.bezetDoor == medewerker.inlognummer)
-                            tafelButton.BackColor = Color.Orange;
-                        else
-                            tafelButton.BackColor = Color.Red;
-                        break;
-                }
-
-                if (i % 2 != 0)
-                {
-                    tafelButton.Margin = new Padding(0, 0, 70, 0);
-                }
-
-                tafelButton.Text = tafel.tafelId.ToString();
-                tafelButton.Font = new Font("Microsoft Sans Serif", 20);
-                tafelButton.Click += TafelButton_Click;
-
-                flowLayoutPanel1.Controls.Add(tafelButton);
-                i++;
-            }
+            // Maak tafel buttons aan met de CreateTafelButtons methode, krijgt List<Tafel> tafels mee als parameter
+            CreateTafelButtons(tafels);
         }
 
         private void TafelButton_Click(object sender, EventArgs e)
@@ -102,6 +79,42 @@ namespace UI
             Control[] txtInlognummer = login.Controls.Find("txtInlognummer", false);
             txtInlognummer[0].Text = "";
             login.Show();
+        }
+
+        public void CreateTafelButtons(List<Tafel> tafels)
+        {
+            pnlTafelOverzicht.Controls.Clear();
+            int i = 1;
+            // Tafel buttons aanmaken en opmaken
+            foreach (Tafel tafel in tafels)
+            {
+                RoundButton tafelButton = new RoundButton();
+                tafelButton.Tag = tafel.tafelId;
+                switch (tafel.status)
+                {
+                    case "vrij":
+                        tafelButton.BackColor = Color.Green;
+                        break;
+                    case "bezet":
+                        if (tafel.bezetDoor == medewerker.inlognummer)
+                            tafelButton.BackColor = Color.Orange;
+                        else
+                            tafelButton.BackColor = Color.Red;
+                        break;
+                }
+
+                if (i % 2 != 0)
+                {
+                    tafelButton.Margin = new Padding(0, 0, 70, 0);
+                }
+
+                tafelButton.Text = tafel.tafelId.ToString();
+                tafelButton.Font = new Font("Microsoft Sans Serif", 20);
+                tafelButton.Click += TafelButton_Click;
+
+                pnlTafelOverzicht.Controls.Add(tafelButton);
+                i++;
+            }
         }
     }
 }

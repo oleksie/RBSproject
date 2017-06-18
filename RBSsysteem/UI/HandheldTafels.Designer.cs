@@ -31,9 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HandheldTafels));
             this.lblPersooneelsNummer = new System.Windows.Forms.Label();
             this.Btn_TafelsLoguit = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlTafelOverzicht = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
-            this.FormClosing += HandheldTafels_FormClosing;
             // 
             // lblPersooneelsNummer
             // 
@@ -54,13 +53,12 @@
             this.Btn_TafelsLoguit.UseVisualStyleBackColor = true;
             this.Btn_TafelsLoguit.Click += new System.EventHandler(this.Btn_TafelsLoguit_Click);
             // 
-            // flowLayoutPanel1
+            // pnlTafelOverzicht
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(288, 266);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(280, 542);
-            this.flowLayoutPanel1.TabIndex = 25;
-            
+            this.pnlTafelOverzicht.Location = new System.Drawing.Point(288, 266);
+            this.pnlTafelOverzicht.Name = "pnlTafelOverzicht";
+            this.pnlTafelOverzicht.Size = new System.Drawing.Size(280, 542);
+            this.pnlTafelOverzicht.TabIndex = 25;
             // 
             // HandheldTafels
             // 
@@ -68,7 +66,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(750, 977);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.pnlTafelOverzicht);
             this.Controls.Add(this.Btn_TafelsLoguit);
             this.Controls.Add(this.lblPersooneelsNummer);
             this.DoubleBuffered = true;
@@ -76,15 +74,20 @@
             this.Text = "HandheldTafels";
             this.Controls.SetChildIndex(this.lblPersooneelsNummer, 0);
             this.Controls.SetChildIndex(this.Btn_TafelsLoguit, 0);
-            this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
+            this.Controls.SetChildIndex(this.pnlTafelOverzicht, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
+        private void HandheldTafels_FormClosing1(object sender, System.Windows.Forms.FormClosingEventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
         #endregion
         private System.Windows.Forms.Label lblPersooneelsNummer;
         private System.Windows.Forms.Button Btn_TafelsLoguit;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel pnlTafelOverzicht;
     }
 }

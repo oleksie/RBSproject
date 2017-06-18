@@ -39,7 +39,6 @@
             this.lbl_medewerkerInfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            this.FormClosing += BasisKokBar_FormClosing;
             // 
             // pictureBox1
             // 
