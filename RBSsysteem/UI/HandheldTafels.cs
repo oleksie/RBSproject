@@ -15,6 +15,8 @@ namespace UI
 {
     public partial class HandheldTafels : BasisHandheld
     {
+        // ALEX GEMAAKT
+        private int huidigeBestellingID;
         private Medewerker medewerker;
         private List<Tafel> tafels;
 
@@ -53,14 +55,16 @@ namespace UI
                 else
                 {
                     this.Hide();
-                    Bestellen bestellen = new Bestellen(medewerker, clickedTafelId);
+                    // ALEX GEMAAKT AANGEPAST
+                    Bestellen bestellen = new Bestellen(medewerker, clickedTafelId, huidigeBestellingID);
                     bestellen.Show();
                 }
             }
             else
             {
                 this.Hide();
-                Bestellen bestellen = new Bestellen(medewerker, clickedTafelId);
+                // ALEX GEMAAKT AANGEPAST
+                Bestellen bestellen = new Bestellen(medewerker, clickedTafelId, 0);
                 bestellen.Show();
             }
         }
@@ -119,6 +123,12 @@ namespace UI
                 pnlTafelOverzicht.Controls.Add(tafelButton);
                 i++;
             }
+        }
+
+        // ALEX gemaakt 
+        public void HuidigeID(int id)
+        {
+            huidigeBestellingID = id;
         }
     }
 }
