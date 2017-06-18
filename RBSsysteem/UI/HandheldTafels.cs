@@ -19,6 +19,8 @@ namespace UI
         private int huidigeBestellingID;
         private Medewerker medewerker;
         private List<Tafel> tafels;
+        private List<BestellingItem> bestellingItems;
+        private TafelService tafelService = new TafelService();
 
         public HandheldTafels(Medewerker medewerker)
         {
@@ -39,15 +41,17 @@ namespace UI
 
         private void TafelButton_Click(object sender, EventArgs e)
         {
+            HandheldPopUpStatus popup = new HandheldPopUpStatus();
+            popup.Show();
             // Zet de geklikte button in een RoundButton object
             RoundButton clickedRoundButton = (sender as RoundButton);
-            int clickedTafelId = (int) clickedRoundButton.Tag;
+            int clickedTafelId = (int)clickedRoundButton.Tag;
             Tafel tafel = tafels[clickedTafelId - 1]; // -1 omdat list index begint bij 0 maar tafelnummers bij 1
-            
+
             // Controleer of en door wie een tafel bezet is
-            if(tafel.status == "bezet")
+            if (tafel.status == "bezet")
             {
-                if(tafel.bezetDoor != medewerker.inlognummer)
+                if (tafel.bezetDoor != medewerker.inlognummer)
                 {
                     HandheldPopUpReminder popUp = new HandheldPopUpReminder();
                     popUp.Show();
@@ -86,14 +90,15 @@ namespace UI
         public void CreateTafelButtons()
         {
             pnlTafelOverzicht.Controls.Clear();
-
-            TafelService tafelService = new TafelService();
             tafels = tafelService.GetTafels();
-
+            
             int i = 1;
             // Tafel buttons aanmaken en opmaken
             foreach (Tafel tafel in tafels)
             {
+                /* 
+                Tafel buttons START
+                */
                 RoundButton tafelButton = new RoundButton();
                 tafelButton.Tag = tafel.tafelId;
                 switch (tafel.status)
@@ -109,22 +114,38 @@ namespace UI
                         break;
                 }
 
-                // Geef een margin van 70 pixels aan de rechter zijde aan alle tafels met een oneven nummer
+                // Geef een margin van 50 pixels aan de rechter zijde aan alle tafels met een oneven nummer
                 if (i % 2 != 0)
-                    tafelButton.Margin = new Padding(0, 0, 70, 0);
+                    tafelButton.Margin = new Padding(0, 0, 50, 0);
 
-                // Button opmaak
+                // Tafelbutton opmaak
                 tafelButton.Text = tafel.tafelId.ToString();
                 tafelButton.Font = new Font("Microsoft Sans Serif", 20);
 
                 // Eventhandler voor als er op een button geklikt wordt
                 tafelButton.Click += TafelButton_Click;
+                /*
+                Tafel buttons END
+                */
+
+                CreateStatusButtons(tafel.tafelId);
 
                 pnlTafelOverzicht.Controls.Add(tafelButton);
                 i++;
             }
         }
 
+        private void CreateStatusButtons(int tafelId)
+        {
+            bestellingItems = tafelService.GetGereedBestellingItemsList(tafelId);
+            //
+            Button statusButton = new Button();
+            statusButton.Size = new Size(20, 20);
+            foreach (BestellingItem bestellingItem in bestellingItems)
+            {
+
+            }
+        }
         // ALEX gemaakt 
         public void HuidigeID(int id)
         {

@@ -106,11 +106,11 @@
     <Compile Include="HandheldTafels.Designer.cs">
       <DependentUpon>HandheldTafels.cs</DependentUpon>
     </Compile>
-    <Compile Include="HanheldPopUpStatus.cs">
+    <Compile Include="HandheldPopUpStatus.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HanheldPopUpStatus.Designer.cs">
-      <DependentUpon>HanheldPopUpStatus.cs</DependentUpon>
+    <Compile Include="HandheldPopUpStatus.Designer.cs">
+      <DependentUpon>HandheldPopUpStatus.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -147,8 +147,8 @@
     <EmbeddedResource Include="HandheldTafels.resx">
       <DependentUpon>HandheldTafels.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HanheldPopUpStatus.resx">
-      <DependentUpon>HanheldPopUpStatus.cs</DependentUpon>
+    <EmbeddedResource Include="HandheldPopUpStatus.resx">
+      <DependentUpon>HandheldPopUpStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

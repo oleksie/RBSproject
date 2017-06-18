@@ -285,5 +285,11 @@ namespace UI
             txtInlognummer[0].Text = "";
             login.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            HandheldAfrekenen afrekenen = new HandheldAfrekenen(bestellingID, medewerker.inlognummer, tafelNummer);
+            afrekenen.Show();
+        }
     }
 }
