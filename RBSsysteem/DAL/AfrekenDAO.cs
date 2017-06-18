@@ -47,6 +47,63 @@ namespace DAL
             reader.Close();
             return lijstAfreken;
         }
+        public static List<Afreken> GetAfreken()
+        {
+            List<Afreken> lijstAfreken = new List<Afreken>();
+            string sqlquery = "SELECT aantal, MenuItem.naam, MenuItem.prijs FROM Bestelling JOIN BestelItem ON BestelItem.bestelling_id = Bestelling.bestelling_id JOIN MenuItem ON BestelItem.menuitem_id = MenuItem.menuitem_id";
+            SqlConnection DBConnectie = new SqlConnection();
+            DALConnection connectie = new DALConnection();
+            DBConnectie = connectie.MaakConnectieDB("Reader");
+            SqlCommand command = new SqlCommand(sqlquery, DBConnectie);
+            command.Prepare();
+            DBConnectie.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                int aantal = reader.GetInt32(0);
+                string naam = reader.GetString(1);
+                double prijs = reader.GetDouble(2);
+
+                Afreken afreken = new Afreken(aantal, naam, prijs);
+
+                lijstAfreken.Add(afreken);
+            }
+
+            DBConnectie.Close();
+            reader.Close();
+            return lijstAfreken;
+        }        public static List<Afreken> SetBetaalMethode()
+        {
+            List<Afreken> lijstAfreken = new List<Afreken>();
+            string sqlquery = "SELECT aantal, MenuItem.naam, MenuItem.prijs,bestelitem.bestelling_id FROM Bestelling JOIN BestelItem ON BestelItem.bestelling_id = Bestelling.bestelling_id JOIN MenuItem ON BestelItem.menuitem_id = MenuItem.menuitem_id";
+            SqlConnection DBConnectie = new SqlConnection();
+             DALConnection connectie = new DALConnection();
+            DBConnectie = connectie.MaakConnectieDB("Reader");
+            SqlCommand command = new SqlCommand(sqlquery, DBConnectie);
+            command.Prepare();
+            DBConnectie.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                int aantal = reader.GetInt32(0);
+                string naam = reader.GetString(1);
+                double prijs = reader.GetDouble(2);
+                int bestelling_id = reader.GetInt32(3);
+
+
+                Afreken afreken = new Afreken(aantal, naam, prijs,bestelling_id);
+
+                lijstAfreken.Add(afreken);
+            }
+
+            DBConnectie.Close();
+            reader.Close();
+            return lijstAfreken;
+        }
 
 
     }
