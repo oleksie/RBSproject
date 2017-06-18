@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
 using Logica;
+using DAL;
 
 namespace UI
 {
@@ -57,31 +58,38 @@ namespace UI
             //columnHeader2.Width = 156;
             //columnHeader3.Width = 156;
             //columnHeader4.Width = 156;
-            BestellingService bestellingService = new BestellingService();
-            List<Bestelling> lijs = bestellingService.GetBestelling();
-            Afreken afreken = new Afreken();
+            //BestellingService bestellingService = new BestellingService();
+            //List<Bestelling> lijs = bestellingService.GetBestelling();
+            List<Afreken> lijst = new List<Afreken>();
+            lijst = AfrekenService.GetAfreken();
+
+
+            //Afreken afreken = new Afreken();
             
-
-
-           
-           
-
-
-            
-            //listView1.Height = 500;
-            //listView1.Width = 500;
             listView1.View = View.Details;
             listView1.Columns.Add("Aantal", 156);
             listView1.Columns.Add("Naam", 156); 
             listView1.Columns.Add("Prijs", 156);
             listView1.Columns.Add("Wijziging", 154);
-
-            ListViewItem leeg = new ListViewItem(afreken.Aantal.ToString());
-            leeg.SubItems.Add(afreken.Naam);
-            leeg.SubItems.Add(afreken.Prijs.ToString());
+            ListViewItem leeg = new ListViewItem(" ");
+            leeg.SubItems.Add(" ");
+            leeg.SubItems.Add(" ");
             leeg.SubItems.Add(" ");
             listView1.Items.Add(leeg);
-          
+            foreach (Model.Afreken afreken in lijst)
+            {
+
+                ListViewItem item = new ListViewItem(afreken.Aantal.ToString());
+                item.SubItems.Add(afreken.Naam);
+                item.SubItems.Add(afreken.Prijs.ToString());
+                listView1.Items.Add(item);
+            }
+
+
+
+
+
+
 
 
             /*foreach (Bestelling bestelling in lijst)

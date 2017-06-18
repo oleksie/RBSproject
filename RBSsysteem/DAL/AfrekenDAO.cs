@@ -19,12 +19,12 @@ namespace DAL
 
         }
 
-        public List<Afreken> GetAfreken()
+        public static List<Afreken> GetAfreken()
         {
             List<Afreken> lijstAfreken = new List<Afreken>();
-            string sqlquery = "SELECT aantal, Bestelling.tafel_id, MenuItem.naam, MenuItem.prijs FROM Bestelling JOIN BestelItem ON BestelItem.bestelling_id = Bestelling.bestelling_id JOIN MenuItem ON BestelItem.menuitem_id = MenuItem.menuitem_id";
-
-            DALConnection connectie = new DALConnection();
+            string sqlquery = "SELECT aantal, MenuItem.naam, MenuItem.prijs FROM Bestelling JOIN BestelItem ON BestelItem.bestelling_id = Bestelling.bestelling_id JOIN MenuItem ON BestelItem.menuitem_id = MenuItem.menuitem_id";
+            SqlConnection DBConnectie = new SqlConnection();
+             DALConnection connectie = new DALConnection();
             DBConnectie = connectie.MaakConnectieDB("Reader");
             SqlCommand command = new SqlCommand(sqlquery, DBConnectie);
             command.Prepare();
@@ -38,9 +38,9 @@ namespace DAL
                 string naam = reader.GetString(1);
                 double prijs = reader.GetDouble(2);
 
-                Afreken bestelling = new Afreken(aantal, naam, prijs);
+                Afreken afreken = new Afreken(aantal, naam, prijs);
 
-                lijstAfreken.Add(bestelling);
+                lijstAfreken.Add(afreken);
             }
 
             DBConnectie.Close();
