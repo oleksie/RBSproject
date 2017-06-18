@@ -15,6 +15,7 @@ namespace Model
         private int aantal;
         private string naam;
         private double prijs;
+        //private int bestelling_id;
 
         #endregion
 
@@ -25,11 +26,12 @@ namespace Model
 
         }
 
-        public Afreken(int aantal,  string naam, double prijs)
+        public Afreken(int aantal, string naam, double prijs)
         {
             this.aantal = aantal;
             this.naam = naam;
             this.prijs = prijs;
+            //this.bestelling_id = bestelling_id;
         }
 
         #endregion
@@ -42,6 +44,11 @@ namespace Model
             get { return naam; }
             set { naam = value; }
         }
+        //public int BestellingID
+        //{
+        //    get { return bestelling_id; }
+        //    set { bestelling_id = value; }
+        //}
 
         public double Prijs
         {

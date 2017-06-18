@@ -140,5 +140,34 @@ namespace DAL
             reader.Close();
             return menuItemList;
         }
+
+        public void UpdateVoorraad(List<ListviewBestellen> list)
+        {
+
+            foreach (ListviewBestellen x in list)
+            {
+                DALConnection connectie = new DALConnection();
+                DBConnectie = connectie.MaakConnectieDB("Reader");
+
+                DBConnectie.Open();
+
+                SqlCommand command = new SqlCommand("UPDATE MenuItem SET voorraad = voorraad - @aantal WHERE menuitem_id = @menuitemid", DBConnectie);
+
+                SqlParameter IdParam1 = new SqlParameter("@aantal", SqlDbType.Int);
+                command.Parameters.Add(IdParam1);
+                IdParam1.Value = x.aantal;
+
+                SqlParameter IdParam2 = new SqlParameter("@menuitemid", SqlDbType.Int);
+                command.Parameters.Add(IdParam2);
+                IdParam2.Value = x.id;
+
+                command.Prepare();
+
+                command.ExecuteNonQuery();
+
+                DBConnectie.Close();
+            }
+            
+        }
     }
 }
