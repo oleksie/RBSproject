@@ -24,7 +24,12 @@ namespace UI
         public HandheldTafels(Medewerker medewerker, List<Tafel> tafels)
         {
             InitializeComponent();
+            // Startpositie voor het scherm meegeven
             this.StartPosition = FormStartPosition.CenterScreen;
+            // Eventhandler voor als het scherm wordt gesloten (bijv. door middel van kruisje)
+            this.FormClosing += HandheldTafels_FormClosing;
+
+            // Tafels list en medewerker object vullen
             this.tafels = tafels;
             this.medewerker = medewerker;
             lblPersooneelsNummer.Text += medewerker.inlognummer;
@@ -57,7 +62,7 @@ namespace UI
                 tafelButton.Font = new Font("Microsoft Sans Serif", 20);
                 tafelButton.Click += TafelButton_Click;
 
-                flowLayoutPanel1.Controls.Add(tafelButton);
+                pnlTafelOverzicht.Controls.Add(tafelButton);
                 i++;
             }
         }

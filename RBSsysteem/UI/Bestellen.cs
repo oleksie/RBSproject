@@ -29,7 +29,10 @@ namespace UI
         public Bestellen()
         {
             InitializeComponent();
+            // Startpositie voor het scherm meegeven
             this.StartPosition = FormStartPosition.CenterScreen;
+            // Eventhandler voor als het scherm wordt gesloten (bijv. door middel van kruisje)
+            this.FormClosing += Bestellen_FormClosing;
 
             ShowLunchStart();
             ShowDinerStart();
@@ -59,17 +62,18 @@ namespace UI
                 {
                     this.ListViewtje.Items.Clear();
                     this.Hide();
+                    Control[] pnl = naarTafelOverzicht.Controls.Find("pnlTafelOverzicht", false);
+                    pnl[0].Refresh();
                     naarTafelOverzicht.Show();
-                    
                 }
             }
             else
             {
                 this.Hide();
+                Control[] pnl = naarTafelOverzicht.Controls.Find("pnlTafelOverzicht", false);
+                pnl[0].Refresh();
                 naarTafelOverzicht.Show();
-                
             }
-            
         }
 
         private void ShowLunchStart()
