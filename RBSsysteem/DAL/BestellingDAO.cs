@@ -151,7 +151,7 @@ namespace DAL
                 int medewerkerid = reader.GetInt32(3);
                 int tafel = reader.GetInt32(4);
 
-                /*Bestelling bestelling = new Bestelling(0, 0, "0",0);//kan ook gewoon die dingen hieronder hier doen natuurlijk
+                Bestelling bestelling = new Bestelling();
 
                 bestelling.bestelling_id = bestellingid;
                 bestelling.commentaarKlant = commentaar;
@@ -160,7 +160,7 @@ namespace DAL
                 //bestelling.prijs = prijs;
                 bestelling.tafelId = tafel;
 
-                bestellingList.Add(bestelling);*/
+                bestellingList.Add(bestelling);
             }
 
             DBConnectie.Close();

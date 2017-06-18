@@ -46,7 +46,7 @@ namespace Logica
                         item = new ListViewItem(arr);
                         listview.Add(item);
                     }
-                    else if (filter == "in bereiding" && currentbestelling[i].status == "in bereiding")
+                    else if (filter == "besteld" && currentbestelling[i].status == "besteld")
                     {
                         arr[0] = Convert.ToString(currentbestelling[i].bestelitemID);
                         arr[1] = Convert.ToString(currentmenuitem[i].Naam);
@@ -91,7 +91,7 @@ namespace Logica
                         item = new ListViewItem(arr);
                         listview.Add(item);
                     }
-                    else if (filter == "in bereiding" && currentbestelling[i].status == "in bereiding")
+                    else if (filter == "besteld" && currentbestelling[i].status == "besteld")
                     {
                         arr[0] = Convert.ToString(currentbestelling[i].bestelitemID);
                         arr[1] = Convert.ToString(currentmenuitem[i].Naam);

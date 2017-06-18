@@ -17,11 +17,11 @@ namespace UI
         BarmanKok BarKok = new BarmanKok();
         private Medewerker medewerker;
         private string filter;
+        List<ListViewItem> bestellinglist = new List<ListViewItem>();
         public BasisKokBar(Medewerker m)
         {
-            List<ListViewItem> bestellinglist = new List<ListViewItem>();
             medewerker = m;
-            filter = "in bereiding";
+            filter = "besteld";
             InitializeComponent();
             lv_KokBarman.View = View.Details;
             lv_KokBarman.GridLines = true;
@@ -46,15 +46,36 @@ namespace UI
 
         }
 
+        private void BasisKokBar_Load(object sender, EventArgs e)
+        {
+            Label1.Text = DateTime.Now.ToShortTimeString();
+            Timer timer = new Timer();
+            timer.Interval = (10 * 1000); // 10 secs
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Start();
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            Label1.Text = DateTime.Now.ToShortTimeString();
+            lv_KokBarman.Items.Clear();
+            if (medewerker.rol == Rol.Kok)
+            { bestellinglist = BarKok.BestellinglistGerechten(filter); }
+            else if (medewerker.rol == Rol.Barman)
+            { bestellinglist = BarKok.BestellinglistDrank(filter); }
+            for (int i = 0; i < bestellinglist.Count; i++)
+            {
+                lv_KokBarman.Items.Add(bestellinglist[i]);
+            }
+        }
+
+
         private void Lbl_Tijd_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void BasisKokBar_Load(object sender, EventArgs e)
-        {
-            Label1.Text = DateTime.Now.ToShortTimeString();
-        }
+        
 
         private void lv_KokBarman_ItemActivate(object sender, EventArgs e)
         {
@@ -76,7 +97,7 @@ namespace UI
 
         private void btn_inBereiding_Click(object sender, EventArgs e)
         {
-            filter = "in bereiding";
+            filter = "besteld";
             List<ListViewItem> bestellinglist = new List<ListViewItem>();
             lv_KokBarman.Items.Clear();
             if (medewerker.rol == Rol.Kok)
