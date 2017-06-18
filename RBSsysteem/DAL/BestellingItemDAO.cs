@@ -170,6 +170,47 @@ namespace DAL
 
             connection.Close();
         }
-        
+
+        public List<Afreken> GetAllAfrekenen(int bestellingid)
+        {
+            SqlConnection connection = dbConnection.MaakConnectieDB("reader");
+            List<Afreken> bestellingItemList = new List<Afreken>();
+
+            connection.Open();
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append("SELECT BestelItem.aantal, MenuItem.naam, MenuItem.prijs from BestelItem inner join MenuItem on BestelItem.menuitem_id = MenuItem.menuitem_id WHERE bestelling_id = @bestellingid");
+
+
+
+            String sql = sb.ToString();
+
+            SqlCommand command = new SqlCommand(sql, connection);
+
+            SqlParameter IdParam1 = new SqlParameter("@bestellingid", SqlDbType.Int);
+            command.Parameters.Add(IdParam1);
+            IdParam1.Value = bestellingid;
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                string naam = reader.GetString(1);
+                int aantal = reader.GetInt32(1);
+                double prijs = reader.GetDouble(2);
+
+                Afreken bestellingitem = new Afreken();
+
+                bestellingitem.Naam = naam;
+                bestellingitem.Aantal = aantal;
+                bestellingitem.Prijs = prijs;
+
+                bestellingItemList.Add(bestellingitem);
+            }
+
+            connection.Close();
+            reader.Close();
+            return bestellingItemList;
+        }
     }
 }
