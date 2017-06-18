@@ -70,6 +70,9 @@
             this.btn_afrondenHuidig = new System.Windows.Forms.Button();
             this.lblTafelNummer = new System.Windows.Forms.Label();
             this.lblPersoneelsNummer = new System.Windows.Forms.Label();
+            this.btnAantalOmhoog = new System.Windows.Forms.Button();
+            this.btnAantalOmlaag = new System.Windows.Forms.Button();
+            this.btnVerwijderItem = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.CategorieDranken.SuspendLayout();
@@ -94,6 +97,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnVerwijderItem);
+            this.panel1.Controls.Add(this.btnAantalOmlaag);
+            this.panel1.Controls.Add(this.btnAantalOmhoog);
             this.panel1.Controls.Add(this.lblPersoneelsNummer);
             this.panel1.Controls.Add(this.lblTafelNummer);
             this.panel1.Controls.Add(this.btn_afrondenHuidig);
@@ -108,7 +114,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(281, 72);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "Tafel afrekenen";
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button4
@@ -117,7 +123,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
+            this.button4.Text = "Terug";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -129,9 +135,12 @@
             this.ListColomOpmerkingItem,
             this.ListColomPrijsItem,
             this.ListColomNaamID});
+            this.ListViewtje.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListViewtje.FullRowSelect = true;
             this.ListViewtje.Location = new System.Drawing.Point(87, 588);
+            this.ListViewtje.MultiSelect = false;
             this.ListViewtje.Name = "ListViewtje";
-            this.ListViewtje.Size = new System.Drawing.Size(571, 303);
+            this.ListViewtje.Size = new System.Drawing.Size(488, 303);
             this.ListViewtje.TabIndex = 4;
             this.ListViewtje.TileSize = new System.Drawing.Size(1, 1);
             this.ListViewtje.UseCompatibleStateImageBehavior = false;
@@ -145,17 +154,17 @@
             // ListColomAantalItem
             // 
             this.ListColomAantalItem.Text = "Aantal";
-            this.ListColomAantalItem.Width = 42;
+            this.ListColomAantalItem.Width = 52;
             // 
             // ListColomOpmerkingItem
             // 
             this.ListColomOpmerkingItem.Text = "Opmerkingen";
-            this.ListColomOpmerkingItem.Width = 285;
+            this.ListColomOpmerkingItem.Width = 212;
             // 
             // ListColomPrijsItem
             // 
             this.ListColomPrijsItem.Text = "Prijs";
-            this.ListColomPrijsItem.Width = 79;
+            this.ListColomPrijsItem.Width = 59;
             // 
             // ListColomNaamID
             // 
@@ -494,6 +503,39 @@
             this.lblPersoneelsNummer.TabIndex = 7;
             this.lblPersoneelsNummer.Text = "Personeelsnummer: ";
             // 
+            // btnAantalOmhoog
+            // 
+            this.btnAantalOmhoog.Enabled = false;
+            this.btnAantalOmhoog.Location = new System.Drawing.Point(583, 633);
+            this.btnAantalOmhoog.Name = "btnAantalOmhoog";
+            this.btnAantalOmhoog.Size = new System.Drawing.Size(75, 55);
+            this.btnAantalOmhoog.TabIndex = 8;
+            this.btnAantalOmhoog.Text = "Omhoog";
+            this.btnAantalOmhoog.UseVisualStyleBackColor = true;
+            this.btnAantalOmhoog.Click += new System.EventHandler(this.btnAantalOmhoog_Click);
+            // 
+            // btnAantalOmlaag
+            // 
+            this.btnAantalOmlaag.Enabled = false;
+            this.btnAantalOmlaag.Location = new System.Drawing.Point(583, 712);
+            this.btnAantalOmlaag.Name = "btnAantalOmlaag";
+            this.btnAantalOmlaag.Size = new System.Drawing.Size(75, 55);
+            this.btnAantalOmlaag.TabIndex = 9;
+            this.btnAantalOmlaag.Text = "Omlaag";
+            this.btnAantalOmlaag.UseVisualStyleBackColor = true;
+            this.btnAantalOmlaag.Click += new System.EventHandler(this.btnAantalOmlaag_Click);
+            // 
+            // btnVerwijderItem
+            // 
+            this.btnVerwijderItem.Enabled = false;
+            this.btnVerwijderItem.Location = new System.Drawing.Point(583, 790);
+            this.btnVerwijderItem.Name = "btnVerwijderItem";
+            this.btnVerwijderItem.Size = new System.Drawing.Size(75, 55);
+            this.btnVerwijderItem.TabIndex = 10;
+            this.btnVerwijderItem.Text = "Verwijder";
+            this.btnVerwijderItem.UseVisualStyleBackColor = true;
+            this.btnVerwijderItem.Click += new System.EventHandler(this.btnVerwijderItem_Click);
+            // 
             // Bestellen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -569,5 +611,8 @@
         public System.Windows.Forms.ListView ListViewtje;
         private System.Windows.Forms.Label lblTafelNummer;
         private System.Windows.Forms.Label lblPersoneelsNummer;
+        private System.Windows.Forms.Button btnVerwijderItem;
+        private System.Windows.Forms.Button btnAantalOmlaag;
+        private System.Windows.Forms.Button btnAantalOmhoog;
     }
 }

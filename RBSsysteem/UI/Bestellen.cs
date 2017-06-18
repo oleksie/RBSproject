@@ -42,6 +42,7 @@ namespace UI
             CategorieLunch.SelectedIndexChanged += CategorieLunch_SelectedIndexChanged;
             CategorieDiner.SelectedIndexChanged += CategorieDiner_SelectedIndexChanged;
             CategorieDranken.SelectedIndexChanged += CategorieDranken_SelectedIndexChanged;
+            ListViewtje.ItemSelectionChanged += ListViewtje_ItemSelectionChanged;
         }
 
         public Bestellen(Medewerker medewerker, int tafelNummer) : this()
@@ -292,6 +293,76 @@ namespace UI
             HandheldAfrekenen afrekenen = new HandheldAfrekenen(bestellingID, medewerker, tafelNummer);
             this.Hide();
             afrekenen.Show();
+        }
+
+        private void btnAantalOmhoog_Click(object sender, EventArgs e)
+        {
+            int aantal = int.Parse(this.ListViewtje.SelectedItems[0].SubItems[1].Text);
+            int id = int.Parse(this.ListViewtje.SelectedItems[0].SubItems[4].Text);
+            string opmerking = this.ListViewtje.SelectedItems[0].SubItems[2].Text;
+
+            aantal++;
+
+            foreach (ListviewBestellen x in listVoorDB)
+            {
+                if (id == x.id && opmerking.Equals(x.opmerking))
+                {
+                    x.aantal = aantal;
+                    break;
+                }
+            }
+
+            this.ListViewtje.SelectedItems[0].SubItems[1].Text = aantal.ToString();
+        }
+
+        private void btnAantalOmlaag_Click(object sender, EventArgs e)
+        {
+            int aantal = int.Parse(this.ListViewtje.SelectedItems[0].SubItems[1].Text);
+            int id = int.Parse(this.ListViewtje.SelectedItems[0].SubItems[4].Text);
+            string opmerking = this.ListViewtje.SelectedItems[0].SubItems[2].Text;
+
+            if (aantal > 1)
+            {
+                aantal--;
+            }
+
+            foreach (ListviewBestellen x in listVoorDB)
+            {
+                if (id == x.id && opmerking.Equals(x.opmerking))
+                {
+                    x.aantal = aantal;
+                    break;
+                }
+            }
+
+            this.ListViewtje.SelectedItems[0].SubItems[1].Text = aantal.ToString();
+        }
+
+        private void btnVerwijderItem_Click(object sender, EventArgs e)
+        {
+            int aantal = int.Parse(this.ListViewtje.SelectedItems[0].SubItems[1].Text);
+            int id = int.Parse(this.ListViewtje.SelectedItems[0].SubItems[4].Text);
+            string opmerking = this.ListViewtje.SelectedItems[0].SubItems[2].Text;
+
+            foreach (ListviewBestellen x in listVoorDB)
+            {
+                if (id == x.id && opmerking.Equals(x.opmerking) && aantal == x.aantal)
+                {
+                    listVoorDB.Remove(x);
+                    break;
+                }
+            }
+
+            this.ListViewtje.SelectedItems[0].Remove();
+        }
+
+        private void ListViewtje_ItemSelectionChanged(Object sender, EventArgs e)
+        {
+            
+            btnAantalOmhoog.Enabled = true;
+            btnAantalOmlaag.Enabled = true;
+            btnVerwijderItem.Enabled = true;
+            
         }
     }
 }
