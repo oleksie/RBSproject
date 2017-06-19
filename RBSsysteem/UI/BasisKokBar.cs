@@ -36,6 +36,7 @@ namespace UI
             lv_KokBarman.FullRowSelect = true;
             lv_KokBarman.CheckBoxes = true;
             lv_KokBarman.Font = new Font("Arial", 20);
+            lv_KokBarman.BackColor = Color.LightGreen;
             //instellingen btn's
             btn_bereid.Font = new Font("Arial", 15);
             btn_inBereiding.Font = new Font("Arial", 15);
@@ -121,6 +122,8 @@ namespace UI
 
         private void btn_inBereiding_Click(object sender, EventArgs e)
         {
+            //zet kleur terug
+            lv_KokBarman.BackColor = Color.LightGreen;
             //zet de filter en geeft deze mee aan de bestellinglist(geeft list op basis van filter) en vult daatna de listview weer
             filter = "besteld";
             List<ListViewItem> bestellinglist = new List<ListViewItem>();
@@ -137,6 +140,8 @@ namespace UI
 
         private void btn_bereid_Click(object sender, EventArgs e)
         {
+            //zet kleur voor bereid
+            lv_KokBarman.BackColor = Color.Tomato;
             //zie methode hierboven
             filter = "bereid";
             List<ListViewItem> bestellinglist = new List<ListViewItem>();
