@@ -37,7 +37,7 @@ namespace Logica
             {
                 if (currentmenuitem[i].CategorieID <= 7)
                 {
-                    if (filter == "bereid" && currentbestelling[i].status == "bereid")
+                    if (filter == "bereid" & currentbestelling[i].status == "bereid")
                     {
                         arr[0] = Convert.ToString(currentbestelling[i].bestelitemID);
                         arr[1] = Convert.ToString(currentmenuitem[i].Naam);
@@ -49,7 +49,7 @@ namespace Logica
                         item = new ListViewItem(arr);
                         listview.Add(item);
                     }
-                    else if (filter == "besteld" && currentbestelling[i].status == "besteld")
+                    else if (filter == "besteld" & currentbestelling[i].status == "besteld")
                     {
                         arr[0] = Convert.ToString(currentbestelling[i].bestelitemID);
                         arr[1] = Convert.ToString(currentmenuitem[i].Naam);
@@ -83,7 +83,7 @@ namespace Logica
             {
                 if (currentmenuitem[i].CategorieID >= 8)
                 {
-                    if (filter == "bereid" && currentbestelling[i].status == "bereid")
+                    if (filter == "bereid" & currentbestelling[i].status == "bereid")
                     {
                         arr[0] = Convert.ToString(currentbestelling[i].bestelitemID);
                         arr[1] = Convert.ToString(currentmenuitem[i].Naam);
@@ -95,7 +95,7 @@ namespace Logica
                         item = new ListViewItem(arr);
                         listview.Add(item);
                     }
-                    else if (filter == "besteld" && currentbestelling[i].status == "besteld")
+                    else if (filter == "besteld" & currentbestelling[i].status == "besteld")
                     {
                         arr[0] = Convert.ToString(currentbestelling[i].bestelitemID);
                         arr[1] = Convert.ToString(currentmenuitem[i].Naam);

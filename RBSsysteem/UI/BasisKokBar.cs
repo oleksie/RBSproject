@@ -41,12 +41,13 @@ namespace UI
             btn_inBereiding.Font = new Font("Arial", 15);
             btn_Loguit.Font = new Font("Arial", 15);
             //voor de leuk ff lbl vullen met rol
+            lbl_medewerkerInfo.Font = new Font("Arial", 20);
             lbl_medewerkerInfo.Text = Convert.ToString(medewerker.rol);
             //toevoegen colums
             lv_KokBarman.Columns.Add("Check", 20);
             lv_KokBarman.Columns.Add("Menu", 400);
             lv_KokBarman.Columns.Add("Aantal", 100);
-            lv_KokBarman.Columns.Add("Commentaar", 300);
+            lv_KokBarman.Columns.Add("Commentaar", 345);
             lv_KokBarman.Columns.Add("Status", 100);
             lv_KokBarman.Columns.Add("Tijd Opgenomen", 300);
             lv_KokBarman.Columns.Add("Tafel", 100);
@@ -103,6 +104,7 @@ namespace UI
             foreach (ListViewItem item in lv_KokBarman.SelectedItems)
             {
                 int lastdeleteditem = Convert.ToInt32(item.SubItems[0].Text);
+                string deletedItemStatus = Convert.ToString(item.SubItems[4].Text);
                 BarKok.Updatebestelitem(lastdeleteditem);
                 item.Remove();
             }
