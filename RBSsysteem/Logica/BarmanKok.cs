@@ -111,9 +111,18 @@ namespace Logica
             }
             return listview;
         }
-        public void Updatebestelitem(int bestelitemid)
+        public void Updatebestelitem(int bestelitemid,string status)
         {
-            bestelitemconnect.UpdateStatus(bestelitemid);
+            //de status moet het tegenovergestelde zijn(daarnaar moet ie veranderd worden dus
+            if (status == "besteld")
+            {
+                status = "bereid";
+            }
+            else if (status == "bereid")
+            {
+                status = "besteld";
+            }
+            bestelitemconnect.UpdateStatus(bestelitemid,status);
         }
         
     }

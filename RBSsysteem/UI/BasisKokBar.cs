@@ -105,7 +105,7 @@ namespace UI
             {
                 int lastdeleteditem = Convert.ToInt32(item.SubItems[0].Text);
                 string deletedItemStatus = Convert.ToString(item.SubItems[4].Text);
-                BarKok.Updatebestelitem(lastdeleteditem);
+                BarKok.Updatebestelitem(lastdeleteditem,deletedItemStatus);
                 item.Remove();
             }
         }

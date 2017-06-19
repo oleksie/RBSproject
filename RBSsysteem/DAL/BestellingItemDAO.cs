@@ -65,7 +65,7 @@ namespace DAL
             return bestellingItemList;
         }
 
-        public void UpdateStatus(int id)
+        public void UpdateStatus(int id,string status)
         {
             //connection open
             SqlConnection connection = dbConnection.MaakConnectieDB("writer");
@@ -73,16 +73,19 @@ namespace DAL
             connection.Open();
             StringBuilder sb = new StringBuilder();
             //string met een variable @id wordt id die is meegegeven
-            sb.Append("Update BESTELITEM SET status = 'bereid' where bestelitem_id = @id");
+            sb.Append("Update BESTELITEM SET status = @status where bestelitem_id = @id");
             
             SqlParameter BestelIDParam = new SqlParameter("@id", SqlDbType.Int, 32);
+            SqlParameter StatusParam = new SqlParameter("@status", SqlDbType.NVarChar, 50);
 
             String sql = sb.ToString();
 
             SqlCommand command = new SqlCommand(sql, connection);
 
             command.Parameters.Add(BestelIDParam);
+            command.Parameters.Add(StatusParam);
 
+            StatusParam.Value = status;
             BestelIDParam.Value = id;
             //uitvoeren query
             command.Prepare();
