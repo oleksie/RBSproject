@@ -15,6 +15,7 @@ namespace UI
     public partial class HandheldPopUpStatus : Form
     {
         private int tafelId;
+
         public HandheldPopUpStatus(int statusButtonTafelId)
         {
             InitializeComponent();
