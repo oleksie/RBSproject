@@ -41,6 +41,7 @@
             // 
             // Btn_HandheldPopUpBestelUp
             // 
+            this.Btn_HandheldPopUpBestelUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_HandheldPopUpBestelUp.Location = new System.Drawing.Point(155, 89);
             this.Btn_HandheldPopUpBestelUp.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_HandheldPopUpBestelUp.Name = "Btn_HandheldPopUpBestelUp";
@@ -52,6 +53,7 @@
             // 
             // Btn_HandheldPopUpBetselDown
             // 
+            this.Btn_HandheldPopUpBetselDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_HandheldPopUpBetselDown.Location = new System.Drawing.Point(250, 89);
             this.Btn_HandheldPopUpBetselDown.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_HandheldPopUpBetselDown.Name = "Btn_HandheldPopUpBetselDown";
@@ -94,6 +96,7 @@
             // 
             // Btn_HandheldPopUpBestelOk
             // 
+            this.Btn_HandheldPopUpBestelOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_HandheldPopUpBestelOk.Location = new System.Drawing.Point(250, 255);
             this.Btn_HandheldPopUpBestelOk.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_HandheldPopUpBestelOk.Name = "Btn_HandheldPopUpBestelOk";
@@ -105,6 +108,7 @@
             // 
             // Btn_HandheldPopUpBestelTerug
             // 
+            this.Btn_HandheldPopUpBestelTerug.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_HandheldPopUpBestelTerug.Location = new System.Drawing.Point(32, 255);
             this.Btn_HandheldPopUpBestelTerug.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_HandheldPopUpBestelTerug.Name = "Btn_HandheldPopUpBestelTerug";
@@ -116,6 +120,7 @@
             // 
             // txt_opmerkingen
             // 
+            this.txt_opmerkingen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_opmerkingen.Location = new System.Drawing.Point(155, 164);
             this.txt_opmerkingen.Margin = new System.Windows.Forms.Padding(2);
             this.txt_opmerkingen.Name = "txt_opmerkingen";
@@ -126,11 +131,14 @@
             // selectedItemNaam
             // 
             this.selectedItemNaam.AutoSize = true;
-            this.selectedItemNaam.Location = new System.Drawing.Point(163, 29);
+            this.selectedItemNaam.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selectedItemNaam.Location = new System.Drawing.Point(59, 29);
+            this.selectedItemNaam.MinimumSize = new System.Drawing.Size(250, 0);
             this.selectedItemNaam.Name = "selectedItemNaam";
-            this.selectedItemNaam.Size = new System.Drawing.Size(42, 13);
+            this.selectedItemNaam.Size = new System.Drawing.Size(250, 29);
             this.selectedItemNaam.TabIndex = 9;
             this.selectedItemNaam.Text = "HALLO";
+            this.selectedItemNaam.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // HandheldPopUpBestel
             // 
