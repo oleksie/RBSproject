@@ -79,5 +79,12 @@ namespace Logica
             double btw = bestelling.GetBTW(bestellingid);
             txtbtw.Text = btw.ToString();
         }
+
+        public List<Bestelling> GetAlleBestellingen()
+        {
+            List<Bestelling> alleBestellingen = bestelling.GetAllBestellingen();
+
+            return alleBestellingen;
+        }
     }
 }

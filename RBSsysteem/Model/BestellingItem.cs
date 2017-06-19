@@ -15,6 +15,7 @@ namespace Model
         public string commentaar;
         public string status;
         public DateTime tijdOpgenomen;
+        public string naam;
 
         public BestellingItem()
         {
