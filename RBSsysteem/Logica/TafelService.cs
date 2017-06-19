@@ -31,6 +31,10 @@ namespace Logica
             tafelDAO.TafelBezetInDB(inlognummer, tafelnr);
         }
 
+        public void UpdateTafel(int tafelnr)
+        {
+            tafelDAO.UpdateTafel(tafelnr);
+        }
         //public List<ListviewBereid> GetGereedBestellingItemsList(int tafelId)
         //{
         //    List<BestellingItem> alleBestellingItems = bestellingItemDAO.GetAll();

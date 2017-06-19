@@ -86,5 +86,10 @@ namespace Logica
 
             return alleBestellingen;
         }
+
+        public void UpdateBestelling(int bestellingid, string betaalwijze, double fooi, string betaald)
+        {
+            bestelling.UpdateBestelling(bestellingid, betaalwijze, fooi, betaald);
+        }
     }
 }

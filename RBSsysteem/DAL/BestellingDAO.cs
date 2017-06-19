@@ -270,5 +270,36 @@ namespace DAL
 
             return bestellingen;
         }
+
+        public void UpdateBestelling(int bestellingid, string betaalwijze, double fooi, string betaald)
+        {
+            DALConnection connectie = new DALConnection();
+            DBConnectie = connectie.MaakConnectieDB("Writer");
+
+            DBConnectie.Open();
+
+            SqlCommand command = new SqlCommand("UPDATE Bestelling SET betaald = @betaald, fooi = @fooi, betaalwijze = @betaalwijze WHERE bestelling_id = @bestellingid", DBConnectie);
+
+            SqlParameter IdParam1 = new SqlParameter("@betaald", SqlDbType.NVarChar, 50);
+            SqlParameter IdParam2 = new SqlParameter("@fooi", SqlDbType.Float);
+            SqlParameter IdParam3 = new SqlParameter("@betaalwijze", SqlDbType.NVarChar, 50);
+            SqlParameter IdParam4 = new SqlParameter("@bestellingid", SqlDbType.Int);
+
+            command.Parameters.Add(IdParam1);
+            command.Parameters.Add(IdParam2);
+            command.Parameters.Add(IdParam3);
+            command.Parameters.Add(IdParam4);
+
+            IdParam1.Value = betaald;
+            IdParam2.Value = fooi;
+            IdParam3.Value = betaalwijze;
+            IdParam4.Value = bestellingid;
+
+            command.Prepare();
+
+            command.ExecuteNonQuery();
+
+            DBConnectie.Close();
+        }
     }
 }
