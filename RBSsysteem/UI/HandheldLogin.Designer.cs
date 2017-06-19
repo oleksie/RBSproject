@@ -32,6 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblLoginError = new System.Windows.Forms.Label();
             this.txtInlognummer = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // LoginAccept
@@ -72,22 +74,48 @@
             this.txtInlognummer.Name = "txtInlognummer";
             this.txtInlognummer.Size = new System.Drawing.Size(273, 90);
             this.txtInlognummer.TabIndex = 8;
+            this.txtInlognummer.TextChanged += new System.EventHandler(this.txtInlognummer_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F);
+            this.label2.Location = new System.Drawing.Point(107, 108);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(524, 54);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Chapoo Bestel Systeem";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.richTextBox1.Location = new System.Drawing.Point(206, 666);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(326, 50);
+            this.richTextBox1.TabIndex = 10;
+            this.richTextBox1.Text = "Persoonlijk nummer vergeten?\nNaam contact op met uw leidingevende.";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // HandheldLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(752, 985);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtInlognummer);
             this.Controls.Add(this.lblLoginError);
             this.Controls.Add(this.LoginAccept);
             this.Controls.Add(this.label1);
             this.Name = "HandheldLogin";
-            this.Text = "Loginscherm";
+            this.Text = "Login";
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.LoginAccept, 0);
             this.Controls.SetChildIndex(this.lblLoginError, 0);
             this.Controls.SetChildIndex(this.txtInlognummer, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.richTextBox1, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,5 +127,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblLoginError;
         private System.Windows.Forms.TextBox txtInlognummer;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

@@ -132,7 +132,7 @@
             this.Controls.Add(this.Lbl_Tijd);
             this.Controls.Add(this.pictureBox1);
             this.Name = "BasisKokBar";
-            this.Text = "BasisKokBar";
+            this.Text = "Keuken&Bar";
             this.Load += new System.EventHandler(this.BasisKokBar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

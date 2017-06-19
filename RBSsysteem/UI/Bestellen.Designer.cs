@@ -562,7 +562,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(752, 985);
             this.Name = "Bestellen";
-            this.Text = "Bestellen";
+            this.Text = "Kaart";
+            this.Load += new System.EventHandler(this.Bestellen_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabPage3.ResumeLayout(false);

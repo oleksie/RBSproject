@@ -403,5 +403,10 @@ namespace UI
             btnVerwijderItem.Enabled = true;
             
         }
+
+        private void Bestellen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

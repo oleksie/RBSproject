@@ -156,7 +156,7 @@
             this.Controls.Add(this.Btn_HandheldPopUpBestelUp);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "HandheldPopUpBestel";
-            this.Text = "ItemGegevens";
+            this.Text = "Bestelling commentaar,aantal";
             this.ResumeLayout(false);
             this.PerformLayout();
 

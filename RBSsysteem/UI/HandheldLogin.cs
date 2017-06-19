@@ -65,5 +65,15 @@ namespace UI
                 }
             }
         }
+
+        private void txtInlognummer_TextChanged(object sender, EventArgs e)
+        { 
+            txtInlognummer.MaxLength = 4;
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+        
+        }
     }
 }
