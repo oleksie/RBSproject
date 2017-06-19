@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bestellen));
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.ListViewtje = new System.Windows.Forms.ListView();
@@ -73,6 +74,7 @@
             this.btnAantalOmhoog = new System.Windows.Forms.Button();
             this.btnAantalOmlaag = new System.Windows.Forms.Button();
             this.btnVerwijderItem = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.CategorieDranken.SuspendLayout();
@@ -93,10 +95,12 @@
             this.HoofdgerechtLunch.SuspendLayout();
             this.NagerechtLunch.SuspendLayout();
             this.MenuKaart.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnVerwijderItem);
             this.panel1.Controls.Add(this.btnAantalOmlaag);
             this.panel1.Controls.Add(this.btnAantalOmhoog);
@@ -110,18 +114,20 @@
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(237, 53);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(281, 72);
+            this.button1.Size = new System.Drawing.Size(269, 72);
             this.button1.TabIndex = 0;
             this.button1.Text = "Tafel afrekenen";
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(42, 919);
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(42, 887);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(141, 55);
             this.button4.TabIndex = 3;
             this.button4.Text = "Terug";
             this.button4.UseVisualStyleBackColor = true;
@@ -137,7 +143,7 @@
             this.ListColomNaamID});
             this.ListViewtje.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListViewtje.FullRowSelect = true;
-            this.ListViewtje.Location = new System.Drawing.Point(87, 588);
+            this.ListViewtje.Location = new System.Drawing.Point(87, 562);
             this.ListViewtje.MultiSelect = false;
             this.ListViewtje.Name = "ListViewtje";
             this.ListViewtje.Size = new System.Drawing.Size(488, 303);
@@ -467,6 +473,7 @@
             this.MenuKaart.Controls.Add(this.tabPage1);
             this.MenuKaart.Controls.Add(this.tabPage2);
             this.MenuKaart.Controls.Add(this.tabPage3);
+            this.MenuKaart.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuKaart.ItemSize = new System.Drawing.Size(192, 50);
             this.MenuKaart.Location = new System.Drawing.Point(83, 152);
             this.MenuKaart.Name = "MenuKaart";
@@ -477,9 +484,10 @@
             // 
             // btn_afrondenHuidig
             // 
-            this.btn_afrondenHuidig.Location = new System.Drawing.Point(513, 919);
+            this.btn_afrondenHuidig.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_afrondenHuidig.Location = new System.Drawing.Point(478, 887);
             this.btn_afrondenHuidig.Name = "btn_afrondenHuidig";
-            this.btn_afrondenHuidig.Size = new System.Drawing.Size(145, 23);
+            this.btn_afrondenHuidig.Size = new System.Drawing.Size(180, 55);
             this.btn_afrondenHuidig.TabIndex = 5;
             this.btn_afrondenHuidig.Text = "Afronden huidige bestelling";
             this.btn_afrondenHuidig.UseVisualStyleBackColor = true;
@@ -506,7 +514,8 @@
             // btnAantalOmhoog
             // 
             this.btnAantalOmhoog.Enabled = false;
-            this.btnAantalOmhoog.Location = new System.Drawing.Point(583, 633);
+            this.btnAantalOmhoog.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAantalOmhoog.Location = new System.Drawing.Point(583, 607);
             this.btnAantalOmhoog.Name = "btnAantalOmhoog";
             this.btnAantalOmhoog.Size = new System.Drawing.Size(75, 55);
             this.btnAantalOmhoog.TabIndex = 8;
@@ -517,7 +526,8 @@
             // btnAantalOmlaag
             // 
             this.btnAantalOmlaag.Enabled = false;
-            this.btnAantalOmlaag.Location = new System.Drawing.Point(583, 712);
+            this.btnAantalOmlaag.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAantalOmlaag.Location = new System.Drawing.Point(583, 686);
             this.btnAantalOmlaag.Name = "btnAantalOmlaag";
             this.btnAantalOmlaag.Size = new System.Drawing.Size(75, 55);
             this.btnAantalOmlaag.TabIndex = 9;
@@ -528,13 +538,23 @@
             // btnVerwijderItem
             // 
             this.btnVerwijderItem.Enabled = false;
-            this.btnVerwijderItem.Location = new System.Drawing.Point(583, 790);
+            this.btnVerwijderItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerwijderItem.Location = new System.Drawing.Point(583, 764);
             this.btnVerwijderItem.Name = "btnVerwijderItem";
             this.btnVerwijderItem.Size = new System.Drawing.Size(75, 55);
             this.btnVerwijderItem.TabIndex = 10;
             this.btnVerwijderItem.Text = "Verwijder";
             this.btnVerwijderItem.UseVisualStyleBackColor = true;
             this.btnVerwijderItem.Click += new System.EventHandler(this.btnVerwijderItem_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(534, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(204, 75);
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
             // 
             // Bestellen
             // 
@@ -564,6 +584,7 @@
             this.HoofdgerechtLunch.ResumeLayout(false);
             this.NagerechtLunch.ResumeLayout(false);
             this.MenuKaart.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -614,5 +635,6 @@
         private System.Windows.Forms.Button btnVerwijderItem;
         private System.Windows.Forms.Button btnAantalOmlaag;
         private System.Windows.Forms.Button btnAantalOmhoog;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
