@@ -51,7 +51,7 @@ namespace UI
             this.tafelNummer = tafelNummer;
             this.bestellingID = bestelling.GetBestellingID(medewerker, tafelNummer);
 
-            lblPersoneelsNummer.Text += medewerker.inlognummer.ToString();
+            lblPersoneelsNummer.Text += medewerker.Inlognummer.ToString();
             lblTafelNummer.Text += tafelNummer.ToString();
         }
 
@@ -290,7 +290,7 @@ namespace UI
                     if (bestellingID == 0)
                     {
                         bestelling.MaakNieuweBestelling(medewerker, tafelNummer);
-                        tafel.TafelOpBezetZetten(medewerker.inlognummer, tafelNummer);
+                        tafel.TafelOpBezetZetten(medewerker.Inlognummer, tafelNummer);
                         bestellingID = bestelling.GetBestellingID(medewerker, tafelNummer);
                         gebruik.VerwerkNieuweBestelling(bestellingID, listVoorDB);
                         actieButton.UpdateVoorraad(listVoorDB);

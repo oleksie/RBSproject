@@ -44,7 +44,7 @@ namespace UI
             this.medewerker = medewerker;
             this.tafelNummer = tafelnr;
 
-            lblpnr.Text += medewerker.inlognummer.ToString();
+            lblpnr.Text += medewerker.Inlognummer.ToString();
             lbltnr.Text += tafelnr.ToString();
 
             bestellingItems.VulAfrekenListview(bestellingID, this.listAfreken);

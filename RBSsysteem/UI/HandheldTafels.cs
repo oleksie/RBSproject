@@ -29,7 +29,7 @@ namespace UI
             // Tafels list en medewerker object vullen
             this.medewerker = medewerker;
 
-            lblPersooneelsNummer.Text += medewerker.inlognummer;
+            lblPersooneelsNummer.Text += medewerker.Inlognummer;
 
             // Maak tafel buttons aan met de CreateTafelButtons methode, krijgt List<Tafel> tafels mee als parameter
             CreateTafelButtons();
@@ -43,9 +43,9 @@ namespace UI
             Tafel tafel = tafels[clickedTafelId - 1]; // -1 omdat list index begint bij 0 maar tafelnummers bij 1
             
             // Controleer of en door wie een tafel bezet is
-            if(tafel.status == "bezet")
+            if(tafel.Status == "bezet")
             {
-                if(tafel.bezetDoor != medewerker.inlognummer)
+                if(tafel.BezetDoor != medewerker.Inlognummer)
                 {
                     HandheldPopUpReminder popUp = new HandheldPopUpReminder();
                     popUp.Show();
@@ -91,14 +91,14 @@ namespace UI
             foreach (Tafel tafel in tafels)
             {
                 RoundButton tafelButton = new RoundButton();
-                tafelButton.Tag = tafel.tafelId;
-                switch (tafel.status)
+                tafelButton.Tag = tafel.TafelId;
+                switch (tafel.Status)
                 {
                     case "vrij":
                         tafelButton.BackColor = Color.Green;
                         break;
                     case "bezet":
-                        if (tafel.bezetDoor == medewerker.inlognummer)
+                        if (tafel.BezetDoor == medewerker.Inlognummer)
                             tafelButton.BackColor = Color.Orange;
                         else
                             tafelButton.BackColor = Color.Red;
@@ -110,7 +110,7 @@ namespace UI
                 statusButton.Size = new Size(20, 20);
                 statusButton.Enabled = true;
                 statusButton.Text = "!";
-                statusButton.Tag = tafel.tafelId;
+                statusButton.Tag = tafel.TafelId;
                 statusButton.Click += StatusButton_Click;
 
                 // Geef een margin van 70 pixels aan de rechter zijde aan alle tafels met een oneven nummer
@@ -120,7 +120,7 @@ namespace UI
                     statusButton.Margin = new Padding(0, 45, 0, 0);
 
                 // Button opmaak
-                tafelButton.Text = tafel.tafelId.ToString();
+                tafelButton.Text = tafel.TafelId.ToString();
                 tafelButton.Font = new Font("Microsoft Sans Serif", 20);
 
                 // Eventhandler voor als er op een button geklikt wordt
@@ -140,9 +140,9 @@ namespace UI
             Tafel tafel = tafels[statusButtonTafelId - 1]; // -1 omdat list index begint bij 0 maar tafelnummers bij 1
             
             // Controleer of en door wie een tafel bezet is
-            if (tafel.status == "bezet")
+            if (tafel.Status == "bezet")
             {
-                if (tafel.bezetDoor != medewerker.inlognummer)
+                if (tafel.BezetDoor != medewerker.Inlognummer)
                 {
                     HandheldPopUpReminder popUp = new HandheldPopUpReminder();
                     popUp.Show();
