@@ -45,6 +45,7 @@ namespace DAL
                 int aantal = reader.GetInt32(4);
                 string status = reader.GetString(5);
                 DateTime tijdOpgenomen = reader.GetDateTime(6);
+                string naam = reader.GetString(7);
 
                 //vul object(volledig!)
                 BestellingItem bestellingitem = new BestellingItem();
@@ -56,6 +57,7 @@ namespace DAL
                 bestellingitem.aantal = aantal;
                 bestellingitem.status = status;
                 bestellingitem.tijdOpgenomen = tijdOpgenomen;
+                bestellingitem.naam = naam;
 
                 bestellingItemList.Add(bestellingitem);
             }

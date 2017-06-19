@@ -21,7 +21,7 @@ namespace UI
         {
             
             InitializeComponent();
-            
+            this.StartPosition = FormStartPosition.CenterScreen;
             //this.Btn_HandheldPopUpBestelTerug.Click += Btn_HandheldPopUpBestelTerug_Click;
             //this.Btn_HandheldPopUpBestelOk.Click += Btn_HandheldPopUpBestelOk_Click;
             //this.Btn_HandheldPopUpBestelUp.Click += Btn_HandheldPopUpBestelUp_Click;

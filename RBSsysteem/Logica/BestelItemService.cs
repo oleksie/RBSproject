@@ -67,5 +67,12 @@ namespace Logica
                 list.Items.Add(item);
             }
         }
+
+        public List<BestellingItem> GetAllBestellingItems()
+        {
+            List<BestellingItem> bestellingItemsList = itemNaarDB.GetAll();
+
+            return bestellingItemsList;
+        }
     }
 }

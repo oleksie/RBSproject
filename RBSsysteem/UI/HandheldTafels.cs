@@ -105,9 +105,19 @@ namespace UI
                         break;
                 }
 
+                // Statusbuttons aanmaken
+                Button statusButton = new Button();
+                statusButton.Size = new Size(20, 20);
+                statusButton.Enabled = true;
+                statusButton.Text = "!";
+                statusButton.Tag = tafel.tafelId;
+                statusButton.Click += StatusButton_Click;
+
                 // Geef een margin van 70 pixels aan de rechter zijde aan alle tafels met een oneven nummer
                 if (i % 2 != 0)
-                    tafelButton.Margin = new Padding(0, 0, 70, 0);
+                    statusButton.Margin = new Padding(0, 45, 20, 0);
+                else
+                    statusButton.Margin = new Padding(0, 45, 0, 0);
 
                 // Button opmaak
                 tafelButton.Text = tafel.tafelId.ToString();
@@ -117,8 +127,18 @@ namespace UI
                 tafelButton.Click += TafelButton_Click;
 
                 pnlTafelOverzicht.Controls.Add(tafelButton);
+                pnlTafelOverzicht.Controls.Add(statusButton);
+
                 i++;
             }
+        }
+
+        private void StatusButton_Click(object sender, EventArgs e)
+        {
+            Button clickedStatusButton = (sender as Button);
+            int statusButtonTafelId = (int) clickedStatusButton.Tag;
+            HandheldPopUpStatus popUpStatus = new HandheldPopUpStatus(statusButtonTafelId);
+            popUpStatus.Show();
         }
     }
 }

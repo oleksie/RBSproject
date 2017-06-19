@@ -80,6 +80,13 @@ namespace Logica
             txtbtw.Text = btw.ToString();
         }
 
+        public List<Bestelling> GetAlleBestellingen()
+        {
+            List<Bestelling> alleBestellingen = bestelling.GetAllBestellingen();
+
+            return alleBestellingen;
+        }
+
         public void UpdateBestelling(int bestellingid, string betaalwijze, double fooi, string betaald)
         {
             bestelling.UpdateBestelling(bestellingid, betaalwijze, fooi, betaald);
