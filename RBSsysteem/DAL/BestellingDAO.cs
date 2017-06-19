@@ -141,7 +141,7 @@ namespace DAL
             List<Bestelling> bestellingList = new List<Bestelling>();
             StringBuilder sb = new StringBuilder();
 
-            sb.Append("select BestelItem.bestelitem_id, Bestelling.bestelling_id,Bestelling.commentaar_klant,Bestelling.medewerker_id,Bestelling.tafel_id,Bestelling.totaal_prijs from BestelItem inner join MenuItem on BestelItem.menuitem_id = MenuItem.menuitem_id inner join Bestelling on BestelItem.bestelling_id=Bestelling.bestelling_id;");
+            sb.Append("select BestelItem.bestelitem_id, Bestelling.bestelling_id,Bestelling.commentaar_klant,Bestelling.medewerker_id,Bestelling.tafel_id,Bestelling.totaal_prijs,Bestelling.betaald,Bestelling.btw,Bestelling.fooi,Bestelling.betaalwijze from BestelItem inner join MenuItem on BestelItem.menuitem_id = MenuItem.menuitem_id inner join Bestelling on BestelItem.bestelling_id=Bestelling.bestelling_id;");
 
             String sql = sb.ToString();
 
@@ -154,15 +154,23 @@ namespace DAL
                 string commentaar = reader.GetString(2);
                 int medewerkerid = reader.GetInt32(3);
                 int tafel = reader.GetInt32(4);
+                double totaalPrijs = reader.GetDouble(5);
+                string betaald = reader.GetString(6);
+                double btw = reader.GetDouble(7);
+                double fooi = reader.GetDouble(8);
+                string betaalwijze = reader.GetString(9);
 
                 Bestelling bestelling = new Bestelling();
 
                 bestelling.bestelling_id = bestellingid;
                 bestelling.commentaarKlant = commentaar;
                 bestelling.medewerkerid = medewerkerid;
-                //bestelling.aantal = aantal;
-                //bestelling.prijs = prijs;
                 bestelling.tafelId = tafel;
+                bestelling.totaalprijs = totaalPrijs;
+                bestelling.betaald = betaald;
+                bestelling.btw = btw;
+                bestelling.fooi = fooi;
+                bestelling.betaalWijze = betaalwijze;
 
                 bestellingList.Add(bestelling);
             }
