@@ -137,8 +137,27 @@ namespace UI
         {
             Button clickedStatusButton = (sender as Button);
             int statusButtonTafelId = (int) clickedStatusButton.Tag;
-            HandheldPopUpStatus popUpStatus = new HandheldPopUpStatus(statusButtonTafelId);
-            popUpStatus.Show();
+            Tafel tafel = tafels[statusButtonTafelId - 1]; // -1 omdat list index begint bij 0 maar tafelnummers bij 1
+
+            // Controleer of en door wie een tafel bezet is
+            if (tafel.status == "bezet")
+            {
+                if (tafel.bezetDoor != medewerker.inlognummer)
+                {
+                    HandheldPopUpReminder popUp = new HandheldPopUpReminder();
+                    popUp.Show();
+                }
+                else
+                {
+                    HandheldPopUpStatus popUpStatus = new HandheldPopUpStatus(statusButtonTafelId);
+                    popUpStatus.Show();
+                }
+            }
+            else
+            {
+                HandheldPopUpStatus popUpStatus = new HandheldPopUpStatus(statusButtonTafelId);
+                popUpStatus.Show();
+            }
         }
     }
 }
