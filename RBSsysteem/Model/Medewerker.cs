@@ -8,22 +8,17 @@ namespace Model
 {
     public class Medewerker
     {
-        private int medewerkerID { get; set; }
-        private string naam { get; set; }
-        private int inlogNummer { get; set; }
-        private Rol rol { get; set; }//enum
+        public int Id { get; private set; }
+        public string Naam { get; private set; }
+        public int Inlognummer { get; private set; }
+        public Rol Rol { get; private set; }
 
-        public Medewerker()
+        public Medewerker(int medewerkerId, string naam, int inlognummer, Rol rol)
         {
-
-        }
-
-        public Medewerker(int medewerkerID, string naam, int inlogNummer, Rol rol)
-        {
-            this.medewerkerID = medewerkerID;
-            this.naam = naam;
-            this.inlogNummer = inlogNummer;
-            this.rol = rol;
+            this.Id = medewerkerId;
+            this.Naam = naam;
+            this.Inlognummer = inlognummer;
+            this.Rol = rol;
         }
     }
 }

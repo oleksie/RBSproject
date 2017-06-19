@@ -44,7 +44,6 @@
     <Compile Include="Bestelling.cs" />
     <Compile Include="BestellingItem.cs" />
     <Compile Include="Categorie.cs" />
-    <Compile Include="ListviewBereid.cs" />
     <Compile Include="ListviewBestellen.cs" />
     <Compile Include="Rol.cs" />
     <Compile Include="Medewerker.cs" />

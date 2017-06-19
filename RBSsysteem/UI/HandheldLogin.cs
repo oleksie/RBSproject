@@ -38,9 +38,8 @@ namespace UI
                 {
                     LoginService loginService = new LoginService();
                     Medewerker medewerker = loginService.LoginMedewerker(inlognummer);
-                    
 
-                    switch (medewerker.rol)
+                    switch (medewerker.Rol)
                     {
                         case (Rol) 1:
                             this.Hide();

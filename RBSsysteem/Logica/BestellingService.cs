@@ -12,10 +12,9 @@ namespace Logica
 {
     public class BestellingService
     {
-        
         List<ListviewBestellen> listvoorDB = new List<ListviewBestellen>();
         
-        BestellingDAO bestelling = new BestellingDAO();
+        BestellingDAO bestellingDAO = new BestellingDAO();
         MenuItemService getListMetItems = new MenuItemService();
 
         public BestellingService()
@@ -48,7 +47,7 @@ namespace Logica
             Bestelling bestellingInfo = new Bestelling();
 
             bestellingInfo.commentaarKlant = "";
-            bestellingInfo.medewerkerid = medewerker.medewerkerId;
+            bestellingInfo.medewerkerid = medewerker.Id;
             bestellingInfo.betaald = "nee";
             bestellingInfo.btw = totaalprijs * 0.21;
             bestellingInfo.tafelId= tafelnr;
@@ -57,39 +56,39 @@ namespace Logica
             bestellingInfo.betaalWijze = "";
 
             
-            bestelling.PlaatsBestelling(bestellingInfo);
+            bestellingDAO.PlaatsBestelling(bestellingInfo);
         }
 
         public int GetBestellingID(Medewerker medewerker, int tafelnr)
         {
             BestellingDAO bestelling = new BestellingDAO();
-            int bestellingID = bestelling.GetHuidigeBestellingID(medewerker.medewerkerId, tafelnr);
+            int bestellingID = bestelling.GetHuidigeBestellingID(medewerker.Id, tafelnr);
 
             return bestellingID;
         }
 
         public void GetTotaalPrijs(int bestellingid, TextBox txtprijs)
         {
-            double prijs = bestelling.GetTotaalPrijs(bestellingid);
+            double prijs = bestellingDAO.GetTotaalPrijs(bestellingid);
             txtprijs.Text = prijs.ToString("0.00");
         }
 
         public void GetBTW(int bestellingid, TextBox txtbtw)
         {
-            double btw = bestelling.GetBTW(bestellingid);
+            double btw = bestellingDAO.GetBTW(bestellingid);
             txtbtw.Text = btw.ToString("0.00");
         }
 
         public List<Bestelling> GetAlleBestellingen()
         {
-            List<Bestelling> alleBestellingen = bestelling.GetAllBestellingen();
+            List<Bestelling> alleBestellingen = bestellingDAO.GetAllBestellingen();
 
             return alleBestellingen;
         }
 
         public void UpdateBestelling(int bestellingid, string betaalwijze, double fooi, string betaald)
         {
-            bestelling.UpdateBestelling(bestellingid, betaalwijze, fooi, betaald);
+            bestellingDAO.UpdateBestelling(bestellingid, betaalwijze, fooi, betaald);
         }
     }
 }
