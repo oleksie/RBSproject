@@ -45,7 +45,7 @@ namespace Logica
                         arr[3] = Convert.ToString(currentbestelling[i].commentaar);
                         arr[4] = currentbestelling[i].status;
                         arr[5] = Convert.ToString(currentbestelling[i].tijdOpgenomen);
-                        arr[6] = Convert.ToString(currentbestelingtafel[i].tafelId);
+                        arr[6] = Convert.ToString(currentbestelingtafel[i].TafelId);
                         item = new ListViewItem(arr);
                         listview.Add(item);
                     }
@@ -57,7 +57,7 @@ namespace Logica
                         arr[3] = Convert.ToString(currentbestelling[i].commentaar);
                         arr[4] = currentbestelling[i].status;
                         arr[5] = Convert.ToString(currentbestelling[i].tijdOpgenomen);
-                        arr[6] = Convert.ToString(currentbestelingtafel[i].tafelId);
+                        arr[6] = Convert.ToString(currentbestelingtafel[i].TafelId);
                         item = new ListViewItem(arr);
                         listview.Add(item);
                     }
@@ -91,7 +91,7 @@ namespace Logica
                         arr[3] = Convert.ToString(currentbestelling[i].commentaar);
                         arr[4] = currentbestelling[i].status;
                         arr[5] = Convert.ToString(currentbestelling[i].tijdOpgenomen);
-                        arr[6] = Convert.ToString(currentbestelingtafel[i].tafelId);
+                        arr[6] = Convert.ToString(currentbestelingtafel[i].TafelId);
                         item = new ListViewItem(arr);
                         listview.Add(item);
                     }
@@ -103,7 +103,7 @@ namespace Logica
                         arr[3] = Convert.ToString(currentbestelling[i].commentaar);
                         arr[4] = currentbestelling[i].status;
                         arr[5] = Convert.ToString(currentbestelling[i].tijdOpgenomen);
-                        arr[6] = Convert.ToString(currentbestelingtafel[i].tafelId);
+                        arr[6] = Convert.ToString(currentbestelingtafel[i].TafelId);
                         item = new ListViewItem(arr);
                         listview.Add(item);
                     }

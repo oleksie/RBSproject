@@ -20,7 +20,7 @@ namespace DAL
 
         public List<Tafel> GetTafels()
         {
-            List<Tafel> tafels = new List<Tafel>();
+            
 
             DALConnection connectie = new DALConnection();
             DBConnectie = connectie.MaakConnectieDB("Reader");
@@ -29,7 +29,10 @@ namespace DAL
             SqlCommand command = new SqlCommand("SELECT * FROM Tafel", DBConnectie);
 
             SqlDataReader reader = command.ExecuteReader();
-            
+
+            // Maak een list aan met Tafel objecten
+            List<Tafel> tafels = new List<Tafel>();
+
             // vul tafels list met resultaten
             while (reader.Read())
             {

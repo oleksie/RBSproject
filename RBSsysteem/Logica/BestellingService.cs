@@ -32,30 +32,24 @@ namespace Logica
 
         public void MaakNieuweBestelling(Medewerker medewerker, int tafelnr)
         {
-            
-
-            //Getlist.listvoorDB = getListMetItems.listVoorListview;
-
             double totaalprijs = 0;
             string naam = "";
             foreach (ListviewBestellen x in listvoorDB)
             {
                 totaalprijs = totaalprijs + x.prijs;
                 naam = x.naam;
-                
             }
             Bestelling bestellingInfo = new Bestelling();
 
-            bestellingInfo.commentaarKlant = "";
-            bestellingInfo.medewerkerid = medewerker.Id;
-            bestellingInfo.betaald = "nee";
-            bestellingInfo.btw = totaalprijs * 0.21;
-            bestellingInfo.tafelId= tafelnr;
-            bestellingInfo.fooi = 0;
-            bestellingInfo.totaalprijs = totaalprijs;
-            bestellingInfo.betaalWijze = "";
+            bestellingInfo.CommentaarKlant = "";
+            bestellingInfo.Medewerkerid = medewerker.Id;
+            bestellingInfo.Betaald = "nee";
+            bestellingInfo.Btw = totaalprijs * 0.21;
+            bestellingInfo.TafelId= tafelnr;
+            bestellingInfo.Fooi = 0;
+            bestellingInfo.Totaalprijs = totaalprijs;
+            bestellingInfo.BetaalWijze = "";
 
-            
             bestellingDAO.PlaatsBestelling(bestellingInfo);
         }
 
@@ -81,8 +75,8 @@ namespace Logica
 
         public List<Bestelling> GetAlleBestellingen()
         {
+            // Haal alle bestellingen op uit de bestelling tabel via de BestellingDAO en retourneer deze
             List<Bestelling> alleBestellingen = bestellingDAO.GetAllBestellingen();
-
             return alleBestellingen;
         }
 

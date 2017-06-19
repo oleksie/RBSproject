@@ -8,14 +8,14 @@ namespace Model
 {
     public class Tafel
     {
-        public int TafelId { get; private set; }
+        public int Id { get; private set; }
         public string Status { get; private set; }
         public int Capaciteit { get; private set; }
         public int BezetDoor { get; private set; }
         
         public Tafel(int tafelId, string status, int capaciteit, int bezetDoor)
         {
-            this.TafelId = tafelId;
+            this.Id = tafelId;
             this.Status = status;
             this.Capaciteit = capaciteit;
             this.BezetDoor = bezetDoor;
