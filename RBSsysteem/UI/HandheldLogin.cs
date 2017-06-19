@@ -54,8 +54,9 @@ namespace UI
                             basisKokBar.Show();
                             break;
                         // rol 4 is voor eigenaar en die wordt niet geïmplementeerd
-                        //case (Rol)4:
-                        //    break;
+                        case (Rol)4:
+                            lblLoginError.Text = "Eigenaar functionaliteit is \nnog niet geimplementeerd.";
+                            break;
                     }
                 }
                 catch // (Exception exc)

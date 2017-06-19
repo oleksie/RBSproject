@@ -51,7 +51,7 @@ namespace UI
             lv_KokBarman.Columns.Add("Commentaar", 345);
             lv_KokBarman.Columns.Add("Status", 100);
             lv_KokBarman.Columns.Add("Tijd Opgenomen", 300);
-            lv_KokBarman.Columns.Add("Tafel", 100);
+            lv_KokBarman.Columns.Add("Tafel", 90);
 
             //selecteert bestelling list op basis van rol
             if (medewerker.rol == Rol.Kok)

@@ -138,7 +138,7 @@ namespace UI
             Button clickedStatusButton = (sender as Button);
             int statusButtonTafelId = (int) clickedStatusButton.Tag;
             Tafel tafel = tafels[statusButtonTafelId - 1]; // -1 omdat list index begint bij 0 maar tafelnummers bij 1
-
+            
             // Controleer of en door wie een tafel bezet is
             if (tafel.status == "bezet")
             {
