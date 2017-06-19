@@ -91,7 +91,7 @@ namespace UI
             foreach (Tafel tafel in tafels)
             {
                 RoundButton tafelButton = new RoundButton();
-                tafelButton.Tag = tafel.TafelId;
+                tafelButton.Tag = tafel.Id;
                 switch (tafel.Status)
                 {
                     case "vrij":
@@ -110,7 +110,7 @@ namespace UI
                 statusButton.Size = new Size(20, 20);
                 statusButton.Enabled = true;
                 statusButton.Text = "!";
-                statusButton.Tag = tafel.TafelId;
+                statusButton.Tag = tafel.Id;
                 statusButton.Click += StatusButton_Click;
 
                 // Geef een margin van 70 pixels aan de rechter zijde aan alle tafels met een oneven nummer
@@ -120,7 +120,7 @@ namespace UI
                     statusButton.Margin = new Padding(0, 45, 0, 0);
 
                 // Button opmaak
-                tafelButton.Text = tafel.TafelId.ToString();
+                tafelButton.Text = tafel.Id.ToString();
                 tafelButton.Font = new Font("Microsoft Sans Serif", 20);
 
                 // Eventhandler voor als er op een button geklikt wordt

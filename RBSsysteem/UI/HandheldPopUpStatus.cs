@@ -48,23 +48,29 @@ namespace UI
 
         private List<BestellingItem> getBestellingItemsForListview()
         {
-            // Bestelling service aanmaken
+            // Bestelling service aanmaken en alle bestellingen ophalen
             BestellingService bestellingService = new BestellingService();
             List<Bestelling> bestellingen = bestellingService.GetAlleBestellingen();
 
-            // Bestel item service aanmaken
+            // Bestel item service aanmaken en alle bestellingItems ophalen
             BestelItemService bestelItemService = new BestelItemService();
             List<BestellingItem> bestellingItems = bestelItemService.GetAllBestellingItems();
 
+            // List aanmaken waaraan de bestellingItems met status Bereid komen te staan
             List<BestellingItem> bereidBestellingItems = new List<BestellingItem>();
 
+            // Loop door alle bestellingen heen
             foreach (Bestelling bestelling in bestellingen)
             {
-                if(bestelling.betaald == "nee")
+                if(bestelling.Betaald == "nee")
                 {
                     foreach (BestellingItem bestelItem in bestellingItems)
                     {
-                        if(bestelItem.bestellingID == bestelling.bestelling_id && bestelItem.status == "bereid" && bestelling.tafelId == tafelId)
+                        if (
+                            bestelItem.bestellingID == bestelling.Id &&
+                            bestelItem.status == "bereid" &&
+                            bestelling.TafelId == tafelId
+                            )
                         {
                             bereidBestellingItems.Add(bestelItem);
                         }

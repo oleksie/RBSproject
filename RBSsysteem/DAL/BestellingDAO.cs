@@ -70,28 +70,28 @@ namespace DAL
             SqlParameter IdParam8 = new SqlParameter("@betaalwijze", SqlDbType.NVarChar, 50);
 
             command.Parameters.Add(IdParam1);
-            IdParam1.Value = bestelling.commentaarKlant;
+            IdParam1.Value = bestelling.CommentaarKlant;
 
             command.Parameters.Add(IdParam2);
-            IdParam2.Value = bestelling.tafelId;
+            IdParam2.Value = bestelling.TafelId;
 
             command.Parameters.Add(IdParam3);
-            IdParam3.Value = bestelling.medewerkerid;
+            IdParam3.Value = bestelling.Medewerkerid;
 
             command.Parameters.Add(IdParam4);
-            IdParam4.Value = bestelling.totaalprijs;
+            IdParam4.Value = bestelling.Totaalprijs;
 
             command.Parameters.Add(IdParam5);
-            IdParam5.Value = bestelling.betaald;
+            IdParam5.Value = bestelling.Betaald;
 
             command.Parameters.Add(IdParam6);
-            IdParam6.Value = bestelling.btw;
+            IdParam6.Value = bestelling.Btw;
 
             command.Parameters.Add(IdParam7);
-            IdParam7.Value = bestelling.fooi;
+            IdParam7.Value = bestelling.Fooi;
 
             command.Parameters.Add(IdParam8);
-            IdParam8.Value = bestelling.betaalWijze;
+            IdParam8.Value = bestelling.BetaalWijze;
 
             command.Prepare();
 
@@ -162,15 +162,15 @@ namespace DAL
 
                 Bestelling bestelling = new Bestelling();
 
-                bestelling.bestelling_id = bestellingid;
-                bestelling.commentaarKlant = commentaar;
-                bestelling.medewerkerid = medewerkerid;
-                bestelling.tafelId = tafel;
-                bestelling.totaalprijs = totaalPrijs;
-                bestelling.betaald = betaald;
-                bestelling.btw = btw;
-                bestelling.fooi = fooi;
-                bestelling.betaalWijze = betaalwijze;
+                bestelling.Id = bestellingid;
+                bestelling.CommentaarKlant = commentaar;
+                bestelling.Medewerkerid = medewerkerid;
+                bestelling.TafelId = tafel;
+                bestelling.Totaalprijs = totaalPrijs;
+                bestelling.Betaald = betaald;
+                bestelling.Btw = btw;
+                bestelling.Fooi = fooi;
+                bestelling.BetaalWijze = betaalwijze;
 
                 bestellingList.Add(bestelling);
             }
@@ -238,29 +238,30 @@ namespace DAL
 
         public List<Bestelling> GetAllBestellingen()
         {
-            List<Bestelling> bestellingen = new List<Bestelling>();
+            // Breng de database verbinding tot stand en voer een query uit
             DALConnection connectie = new DALConnection();
             DBConnectie = connectie.MaakConnectieDB("Reader");
-
             DBConnectie.Open();
-
             SqlCommand command = new SqlCommand("SELECT * FROM Bestelling", DBConnectie);
-
             SqlDataReader reader = command.ExecuteReader();
 
+            // Maak een list met Bestelling
+            List<Bestelling> bestellingen = new List<Bestelling>();
+
+            // Vul de list met alle records die geretourneerd worden
             while (reader.Read())
             {
                 Bestelling bestelling = new Bestelling();
 
-                bestelling.bestelling_id = reader.GetInt32(0);
-                bestelling.commentaarKlant = reader.GetString(1);
-                bestelling.tafelId = reader.GetInt32(2);
-                bestelling.medewerkerid = reader.GetInt32(3);
-                bestelling.totaalprijs = reader.GetDouble(4);
-                bestelling.betaald = reader.GetString(5);
-                bestelling.btw = reader.GetDouble(6);
-                bestelling.fooi = reader.GetDouble(7);
-                bestelling.betaalWijze = reader.GetString(8);
+                bestelling.Id = reader.GetInt32(0);
+                bestelling.CommentaarKlant = reader.GetString(1);
+                bestelling.TafelId = reader.GetInt32(2);
+                bestelling.Medewerkerid = reader.GetInt32(3);
+                bestelling.Totaalprijs = reader.GetDouble(4);
+                bestelling.Betaald = reader.GetString(5);
+                bestelling.Btw = reader.GetDouble(6);
+                bestelling.Fooi = reader.GetDouble(7);
+                bestelling.BetaalWijze = reader.GetString(8);
 
                 bestellingen.Add(bestelling);
             }

@@ -8,21 +8,21 @@ namespace Model
 {
     public class Bestelling
     {
-        public int bestelling_id;
-        public string commentaarKlant;
-        public int medewerkerid;
-        public int tafelId;
-        public double totaalprijs;
-        public string betaald;
-        public double btw;
-        public double fooi;
-        public string betaalWijze;
+        public int Id { get; set; }
+        public string CommentaarKlant { get; set; }
+        public int Medewerkerid { get; set; }
+        public int TafelId { get; set; }
+        public double Totaalprijs { get; set; }
+        public string Betaald { get; set; }
+        public double Btw { get; set; }
+        public double Fooi { get; set; }
+        public string BetaalWijze { get; set; }
 
 
         public Bestelling( int tafelId, double prijs)
         {
-            this.tafelId = tafelId;
-            this.totaalprijs = prijs;
+            this.TafelId = tafelId;
+            this.Totaalprijs = prijs;
         }
 
         public Bestelling()
