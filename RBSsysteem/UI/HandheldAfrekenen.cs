@@ -69,5 +69,15 @@ namespace UI
             txtInlognummer[0].Text = "";
             login.Show();
         }
+
+        private void HandheldAfrekenen_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listAfreken_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -150,24 +150,24 @@
             this.groupBox1.Controls.Add(this.txt_totaal);
             this.groupBox1.Location = new System.Drawing.Point(434, 550);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 225);
+            this.groupBox1.Size = new System.Drawing.Size(249, 225);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             // 
             // txt_fooi
             // 
             this.txt_fooi.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.txt_fooi.Location = new System.Drawing.Point(121, 157);
+            this.txt_fooi.Location = new System.Drawing.Point(100, 157);
             this.txt_fooi.Name = "txt_fooi";
-            this.txt_fooi.Size = new System.Drawing.Size(73, 53);
+            this.txt_fooi.Size = new System.Drawing.Size(143, 53);
             this.txt_fooi.TabIndex = 9;
             // 
             // txt_klantBetaalt
             // 
             this.txt_klantBetaalt.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.txt_klantBetaalt.Location = new System.Drawing.Point(121, 88);
+            this.txt_klantBetaalt.Location = new System.Drawing.Point(100, 88);
             this.txt_klantBetaalt.Name = "txt_klantBetaalt";
-            this.txt_klantBetaalt.Size = new System.Drawing.Size(73, 53);
+            this.txt_klantBetaalt.Size = new System.Drawing.Size(143, 53);
             this.txt_klantBetaalt.TabIndex = 8;
             // 
             // label5
@@ -200,9 +200,9 @@
             // txt_totaal
             // 
             this.txt_totaal.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.txt_totaal.Location = new System.Drawing.Point(121, 19);
+            this.txt_totaal.Location = new System.Drawing.Point(100, 19);
             this.txt_totaal.Name = "txt_totaal";
-            this.txt_totaal.Size = new System.Drawing.Size(73, 53);
+            this.txt_totaal.Size = new System.Drawing.Size(143, 53);
             this.txt_totaal.TabIndex = 4;
             // 
             // listAfreken
@@ -211,6 +211,7 @@
             this.columnNaam,
             this.columnAantal,
             this.columnPrijs});
+            this.listAfreken.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.listAfreken.GridLines = true;
             this.listAfreken.Location = new System.Drawing.Point(64, 117);
             this.listAfreken.Name = "listAfreken";
@@ -218,6 +219,7 @@
             this.listAfreken.TabIndex = 11;
             this.listAfreken.UseCompatibleStateImageBehavior = false;
             this.listAfreken.View = System.Windows.Forms.View.Details;
+            this.listAfreken.SelectedIndexChanged += new System.EventHandler(this.listAfreken_SelectedIndexChanged);
             // 
             // columnNaam
             // 
@@ -246,9 +248,9 @@
             // txtBTW
             // 
             this.txtBTW.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.txtBTW.Location = new System.Drawing.Point(342, 569);
+            this.txtBTW.Location = new System.Drawing.Point(294, 569);
             this.txtBTW.Name = "txtBTW";
-            this.txtBTW.Size = new System.Drawing.Size(73, 53);
+            this.txtBTW.Size = new System.Drawing.Size(134, 53);
             this.txtBTW.TabIndex = 10;
             // 
             // HandheldAfrekenen
@@ -268,6 +270,7 @@
             this.Controls.Add(this.Btn_Afrekenen);
             this.Name = "HandheldAfrekenen";
             this.Text = "HandheldAfrekenen";
+            this.Load += new System.EventHandler(this.HandheldAfrekenen_Load);
             this.Controls.SetChildIndex(this.Btn_Afrekenen, 0);
             this.Controls.SetChildIndex(this.radioButton1, 0);
             this.Controls.SetChildIndex(this.radioButton2, 0);
