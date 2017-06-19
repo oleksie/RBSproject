@@ -14,25 +14,25 @@ namespace UI
 {
     public partial class HandheldPopUpStatus : Form
     {
+        private int tafelId;
         public HandheldPopUpStatus(int statusButtonTafelId)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            tafelId = statusButtonTafelId;
 
             lvBestelItemsStatus.View = View.Details;
             lvBestelItemsStatus.GridLines = true;
             lvBestelItemsStatus.FullRowSelect = true;
-
-            lvBestelItemsStatus.Columns.Add("Tafel", 40);
-            lvBestelItemsStatus.Columns.Add("Item naam", 170);
-            lvBestelItemsStatus.Columns.Add("Status", 50);
-            lvBestelItemsStatus.Columns.Add("Verstreken tijd", 80);
+            lvBestelItemsStatus.Font = new Font("Microsoft Sans Serif", 14);
+            lvBestelItemsStatus.Columns.Add("Tafel", 55);
+            lvBestelItemsStatus.Columns.Add("Item naam", 265);
+            lvBestelItemsStatus.Columns.Add("Verstreken tijd", 135);
 
             foreach (BestellingItem bereidBestelItem in getBestellingItemsForListview())
             {
                 ListViewItem lviStatus = new ListViewItem(statusButtonTafelId.ToString());
                 lviStatus.SubItems.Add(bereidBestelItem.naam);
-                lviStatus.SubItems.Add(bereidBestelItem.status);
 
                 // Tijd berekenen tussen opname van de bestelling en nu en tonen in minuten
                 DateTime nu = DateTime.Now;
@@ -41,12 +41,9 @@ namespace UI
 
                 lvBestelItemsStatus.Items.Add(lviStatus);
             }
-        }
 
-        private void Btn_HandheldPopUpStatusOk_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
+        
 
         private List<BestellingItem> getBestellingItemsForListview()
         {
@@ -66,7 +63,7 @@ namespace UI
                 {
                     foreach (BestellingItem bestelItem in bestellingItems)
                     {
-                        if(bestelItem.bestellingID == bestelling.bestelling_id && bestelItem.status == "bereid")
+                        if(bestelItem.bestellingID == bestelling.bestelling_id && bestelItem.status == "bereid" && bestelling.tafelId == tafelId)
                         {
                             bereidBestellingItems.Add(bestelItem);
                         }
@@ -75,6 +72,11 @@ namespace UI
             }
 
             return bereidBestellingItems;
+        }
+
+        private void btnSluiten_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
