@@ -36,8 +36,8 @@ namespace Logica
                     button = new Button();
                     button.Tag = x.Naam;
                     button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
-                    button.Width = 200;
-                    button.Height = 100;
+                    button.Width = 255;
+                    button.Height = 120;
 
                     btnList.Add(button);
                     panel.Controls.Add(button);
@@ -54,8 +54,8 @@ namespace Logica
                     button = new Button();
                     button.Tag = x.Naam;
                     button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
-                    button.Width = 200;
-                    button.Height = 100;
+                    button.Width = 255;
+                    button.Height = 120;
 
 
                     panel.Controls.Add(button);
@@ -72,8 +72,8 @@ namespace Logica
                     button = new Button();
                     button.Tag = x.Naam;
                     button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
-                    button.Width = 200;
-                    button.Height = 100;
+                    button.Width = 255;
+                    button.Height = 120;
 
                     panel.Controls.Add(button);
                     btnList.Add(button);
@@ -89,8 +89,8 @@ namespace Logica
                     button = new Button();
                     button.Tag = x.Naam;
                     button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
-                    button.Width = 200;
-                    button.Height = 100;
+                    button.Width = 255;
+                    button.Height = 120;
 
                     panel.Controls.Add(button);
                     btnList.Add(button);
@@ -106,8 +106,8 @@ namespace Logica
                     button = new Button();
                     button.Tag = x.Naam;
                     button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
-                    button.Width = 200;
-                    button.Height = 100;
+                    button.Width = 255;
+                    button.Height = 120;
 
                     panel.Controls.Add(button);
                     btnList.Add(button);
@@ -123,8 +123,8 @@ namespace Logica
                     button = new Button();
                     button.Tag = x.Naam;
                     button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
-                    button.Width = 200;
-                    button.Height = 100;
+                    button.Width = 255;
+                    button.Height = 120;
 
                     panel.Controls.Add(button);
                     btnList.Add(button);
@@ -140,8 +140,8 @@ namespace Logica
                     button = new Button();
                     button.Tag = x.Naam;
                     button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
-                    button.Width = 200;
-                    button.Height = 100;
+                    button.Width = 255;
+                    button.Height = 120;
 
                     panel.Controls.Add(button);
                     btnList.Add(button);
@@ -157,8 +157,8 @@ namespace Logica
                     button = new Button();
                     button.Tag = x.Naam;
                     button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
-                    button.Width = 200;
-                    button.Height = 100;
+                    button.Width = 125;
+                    button.Height = 120;
 
                     panel.Controls.Add(button);
                     btnList.Add(button);
@@ -174,8 +174,8 @@ namespace Logica
                     button = new Button();
                     button.Tag = x.Naam;
                     button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
-                    button.Width = 200;
-                    button.Height = 100;
+                    button.Width = 255;
+                    button.Height = 120;
 
                     panel.Controls.Add(button);
                     btnList.Add(button);
@@ -191,8 +191,8 @@ namespace Logica
                     button = new Button();
                     button.Tag = x.Naam;
                     button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
-                    button.Width = 200;
-                    button.Height = 100;
+                    button.Width = 167;
+                    button.Height = 120;
 
                     panel.Controls.Add(button);
                     btnList.Add(button);
@@ -208,7 +208,7 @@ namespace Logica
                     button = new Button();
                     button.Tag = x.Naam;
                     button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
-                    button.Width = 200;
+                    button.Width = 167;
                     button.Height = 100;
 
                     panel.Controls.Add(button);
@@ -225,8 +225,8 @@ namespace Logica
                     button = new Button();
                     button.Tag = x.Naam;
                     button.Text = x.Naam + Environment.NewLine + x.Omschrijving + Environment.NewLine + "€ " + x.Prijs;
-                    button.Width = 200;
-                    button.Height = 100;
+                    button.Width = 255;
+                    button.Height = 120;
 
                     panel.Controls.Add(button);
                     btnList.Add(button);

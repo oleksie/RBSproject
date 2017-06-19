@@ -154,7 +154,7 @@
             this.Controls.Add(this.lblPersooneelsNummer);
             this.DoubleBuffered = true;
             this.Name = "HandheldTafels";
-            this.Text = "HandheldTafels";
+            this.Text = "Tafels";
             this.Controls.SetChildIndex(this.lblPersooneelsNummer, 0);
             this.Controls.SetChildIndex(this.Btn_TafelsLoguit, 0);
             this.Controls.SetChildIndex(this.pnlTafelOverzicht, 0);
