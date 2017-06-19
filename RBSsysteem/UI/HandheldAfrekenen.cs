@@ -63,29 +63,39 @@ namespace UI
         {
             if (rbContant.Checked || rbCreditcard.Checked || rbPinnen.Checked && double.Parse(txt_klantBetaalt.Text) > 0)
             {
-                string betaalWijze = "";
+                if ((MessageBox.Show("Is de bestelling compleet?", "De bestelling wordt nu opgeslagen.",
+                     MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                     MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
+                {
 
-                if (rbContant.Checked)
-                {
-                    betaalWijze = rbContant.Text;
-                } else if(rbCreditcard.Checked)
-                {
-                    betaalWijze = rbCreditcard.Text;
-                }else
-                {
-                    betaalWijze = rbPinnen.Text;
+                    string betaalWijze = "";
+
+                    if (rbContant.Checked)
+                    {
+                        betaalWijze = rbContant.Text;
+                    }
+                    else if (rbCreditcard.Checked)
+                    {
+                        betaalWijze = rbCreditcard.Text;
+                    }
+                    else
+                    {
+                        betaalWijze = rbPinnen.Text;
+                    }
+
+                    double fooi = double.Parse(this.txt_fooi.Text);
+                    string betaald = "ja";
+                    int tafelnr = tafelNummer;
+
+                    tafel.UpdateTafel(tafelnr);
+                    bestelling.UpdateBestelling(bestellingID, betaalWijze, fooi, betaald);
+
+                    this.Hide();
+                    naarTafelOverzicht.CreateTafelButtons();
+                    naarTafelOverzicht.Show();
+
                 }
-
-                double fooi = double.Parse(this.txt_fooi.Text);
-                string betaald = "ja";
-                int tafelnr = tafelNummer;
-
-                tafel.UpdateTafel(tafelnr);
-                bestelling.UpdateBestelling(bestellingID, betaalWijze, fooi, betaald);
-
-                this.Hide();
-                naarTafelOverzicht.CreateTafelButtons();
-                naarTafelOverzicht.Show();
+                
                 
             }
             else
