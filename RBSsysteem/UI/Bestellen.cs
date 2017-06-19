@@ -264,7 +264,7 @@ namespace UI
             {
                 foreach (Model.MenuItem y in checkVoorraad)
                 {
-                    if (x.id == y.ID && y.Voorraad < x.aantal)
+                    if (x.MenuItemID == y.MenuItemID && y.Voorraad < x.Aantal)
                     {
                         naamItemVoorraad = y.Naam;
                         aantalItemVoorraad = y.Voorraad;
@@ -272,7 +272,7 @@ namespace UI
                         break;
                     }
 
-                    y.Voorraad = y.Voorraad - x.aantal;
+                    y.Voorraad = y.Voorraad - x.Aantal;
                 }
 
                 if (genoegOpVoorraad == false)
@@ -344,9 +344,9 @@ namespace UI
 
             foreach (ListviewBestellen x in listVoorDB)
             {
-                if (id == x.id && opmerking.Equals(x.opmerking))
+                if (id == x.MenuItemID && opmerking.Equals(x.Opmerking))
                 {
-                    x.aantal = aantal;
+                    x.Aantal = aantal;
                     break;
                 }
             }
@@ -367,9 +367,9 @@ namespace UI
 
             foreach (ListviewBestellen x in listVoorDB)
             {
-                if (id == x.id && opmerking.Equals(x.opmerking))
+                if (id == x.MenuItemID && opmerking.Equals(x.Opmerking))
                 {
-                    x.aantal = aantal;
+                    x.Aantal = aantal;
                     break;
                 }
             }
@@ -385,7 +385,7 @@ namespace UI
 
             foreach (ListviewBestellen x in listVoorDB)
             {
-                if (id == x.id && opmerking.Equals(x.opmerking) && aantal == x.aantal)
+                if (id == x.MenuItemID && opmerking.Equals(x.Opmerking) && aantal == x.Aantal)
                 {
                     listVoorDB.Remove(x);
                     break;

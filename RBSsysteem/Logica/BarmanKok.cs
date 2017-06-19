@@ -37,26 +37,26 @@ namespace Logica
             {
                 if (currentmenuitem[i].CategorieID <= 7)
                 {
-                    if (filter == "bereid" & currentbestelling[i].status == "bereid")
+                    if (filter == "bereid" & currentbestelling[i].Status == "bereid")
                     {
-                        arr[0] = Convert.ToString(currentbestelling[i].bestelitemID);
+                        arr[0] = Convert.ToString(currentbestelling[i].BestelitemID);
                         arr[1] = Convert.ToString(currentmenuitem[i].Naam);
-                        arr[2] = Convert.ToString(currentbestelling[i].aantal);
-                        arr[3] = Convert.ToString(currentbestelling[i].commentaar);
-                        arr[4] = currentbestelling[i].status;
-                        arr[5] = Convert.ToString(currentbestelling[i].tijdOpgenomen);
+                        arr[2] = Convert.ToString(currentbestelling[i].Aantal);
+                        arr[3] = Convert.ToString(currentbestelling[i].Commentaar);
+                        arr[4] = currentbestelling[i].Status;
+                        arr[5] = Convert.ToString(currentbestelling[i].TijdOpgenomen);
                         arr[6] = Convert.ToString(currentbestelingtafel[i].TafelId);
                         item = new ListViewItem(arr);
                         listview.Add(item);
                     }
-                    else if (filter == "besteld" & currentbestelling[i].status == "besteld")
+                    else if (filter == "besteld" & currentbestelling[i].Status == "besteld")
                     {
-                        arr[0] = Convert.ToString(currentbestelling[i].bestelitemID);
+                        arr[0] = Convert.ToString(currentbestelling[i].BestelitemID);
                         arr[1] = Convert.ToString(currentmenuitem[i].Naam);
-                        arr[2] = Convert.ToString(currentbestelling[i].aantal);
-                        arr[3] = Convert.ToString(currentbestelling[i].commentaar);
-                        arr[4] = currentbestelling[i].status;
-                        arr[5] = Convert.ToString(currentbestelling[i].tijdOpgenomen);
+                        arr[2] = Convert.ToString(currentbestelling[i].Aantal);
+                        arr[3] = Convert.ToString(currentbestelling[i].Commentaar);
+                        arr[4] = currentbestelling[i].Status;
+                        arr[5] = Convert.ToString(currentbestelling[i].TijdOpgenomen);
                         arr[6] = Convert.ToString(currentbestelingtafel[i].TafelId);
                         item = new ListViewItem(arr);
                         listview.Add(item);
@@ -83,26 +83,26 @@ namespace Logica
             {
                 if (currentmenuitem[i].CategorieID >= 8)
                 {
-                    if (filter == "bereid" & currentbestelling[i].status == "bereid")
+                    if (filter == "bereid" & currentbestelling[i].Status == "bereid")
                     {
-                        arr[0] = Convert.ToString(currentbestelling[i].bestelitemID);
+                        arr[0] = Convert.ToString(currentbestelling[i].BestelitemID);
                         arr[1] = Convert.ToString(currentmenuitem[i].Naam);
-                        arr[2] = Convert.ToString(currentbestelling[i].aantal);
-                        arr[3] = Convert.ToString(currentbestelling[i].commentaar);
-                        arr[4] = currentbestelling[i].status;
-                        arr[5] = Convert.ToString(currentbestelling[i].tijdOpgenomen);
+                        arr[2] = Convert.ToString(currentbestelling[i].Aantal);
+                        arr[3] = Convert.ToString(currentbestelling[i].Commentaar);
+                        arr[4] = currentbestelling[i].Status;
+                        arr[5] = Convert.ToString(currentbestelling[i].TijdOpgenomen);
                         arr[6] = Convert.ToString(currentbestelingtafel[i].TafelId);
                         item = new ListViewItem(arr);
                         listview.Add(item);
                     }
-                    else if (filter == "besteld" & currentbestelling[i].status == "besteld")
+                    else if (filter == "besteld" & currentbestelling[i].Status == "besteld")
                     {
-                        arr[0] = Convert.ToString(currentbestelling[i].bestelitemID);
+                        arr[0] = Convert.ToString(currentbestelling[i].BestelitemID);
                         arr[1] = Convert.ToString(currentmenuitem[i].Naam);
-                        arr[2] = Convert.ToString(currentbestelling[i].aantal);
-                        arr[3] = Convert.ToString(currentbestelling[i].commentaar);
-                        arr[4] = currentbestelling[i].status;
-                        arr[5] = Convert.ToString(currentbestelling[i].tijdOpgenomen);
+                        arr[2] = Convert.ToString(currentbestelling[i].Aantal);
+                        arr[3] = Convert.ToString(currentbestelling[i].Commentaar);
+                        arr[4] = currentbestelling[i].Status;
+                        arr[5] = Convert.ToString(currentbestelling[i].TijdOpgenomen);
                         arr[6] = Convert.ToString(currentbestelingtafel[i].TafelId);
                         item = new ListViewItem(arr);
                         listview.Add(item);

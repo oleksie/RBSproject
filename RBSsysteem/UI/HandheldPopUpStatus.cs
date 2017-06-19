@@ -33,11 +33,11 @@ namespace UI
             foreach (BestellingItem bereidBestelItem in getBestellingItemsForListview())
             {
                 ListViewItem lviStatus = new ListViewItem(statusButtonTafelId.ToString());
-                lviStatus.SubItems.Add(bereidBestelItem.naam);
+                lviStatus.SubItems.Add(bereidBestelItem.Naam);
 
                 // Tijd berekenen tussen opname van de bestelling en nu en tonen in minuten
                 DateTime nu = DateTime.Now;
-                TimeSpan tijdVerstreken = nu - bereidBestelItem.tijdOpgenomen;
+                TimeSpan tijdVerstreken = nu - bereidBestelItem.TijdOpgenomen;
                 lviStatus.SubItems.Add(tijdVerstreken.Minutes.ToString());
 
                 lvBestelItemsStatus.Items.Add(lviStatus);
@@ -67,8 +67,8 @@ namespace UI
                     foreach (BestellingItem bestelItem in bestellingItems)
                     {
                         if (
-                            bestelItem.bestellingID == bestelling.Id &&
-                            bestelItem.status == "bereid" &&
+                            bestelItem.BestellingID == bestelling.Bestelling_id &&
+                            bestelItem.Status == "bereid" &&
                             bestelling.TafelId == tafelId
                             )
                         {

@@ -51,14 +51,14 @@ namespace DAL
                 //vul object(volledig!)
                 BestellingItem bestellingitem = new BestellingItem();
 
-                bestellingitem.bestelitemID = bestellingitemID;
-                bestellingitem.menuitemid = menuitemID;
-                bestellingitem.bestellingID = bestellingID;
-                bestellingitem.commentaar = opmerkingen;
-                bestellingitem.aantal = aantal;
-                bestellingitem.status = status;
-                bestellingitem.tijdOpgenomen = tijdOpgenomen;
-                bestellingitem.naam = naam;
+                bestellingitem.BestelitemID = bestellingitemID;
+                bestellingitem.MenuItemID = menuitemID;
+                bestellingitem.BestellingID = bestellingID;
+                bestellingitem.Commentaar = opmerkingen;
+                bestellingitem.Aantal = aantal;
+                bestellingitem.Status = status;
+                bestellingitem.TijdOpgenomen = tijdOpgenomen;
+                bestellingitem.Naam = naam;
 
                 bestellingItemList.Add(bestellingitem);
             }
@@ -97,6 +97,7 @@ namespace DAL
             connection.Close(); ;
         }
 
+        //Code Alex
         public void PlaatsBestellingItem(BestellingItem item)
         {
             SqlConnection connection = dbConnection.MaakConnectieDB("Writer");
@@ -112,22 +113,22 @@ namespace DAL
             SqlParameter IdParam6 = new SqlParameter("@tijdopgenomen", SqlDbType.DateTime);
 
             command.Parameters.Add(IdParam1);
-            IdParam1.Value = item.bestellingID;
+            IdParam1.Value = item.BestellingID;
 
             command.Parameters.Add(IdParam2);
-            IdParam2.Value = item.menuitemid;
+            IdParam2.Value = item.MenuItemID;
 
             command.Parameters.Add(IdParam3);
-            IdParam3.Value = item.commentaar;
+            IdParam3.Value = item.Commentaar;
 
             command.Parameters.Add(IdParam4);
-            IdParam4.Value = item.aantal;
+            IdParam4.Value = item.Aantal;
 
             command.Parameters.Add(IdParam5);
-            IdParam5.Value = item.status;
+            IdParam5.Value = item.Status;
 
             command.Parameters.Add(IdParam6);
-            IdParam6.Value = item.tijdOpgenomen;
+            IdParam6.Value = item.TijdOpgenomen;
 
             command.Prepare();
 
@@ -136,10 +137,9 @@ namespace DAL
             connection.Close();
         }
 
+        //Code Alex
         public void vulTotaalPrijs(int bestellingid, List<ListviewBestellen> list)
         {
-            
-
             foreach (ListviewBestellen x in list)
             {
                 SqlConnection connection = dbConnection.MaakConnectieDB("Writer");
@@ -153,7 +153,7 @@ namespace DAL
 
                 SqlParameter IdParam2 = new SqlParameter("@prijs", SqlDbType.Float);
                 command.Parameters.Add(IdParam2);
-                IdParam2.Value = x.prijs;
+                IdParam2.Value = x.Prijs;
 
                 command.Prepare();
 
@@ -163,6 +163,7 @@ namespace DAL
             }
         }
 
+        //Code Alex
         public void vulBTW(int bestellingid, List<ListviewBestellen> list)
         {
             SqlConnection connection = dbConnection.MaakConnectieDB("Writer");

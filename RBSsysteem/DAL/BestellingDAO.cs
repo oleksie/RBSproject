@@ -50,7 +50,7 @@ namespace DAL
         }
 
         
-
+        // Code Alex
         public void PlaatsBestelling(Bestelling bestelling)
         {
             DALConnection connectie = new DALConnection();
@@ -100,6 +100,7 @@ namespace DAL
             DBConnectie.Close();
         }
 
+        //Code Alex
         public int GetHuidigeBestellingID(int medewerkerid, int tafelnr)
         {
             DALConnection connectie = new DALConnection();
@@ -131,6 +132,7 @@ namespace DAL
 
             return id;
         }
+
         //voor anne
         public List<Bestelling> GetTafel()
         {
@@ -162,7 +164,7 @@ namespace DAL
 
                 Bestelling bestelling = new Bestelling();
 
-                bestelling.Id = bestellingid;
+                bestelling.Bestelling_id = bestellingid;
                 bestelling.CommentaarKlant = commentaar;
                 bestelling.Medewerkerid = medewerkerid;
                 bestelling.TafelId = tafel;
@@ -180,6 +182,7 @@ namespace DAL
             return bestellingList;
         }
 
+        //Code Alex
         public double GetTotaalPrijs(int bestellingid)
         {
             DALConnection connectie = new DALConnection();
@@ -208,6 +211,7 @@ namespace DAL
             return prijs;
         }
 
+        //Code Alex
         public double GetBTW(int bestellingid)
         {
             DALConnection connectie = new DALConnection();
@@ -253,7 +257,7 @@ namespace DAL
             {
                 Bestelling bestelling = new Bestelling();
 
-                bestelling.Id = reader.GetInt32(0);
+                bestelling.Bestelling_id = reader.GetInt32(0);
                 bestelling.CommentaarKlant = reader.GetString(1);
                 bestelling.TafelId = reader.GetInt32(2);
                 bestelling.Medewerkerid = reader.GetInt32(3);
@@ -272,6 +276,7 @@ namespace DAL
             return bestellingen;
         }
 
+        //Code Alex
         public void UpdateBestelling(int bestellingid, string betaalwijze, double fooi, string betaald)
         {
             DALConnection connectie = new DALConnection();

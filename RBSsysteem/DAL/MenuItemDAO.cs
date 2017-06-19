@@ -18,6 +18,7 @@ namespace DAL
 
         }
 
+        //Code Alex
         public List<MenuItem> GetMenuItems()
         {
             DALConnection connectie = new DALConnection();
@@ -40,7 +41,7 @@ namespace DAL
                 string omschrijving = reader.GetString(5);
 
                 MenuItem menuItem = new MenuItem();
-                menuItem.ID = id;
+                menuItem.MenuItemID = id;
                 menuItem.CategorieID = categorieid;
                 menuItem.Voorraad = voorraad;
                 menuItem.Naam = naam;
@@ -82,7 +83,7 @@ namespace DAL
                 string omschrijving = reader.GetString(5);
 
                 MenuItem menuItem = new MenuItem();
-                menuItem.ID = id;
+                menuItem.MenuItemID = id;
                 menuItem.CategorieID = categorieid;
                 menuItem.Voorraad = voorraad;
                 menuItem.Naam = naam;
@@ -126,7 +127,7 @@ namespace DAL
 
                 MenuItem menuitem = new MenuItem();
 
-                menuitem.ID = menuitemid;
+                menuitem.MenuItemID = menuitemid;
                 menuitem.Voorraad = voorraad;
                 menuitem.Prijs = prijs;
                 menuitem.Naam = naam;
@@ -141,6 +142,7 @@ namespace DAL
             return menuItemList;
         }
 
+        //Code Alex
         public void UpdateVoorraad(List<ListviewBestellen> list)
         {
 
@@ -155,11 +157,11 @@ namespace DAL
 
                 SqlParameter IdParam1 = new SqlParameter("@aantal", SqlDbType.Int);
                 command.Parameters.Add(IdParam1);
-                IdParam1.Value = x.aantal;
+                IdParam1.Value = x.Aantal;
 
                 SqlParameter IdParam2 = new SqlParameter("@menuitemid", SqlDbType.Int);
                 command.Parameters.Add(IdParam2);
-                IdParam2.Value = x.id;
+                IdParam2.Value = x.MenuItemID;
 
                 command.Prepare();
 

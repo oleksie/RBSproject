@@ -30,14 +30,15 @@ namespace Logica
             //return bestellingen;
         }
 
+        // Code Alex
         public void MaakNieuweBestelling(Medewerker medewerker, int tafelnr)
         {
             double totaalprijs = 0;
             string naam = "";
             foreach (ListviewBestellen x in listvoorDB)
             {
-                totaalprijs = totaalprijs + x.prijs;
-                naam = x.naam;
+                totaalprijs = totaalprijs + x.Prijs;
+                naam = x.Naam;
             }
             Bestelling bestellingInfo = new Bestelling();
 

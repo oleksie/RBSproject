@@ -15,6 +15,7 @@ namespace Model
         private string commentaar;
         private string status;
         private DateTime tijdOpgenomen;
+        private string naam;
 
         public BestellingItem()
         {
@@ -72,6 +73,12 @@ namespace Model
         {
             get { return tijdOpgenomen; }
             set { tijdOpgenomen = DateTime.Now; }
+        }
+
+        public string Naam
+        {
+            get { return naam; }
+            set { naam = value; }
         }
     }
 }

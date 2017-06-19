@@ -19,16 +19,17 @@ namespace Logica
 
         }
 
+        //Code Alex
         public void VerwerkNieuweBestelling(int bestellingID, List<ListviewBestellen> list)
         {
             foreach (ListviewBestellen x in list)
             {
-                besteldeItem.bestellingID = bestellingID;
-                besteldeItem.aantal = x.aantal;
-                besteldeItem.commentaar = x.opmerking;
-                besteldeItem.menuitemid = x.id;
-                besteldeItem.status = "besteld";
-                besteldeItem.tijdOpgenomen = DateTime.Now;
+                besteldeItem.BestellingID = bestellingID;
+                besteldeItem.Aantal = x.Aantal;
+                besteldeItem.Commentaar = x.Opmerking;
+                besteldeItem.MenuItemID = x.MenuItemID;
+                besteldeItem.Status = "besteld";
+                besteldeItem.TijdOpgenomen = DateTime.Now;
 
                 bestellingItemDAO.PlaatsBestellingItem(besteldeItem);
             }
@@ -37,16 +38,17 @@ namespace Logica
             bestellingItemDAO.vulBTW(bestellingID, list);
         }
 
+        //Code Alex
         public void VerwerkHuidigeBestelling(int bestellingID, List<ListviewBestellen> list)
         {
             foreach (ListviewBestellen x in list)
             {
-                besteldeItem.bestellingID = bestellingID;
-                besteldeItem.aantal = x.aantal;
-                besteldeItem.commentaar = x.opmerking;
-                besteldeItem.menuitemid = x.id;
-                besteldeItem.status = "besteld";
-                besteldeItem.tijdOpgenomen = DateTime.Now;
+                besteldeItem.BestellingID = bestellingID;
+                besteldeItem.Aantal = x.Aantal;
+                besteldeItem.Commentaar = x.Opmerking;
+                besteldeItem.MenuItemID = x.MenuItemID;
+                besteldeItem.Status = "besteld";
+                besteldeItem.TijdOpgenomen = DateTime.Now;
 
                 bestellingItemDAO.PlaatsBestellingItem(besteldeItem);
             }
