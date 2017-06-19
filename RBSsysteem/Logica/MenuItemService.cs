@@ -298,5 +298,12 @@ namespace Logica
         {
             menuItem.UpdateVoorraad(list);
         }
+
+        public List<Model.MenuItem> GetVoorraad()
+        {
+            List<Model.MenuItem> checkVoorraad = menuItem.GetMenuItems();
+
+            return checkVoorraad;
+        }
     }
 }

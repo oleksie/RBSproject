@@ -254,30 +254,66 @@ namespace UI
                 return;
             }
 
-            //throw new Exception("id is hopelijk niks: " + bestellingID);
+            bool genoegOpVoorraad = true;
 
-            if ((MessageBox.Show("Is de bestelling compleet?", "De bestelling wordt nu opgeslagen.",
+            List<Model.MenuItem> checkVoorraad = actieButton.GetVoorraad();
+            string naamItemVoorraad = "";
+            int aantalItemVoorraad = 0;
+
+            foreach (ListviewBestellen x in listVoorDB)
+            {
+                foreach (Model.MenuItem y in checkVoorraad)
+                {
+                    if (x.id == y.ID && y.Voorraad < x.aantal)
+                    {
+                        naamItemVoorraad = y.Naam;
+                        aantalItemVoorraad = y.Voorraad;
+                        genoegOpVoorraad = false;
+                        break;
+                    }
+
+                    y.Voorraad = y.Voorraad - x.aantal;
+                }
+
+                if (genoegOpVoorraad == false)
+                {
+                    break;
+                }
+            }
+
+            if (genoegOpVoorraad == true)
+            {
+                if ((MessageBox.Show("Is de bestelling compleet?", "De bestelling wordt nu opgeslagen.",
                      MessageBoxButtons.YesNo, MessageBoxIcon.Question,
                      MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
-            {
-                if (bestellingID == 0)
                 {
-                    bestelling.MaakNieuweBestelling(medewerker, tafelNummer);
-                    tafel.TafelOpBezetZetten(medewerker.inlognummer, tafelNummer);
-                    bestellingID = bestelling.GetBestellingID(medewerker, tafelNummer);
-                    gebruik.VerwerkNieuweBestelling(bestellingID, listVoorDB);
-                    actieButton.UpdateVoorraad(listVoorDB);
-                    actieButton.listVoorListview.Clear();
-                }
-                else
-                {
-                    gebruik.VerwerkHuidigeBestelling(bestellingID, listVoorDB);
-                    actieButton.UpdateVoorraad(listVoorDB);
-                    actieButton.listVoorListview.Clear();
-                }
+                    if (bestellingID == 0)
+                    {
+                        bestelling.MaakNieuweBestelling(medewerker, tafelNummer);
+                        tafel.TafelOpBezetZetten(medewerker.inlognummer, tafelNummer);
+                        bestellingID = bestelling.GetBestellingID(medewerker, tafelNummer);
+                        gebruik.VerwerkNieuweBestelling(bestellingID, listVoorDB);
+                        actieButton.UpdateVoorraad(listVoorDB);
+                        actieButton.listVoorListview.Clear();
+                    }
+                    else
+                    {
+                        gebruik.VerwerkHuidigeBestelling(bestellingID, listVoorDB);
+                        actieButton.UpdateVoorraad(listVoorDB);
+                        actieButton.listVoorListview.Clear();
+                    }
 
-                this.ListViewtje.Items.Clear();
+                    this.ListViewtje.Items.Clear();
+                }
             }
+            else
+            {
+                MessageBox.Show("Er zijn nog maar " + naamItemVoorraad + " " + aantalItemVoorraad + " beschikbaar!", "Let op!");
+                return;
+            }
+            
+
+
         }
 
         private void Bestellen_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
