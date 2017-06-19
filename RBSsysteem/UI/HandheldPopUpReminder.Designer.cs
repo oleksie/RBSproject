@@ -76,7 +76,7 @@
             this.Controls.Add(this.label2);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "HandheldPopUpReminder";
-            this.Text = "HandheldPopUpReminder";
+            this.Text = "PopUpReminder";
             this.ResumeLayout(false);
             this.PerformLayout();
 

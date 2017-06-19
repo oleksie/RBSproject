@@ -71,13 +71,13 @@ namespace Logica
         public void GetTotaalPrijs(int bestellingid, TextBox txtprijs)
         {
             double prijs = bestelling.GetTotaalPrijs(bestellingid);
-            txtprijs.Text = prijs.ToString();
+            txtprijs.Text = prijs.ToString("0.00");
         }
 
         public void GetBTW(int bestellingid, TextBox txtbtw)
         {
             double btw = bestelling.GetBTW(bestellingid);
-            txtbtw.Text = btw.ToString();
+            txtbtw.Text = btw.ToString("0.00");
         }
 
         public List<Bestelling> GetAlleBestellingen()

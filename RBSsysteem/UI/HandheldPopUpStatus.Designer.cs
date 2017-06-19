@@ -85,7 +85,7 @@
             this.Controls.Add(this.Btn_HandheldPopUpStatusOk);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "HandheldPopUpStatus";
-            this.Text = "HanheldPopUpStatus";
+            this.Text = "PopUpStatus";
             this.ResumeLayout(false);
             this.PerformLayout();
 

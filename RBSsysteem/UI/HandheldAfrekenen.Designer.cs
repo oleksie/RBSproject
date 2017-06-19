@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
             this.Btn_Afrekenen = new System.Windows.Forms.Button();
             this.rbPinnen = new System.Windows.Forms.RadioButton();
             this.rbCreditcard = new System.Windows.Forms.RadioButton();
@@ -150,25 +151,25 @@
             this.groupBox1.Controls.Add(this.txt_totaal);
             this.groupBox1.Location = new System.Drawing.Point(434, 550);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 225);
+            this.groupBox1.Size = new System.Drawing.Size(249, 225);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             // 
             // txt_fooi
             // 
             this.txt_fooi.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.txt_fooi.Location = new System.Drawing.Point(121, 157);
+            this.txt_fooi.Location = new System.Drawing.Point(106, 156);
             this.txt_fooi.Name = "txt_fooi";
             this.txt_fooi.ReadOnly = true;
-            this.txt_fooi.Size = new System.Drawing.Size(73, 53);
+            this.txt_fooi.Size = new System.Drawing.Size(137, 53);
             this.txt_fooi.TabIndex = 9;
             // 
             // txt_klantBetaalt
             // 
             this.txt_klantBetaalt.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.txt_klantBetaalt.Location = new System.Drawing.Point(121, 88);
+            this.txt_klantBetaalt.Location = new System.Drawing.Point(106, 88);
             this.txt_klantBetaalt.Name = "txt_klantBetaalt";
-            this.txt_klantBetaalt.Size = new System.Drawing.Size(73, 53);
+            this.txt_klantBetaalt.Size = new System.Drawing.Size(137, 53);
             this.txt_klantBetaalt.TabIndex = 8;
             this.txt_klantBetaalt.Text = "0";
             // 
@@ -202,10 +203,10 @@
             // txt_totaal
             // 
             this.txt_totaal.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.txt_totaal.Location = new System.Drawing.Point(121, 19);
+            this.txt_totaal.Location = new System.Drawing.Point(106, 19);
             this.txt_totaal.Name = "txt_totaal";
             this.txt_totaal.ReadOnly = true;
-            this.txt_totaal.Size = new System.Drawing.Size(73, 53);
+            this.txt_totaal.Size = new System.Drawing.Size(137, 53);
             this.txt_totaal.TabIndex = 4;
             // 
             // listAfreken
@@ -214,7 +215,10 @@
             this.columnNaam,
             this.columnAantal,
             this.columnPrijs});
+            this.listAfreken.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.listAfreken.GridLines = true;
+            this.listAfreken.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1});
             this.listAfreken.Location = new System.Drawing.Point(64, 117);
             this.listAfreken.Name = "listAfreken";
             this.listAfreken.Size = new System.Drawing.Size(619, 411);
@@ -249,11 +253,12 @@
             // txtBTW
             // 
             this.txtBTW.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.txtBTW.Location = new System.Drawing.Point(342, 569);
+            this.txtBTW.Location = new System.Drawing.Point(278, 569);
             this.txtBTW.Name = "txtBTW";
             this.txtBTW.ReadOnly = true;
-            this.txtBTW.Size = new System.Drawing.Size(73, 53);
+            this.txtBTW.Size = new System.Drawing.Size(137, 53);
             this.txtBTW.TabIndex = 10;
+            this.txtBTW.TextChanged += new System.EventHandler(this.txtBTW_TextChanged);
             // 
             // HandheldAfrekenen
             // 
@@ -271,7 +276,7 @@
             this.Controls.Add(this.rbPinnen);
             this.Controls.Add(this.Btn_Afrekenen);
             this.Name = "HandheldAfrekenen";
-            this.Text = "HandheldAfrekenen";
+            this.Text = "Afrekenen";
             this.Controls.SetChildIndex(this.Btn_Afrekenen, 0);
             this.Controls.SetChildIndex(this.rbPinnen, 0);
             this.Controls.SetChildIndex(this.rbCreditcard, 0);

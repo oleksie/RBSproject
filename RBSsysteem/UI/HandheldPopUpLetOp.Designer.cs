@@ -39,9 +39,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(191, 44);
+            this.label5.Location = new System.Drawing.Point(143, 36);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 32);
+            this.label5.Size = new System.Drawing.Size(78, 26);
             this.label5.TabIndex = 5;
             this.label5.Text = "Let op!";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -50,17 +51,19 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(105, 118);
+            this.label2.Location = new System.Drawing.Point(79, 96);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(285, 24);
+            this.label2.Size = new System.Drawing.Size(217, 18);
             this.label2.TabIndex = 6;
             this.label2.Text = "De huidige bestelling is nog leeg";
             // 
             // Btn_HandheldPopUpLetOPJa
             // 
-            this.Btn_HandheldPopUpLetOPJa.Location = new System.Drawing.Point(43, 233);
+            this.Btn_HandheldPopUpLetOPJa.Location = new System.Drawing.Point(32, 189);
+            this.Btn_HandheldPopUpLetOPJa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Btn_HandheldPopUpLetOPJa.Name = "Btn_HandheldPopUpLetOPJa";
-            this.Btn_HandheldPopUpLetOPJa.Size = new System.Drawing.Size(111, 64);
+            this.Btn_HandheldPopUpLetOPJa.Size = new System.Drawing.Size(83, 52);
             this.Btn_HandheldPopUpLetOPJa.TabIndex = 10;
             this.Btn_HandheldPopUpLetOPJa.Text = "Ja";
             this.Btn_HandheldPopUpLetOPJa.UseVisualStyleBackColor = true;
@@ -68,9 +71,10 @@
             // 
             // Btn_HandheldPopUpLetOpNee
             // 
-            this.Btn_HandheldPopUpLetOpNee.Location = new System.Drawing.Point(334, 233);
+            this.Btn_HandheldPopUpLetOpNee.Location = new System.Drawing.Point(250, 189);
+            this.Btn_HandheldPopUpLetOpNee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Btn_HandheldPopUpLetOpNee.Name = "Btn_HandheldPopUpLetOpNee";
-            this.Btn_HandheldPopUpLetOpNee.Size = new System.Drawing.Size(111, 64);
+            this.Btn_HandheldPopUpLetOpNee.Size = new System.Drawing.Size(83, 52);
             this.Btn_HandheldPopUpLetOpNee.TabIndex = 9;
             this.Btn_HandheldPopUpLetOpNee.Text = "Nee";
             this.Btn_HandheldPopUpLetOpNee.UseVisualStyleBackColor = true;
@@ -81,24 +85,26 @@
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(163, 155);
+            this.label1.Location = new System.Drawing.Point(122, 126);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 24);
+            this.label1.Size = new System.Drawing.Size(128, 18);
             this.label1.TabIndex = 11;
             this.label1.Text = "Weet u het zeker?";
             // 
             // HandheldPopUpLetOp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(494, 337);
+            this.ClientSize = new System.Drawing.Size(370, 274);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Btn_HandheldPopUpLetOPJa);
             this.Controls.Add(this.Btn_HandheldPopUpLetOpNee);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "HandheldPopUpLetOp";
-            this.Text = "HandheldPopUpLetOp";
+            this.Text = "PopUpLetOp";
             this.ResumeLayout(false);
             this.PerformLayout();
 

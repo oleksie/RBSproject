@@ -125,7 +125,12 @@ namespace UI
 
             double totaalp = double.Parse(this.txt_totaal.Text);
             double fooid = klantbetaald - totaalp;
-            this.txt_fooi.Text = fooid.ToString();
+            this.txt_fooi.Text = fooid.ToString("0.00");
+        }
+
+        private void txtBTW_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
