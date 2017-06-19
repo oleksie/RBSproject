@@ -8,12 +8,12 @@ namespace Model
 {
     public class MenuItem
     {
-        private int id;
+        private int menuItemID;
         private int voorraad;
         private string naam;
         private double prijs;
         private string omschrijving;
-        private int categorieid;
+        private int categorieID;
 
 
         public MenuItem()
@@ -21,10 +21,20 @@ namespace Model
 
         }
 
-        public int ID
+        public MenuItem(int menuItemID, int voorraad, string naam, double prijs, string omschrijving, int categorieID)
         {
-            get { return id; }
-            set { id = value; }
+            this.menuItemID = menuItemID;
+            this.voorraad = voorraad;
+            this.naam = naam;
+            this.prijs = prijs;
+            this.omschrijving = omschrijving;
+            this.categorieID = categorieID;
+        }
+
+        public int MenuItemID
+        {
+            get { return menuItemID; }
+            set { menuItemID = value; }
         }
 
         public int Voorraad
@@ -53,8 +63,8 @@ namespace Model
 
         public int CategorieID
         {
-            get { return categorieid; }
-            set { categorieid = value; }
+            get { return categorieID; }
+            set { categorieID = value; }
         }
     }
 }

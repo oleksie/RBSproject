@@ -8,9 +8,9 @@ namespace Model
 {
     public class ListviewBereid
     {
-        public string naam;
-        public int aantal;
-        public DateTime tijdOpgenomen;
+        private string naam;
+        private int aantal;
+        private DateTime tijdOpgenomen;
 
         public ListviewBereid()
         {
@@ -22,6 +22,24 @@ namespace Model
             this.naam = naam;
             this.aantal = aantal;
             this.tijdOpgenomen = tijdOpgenomen;
+        }
+
+        public string Naam
+        {
+            get { return naam; }
+            set { naam = value; }
+        }
+
+        public int Aantal
+        {
+            get { return aantal; }
+            set { aantal = value; }
+        }
+
+        public DateTime TijdOpgenomen
+        {
+            get { return tijdOpgenomen; }
+            set { tijdOpgenomen = value; }
         }
     }
 }

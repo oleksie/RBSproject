@@ -8,25 +8,46 @@ namespace Model
 {
     public class BestellingItem
     {
-        public int bestelitemID;
-        public int bestellingID;
-        public int menuitemid;
-        public int aantal;
-        public string commentaar;
-        public string status;
-        public DateTime tijdOpgenomen;
-        public string naam;
+        private int bestelitemID;
+        private int bestellingID;
+        private int menuitemID;
+        private int aantal;
+        private string commentaar;
+        private string status;
+        private DateTime tijdOpgenomen;
 
         public BestellingItem()
         {
 
         }
 
-        /*
-         * public int MenuItemID
+        public BestellingItem(int bestelItemID, int bestellingID, int menuItemID, int aantal, string commentaar, string status, DateTime tijdOpgenomen)
         {
-            get { return menuitemid; }
-            set { menuitemid = value; }
+            this.bestelitemID = bestelItemID;
+            this.bestellingID = bestellingID;
+            this.menuitemID = menuItemID;
+            this.aantal = aantal;
+            this.commentaar = commentaar;
+            this.status = status;
+            this.tijdOpgenomen = tijdOpgenomen;
+        }
+
+        public int BestelitemID
+        {
+            get { return bestelitemID; }
+            set { bestelitemID = value; }
+        }
+
+        public int BestellingID
+        {
+            get { return bestellingID; }
+            set { bestellingID = value; }
+        }
+
+        public int MenuItemID
+        {
+            get { return menuitemID; }
+            set { menuitemID = value; }
         }
 
         public int Aantal
@@ -52,6 +73,5 @@ namespace Model
             get { return tijdOpgenomen; }
             set { tijdOpgenomen = DateTime.Now; }
         }
-        */
     }
 }

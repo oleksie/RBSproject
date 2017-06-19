@@ -8,7 +8,7 @@ namespace Model
 {
     public class MenuKaart
     {
-        private int id;
+        private int menuKaartID;
         private string naam;
 
         public MenuKaart()
@@ -16,10 +16,16 @@ namespace Model
 
         }
 
-        public int ID
+        public MenuKaart(int menuKaartID, string naam)
         {
-            get { return id; }
-            set { id = value; }
+            this.menuKaartID = menuKaartID;
+            this.naam = naam;
+        }
+
+        public int MenuKaartID
+        {
+            get { return menuKaartID; }
+            set { menuKaartID = value; }
         }
 
         public string Naam

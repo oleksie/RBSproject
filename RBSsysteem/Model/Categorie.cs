@@ -8,8 +8,8 @@ namespace Model
 {
     public class Categorie
     {
-        private int id;
-        private int menukaartid;
+        private int categorieID;
+        private int menukaartID;
         private string naam;
 
         public Categorie()
@@ -17,16 +17,23 @@ namespace Model
 
         }
 
-        public int ID
+        public Categorie(int categorieID, int menukaartID, string naam)
         {
-            get { return id; }
-            set { id = value; }
+            this.categorieID = categorieID;
+            this.menukaartID = menukaartID;
+            this.naam = naam;
+        }
+
+        public int CategorieID
+        {
+            get { return categorieID; }
+            set { categorieID = value; }
         }
 
         public int MenuKaartID
         {
-            get { return menukaartid; }
-            set { menukaartid = value; }
+            get { return menukaartID; }
+            set { menukaartID = value; }
         }
 
         public string Naam
