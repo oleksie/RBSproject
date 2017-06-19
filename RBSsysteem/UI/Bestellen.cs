@@ -304,6 +304,9 @@ namespace UI
                     }
 
                     this.ListViewtje.Items.Clear();
+                    this.Hide();
+                    naarTafelOverzicht.CreateTafelButtons();
+                    naarTafelOverzicht.Show();
                 }
             }
             else
