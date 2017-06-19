@@ -124,7 +124,7 @@
             // 
             // button4
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(42, 887);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(141, 55);
@@ -195,6 +195,7 @@
             this.CategorieDranken.Controls.Add(this.Wijn);
             this.CategorieDranken.Controls.Add(this.Gedistileerd);
             this.CategorieDranken.Controls.Add(this.Koffiethee);
+            this.CategorieDranken.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CategorieDranken.ItemSize = new System.Drawing.Size(115, 50);
             this.CategorieDranken.Location = new System.Drawing.Point(-4, -4);
             this.CategorieDranken.Name = "CategorieDranken";
@@ -216,9 +217,9 @@
             // 
             // FLPDrankFris
             // 
-            this.FLPDrankFris.Location = new System.Drawing.Point(53, 28);
+            this.FLPDrankFris.Location = new System.Drawing.Point(23, 18);
             this.FLPDrankFris.Name = "FLPDrankFris";
-            this.FLPDrankFris.Size = new System.Drawing.Size(464, 235);
+            this.FLPDrankFris.Size = new System.Drawing.Size(525, 253);
             this.FLPDrankFris.TabIndex = 4;
             // 
             // Bier
@@ -234,9 +235,9 @@
             // 
             // FLPDrankBier
             // 
-            this.FLPDrankBier.Location = new System.Drawing.Point(53, 28);
+            this.FLPDrankBier.Location = new System.Drawing.Point(23, 18);
             this.FLPDrankBier.Name = "FLPDrankBier";
-            this.FLPDrankBier.Size = new System.Drawing.Size(464, 235);
+            this.FLPDrankBier.Size = new System.Drawing.Size(525, 253);
             this.FLPDrankBier.TabIndex = 4;
             // 
             // Wijn
@@ -252,9 +253,9 @@
             // 
             // FLPDrankWijn
             // 
-            this.FLPDrankWijn.Location = new System.Drawing.Point(53, 28);
+            this.FLPDrankWijn.Location = new System.Drawing.Point(23, 18);
             this.FLPDrankWijn.Name = "FLPDrankWijn";
-            this.FLPDrankWijn.Size = new System.Drawing.Size(464, 235);
+            this.FLPDrankWijn.Size = new System.Drawing.Size(525, 253);
             this.FLPDrankWijn.TabIndex = 4;
             // 
             // Gedistileerd
@@ -270,9 +271,9 @@
             // 
             // FLPDrankGedis
             // 
-            this.FLPDrankGedis.Location = new System.Drawing.Point(53, 28);
+            this.FLPDrankGedis.Location = new System.Drawing.Point(23, 18);
             this.FLPDrankGedis.Name = "FLPDrankGedis";
-            this.FLPDrankGedis.Size = new System.Drawing.Size(464, 235);
+            this.FLPDrankGedis.Size = new System.Drawing.Size(525, 253);
             this.FLPDrankGedis.TabIndex = 4;
             // 
             // Koffiethee
@@ -288,9 +289,9 @@
             // 
             // FLPDrankKoffthee
             // 
-            this.FLPDrankKoffthee.Location = new System.Drawing.Point(53, 28);
+            this.FLPDrankKoffthee.Location = new System.Drawing.Point(23, 18);
             this.FLPDrankKoffthee.Name = "FLPDrankKoffthee";
-            this.FLPDrankKoffthee.Size = new System.Drawing.Size(464, 235);
+            this.FLPDrankKoffthee.Size = new System.Drawing.Size(525, 253);
             this.FLPDrankKoffthee.TabIndex = 4;
             // 
             // tabPage2
@@ -310,6 +311,7 @@
             this.CategorieDiner.Controls.Add(this.TussengerechtDiner);
             this.CategorieDiner.Controls.Add(this.HoofdgerechtDiner);
             this.CategorieDiner.Controls.Add(this.NagerechtDiner);
+            this.CategorieDiner.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CategorieDiner.ItemSize = new System.Drawing.Size(144, 50);
             this.CategorieDiner.Location = new System.Drawing.Point(-4, -3);
             this.CategorieDiner.Name = "CategorieDiner";
@@ -331,9 +333,9 @@
             // 
             // FLPDinerVoor
             // 
-            this.FLPDinerVoor.Location = new System.Drawing.Point(53, 28);
+            this.FLPDinerVoor.Location = new System.Drawing.Point(23, 18);
             this.FLPDinerVoor.Name = "FLPDinerVoor";
-            this.FLPDinerVoor.Size = new System.Drawing.Size(464, 235);
+            this.FLPDinerVoor.Size = new System.Drawing.Size(525, 253);
             this.FLPDinerVoor.TabIndex = 3;
             // 
             // TussengerechtDiner
@@ -349,9 +351,9 @@
             // 
             // FLPDinerTussen
             // 
-            this.FLPDinerTussen.Location = new System.Drawing.Point(53, 28);
+            this.FLPDinerTussen.Location = new System.Drawing.Point(23, 18);
             this.FLPDinerTussen.Name = "FLPDinerTussen";
-            this.FLPDinerTussen.Size = new System.Drawing.Size(464, 235);
+            this.FLPDinerTussen.Size = new System.Drawing.Size(525, 253);
             this.FLPDinerTussen.TabIndex = 3;
             // 
             // HoofdgerechtDiner
@@ -367,9 +369,9 @@
             // 
             // FLPDinerHoofd
             // 
-            this.FLPDinerHoofd.Location = new System.Drawing.Point(53, 28);
+            this.FLPDinerHoofd.Location = new System.Drawing.Point(23, 18);
             this.FLPDinerHoofd.Name = "FLPDinerHoofd";
-            this.FLPDinerHoofd.Size = new System.Drawing.Size(464, 235);
+            this.FLPDinerHoofd.Size = new System.Drawing.Size(525, 253);
             this.FLPDinerHoofd.TabIndex = 3;
             // 
             // NagerechtDiner
@@ -385,9 +387,9 @@
             // 
             // FLPDinerNa
             // 
-            this.FLPDinerNa.Location = new System.Drawing.Point(53, 28);
+            this.FLPDinerNa.Location = new System.Drawing.Point(23, 18);
             this.FLPDinerNa.Name = "FLPDinerNa";
-            this.FLPDinerNa.Size = new System.Drawing.Size(464, 235);
+            this.FLPDinerNa.Size = new System.Drawing.Size(525, 253);
             this.FLPDinerNa.TabIndex = 3;
             // 
             // tabPage1
@@ -406,6 +408,7 @@
             this.CategorieLunch.Controls.Add(this.VoorgerechtLunch);
             this.CategorieLunch.Controls.Add(this.HoofdgerechtLunch);
             this.CategorieLunch.Controls.Add(this.NagerechtLunch);
+            this.CategorieLunch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CategorieLunch.ItemSize = new System.Drawing.Size(192, 50);
             this.CategorieLunch.Location = new System.Drawing.Point(-4, -4);
             this.CategorieLunch.Name = "CategorieLunch";
@@ -427,9 +430,9 @@
             // 
             // FLPLunchVoor
             // 
-            this.FLPLunchVoor.Location = new System.Drawing.Point(53, 28);
+            this.FLPLunchVoor.Location = new System.Drawing.Point(23, 18);
             this.FLPLunchVoor.Name = "FLPLunchVoor";
-            this.FLPLunchVoor.Size = new System.Drawing.Size(464, 235);
+            this.FLPLunchVoor.Size = new System.Drawing.Size(525, 253);
             this.FLPLunchVoor.TabIndex = 2;
             // 
             // HoofdgerechtLunch
@@ -445,9 +448,9 @@
             // 
             // FLPLunchHoofd
             // 
-            this.FLPLunchHoofd.Location = new System.Drawing.Point(53, 28);
+            this.FLPLunchHoofd.Location = new System.Drawing.Point(23, 18);
             this.FLPLunchHoofd.Name = "FLPLunchHoofd";
-            this.FLPLunchHoofd.Size = new System.Drawing.Size(464, 235);
+            this.FLPLunchHoofd.Size = new System.Drawing.Size(525, 253);
             this.FLPLunchHoofd.TabIndex = 1;
             // 
             // NagerechtLunch
@@ -463,9 +466,9 @@
             // 
             // FLPLucnhNa
             // 
-            this.FLPLucnhNa.Location = new System.Drawing.Point(53, 28);
+            this.FLPLucnhNa.Location = new System.Drawing.Point(23, 18);
             this.FLPLucnhNa.Name = "FLPLucnhNa";
-            this.FLPLucnhNa.Size = new System.Drawing.Size(464, 235);
+            this.FLPLucnhNa.Size = new System.Drawing.Size(525, 253);
             this.FLPLucnhNa.TabIndex = 2;
             // 
             // MenuKaart
@@ -484,7 +487,7 @@
             // 
             // btn_afrondenHuidig
             // 
-            this.btn_afrondenHuidig.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_afrondenHuidig.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_afrondenHuidig.Location = new System.Drawing.Point(478, 887);
             this.btn_afrondenHuidig.Name = "btn_afrondenHuidig";
             this.btn_afrondenHuidig.Size = new System.Drawing.Size(180, 55);
