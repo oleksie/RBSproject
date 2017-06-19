@@ -23,6 +23,7 @@ namespace UI
 
         BestelItemService bestellingItems = new BestelItemService();
         BestellingService bestelling = new BestellingService();
+        TafelService tafel = new TafelService();
 
         public HandheldAfrekenen()
         {
@@ -31,6 +32,8 @@ namespace UI
             this.StartPosition = FormStartPosition.CenterScreen;
             // Eventhandler voor als het scherm wordt gesloten (bijv. door middel van kruisje)
             this.FormClosing += HandheldAfrekenen_FormClosing;
+
+            txt_klantBetaalt.TextChanged += txt_klantBetaalt_TextChanged;
 
             
         }
@@ -58,7 +61,37 @@ namespace UI
 
         private void Btn_Afrekenen_Click(object sender, EventArgs e)
         {
-            
+            if (rbContant.Checked || rbCreditcard.Checked || rbPinnen.Checked && double.Parse(txt_klantBetaalt.Text) > 0)
+            {
+                string betaalWijze = "";
+
+                if (rbContant.Checked)
+                {
+                    betaalWijze = rbContant.Text;
+                } else if(rbCreditcard.Checked)
+                {
+                    betaalWijze = rbCreditcard.Text;
+                }else
+                {
+                    betaalWijze = rbPinnen.Text;
+                }
+
+                double fooi = double.Parse(this.txt_fooi.Text);
+                string betaald = "ja";
+                int tafelnr = tafelNummer;
+
+                tafel.UpdateTafel(tafelnr);
+                bestelling.UpdateBestelling(bestellingID, betaalWijze, fooi, betaald);
+
+                this.Hide();
+                naarTafelOverzicht.CreateTafelButtons();
+                naarTafelOverzicht.Show();
+                
+            }
+            else
+            {
+                return;
+            }
 
         }
 
@@ -68,6 +101,21 @@ namespace UI
             Control[] txtInlognummer = login.Controls.Find("txtInlognummer", false);
             txtInlognummer[0].Text = "";
             login.Show();
+        }
+
+        private void txt_klantBetaalt_TextChanged(object sender, EventArgs e)
+        {
+            double klantbetaald = 0;
+            double ingevoerdePrijs;
+
+            if (double.TryParse(this.txt_klantBetaalt.Text, out ingevoerdePrijs))
+            {
+                klantbetaald = ingevoerdePrijs;
+            }
+
+            double totaalp = double.Parse(this.txt_totaal.Text);
+            double fooid = klantbetaald - totaalp;
+            this.txt_fooi.Text = fooid.ToString();
         }
     }
 }
