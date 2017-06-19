@@ -36,17 +36,19 @@ namespace UI
             lv_KokBarman.FullRowSelect = true;
             lv_KokBarman.CheckBoxes = true;
             lv_KokBarman.Font = new Font("Arial", 20);
+            lv_KokBarman.BackColor = Color.LightGreen;
             //instellingen btn's
             btn_bereid.Font = new Font("Arial", 15);
             btn_inBereiding.Font = new Font("Arial", 15);
             btn_Loguit.Font = new Font("Arial", 15);
             //voor de leuk ff lbl vullen met rol
+            lbl_medewerkerInfo.Font = new Font("Arial", 20);
             lbl_medewerkerInfo.Text = Convert.ToString(medewerker.rol);
             //toevoegen colums
             lv_KokBarman.Columns.Add("Check", 20);
             lv_KokBarman.Columns.Add("Menu", 400);
             lv_KokBarman.Columns.Add("Aantal", 100);
-            lv_KokBarman.Columns.Add("Commentaar", 300);
+            lv_KokBarman.Columns.Add("Commentaar", 345);
             lv_KokBarman.Columns.Add("Status", 100);
             lv_KokBarman.Columns.Add("Tijd Opgenomen", 300);
             lv_KokBarman.Columns.Add("Tafel", 100);
@@ -103,7 +105,8 @@ namespace UI
             foreach (ListViewItem item in lv_KokBarman.SelectedItems)
             {
                 int lastdeleteditem = Convert.ToInt32(item.SubItems[0].Text);
-                BarKok.Updatebestelitem(lastdeleteditem);
+                string deletedItemStatus = Convert.ToString(item.SubItems[4].Text);
+                BarKok.Updatebestelitem(lastdeleteditem,deletedItemStatus);
                 item.Remove();
             }
         }
@@ -119,6 +122,8 @@ namespace UI
 
         private void btn_inBereiding_Click(object sender, EventArgs e)
         {
+            //zet kleur terug
+            lv_KokBarman.BackColor = Color.LightGreen;
             //zet de filter en geeft deze mee aan de bestellinglist(geeft list op basis van filter) en vult daatna de listview weer
             filter = "besteld";
             List<ListViewItem> bestellinglist = new List<ListViewItem>();
@@ -135,6 +140,8 @@ namespace UI
 
         private void btn_bereid_Click(object sender, EventArgs e)
         {
+            //zet kleur voor bereid
+            lv_KokBarman.BackColor = Color.Tomato;
             //zie methode hierboven
             filter = "bereid";
             List<ListViewItem> bestellinglist = new List<ListViewItem>();
