@@ -67,5 +67,25 @@ namespace DAL
 
             DBConnectie.Close();
         }
+
+        public void UpdateTafel(int tafelnr)
+        {
+            DALConnection connectie = new DALConnection();
+            DBConnectie = connectie.MaakConnectieDB("Writer");
+
+            DBConnectie.Open();
+
+            SqlCommand command = new SqlCommand("UPDATE Tafel SET status = 'vrij', bezet_door = 0 WHERE tafel_id = @tafelnr; ", DBConnectie);
+
+            SqlParameter IdParam1 = new SqlParameter("@tafelnr", SqlDbType.Int);
+            command.Parameters.Add(IdParam1);
+            IdParam1.Value = tafelnr;
+
+            command.Prepare();
+
+            command.ExecuteNonQuery();
+
+            DBConnectie.Close();
+        }
     }
 }

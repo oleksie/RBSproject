@@ -42,6 +42,7 @@ namespace UI
             CategorieLunch.SelectedIndexChanged += CategorieLunch_SelectedIndexChanged;
             CategorieDiner.SelectedIndexChanged += CategorieDiner_SelectedIndexChanged;
             CategorieDranken.SelectedIndexChanged += CategorieDranken_SelectedIndexChanged;
+            ListViewtje.ItemSelectionChanged += ListViewtje_ItemSelectionChanged;
         }
 
         public Bestellen(Medewerker medewerker, int tafelNummer) : this()
@@ -253,30 +254,66 @@ namespace UI
                 return;
             }
 
-            //throw new Exception("id is hopelijk niks: " + bestellingID);
+            bool genoegOpVoorraad = true;
 
-            if ((MessageBox.Show("Is de bestelling compleet?", "De bestelling wordt nu opgeslagen.",
+            List<Model.MenuItem> checkVoorraad = actieButton.GetVoorraad();
+            string naamItemVoorraad = "";
+            int aantalItemVoorraad = 0;
+
+            foreach (ListviewBestellen x in listVoorDB)
+            {
+                foreach (Model.MenuItem y in checkVoorraad)
+                {
+                    if (x.id == y.ID && y.Voorraad < x.aantal)
+                    {
+                        naamItemVoorraad = y.Naam;
+                        aantalItemVoorraad = y.Voorraad;
+                        genoegOpVoorraad = false;
+                        break;
+                    }
+
+                    y.Voorraad = y.Voorraad - x.aantal;
+                }
+
+                if (genoegOpVoorraad == false)
+                {
+                    break;
+                }
+            }
+
+            if (genoegOpVoorraad == true)
+            {
+                if ((MessageBox.Show("Is de bestelling compleet?", "De bestelling wordt nu opgeslagen.",
                      MessageBoxButtons.YesNo, MessageBoxIcon.Question,
                      MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
-            {
-                if (bestellingID == 0)
                 {
-                    bestelling.MaakNieuweBestelling(medewerker, tafelNummer);
-                    tafel.TafelOpBezetZetten(medewerker.inlognummer, tafelNummer);
-                    bestellingID = bestelling.GetBestellingID(medewerker, tafelNummer);
-                    gebruik.VerwerkNieuweBestelling(bestellingID, listVoorDB);
-                    actieButton.UpdateVoorraad(listVoorDB);
-                    actieButton.listVoorListview.Clear();
-                }
-                else
-                {
-                    gebruik.VerwerkHuidigeBestelling(bestellingID, listVoorDB);
-                    actieButton.UpdateVoorraad(listVoorDB);
-                    actieButton.listVoorListview.Clear();
-                }
+                    if (bestellingID == 0)
+                    {
+                        bestelling.MaakNieuweBestelling(medewerker, tafelNummer);
+                        tafel.TafelOpBezetZetten(medewerker.inlognummer, tafelNummer);
+                        bestellingID = bestelling.GetBestellingID(medewerker, tafelNummer);
+                        gebruik.VerwerkNieuweBestelling(bestellingID, listVoorDB);
+                        actieButton.UpdateVoorraad(listVoorDB);
+                        actieButton.listVoorListview.Clear();
+                    }
+                    else
+                    {
+                        gebruik.VerwerkHuidigeBestelling(bestellingID, listVoorDB);
+                        actieButton.UpdateVoorraad(listVoorDB);
+                        actieButton.listVoorListview.Clear();
+                    }
 
-                this.ListViewtje.Items.Clear();
+                    this.ListViewtje.Items.Clear();
+                }
             }
+            else
+            {
+                MessageBox.Show("Er zijn nog maar " + naamItemVoorraad + " " + aantalItemVoorraad + " beschikbaar!", "Let op!");
+                return;
+            }
+            
+
+
         }
 
         private void Bestellen_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
@@ -292,6 +329,76 @@ namespace UI
             HandheldAfrekenen afrekenen = new HandheldAfrekenen(bestellingID, medewerker, tafelNummer);
             this.Hide();
             afrekenen.Show();
+        }
+
+        private void btnAantalOmhoog_Click(object sender, EventArgs e)
+        {
+            int aantal = int.Parse(this.ListViewtje.SelectedItems[0].SubItems[1].Text);
+            int id = int.Parse(this.ListViewtje.SelectedItems[0].SubItems[4].Text);
+            string opmerking = this.ListViewtje.SelectedItems[0].SubItems[2].Text;
+
+            aantal++;
+
+            foreach (ListviewBestellen x in listVoorDB)
+            {
+                if (id == x.id && opmerking.Equals(x.opmerking))
+                {
+                    x.aantal = aantal;
+                    break;
+                }
+            }
+
+            this.ListViewtje.SelectedItems[0].SubItems[1].Text = aantal.ToString();
+        }
+
+        private void btnAantalOmlaag_Click(object sender, EventArgs e)
+        {
+            int aantal = int.Parse(this.ListViewtje.SelectedItems[0].SubItems[1].Text);
+            int id = int.Parse(this.ListViewtje.SelectedItems[0].SubItems[4].Text);
+            string opmerking = this.ListViewtje.SelectedItems[0].SubItems[2].Text;
+
+            if (aantal > 1)
+            {
+                aantal--;
+            }
+
+            foreach (ListviewBestellen x in listVoorDB)
+            {
+                if (id == x.id && opmerking.Equals(x.opmerking))
+                {
+                    x.aantal = aantal;
+                    break;
+                }
+            }
+
+            this.ListViewtje.SelectedItems[0].SubItems[1].Text = aantal.ToString();
+        }
+
+        private void btnVerwijderItem_Click(object sender, EventArgs e)
+        {
+            int aantal = int.Parse(this.ListViewtje.SelectedItems[0].SubItems[1].Text);
+            int id = int.Parse(this.ListViewtje.SelectedItems[0].SubItems[4].Text);
+            string opmerking = this.ListViewtje.SelectedItems[0].SubItems[2].Text;
+
+            foreach (ListviewBestellen x in listVoorDB)
+            {
+                if (id == x.id && opmerking.Equals(x.opmerking) && aantal == x.aantal)
+                {
+                    listVoorDB.Remove(x);
+                    break;
+                }
+            }
+
+            this.ListViewtje.SelectedItems[0].Remove();
+        }
+
+        private void ListViewtje_ItemSelectionChanged(Object sender, EventArgs e)
+        {
+            
+            btnAantalOmhoog.Enabled = true;
+            btnAantalOmlaag.Enabled = true;
+            btnVerwijderItem.Enabled = true;
+            
         }
     }
 }

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.Btn_Afrekenen = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.rbPinnen = new System.Windows.Forms.RadioButton();
+            this.rbCreditcard = new System.Windows.Forms.RadioButton();
+            this.rbContant = new System.Windows.Forms.RadioButton();
             this.Btn_AfrekenenTerug = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lbltnr = new System.Windows.Forms.Label();
@@ -63,38 +63,38 @@
             this.Btn_Afrekenen.UseVisualStyleBackColor = true;
             this.Btn_Afrekenen.Click += new System.EventHandler(this.Btn_Afrekenen_Click);
             // 
-            // radioButton1
+            // rbPinnen
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(385, 853);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(58, 17);
-            this.radioButton1.TabIndex = 3;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Pinnen";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbPinnen.AutoSize = true;
+            this.rbPinnen.Location = new System.Drawing.Point(385, 853);
+            this.rbPinnen.Name = "rbPinnen";
+            this.rbPinnen.Size = new System.Drawing.Size(58, 17);
+            this.rbPinnen.TabIndex = 3;
+            this.rbPinnen.TabStop = true;
+            this.rbPinnen.Text = "Pinnen";
+            this.rbPinnen.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbCreditcard
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(385, 824);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(73, 17);
-            this.radioButton2.TabIndex = 4;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Creditcard";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbCreditcard.AutoSize = true;
+            this.rbCreditcard.Location = new System.Drawing.Point(385, 824);
+            this.rbCreditcard.Name = "rbCreditcard";
+            this.rbCreditcard.Size = new System.Drawing.Size(73, 17);
+            this.rbCreditcard.TabIndex = 4;
+            this.rbCreditcard.TabStop = true;
+            this.rbCreditcard.Text = "Creditcard";
+            this.rbCreditcard.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rbContant
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(385, 882);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(62, 17);
-            this.radioButton3.TabIndex = 5;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Contant";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbContant.AutoSize = true;
+            this.rbContant.Location = new System.Drawing.Point(385, 882);
+            this.rbContant.Name = "rbContant";
+            this.rbContant.Size = new System.Drawing.Size(62, 17);
+            this.rbContant.TabIndex = 5;
+            this.rbContant.TabStop = true;
+            this.rbContant.Text = "Contant";
+            this.rbContant.UseVisualStyleBackColor = true;
             // 
             // Btn_AfrekenenTerug
             // 
@@ -150,25 +150,27 @@
             this.groupBox1.Controls.Add(this.txt_totaal);
             this.groupBox1.Location = new System.Drawing.Point(434, 550);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(249, 225);
+            this.groupBox1.Size = new System.Drawing.Size(200, 225);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             // 
             // txt_fooi
             // 
             this.txt_fooi.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.txt_fooi.Location = new System.Drawing.Point(100, 157);
+            this.txt_fooi.Location = new System.Drawing.Point(121, 157);
             this.txt_fooi.Name = "txt_fooi";
-            this.txt_fooi.Size = new System.Drawing.Size(143, 53);
+            this.txt_fooi.ReadOnly = true;
+            this.txt_fooi.Size = new System.Drawing.Size(73, 53);
             this.txt_fooi.TabIndex = 9;
             // 
             // txt_klantBetaalt
             // 
             this.txt_klantBetaalt.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.txt_klantBetaalt.Location = new System.Drawing.Point(100, 88);
+            this.txt_klantBetaalt.Location = new System.Drawing.Point(121, 88);
             this.txt_klantBetaalt.Name = "txt_klantBetaalt";
-            this.txt_klantBetaalt.Size = new System.Drawing.Size(143, 53);
+            this.txt_klantBetaalt.Size = new System.Drawing.Size(73, 53);
             this.txt_klantBetaalt.TabIndex = 8;
+            this.txt_klantBetaalt.Text = "0";
             // 
             // label5
             // 
@@ -200,9 +202,10 @@
             // txt_totaal
             // 
             this.txt_totaal.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.txt_totaal.Location = new System.Drawing.Point(100, 19);
+            this.txt_totaal.Location = new System.Drawing.Point(121, 19);
             this.txt_totaal.Name = "txt_totaal";
-            this.txt_totaal.Size = new System.Drawing.Size(143, 53);
+            this.txt_totaal.ReadOnly = true;
+            this.txt_totaal.Size = new System.Drawing.Size(73, 53);
             this.txt_totaal.TabIndex = 4;
             // 
             // listAfreken
@@ -211,7 +214,6 @@
             this.columnNaam,
             this.columnAantal,
             this.columnPrijs});
-            this.listAfreken.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.listAfreken.GridLines = true;
             this.listAfreken.Location = new System.Drawing.Point(64, 117);
             this.listAfreken.Name = "listAfreken";
@@ -219,7 +221,6 @@
             this.listAfreken.TabIndex = 11;
             this.listAfreken.UseCompatibleStateImageBehavior = false;
             this.listAfreken.View = System.Windows.Forms.View.Details;
-            this.listAfreken.SelectedIndexChanged += new System.EventHandler(this.listAfreken_SelectedIndexChanged);
             // 
             // columnNaam
             // 
@@ -248,9 +249,10 @@
             // txtBTW
             // 
             this.txtBTW.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.txtBTW.Location = new System.Drawing.Point(294, 569);
+            this.txtBTW.Location = new System.Drawing.Point(342, 569);
             this.txtBTW.Name = "txtBTW";
-            this.txtBTW.Size = new System.Drawing.Size(134, 53);
+            this.txtBTW.ReadOnly = true;
+            this.txtBTW.Size = new System.Drawing.Size(73, 53);
             this.txtBTW.TabIndex = 10;
             // 
             // HandheldAfrekenen
@@ -264,17 +266,16 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.Btn_AfrekenenTerug);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.rbContant);
+            this.Controls.Add(this.rbCreditcard);
+            this.Controls.Add(this.rbPinnen);
             this.Controls.Add(this.Btn_Afrekenen);
             this.Name = "HandheldAfrekenen";
             this.Text = "HandheldAfrekenen";
-            this.Load += new System.EventHandler(this.HandheldAfrekenen_Load);
             this.Controls.SetChildIndex(this.Btn_Afrekenen, 0);
-            this.Controls.SetChildIndex(this.radioButton1, 0);
-            this.Controls.SetChildIndex(this.radioButton2, 0);
-            this.Controls.SetChildIndex(this.radioButton3, 0);
+            this.Controls.SetChildIndex(this.rbPinnen, 0);
+            this.Controls.SetChildIndex(this.rbCreditcard, 0);
+            this.Controls.SetChildIndex(this.rbContant, 0);
             this.Controls.SetChildIndex(this.Btn_AfrekenenTerug, 0);
             this.Controls.SetChildIndex(this.groupBox2, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);
@@ -293,9 +294,9 @@
         #endregion
 
         private System.Windows.Forms.Button Btn_Afrekenen;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton rbPinnen;
+        private System.Windows.Forms.RadioButton rbCreditcard;
+        private System.Windows.Forms.RadioButton rbContant;
         private System.Windows.Forms.Button Btn_AfrekenenTerug;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lbltnr;

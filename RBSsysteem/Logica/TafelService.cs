@@ -31,20 +31,31 @@ namespace Logica
             tafelDAO.TafelBezetInDB(inlognummer, tafelnr);
         }
 
-        public List<BestellingItem> GetGereedBestellingItemsList(int tafelId)
+        public void UpdateTafel(int tafelnr)
         {
-            List<BestellingItem> alleBestellingItems = bestellingItemDAO.GetAll();
-            List<Bestelling> alleBestellingen = bestellingDAO.GetBestelling();
-
-            List<BestellingItem> gereedBestellingItems = new List<BestellingItem>();
-
-            foreach (BestellingItem bestellingItem in alleBestellingItems)
-            {
-                if (bestellingItem.status == "bereid")
-                    gereedBestellingItems.Add(bestellingItem);
-            }
-
-            return gereedBestellingItems;
+            tafelDAO.UpdateTafel(tafelnr);
         }
+        //public List<ListviewBereid> GetGereedBestellingItemsList(int tafelId)
+        //{
+        //    List<BestellingItem> alleBestellingItems = bestellingItemDAO.GetAll();
+        //    List<Bestelling> alleBestellingen = bestellingDAO.GetAllBestellingen();
+
+        //    List<ListviewBereid> gereedBestellingItems = new List<ListviewBereid>();
+
+        //    for (int i = 0; i < alleBestellingen.Count; i++)
+        //    {
+        //        if(alleBestellingItems[i].status == "bereid")
+        //        {
+        //            if(alleBestellingItems[i].bestellingID == alleBestellingen[i].bestelling_id)
+        //            {
+        //                ListviewBereid gereedBestelling = new ListviewBereid();
+        //                gereedBestelling.aantal = alleBestellingItems[i].aantal;
+        //                gereedBestelling.naam = alleBestellingItems[i].
+        //            }
+        //        }
+        //    }
+
+        //    return gereedBestellingItems;
+        //}
     }
 }

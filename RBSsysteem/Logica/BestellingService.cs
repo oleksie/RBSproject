@@ -79,5 +79,10 @@ namespace Logica
             double btw = bestelling.GetBTW(bestellingid);
             txtbtw.Text = btw.ToString();
         }
+
+        public void UpdateBestelling(int bestellingid, string betaalwijze, double fooi, string betaald)
+        {
+            bestelling.UpdateBestelling(bestellingid, betaalwijze, fooi, betaald);
+        }
     }
 }

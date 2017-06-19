@@ -141,7 +141,7 @@ namespace DAL
             List<Bestelling> bestellingList = new List<Bestelling>();
             StringBuilder sb = new StringBuilder();
 
-            sb.Append("select BestelItem.bestelitem_id, Bestelling.bestelling_id,Bestelling.commentaar_klant,Bestelling.medewerker_id,Bestelling.tafel_id,Bestelling.totaal_prijs from BestelItem inner join MenuItem on BestelItem.menuitem_id = MenuItem.menuitem_id inner join Bestelling on BestelItem.bestelling_id=Bestelling.bestelling_id;");
+            sb.Append("select BestelItem.bestelitem_id, Bestelling.bestelling_id,Bestelling.commentaar_klant,Bestelling.medewerker_id,Bestelling.tafel_id,Bestelling.totaal_prijs,Bestelling.betaald,Bestelling.btw,Bestelling.fooi,Bestelling.betaalwijze from BestelItem inner join MenuItem on BestelItem.menuitem_id = MenuItem.menuitem_id inner join Bestelling on BestelItem.bestelling_id=Bestelling.bestelling_id;");
 
             String sql = sb.ToString();
 
@@ -154,15 +154,23 @@ namespace DAL
                 string commentaar = reader.GetString(2);
                 int medewerkerid = reader.GetInt32(3);
                 int tafel = reader.GetInt32(4);
+                double totaalPrijs = reader.GetDouble(5);
+                string betaald = reader.GetString(6);
+                double btw = reader.GetDouble(7);
+                double fooi = reader.GetDouble(8);
+                string betaalwijze = reader.GetString(9);
 
                 Bestelling bestelling = new Bestelling();
 
                 bestelling.bestelling_id = bestellingid;
                 bestelling.commentaarKlant = commentaar;
                 bestelling.medewerkerid = medewerkerid;
-                //bestelling.aantal = aantal;
-                //bestelling.prijs = prijs;
                 bestelling.tafelId = tafel;
+                bestelling.totaalprijs = totaalPrijs;
+                bestelling.betaald = betaald;
+                bestelling.btw = btw;
+                bestelling.fooi = fooi;
+                bestelling.betaalWijze = betaalwijze;
 
                 bestellingList.Add(bestelling);
             }
@@ -226,6 +234,72 @@ namespace DAL
             DBConnectie.Close();
 
             return btw;
+        }
+
+        public List<Bestelling> GetAllBestellingen()
+        {
+            List<Bestelling> bestellingen = new List<Bestelling>();
+            DALConnection connectie = new DALConnection();
+            DBConnectie = connectie.MaakConnectieDB("Reader");
+
+            DBConnectie.Open();
+
+            SqlCommand command = new SqlCommand("SELECT * FROM Bestelling", DBConnectie);
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Bestelling bestelling = new Bestelling();
+
+                bestelling.bestelling_id = reader.GetInt32(0);
+                bestelling.commentaarKlant = reader.GetString(1);
+                bestelling.tafelId = reader.GetInt32(2);
+                bestelling.medewerkerid = reader.GetInt32(3);
+                bestelling.totaalprijs = reader.GetDouble(4);
+                bestelling.betaald = reader.GetString(5);
+                bestelling.btw = reader.GetDouble(6);
+                bestelling.fooi = reader.GetDouble(7);
+                bestelling.betaalWijze = reader.GetString(8);
+
+                bestellingen.Add(bestelling);
+            }
+
+            reader.Close();
+            DBConnectie.Close();
+
+            return bestellingen;
+        }
+
+        public void UpdateBestelling(int bestellingid, string betaalwijze, double fooi, string betaald)
+        {
+            DALConnection connectie = new DALConnection();
+            DBConnectie = connectie.MaakConnectieDB("Writer");
+
+            DBConnectie.Open();
+
+            SqlCommand command = new SqlCommand("UPDATE Bestelling SET betaald = @betaald, fooi = @fooi, betaalwijze = @betaalwijze WHERE bestelling_id = @bestellingid", DBConnectie);
+
+            SqlParameter IdParam1 = new SqlParameter("@betaald", SqlDbType.NVarChar, 50);
+            SqlParameter IdParam2 = new SqlParameter("@fooi", SqlDbType.Float);
+            SqlParameter IdParam3 = new SqlParameter("@betaalwijze", SqlDbType.NVarChar, 50);
+            SqlParameter IdParam4 = new SqlParameter("@bestellingid", SqlDbType.Int);
+
+            command.Parameters.Add(IdParam1);
+            command.Parameters.Add(IdParam2);
+            command.Parameters.Add(IdParam3);
+            command.Parameters.Add(IdParam4);
+
+            IdParam1.Value = betaald;
+            IdParam2.Value = fooi;
+            IdParam3.Value = betaalwijze;
+            IdParam4.Value = bestellingid;
+
+            command.Prepare();
+
+            command.ExecuteNonQuery();
+
+            DBConnectie.Close();
         }
     }
 }
