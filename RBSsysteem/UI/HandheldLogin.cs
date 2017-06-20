@@ -17,8 +17,9 @@ namespace UI
         public HandheldLogin()
         {
             InitializeComponent();
+            // StartPositie van form instellen op CenterScreen
             this.StartPosition = FormStartPosition.CenterScreen;
-
+            // Maximale lengte van txtInlognummer naar 4 limiteren
             txtInlognummer.MaxLength = 4;
         }
 
@@ -29,7 +30,7 @@ namespace UI
             // Controleer of input naar een integer kan worden geparsed, zo niet geef dan een melding
             try {
                 inlognummer = int.Parse(txtInlognummer.Text);
-                lblLoginError.Text = "";
+                lblLoginError.Text = string.Empty;
             }
             catch
             {
