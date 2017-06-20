@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BasisKokBar.cs">
+    <Compile Include="KokBar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BasisKokBar.Designer.cs">
-      <DependentUpon>BasisKokBar.cs</DependentUpon>
+    <Compile Include="KokBar.Designer.cs">
+      <DependentUpon>KokBar.cs</DependentUpon>
     </Compile>
     <Compile Include="HandheldBestellen.cs">
       <SubType>Form</SubType>
@@ -105,8 +105,8 @@
     <Compile Include="RoundButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="BasisKokBar.resx">
-      <DependentUpon>BasisKokBar.cs</DependentUpon>
+    <EmbeddedResource Include="KokBar.resx">
+      <DependentUpon>KokBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HandheldBestellen.resx">
       <DependentUpon>HandheldBestellen.cs</DependentUpon>

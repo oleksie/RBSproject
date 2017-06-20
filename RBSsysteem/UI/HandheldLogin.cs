@@ -56,7 +56,7 @@ namespace UI
                         case (Rol)2:
                         case (Rol)3:
                             this.Hide();
-                            BasisKokBar basisKokBar = new BasisKokBar(medewerker);
+                            KokBar basisKokBar = new KokBar(medewerker);
                             basisKokBar.Show();
                             break;
                         // rol 4 is voor eigenaar en die wordt niet geïmplementeerd

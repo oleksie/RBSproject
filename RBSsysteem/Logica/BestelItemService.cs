@@ -60,11 +60,11 @@ namespace Logica
         {
             List<Afreken> listMetItems =  bestellingItemDAO.GetAllAfrekenen(bestellingid);
 
-            foreach (Afreken x in listMetItems)
+            foreach (Afreken afrekenObject in listMetItems)
             {
-                ListViewItem item = new ListViewItem(x.Naam);
-                item.SubItems.Add(x.Aantal.ToString());
-                item.SubItems.Add(x.Prijs.ToString());
+                ListViewItem item = new ListViewItem(afrekenObject.Naam);
+                item.SubItems.Add(afrekenObject.Aantal.ToString());
+                item.SubItems.Add(afrekenObject.Prijs.ToString());
                 list.Items.Add(item);
             }
         }
