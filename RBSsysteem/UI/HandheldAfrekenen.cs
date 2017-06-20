@@ -54,7 +54,7 @@ namespace UI
 
         private void Btn_AfrekenenTerug_Click(object sender, EventArgs e)
         {
-            Bestellen bestellen = (Bestellen)Application.OpenForms["Bestellen"];
+            HandheldBestellen bestellen = (HandheldBestellen)Application.OpenForms["Bestellen"];
             this.Hide();
             bestellen.Show();
         }

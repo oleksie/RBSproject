@@ -46,23 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BasisHandheld.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BasisHandheld.designer.cs">
-      <DependentUpon>BasisHandheld.cs</DependentUpon>
-    </Compile>
     <Compile Include="BasisKokBar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BasisKokBar.Designer.cs">
       <DependentUpon>BasisKokBar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Bestellen.cs">
+    <Compile Include="HandheldBestellen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bestellen.Designer.cs">
-      <DependentUpon>Bestellen.cs</DependentUpon>
+    <Compile Include="HandheldBestellen.Designer.cs">
+      <DependentUpon>HandheldBestellen.cs</DependentUpon>
     </Compile>
     <Compile Include="HandheldAfrekenen.cs">
       <SubType>Form</SubType>
@@ -111,14 +105,11 @@
     <Compile Include="RoundButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="BasisHandheld.resx">
-      <DependentUpon>BasisHandheld.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BasisKokBar.resx">
       <DependentUpon>BasisKokBar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Bestellen.resx">
-      <DependentUpon>Bestellen.cs</DependentUpon>
+    <EmbeddedResource Include="HandheldBestellen.resx">
+      <DependentUpon>HandheldBestellen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HandheldAfrekenen.resx">
       <DependentUpon>HandheldAfrekenen.cs</DependentUpon>

@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class Bestellen
+    partial class HandheldBestellen
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bestellen));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HandheldBestellen));
+            this.btnNaarTafelAfrekenen = new System.Windows.Forms.Button();
+            this.btnTerugNaarOverzicht = new System.Windows.Forms.Button();
             this.ListViewtje = new System.Windows.Forms.ListView();
             this.ListColomNaamItem = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ListColomAantalItem = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -108,30 +108,30 @@
             this.panel1.Controls.Add(this.lblTafelNummer);
             this.panel1.Controls.Add(this.btn_afrondenHuidig);
             this.panel1.Controls.Add(this.ListViewtje);
-            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.btnTerugNaarOverzicht);
             this.panel1.Controls.Add(this.MenuKaart);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnNaarTafelAfrekenen);
             // 
-            // button1
+            // btnNaarTafelAfrekenen
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(237, 53);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(269, 72);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Tafel afrekenen";
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnNaarTafelAfrekenen.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNaarTafelAfrekenen.Location = new System.Drawing.Point(237, 53);
+            this.btnNaarTafelAfrekenen.Name = "btnNaarTafelAfrekenen";
+            this.btnNaarTafelAfrekenen.Size = new System.Drawing.Size(269, 72);
+            this.btnNaarTafelAfrekenen.TabIndex = 0;
+            this.btnNaarTafelAfrekenen.Text = "Tafel afrekenen";
+            this.btnNaarTafelAfrekenen.Click += new System.EventHandler(this.btnNaarTafelAfrekenen_Click);
             // 
-            // button4
+            // btnTerugNaarOverzicht
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(87, 887);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(141, 55);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Terug";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnTerugNaarOverzicht.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTerugNaarOverzicht.Location = new System.Drawing.Point(87, 887);
+            this.btnTerugNaarOverzicht.Name = "btnTerugNaarOverzicht";
+            this.btnTerugNaarOverzicht.Size = new System.Drawing.Size(141, 55);
+            this.btnTerugNaarOverzicht.TabIndex = 3;
+            this.btnTerugNaarOverzicht.Text = "Terug";
+            this.btnTerugNaarOverzicht.UseVisualStyleBackColor = true;
+            this.btnTerugNaarOverzicht.Click += new System.EventHandler(this.btnTerugNaarOverzicht_Click);
             // 
             // ListViewtje
             // 
@@ -559,14 +559,13 @@
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
-            // Bestellen
+            // HandheldBestellen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(752, 985);
-            this.Name = "Bestellen";
+            this.Name = "HandheldBestellen";
             this.Text = "Kaart";
-            this.Load += new System.EventHandler(this.Bestellen_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -594,8 +593,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnNaarTafelAfrekenen;
+        private System.Windows.Forms.Button btnTerugNaarOverzicht;
         private System.Windows.Forms.ColumnHeader ListColomNaamItem;
         private System.Windows.Forms.ColumnHeader ListColomAantalItem;
         private System.Windows.Forms.ColumnHeader ListColomOpmerkingItem;

@@ -53,14 +53,14 @@ namespace UI
                 else
                 {
                     this.Hide();
-                    Bestellen bestellen = new Bestellen(medewerker, clickedTafelId);
+                    HandheldBestellen bestellen = new HandheldBestellen(medewerker, clickedTafelId);
                     bestellen.Show();
                 }
             }
             else
             {
                 this.Hide();
-                Bestellen bestellen = new Bestellen(medewerker, clickedTafelId);
+                HandheldBestellen bestellen = new HandheldBestellen(medewerker, clickedTafelId);
                 bestellen.Show();
             }
         }

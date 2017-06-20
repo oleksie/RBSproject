@@ -13,34 +13,29 @@ namespace UI
 {
     public partial class HandheldPopUpBestel : Form
     {
-        public int aantal = 1;
-        public string opmerking = "";
-        public bool ok = true;
+        private int aantal = 1;
+        private string opmerking = "";
+        private bool ok = true;
 
         public HandheldPopUpBestel()
         {
-            
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            //this.Btn_HandheldPopUpBestelTerug.Click += Btn_HandheldPopUpBestelTerug_Click;
-            //this.Btn_HandheldPopUpBestelOk.Click += Btn_HandheldPopUpBestelOk_Click;
-            //this.Btn_HandheldPopUpBestelUp.Click += Btn_HandheldPopUpBestelUp_Click;
-            //this.Btn_HandheldPopUpBetselDown.Click += Btn_HandheldPopUpBetselDown_Click;
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        public int Aantal
         {
-
+            get { return aantal;  }
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        public string Opmerking
         {
-
+            get { return opmerking; }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        public bool Ok
         {
-
+            get { return ok; }
         }
 
         public void Btn_HandheldPopUpBestelUp_Click(object sender, EventArgs e)
@@ -58,14 +53,13 @@ namespace UI
             {
                 aantalint--;
                 this.Txt_HandheldPopUpBetselAantal.Text = aantalint.ToString();
-            }
-            
+            }   
         }
 
         private void Btn_HandheldPopUpBestelTerug_Click(object sender, EventArgs e)
         {
             ok = false;
-            Bestellen bestelscherm = new Bestellen();
+            HandheldBestellen bestelscherm = new HandheldBestellen();
             this.Close();
         }
 

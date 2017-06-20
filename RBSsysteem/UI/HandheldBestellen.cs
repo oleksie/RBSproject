@@ -12,22 +12,24 @@ using Model;
 
 namespace UI
 {
-    public partial class Bestellen : StyleGuide.BasisHandheldForm
+    public partial class HandheldBestellen : StyleGuide.BasisHandheldForm
     {
-        MenuItemService actieButton = new MenuItemService();
-        HandheldTafels naarTafelOverzicht = (HandheldTafels)Application.OpenForms["HandheldTafels"];
-
-        List<ListviewBestellen> listVoorDB;
-
-        public int bestellingID;
+        private int bestellingID;
         private int tafelNummer;
         private Medewerker medewerker;
 
-        BestellingService bestelling = new BestellingService();
-        BestelItemService gebruik = new BestelItemService();
-        TafelService tafel = new TafelService();
+        List<ListviewBestellen> listVoorDB;
 
-        public Bestellen()
+        //Gebruikte UI
+        HandheldTafels naarTafelOverzicht = (HandheldTafels)Application.OpenForms["HandheldTafels"];
+
+        //Gebruikte Logica
+        BestellingService bestellingService = new BestellingService();
+        BestelItemService bestelItemService = new BestelItemService();
+        TafelService tafelService = new TafelService();
+        MenuItemService menuItemService = new MenuItemService();
+
+        public HandheldBestellen()
         {
             InitializeComponent();
             // Startpositie voor het scherm meegeven
@@ -45,17 +47,18 @@ namespace UI
             ListViewtje.ItemSelectionChanged += ListViewtje_ItemSelectionChanged;
         }
 
-        public Bestellen(Medewerker medewerker, int tafelNummer) : this()
+        public HandheldBestellen(Medewerker medewerker, int tafelNummer) : this()
         {
             this.medewerker = medewerker;
             this.tafelNummer = tafelNummer;
-            this.bestellingID = bestelling.GetBestellingID(medewerker, tafelNummer);
+            this.bestellingID = bestellingService.GetBestellingID(medewerker, tafelNummer);
 
             lblPersoneelsNummer.Text += medewerker.Inlognummer.ToString();
             lblTafelNummer.Text += tafelNummer.ToString();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        //Button voor als je terug wilt naar overzicht
+        private void btnTerugNaarOverzicht_Click(object sender, EventArgs e)
         {
             if (this.ListViewtje.Items.Count != 0)
             {
@@ -67,7 +70,6 @@ namespace UI
                     this.Hide();
                     naarTafelOverzicht.CreateTafelButtons();
                     naarTafelOverzicht.Show();
-                    
                 }
             }
             else
@@ -78,39 +80,40 @@ namespace UI
             }
         }
 
+        //Laat menuitems buttons zien bij opstart
         private void ShowLunchStart()
         {
-            MenuItemService hoi = new MenuItemService();
             List<Button> btnList = null;
-            btnList = hoi.MenuItemNaarButton(this.CategorieLunch, this.FLPLunchVoor);
+            btnList = menuItemService.MenuItemNaarButton(this.CategorieLunch, this.FLPLunchVoor);
             foreach (Button x in btnList)
             {
                 x.Click += new EventHandler(button_Click);
             }
         }
 
+        //Laat menuitems buttons zien bij opstart
         private void ShowDinerStart()
         {
-            MenuItemService hoi = new MenuItemService();
             List<Button> btnList = null;
-            btnList = hoi.MenuItemNaarButton(this.CategorieDiner, this.FLPDinerVoor);
+            btnList = menuItemService.MenuItemNaarButton(this.CategorieDiner, this.FLPDinerVoor);
             foreach (Button x in btnList)
             {
                 x.Click += new EventHandler(button_Click);
             }
         }
 
+        //Laat menuitems buttons zien bij opstart
         private void ShowDrankStart()
         {
-            MenuItemService hoi = new MenuItemService();
             List<Button> btnList = null;
-            btnList = hoi.MenuItemNaarButton(this.CategorieDranken, this.FLPDrankFris);
+            btnList = menuItemService.MenuItemNaarButton(this.CategorieDranken, this.FLPDrankFris);
             foreach (Button x in btnList)
             {
                 x.Click += new EventHandler(button_Click);
             }
         }
 
+        //MenuItem button
         public void button_Click(object sender, EventArgs e)
         {
             Button btn = new Button();
@@ -119,23 +122,20 @@ namespace UI
             aantalItem.selectedItemNaam.Text = btn.Tag.ToString();
             aantalItem.ShowDialog();
 
-            if (aantalItem.ok)
+            if (aantalItem.Ok)
             {
-                
-                ListviewBestellen item = actieButton.MenuItemNaarList(sender as Button, aantalItem.aantal, aantalItem.opmerking);
-                listVoorDB = actieButton.MenuItemNaarListView(this.ListViewtje, item);
-
+                ListviewBestellen item = menuItemService.MenuItemNaarList(sender as Button, aantalItem.Aantal, aantalItem.Opmerking);
+                listVoorDB = menuItemService.MenuItemNaarListView(this.ListViewtje, item);
             }
         }
 
         private void CategorieLunch_SelectedIndexChanged(Object sender, EventArgs e)
         {
-            MenuItemService hoi = new MenuItemService();
             List<Button> btnList = null;
 
             if (CategorieLunch.SelectedTab.Name == "HoofdgerechtLunch")
             {
-                btnList = hoi.MenuItemNaarButton(this.CategorieLunch, this.FLPLunchHoofd);
+                btnList = menuItemService.MenuItemNaarButton(this.CategorieLunch, this.FLPLunchHoofd);
                 foreach (Button x in btnList)
                 {
                     x.Click += new EventHandler(button_Click);
@@ -143,7 +143,7 @@ namespace UI
             }
             else if (CategorieLunch.SelectedTab.Name == "VoorgerechtLunch")
             {
-                btnList = hoi.MenuItemNaarButton(this.CategorieLunch, this.FLPLunchVoor);
+                btnList = menuItemService.MenuItemNaarButton(this.CategorieLunch, this.FLPLunchVoor);
                 foreach (Button x in btnList)
                 {
                     x.Click += new EventHandler(button_Click);
@@ -151,7 +151,7 @@ namespace UI
             }
             else
             {
-                btnList = hoi.MenuItemNaarButton(this.CategorieLunch, this.FLPLucnhNa);
+                btnList = menuItemService.MenuItemNaarButton(this.CategorieLunch, this.FLPLucnhNa);
                 foreach (Button x in btnList)
                 {
                     x.Click += new EventHandler(button_Click);
@@ -162,12 +162,11 @@ namespace UI
 
         private void CategorieDiner_SelectedIndexChanged(Object sender, EventArgs e)
         {
-            MenuItemService hoi = new MenuItemService();
             List<Button> btnList = null;
 
             if (CategorieDiner.SelectedTab.Name == "HoofdgerechtDiner")
             {
-                btnList = hoi.MenuItemNaarButton(this.CategorieDiner, this.FLPDinerHoofd);
+                btnList = menuItemService.MenuItemNaarButton(this.CategorieDiner, this.FLPDinerHoofd);
                 foreach (Button x in btnList)
                 {
                     x.Click += new EventHandler(button_Click);
@@ -175,7 +174,7 @@ namespace UI
             }
             else if (CategorieDiner.SelectedTab.Name == "VoorgerechtDiner")
             {
-                btnList = hoi.MenuItemNaarButton(this.CategorieDiner, this.FLPDinerVoor);
+                btnList = menuItemService.MenuItemNaarButton(this.CategorieDiner, this.FLPDinerVoor);
                 foreach (Button x in btnList)
                 {
                     x.Click += new EventHandler(button_Click);
@@ -183,7 +182,7 @@ namespace UI
             }
             else if (CategorieDiner.SelectedTab.Name == "TussengerechtDiner")
             {
-                btnList = hoi.MenuItemNaarButton(this.CategorieDiner, this.FLPDinerTussen);
+                btnList = menuItemService.MenuItemNaarButton(this.CategorieDiner, this.FLPDinerTussen);
                 foreach (Button x in btnList)
                 {
                     x.Click += new EventHandler(button_Click);
@@ -191,7 +190,7 @@ namespace UI
             }
             else
             {
-                btnList = hoi.MenuItemNaarButton(this.CategorieDiner, this.FLPDinerNa);
+                btnList = menuItemService.MenuItemNaarButton(this.CategorieDiner, this.FLPDinerNa);
                 foreach (Button x in btnList)
                 {
                     x.Click += new EventHandler(button_Click);
@@ -201,12 +200,11 @@ namespace UI
 
         private void CategorieDranken_SelectedIndexChanged(Object sender, EventArgs e)
         {
-            MenuItemService hoi = new MenuItemService();
             List<Button> btnList = null;
 
             if (CategorieDranken.SelectedTab.Name == "Frisdrank")
             {
-                btnList = hoi.MenuItemNaarButton(this.CategorieDranken, this.FLPDrankFris);
+                btnList = menuItemService.MenuItemNaarButton(this.CategorieDranken, this.FLPDrankFris);
                 foreach (Button x in btnList)
                 {
                     x.Click += new EventHandler(button_Click);
@@ -214,7 +212,7 @@ namespace UI
             }
             else if (CategorieDranken.SelectedTab.Name == "Bier")
             {
-                btnList = hoi.MenuItemNaarButton(this.CategorieDranken, this.FLPDrankBier);
+                btnList = menuItemService.MenuItemNaarButton(this.CategorieDranken, this.FLPDrankBier);
                 foreach (Button x in btnList)
                 {
                     x.Click += new EventHandler(button_Click);
@@ -222,7 +220,7 @@ namespace UI
             }
             else if (CategorieDranken.SelectedTab.Name == "Wijn")
             {
-                btnList = hoi.MenuItemNaarButton(this.CategorieDranken, this.FLPDrankWijn);
+                btnList = menuItemService.MenuItemNaarButton(this.CategorieDranken, this.FLPDrankWijn);
                 foreach (Button x in btnList)
                 {
                     x.Click += new EventHandler(button_Click);
@@ -230,7 +228,7 @@ namespace UI
             }
             else if (CategorieDranken.SelectedTab.Name == "Gedistileerd")
             {
-                btnList = hoi.MenuItemNaarButton(this.CategorieDranken, this.FLPDrankGedis);
+                btnList = menuItemService.MenuItemNaarButton(this.CategorieDranken, this.FLPDrankGedis);
                 foreach (Button x in btnList)
                 {
                     x.Click += new EventHandler(button_Click);
@@ -238,7 +236,7 @@ namespace UI
             }
             else
             {
-                btnList = hoi.MenuItemNaarButton(this.CategorieDranken, this.FLPDrankKoffthee);
+                btnList = menuItemService.MenuItemNaarButton(this.CategorieDranken, this.FLPDrankKoffthee);
                 foreach (Button x in btnList)
                 {
                     x.Click += new EventHandler(button_Click);
@@ -256,7 +254,7 @@ namespace UI
 
             bool genoegOpVoorraad = true;
 
-            List<Model.MenuItem> checkVoorraad = actieButton.GetVoorraad();
+            List<Model.MenuItem> checkVoorraad = menuItemService.GetVoorraad();
             string naamItemVoorraad = "";
             int aantalItemVoorraad = 0;
 
@@ -289,18 +287,18 @@ namespace UI
                 {
                     if (bestellingID == 0)
                     {
-                        bestelling.MaakNieuweBestelling(medewerker, tafelNummer);
-                        tafel.TafelOpBezetZetten(medewerker.Inlognummer, tafelNummer);
-                        bestellingID = bestelling.GetBestellingID(medewerker, tafelNummer);
-                        gebruik.VerwerkNieuweBestelling(bestellingID, listVoorDB);
-                        actieButton.UpdateVoorraad(listVoorDB);
-                        actieButton.listVoorListview.Clear();
+                        bestellingService.MaakNieuweBestelling(medewerker, tafelNummer);
+                        tafelService.TafelOpBezetZetten(medewerker.Inlognummer, tafelNummer);
+                        bestellingID = bestellingService.GetBestellingID(medewerker, tafelNummer);
+                        bestelItemService.VerwerkNieuweBestelling(bestellingID, listVoorDB);
+                        menuItemService.UpdateVoorraad(listVoorDB);
+                        menuItemService.listVoorListview.Clear();
                     }
                     else
                     {
-                        gebruik.VerwerkHuidigeBestelling(bestellingID, listVoorDB);
-                        actieButton.UpdateVoorraad(listVoorDB);
-                        actieButton.listVoorListview.Clear();
+                        bestelItemService.VerwerkHuidigeBestelling(bestellingID, listVoorDB);
+                        menuItemService.UpdateVoorraad(listVoorDB);
+                        menuItemService.listVoorListview.Clear();
                     }
 
                     this.ListViewtje.Items.Clear();
@@ -314,9 +312,6 @@ namespace UI
                 MessageBox.Show("Er zijn nog maar " + naamItemVoorraad + " " + aantalItemVoorraad + " beschikbaar!", "Let op!");
                 return;
             }
-            
-
-
         }
 
         private void Bestellen_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
@@ -327,13 +322,15 @@ namespace UI
             login.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        //Button om naar de afreken scherm te gaan
+        private void btnNaarTafelAfrekenen_Click(object sender, EventArgs e)
         {
             HandheldAfrekenen afrekenen = new HandheldAfrekenen(bestellingID, medewerker, tafelNummer);
             this.Hide();
             afrekenen.Show();
         }
 
+        //Aantal omhoog van geselecteerde item
         private void btnAantalOmhoog_Click(object sender, EventArgs e)
         {
             int aantal = int.Parse(this.ListViewtje.SelectedItems[0].SubItems[1].Text);
@@ -354,6 +351,7 @@ namespace UI
             this.ListViewtje.SelectedItems[0].SubItems[1].Text = aantal.ToString();
         }
 
+        //Aantal omlaag van geselecteerde item
         private void btnAantalOmlaag_Click(object sender, EventArgs e)
         {
             int aantal = int.Parse(this.ListViewtje.SelectedItems[0].SubItems[1].Text);
@@ -377,6 +375,7 @@ namespace UI
             this.ListViewtje.SelectedItems[0].SubItems[1].Text = aantal.ToString();
         }
 
+        //De itemattributen worden uit de listview gehaald en gecheckt op aanwezigheid. Dan verwijderd.
         private void btnVerwijderItem_Click(object sender, EventArgs e)
         {
             int aantal = int.Parse(this.ListViewtje.SelectedItems[0].SubItems[1].Text);
@@ -395,18 +394,12 @@ namespace UI
             this.ListViewtje.SelectedItems[0].Remove();
         }
 
+        //Als list item geselecteerd wordt, dan wordt een event in gang gezet en gaan de buttons open
         private void ListViewtje_ItemSelectionChanged(Object sender, EventArgs e)
         {
-            
             btnAantalOmhoog.Enabled = true;
             btnAantalOmlaag.Enabled = true;
             btnVerwijderItem.Enabled = true;
-            
-        }
-
-        private void Bestellen_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
