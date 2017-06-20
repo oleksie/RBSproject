@@ -33,7 +33,14 @@ namespace DAL
             // vul tafels list met resultaten
             while (reader.Read())
             {
-                Tafel tafel = new Tafel(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2), reader.GetInt32(3));
+                // Schrijf de opgehaalde data weg in variabelen
+                int tafelId = reader.GetInt32(0);
+                string status = reader.GetString(1);
+                int capaciteit = reader.GetInt32(2);
+                int bezetDoor = reader.GetInt32(3);
+                // Maak tafel object aan met de bovenstaande gegevens als parameters voor de constructor
+                Tafel tafel = new Tafel(tafelId, status, capaciteit, bezetDoor);
+                // Voeg tafel object toe aan List<Tafel> tafels
                 tafels.Add(tafel);
             }
 

@@ -18,6 +18,7 @@ namespace Logica
 
         public Medewerker LoginMedewerker(int inlognummer)
         {
+            // Medewerker ophalen uit database aan de hand van binnengekomen inlognummer, via medewerkerDAO
             MedewerkerDAO medewerkerDAO = new MedewerkerDAO();
             Medewerker medewerker = medewerkerDAO.GetMedewerker(inlognummer);
 

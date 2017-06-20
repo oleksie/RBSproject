@@ -19,6 +19,7 @@ namespace Logica
 
         public List<Tafel> GetTafels()
         {
+            // Lijst met tafels ophalen uit de database via tafelDAO
             List<Tafel> tafels = tafelDAO.GetTafels();
 
             return tafels;

@@ -47,9 +47,8 @@ namespace DAL
             // Maak het Medewerker object aan met de opgevraagde data en het als parameter doorgegeven inlognummer
             Medewerker medewerker = new Medewerker(medewerkerId, naam, inlognummer, rol);
 
-            /* controleer of er nog een record is terug gestuurd, dit zou in geen enkel geval voor moeten komen
-            *  aangezien inlognummers uniek zijn
-            */
+            // controleer of er nog een record is terug gestuurd, dit zou in geen enkel geval voor moeten komen
+            // aangezien inlognummers uniek zijn
             if (reader.Read())
                 throw new InvalidOperationException("Multiple records were returned.");
 
