@@ -43,7 +43,7 @@ namespace Logica
             Bestelling bestellingInfo = new Bestelling();
 
             bestellingInfo.CommentaarKlant = "";
-            bestellingInfo.Medewerkerid = medewerker.Id;
+            bestellingInfo.MedewerkerId = medewerker.Id;
             bestellingInfo.Betaald = "nee";
             bestellingInfo.Btw = totaalprijs * 0.21;
             bestellingInfo.TafelId= tafelnr;
