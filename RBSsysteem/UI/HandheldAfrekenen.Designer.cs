@@ -56,6 +56,7 @@
             // 
             // Btn_Afrekenen
             // 
+            this.Btn_Afrekenen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Btn_Afrekenen.Location = new System.Drawing.Point(555, 832);
             this.Btn_Afrekenen.Name = "Btn_Afrekenen";
             this.Btn_Afrekenen.Size = new System.Drawing.Size(128, 79);
@@ -99,6 +100,7 @@
             // 
             // Btn_AfrekenenTerug
             // 
+            this.Btn_AfrekenenTerug.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Btn_AfrekenenTerug.Location = new System.Drawing.Point(57, 824);
             this.Btn_AfrekenenTerug.Name = "Btn_AfrekenenTerug";
             this.Btn_AfrekenenTerug.Size = new System.Drawing.Size(128, 79);
@@ -208,6 +210,7 @@
             this.txt_totaal.ReadOnly = true;
             this.txt_totaal.Size = new System.Drawing.Size(137, 53);
             this.txt_totaal.TabIndex = 4;
+            this.txt_totaal.TextChanged += new System.EventHandler(this.txt_totaal_TextChanged);
             // 
             // listAfreken
             // 

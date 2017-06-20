@@ -132,5 +132,10 @@ namespace UI
         {
 
         }
+
+        private void txt_totaal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
