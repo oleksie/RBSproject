@@ -8,92 +8,75 @@ namespace Model
 {
     public class Bestelling
     {
-        private int bestellingID;
-        private string commentaarKlant;
-        private int medewerkerID;
-        private int tafelID;
-        private double totaalPrijs;
-        private string betaald;
-        private double btw;
-        private double fooi;
-        private string betaalWijze;
+        public int Id { get; set; }
+        public string CommentaarKlant { get; set; }
+        public int MedewerkerId { get; set; }
+        public int TafelId { get; set; }
+        public double Totaalprijs { get; set; }
+        public string Betaald { get; set; }
+        public double Btw { get; set; }
+        public double Fooi { get; set; }
+        public string BetaalWijze { get; set; }
 
         public Bestelling()
         {
 
         }
 
-        public Bestelling(int tafelId, double prijs)
-        {
-            this.tafelID = tafelId;
-            this.totaalPrijs = prijs;
-        }
+        #region Alternatieve manier van getters en setters, is dit beter of niet? Lijkt ons overbodig
+        //public int Bestelling_id
+        //{
+        //    get { return Id; }
+        //    set { Id = value; }
+        //}
 
-        public Bestelling(int bestellingID, string commentaarKlant, int medewerkerID, int tafelID, double totaalPrijs, string betaald, double btw, double fooi, string betaalWijze)
-        {
-            this.bestellingID = bestellingID;
-            this.commentaarKlant = commentaarKlant;
-            this.medewerkerID = medewerkerID;
-            this.TafelId = tafelID;
-            this.totaalPrijs = totaalPrijs;
-            this.betaald = betaald;
-            this.btw = btw;
-            this.fooi = fooi;
-            this.betaalWijze = betaalWijze;
-        }
+        //public string CommentaarKlant
+        //{
+        //    get { return CommentaarKlant; }
+        //    set { CommentaarKlant = value; }
+        //}
 
-        public int Bestelling_id
-        {
-            get { return bestellingID; }
-            set { bestellingID = value; }
-        }
+        //public int Medewerkerid
+        //{
+        //    get { return MedewerkerID; }
+        //    set { MedewerkerID = value; }
+        //}
 
-        public string CommentaarKlant
-        {
-            get { return commentaarKlant; }
-            set { commentaarKlant = value; }
-        }
+        //public int TafelId
+        //{
+        //    get { return TafelID; }
+        //    set { TafelID = value; }
+        //}
 
-        public int Medewerkerid
-        {
-            get { return medewerkerID; }
-            set { medewerkerID = value; }
-        }
+        //public double Totaalprijs
+        //{
+        //    get { return TotaalPrijs; }
+        //    set { TotaalPrijs = value; }
+        //}
 
-        public int TafelId
-        {
-            get { return tafelID; }
-            set { tafelID = value; }
-        }
+        //public string Betaald
+        //{
+        //    get { return Betaald; }
+        //    set { Betaald = value; }
+        //}
 
-        public double Totaalprijs
-        {
-            get { return totaalPrijs; }
-            set { totaalPrijs = value; }
-        }
+        //public double Btw
+        //{
+        //    get { return Btw; }
+        //    set { Btw = value; }
+        //}
 
-        public string Betaald
-        {
-            get { return betaald; }
-            set { betaald = value; }
-        }
+        //public double Fooi
+        //{
+        //    get { return Fooi; }
+        //    set { Fooi = value; }
+        //}
 
-        public double Btw
-        {
-            get { return btw; }
-            set { btw = value; }
-        }
-
-        public double Fooi
-        {
-            get { return fooi; }
-            set { fooi = value; }
-        }
-
-        public string BetaalWijze
-        {
-            get { return betaalWijze; }
-            set { betaalWijze = value; }
-        }
+        //public string BetaalWijze
+        //{
+        //    get { return BetaalWijze; }
+        //    set { BetaalWijze = value; }
+        //}
+        #endregion
     }
 }

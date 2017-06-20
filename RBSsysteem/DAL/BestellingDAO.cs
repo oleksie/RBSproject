@@ -76,7 +76,7 @@ namespace DAL
             IdParam2.Value = bestelling.TafelId;
 
             command.Parameters.Add(IdParam3);
-            IdParam3.Value = bestelling.Medewerkerid;
+            IdParam3.Value = bestelling.MedewerkerId;
 
             command.Parameters.Add(IdParam4);
             IdParam4.Value = bestelling.Totaalprijs;
@@ -164,9 +164,9 @@ namespace DAL
 
                 Bestelling bestelling = new Bestelling();
 
-                bestelling.Bestelling_id = bestellingid;
+                bestelling.Id = bestellingid;
                 bestelling.CommentaarKlant = commentaar;
-                bestelling.Medewerkerid = medewerkerid;
+                bestelling.MedewerkerId = medewerkerid;
                 bestelling.TafelId = tafel;
                 bestelling.Totaalprijs = totaalPrijs;
                 bestelling.Betaald = betaald;
@@ -257,10 +257,10 @@ namespace DAL
             {
                 Bestelling bestelling = new Bestelling();
 
-                bestelling.Bestelling_id = reader.GetInt32(0);
+                bestelling.Id = reader.GetInt32(0);
                 bestelling.CommentaarKlant = reader.GetString(1);
                 bestelling.TafelId = reader.GetInt32(2);
-                bestelling.Medewerkerid = reader.GetInt32(3);
+                bestelling.MedewerkerId = reader.GetInt32(3);
                 bestelling.Totaalprijs = reader.GetDouble(4);
                 bestelling.Betaald = reader.GetString(5);
                 bestelling.Btw = reader.GetDouble(6);

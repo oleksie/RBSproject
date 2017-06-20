@@ -91,7 +91,7 @@ namespace UI
                     bestelling.UpdateBestelling(bestellingID, betaalWijze, fooi, betaald);
 
                     this.Hide();
-                    naarTafelOverzicht.CreateTafelButtons();
+                    naarTafelOverzicht.CreateTafelOverzichtButtons();
                     naarTafelOverzicht.Show();
 
                 }
@@ -129,6 +129,11 @@ namespace UI
         }
 
         private void txtBTW_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_totaal_TextChanged(object sender, EventArgs e)
         {
 
         }
