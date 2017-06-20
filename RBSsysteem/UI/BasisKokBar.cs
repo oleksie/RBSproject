@@ -15,18 +15,21 @@ namespace UI
     public partial class BasisKokBar : Form
     {
         //dit zijn de private variables die ik nodig heb in deze form
-        private BarmanKok BarKok = new BarmanKok();
+        private BarmanKokServices BarKok = new BarmanKokServices();
         private Medewerker medewerker;
         private string filter;
         private List<ListViewItem> bestellinglist = new List<ListViewItem>();
+
         public BasisKokBar(Medewerker m)
         {
             //instellen basis waarden
             medewerker = m;
             filter = "besteld";
             InitializeComponent();
+
             // Startpositie voor het scherm meegeven
             this.StartPosition = FormStartPosition.CenterScreen;
+
             // Eventhandler voor als het scherm wordt gesloten (bijv. door middel van kruisje)
             this.FormClosing += BasisKokBar_FormClosing;
 
@@ -37,13 +40,16 @@ namespace UI
             lv_KokBarman.CheckBoxes = true;
             lv_KokBarman.Font = new Font("Arial", 20);
             lv_KokBarman.BackColor = Color.LightGreen;
+
             //instellingen btn's
             btn_bereid.Font = new Font("Arial", 15);
             btn_inBereiding.Font = new Font("Arial", 15);
             btn_Loguit.Font = new Font("Arial", 15);
+
             //voor de leuk ff lbl vullen met rol
             lbl_medewerkerInfo.Font = new Font("Arial", 20);
             lbl_medewerkerInfo.Text = Convert.ToString(medewerker.Rol);
+
             //toevoegen colums
             lv_KokBarman.Columns.Add("Check", 20);
             lv_KokBarman.Columns.Add("Menu", 400);
@@ -54,10 +60,8 @@ namespace UI
             lv_KokBarman.Columns.Add("Tafel", 90);
 
             //selecteert bestelling list op basis van rol
-            if (medewerker.Rol == Rol.Kok)
-            { bestellinglist = BarKok.BestellinglistGerechten(filter); }
-            else if (medewerker.Rol == Rol.Barman)
-            { bestellinglist = BarKok.BestellinglistDrank(filter); }
+            bestellinglist = BarKok.BestellinglistGerechten(filter,medewerker);
+            
             // vult listview
             for (int i = 0; i < bestellinglist.Count; i++)
             {
@@ -68,8 +72,10 @@ namespace UI
 
         private void BasisKokBar_Load(object sender, EventArgs e)
         {
-            //start een timer van 10 seconden waarna de list refresh wordt
+            //klok start
             Label1.Text = DateTime.Now.ToShortTimeString();
+
+            //start een timer van 10 seconden waarna de list refresh wordt
             Timer timer = new Timer();
             timer.Interval = (10 * 1000); // 10 secs
             timer.Tick += new EventHandler(timer_Tick);
@@ -78,13 +84,10 @@ namespace UI
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            //de refresh (+tijd refresh)
+            //de refresh van list (+tijd refresh)
             Label1.Text = DateTime.Now.ToShortTimeString();
             lv_KokBarman.Items.Clear();
-            if (medewerker.Rol == Rol.Kok)
-            { bestellinglist = BarKok.BestellinglistGerechten(filter); }
-            else if (medewerker.Rol == Rol.Barman)
-            { bestellinglist = BarKok.BestellinglistDrank(filter); }
+            bestellinglist = BarKok.BestellinglistGerechten(filter, medewerker);
             for (int i = 0; i < bestellinglist.Count; i++)
             {
                 lv_KokBarman.Items.Add(bestellinglist[i]);
@@ -94,7 +97,8 @@ namespace UI
 
         private void Lbl_Tijd_Click(object sender, EventArgs e)
         {
-
+            //refresh klok
+            Label1.Text = DateTime.Now.ToShortTimeString();
         }
 
         
@@ -124,14 +128,13 @@ namespace UI
         {
             //zet kleur terug
             lv_KokBarman.BackColor = Color.LightGreen;
+
             //zet de filter en geeft deze mee aan de bestellinglist(geeft list op basis van filter) en vult daatna de listview weer
             filter = "besteld";
             List<ListViewItem> bestellinglist = new List<ListViewItem>();
             lv_KokBarman.Items.Clear();
-            if (medewerker.Rol == Rol.Kok)
-            { bestellinglist = BarKok.BestellinglistGerechten(filter); }
-            else if (medewerker.Rol == Rol.Barman)
-            { bestellinglist = BarKok.BestellinglistDrank(filter); }
+            bestellinglist = BarKok.BestellinglistGerechten(filter, medewerker);
+
             for (int i = 0; i < bestellinglist.Count; i++)
             {
                 lv_KokBarman.Items.Add(bestellinglist[i]);
@@ -142,14 +145,12 @@ namespace UI
         {
             //zet kleur voor bereid
             lv_KokBarman.BackColor = Color.Tomato;
+
             //zie methode hierboven
             filter = "bereid";
             List<ListViewItem> bestellinglist = new List<ListViewItem>();
             lv_KokBarman.Items.Clear();
-            if (medewerker.Rol == Rol.Kok)
-            { bestellinglist = BarKok.BestellinglistGerechten(filter); }
-            else if (medewerker.Rol == Rol.Barman)
-            { bestellinglist = BarKok.BestellinglistDrank(filter); }
+            bestellinglist = BarKok.BestellinglistGerechten(filter, medewerker);
             for (int i = 0; i < bestellinglist.Count; i++)
             {
                 lv_KokBarman.Items.Add(bestellinglist[i]);

@@ -20,8 +20,7 @@ namespace DAL
 
         public List<Tafel> GetTafels()
         {
-            
-
+            // Database verbinding tot stand brengen
             DALConnection connectie = new DALConnection();
             DBConnectie = connectie.MaakConnectieDB("Reader");
             DBConnectie.Open();
