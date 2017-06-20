@@ -43,7 +43,7 @@ namespace UI
             btn_Loguit.Font = new Font("Arial", 15);
             //voor de leuk ff lbl vullen met rol
             lbl_medewerkerInfo.Font = new Font("Arial", 20);
-            lbl_medewerkerInfo.Text = Convert.ToString(medewerker.rol);
+            lbl_medewerkerInfo.Text = Convert.ToString(medewerker.Rol);
             //toevoegen colums
             lv_KokBarman.Columns.Add("Check", 20);
             lv_KokBarman.Columns.Add("Menu", 400);
@@ -51,12 +51,12 @@ namespace UI
             lv_KokBarman.Columns.Add("Commentaar", 345);
             lv_KokBarman.Columns.Add("Status", 100);
             lv_KokBarman.Columns.Add("Tijd Opgenomen", 300);
-            lv_KokBarman.Columns.Add("Tafel", 100);
+            lv_KokBarman.Columns.Add("Tafel", 90);
 
             //selecteert bestelling list op basis van rol
-            if (medewerker.rol == Rol.Kok)
+            if (medewerker.Rol == Rol.Kok)
             { bestellinglist = BarKok.BestellinglistGerechten(filter); }
-            else if (medewerker.rol == Rol.Barman)
+            else if (medewerker.Rol == Rol.Barman)
             { bestellinglist = BarKok.BestellinglistDrank(filter); }
             // vult listview
             for (int i = 0; i < bestellinglist.Count; i++)
@@ -81,9 +81,9 @@ namespace UI
             //de refresh (+tijd refresh)
             Label1.Text = DateTime.Now.ToShortTimeString();
             lv_KokBarman.Items.Clear();
-            if (medewerker.rol == Rol.Kok)
+            if (medewerker.Rol == Rol.Kok)
             { bestellinglist = BarKok.BestellinglistGerechten(filter); }
-            else if (medewerker.rol == Rol.Barman)
+            else if (medewerker.Rol == Rol.Barman)
             { bestellinglist = BarKok.BestellinglistDrank(filter); }
             for (int i = 0; i < bestellinglist.Count; i++)
             {
@@ -128,9 +128,9 @@ namespace UI
             filter = "besteld";
             List<ListViewItem> bestellinglist = new List<ListViewItem>();
             lv_KokBarman.Items.Clear();
-            if (medewerker.rol == Rol.Kok)
+            if (medewerker.Rol == Rol.Kok)
             { bestellinglist = BarKok.BestellinglistGerechten(filter); }
-            else if (medewerker.rol == Rol.Barman)
+            else if (medewerker.Rol == Rol.Barman)
             { bestellinglist = BarKok.BestellinglistDrank(filter); }
             for (int i = 0; i < bestellinglist.Count; i++)
             {
@@ -146,9 +146,9 @@ namespace UI
             filter = "bereid";
             List<ListViewItem> bestellinglist = new List<ListViewItem>();
             lv_KokBarman.Items.Clear();
-            if (medewerker.rol == Rol.Kok)
+            if (medewerker.Rol == Rol.Kok)
             { bestellinglist = BarKok.BestellinglistGerechten(filter); }
-            else if (medewerker.rol == Rol.Barman)
+            else if (medewerker.Rol == Rol.Barman)
             { bestellinglist = BarKok.BestellinglistDrank(filter); }
             for (int i = 0; i < bestellinglist.Count; i++)
             {

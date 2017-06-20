@@ -20,13 +20,15 @@ namespace DAL
 
         public Medewerker GetMedewerker(int inlognummer)
         {
-            Medewerker medewerker = new Medewerker();
-
+            // Breng verbinding met database tot stand
             DALConnection connectie = new DALConnection();
             DBConnectie = connectie.MaakConnectieDB("Reader");
             DBConnectie.Open();
 
-            SqlCommand command = new SqlCommand("SELECT * FROM Medewerker WHERE inlognummer = @inlognummer", DBConnectie);
+            SqlCommand command = new SqlCommand(
+                "SELECT medewerker_id, naam, rol FROM Medewerker WHERE inlognummer = @inlognummer",
+                DBConnectie
+            );
             command.Parameters.Add(new SqlParameter("inlognummer", inlognummer));
             
             SqlDataReader reader = command.ExecuteReader();
@@ -35,18 +37,25 @@ namespace DAL
             if (!reader.Read())
                 return null;
 
-            medewerker.medewerkerId = reader.GetInt32(0);
-            medewerker.naam = reader.GetString(1);
-            medewerker.inlognummer = reader.GetInt32(2);
-            medewerker.rol = (Rol) reader.GetInt32(3);
+            // Vul de opgehaalde data in variabelen
+            int medewerkerId = reader.GetInt32(0);
+            string naam = reader.GetString(1);
+            Rol rol = (Rol) reader.GetInt32(2);
 
-            // controleer of er nog een record is terug gestuurd
+            // Maak het Medewerker object aan met de opgevraagde data en het als parameter doorgegeven inlognummer
+            Medewerker medewerker = new Medewerker(medewerkerId, naam, inlognummer, rol);
+
+            /* controleer of er nog een record is terug gestuurd, dit zou in geen enkel geval voor moeten komen
+            *  aangezien inlognummers uniek zijn
+            */
             if (reader.Read())
                 throw new InvalidOperationException("Multiple records were returned.");
 
+            // Sluit reader en verbinding
             reader.Close();
             DBConnectie.Close();
 
+            // Retourneer het gevulde object
             return medewerker;
         }
     }

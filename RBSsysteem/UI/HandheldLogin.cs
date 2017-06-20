@@ -18,11 +18,15 @@ namespace UI
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+
+            txtInlognummer.MaxLength = 4;
         }
 
         private void LoginAccept_Click(object sender, EventArgs e)
         {
             int inlognummer = 0;
+
+            // Controleer of input naar een integer kan worden geparsed, zo niet geef dan een melding
             try {
                 inlognummer = int.Parse(txtInlognummer.Text);
                 lblLoginError.Text = "";
@@ -32,15 +36,17 @@ namespace UI
                 lblLoginError.Text = "Foutieve invoer, probeer opnieuw.";
             }
 
+            // Als inlognummer naar een geldige integer waarde is veranderd is deze niet langer 0 en gebeurt
+            // het volgende:
             if (inlognummer != 0)
             {
-                try
+                try // Probeer een medewerker op te halen uit de database via LoginService
                 {
                     LoginService loginService = new LoginService();
                     Medewerker medewerker = loginService.LoginMedewerker(inlognummer);
-                    
 
-                    switch (medewerker.rol)
+                    // Open aan de hand van de rol van de medewerker het bijbehorende scherm
+                    switch (medewerker.Rol)
                     {
                         case (Rol) 1:
                             this.Hide();
@@ -54,26 +60,18 @@ namespace UI
                             basisKokBar.Show();
                             break;
                         // rol 4 is voor eigenaar en die wordt niet geïmplementeerd
-                        //case (Rol)4:
-                        //    break;
+                        case (Rol)4:
+                            lblLoginError.Text = "Eigenaar functionaliteit is \nnog niet geimplementeerd.";
+                            break;
                     }
                 }
-                catch // (Exception exc)
+                catch
                 {
-                    lblLoginError.Text = "Inlognummer bestaat niet. \n";
-                    //lblLoginError.Text += exc.Message;
+                    // Als bovenstaande code niet foutloos is afgerond betekend dit automatisch dat het inlognummer
+                    // niet bestaat
+                    lblLoginError.Text = "Inlognummer bestaat niet.";
                 }
             }
-        }
-
-        private void txtInlognummer_TextChanged(object sender, EventArgs e)
-        { 
-            txtInlognummer.MaxLength = 4;
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-        
         }
     }
 }

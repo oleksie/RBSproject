@@ -51,7 +51,7 @@ namespace UI
             this.tafelNummer = tafelNummer;
             this.bestellingID = bestelling.GetBestellingID(medewerker, tafelNummer);
 
-            lblPersoneelsNummer.Text += medewerker.inlognummer.ToString();
+            lblPersoneelsNummer.Text += medewerker.Inlognummer.ToString();
             lblTafelNummer.Text += tafelNummer.ToString();
         }
 
@@ -65,7 +65,7 @@ namespace UI
                 {
                     this.ListViewtje.Items.Clear();
                     this.Hide();
-                    naarTafelOverzicht.CreateTafelButtons();
+                    naarTafelOverzicht.CreateTafelOverzichtButtons();
                     naarTafelOverzicht.Show();
                     
                 }
@@ -73,7 +73,7 @@ namespace UI
             else
             {
                 this.Hide();
-                naarTafelOverzicht.CreateTafelButtons();
+                naarTafelOverzicht.CreateTafelOverzichtButtons();
                 naarTafelOverzicht.Show();
             }
         }
@@ -264,7 +264,7 @@ namespace UI
             {
                 foreach (Model.MenuItem y in checkVoorraad)
                 {
-                    if (x.id == y.ID && y.Voorraad < x.aantal)
+                    if (x.MenuItemID == y.MenuItemID && y.Voorraad < x.Aantal)
                     {
                         naamItemVoorraad = y.Naam;
                         aantalItemVoorraad = y.Voorraad;
@@ -272,7 +272,7 @@ namespace UI
                         break;
                     }
 
-                    y.Voorraad = y.Voorraad - x.aantal;
+                    y.Voorraad = y.Voorraad - x.Aantal;
                 }
 
                 if (genoegOpVoorraad == false)
@@ -290,7 +290,7 @@ namespace UI
                     if (bestellingID == 0)
                     {
                         bestelling.MaakNieuweBestelling(medewerker, tafelNummer);
-                        tafel.TafelOpBezetZetten(medewerker.inlognummer, tafelNummer);
+                        tafel.TafelOpBezetZetten(medewerker.Inlognummer, tafelNummer);
                         bestellingID = bestelling.GetBestellingID(medewerker, tafelNummer);
                         gebruik.VerwerkNieuweBestelling(bestellingID, listVoorDB);
                         actieButton.UpdateVoorraad(listVoorDB);
@@ -305,7 +305,7 @@ namespace UI
 
                     this.ListViewtje.Items.Clear();
                     this.Hide();
-                    naarTafelOverzicht.CreateTafelButtons();
+                    naarTafelOverzicht.CreateTafelOverzichtButtons();
                     naarTafelOverzicht.Show();
                 }
             }
@@ -344,9 +344,9 @@ namespace UI
 
             foreach (ListviewBestellen x in listVoorDB)
             {
-                if (id == x.id && opmerking.Equals(x.opmerking))
+                if (id == x.MenuItemID && opmerking.Equals(x.Opmerking))
                 {
-                    x.aantal = aantal;
+                    x.Aantal = aantal;
                     break;
                 }
             }
@@ -367,9 +367,9 @@ namespace UI
 
             foreach (ListviewBestellen x in listVoorDB)
             {
-                if (id == x.id && opmerking.Equals(x.opmerking))
+                if (id == x.MenuItemID && opmerking.Equals(x.Opmerking))
                 {
-                    x.aantal = aantal;
+                    x.Aantal = aantal;
                     break;
                 }
             }
@@ -385,7 +385,7 @@ namespace UI
 
             foreach (ListviewBestellen x in listVoorDB)
             {
-                if (id == x.id && opmerking.Equals(x.opmerking) && aantal == x.aantal)
+                if (id == x.MenuItemID && opmerking.Equals(x.Opmerking) && aantal == x.Aantal)
                 {
                     listVoorDB.Remove(x);
                     break;

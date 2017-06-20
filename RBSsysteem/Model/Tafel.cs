@@ -8,22 +8,17 @@ namespace Model
 {
     public class Tafel
     {
-        public int tafelId { get; set; }
-        public string status { get; set; }
-        public int capaciteit { get; set; }
-        public int bezetDoor { get; set; }
-
-        public Tafel()
-        {
-
-        }
-
+        public int Id { get; private set; }
+        public string Status { get; private set; }
+        public int Capaciteit { get; private set; }
+        public int BezetDoor { get; private set; }
+        
         public Tafel(int tafelId, string status, int capaciteit, int bezetDoor)
         {
-            this.tafelId = tafelId;
-            this.status = status;
-            this.capaciteit = capaciteit;
-            this.bezetDoor = bezetDoor;
+            this.Id = tafelId;
+            this.Status = status;
+            this.Capaciteit = capaciteit;
+            this.BezetDoor = bezetDoor;
         }
     }
 }

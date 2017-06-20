@@ -15,6 +15,7 @@ namespace UI
     public partial class HandheldPopUpStatus : Form
     {
         private int tafelId;
+
         public HandheldPopUpStatus(int statusButtonTafelId)
         {
             InitializeComponent();
@@ -32,11 +33,11 @@ namespace UI
             foreach (BestellingItem bereidBestelItem in getBestellingItemsForListview())
             {
                 ListViewItem lviStatus = new ListViewItem(statusButtonTafelId.ToString());
-                lviStatus.SubItems.Add(bereidBestelItem.naam);
+                lviStatus.SubItems.Add(bereidBestelItem.Naam);
 
                 // Tijd berekenen tussen opname van de bestelling en nu en tonen in minuten
                 DateTime nu = DateTime.Now;
-                TimeSpan tijdVerstreken = nu - bereidBestelItem.tijdOpgenomen;
+                TimeSpan tijdVerstreken = nu - bereidBestelItem.TijdOpgenomen;
                 lviStatus.SubItems.Add(tijdVerstreken.Minutes.ToString());
 
                 lvBestelItemsStatus.Items.Add(lviStatus);
@@ -47,23 +48,29 @@ namespace UI
 
         private List<BestellingItem> getBestellingItemsForListview()
         {
-            // Bestelling service aanmaken
+            // Bestelling service aanmaken en alle bestellingen ophalen
             BestellingService bestellingService = new BestellingService();
             List<Bestelling> bestellingen = bestellingService.GetAlleBestellingen();
 
-            // Bestel item service aanmaken
+            // Bestel item service aanmaken en alle bestellingItems ophalen
             BestelItemService bestelItemService = new BestelItemService();
             List<BestellingItem> bestellingItems = bestelItemService.GetAllBestellingItems();
 
+            // List aanmaken waaraan de bestellingItems met status Bereid komen te staan
             List<BestellingItem> bereidBestellingItems = new List<BestellingItem>();
 
+            // Loop door alle bestellingen heen
             foreach (Bestelling bestelling in bestellingen)
             {
-                if(bestelling.betaald == "nee")
+                if(bestelling.Betaald == "nee")
                 {
                     foreach (BestellingItem bestelItem in bestellingItems)
                     {
-                        if(bestelItem.bestellingID == bestelling.bestelling_id && bestelItem.status == "bereid" && bestelling.tafelId == tafelId)
+                        if (
+                            bestelItem.BestellingID == bestelling.Bestelling_id &&
+                            bestelItem.Status == "bereid" &&
+                            bestelling.TafelId == tafelId
+                            )
                         {
                             bereidBestellingItems.Add(bestelItem);
                         }

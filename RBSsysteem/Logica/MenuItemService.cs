@@ -20,6 +20,7 @@ namespace Logica
 
         }
 
+        //Code Alex
         public List<Button> MenuItemNaarButton(TabControl tab, FlowLayoutPanel panel)
         {
             panel.Controls.Clear();
@@ -235,6 +236,7 @@ namespace Logica
             }
         }
 
+        //Code Alex
         public ListviewBestellen MenuItemNaarList(Button button, int aantal, string opmerking)
         {
             List<Model.MenuItem> menuItems = menuItem.GetMenuItems();
@@ -245,17 +247,18 @@ namespace Logica
             {
                 if (x.Naam == button.Tag.ToString())
                 {
-                    item.naam = x.Naam;
-                    item.aantal = aantal;
-                    item.opmerking = opmerking;
-                    item.itemPrijs = x.Prijs;
-                    item.prijs = (x.Prijs * aantal);
-                    item.id = x.ID;
+                    item.Naam = x.Naam;
+                    item.Aantal = aantal;
+                    item.Opmerking = opmerking;
+                    item.ItemPrijs = x.Prijs;
+                    item.Prijs = (x.Prijs * aantal);
+                    item.MenuItemID = x.MenuItemID;
                 }
             }
             return item;
         }
 
+        //Code Alex
         public List<ListviewBestellen> MenuItemNaarListView(ListView list, ListviewBestellen item)
         {
             list.Items.Clear();
@@ -263,14 +266,14 @@ namespace Logica
 
             foreach (ListviewBestellen x in listVoorListview)
             {
-                if (item.naam == x.naam && string.IsNullOrEmpty(x.opmerking) && string.IsNullOrEmpty(item.opmerking))
+                if (item.Naam == x.Naam && string.IsNullOrEmpty(x.Opmerking) && string.IsNullOrEmpty(item.Opmerking))
                 {
                     itemIsInList = true;
-                    int aantalWijzig = x.aantal;
-                    aantalWijzig = aantalWijzig + item.aantal;
-                    x.aantal = aantalWijzig;
+                    int aantalWijzig = x.Aantal;
+                    aantalWijzig = aantalWijzig + item.Aantal;
+                    x.Aantal = aantalWijzig;
 
-                    x.prijs = (x.itemPrijs * aantalWijzig);
+                    x.Prijs = (x.ItemPrijs * aantalWijzig);
                     break;
                 }
             }
@@ -282,11 +285,11 @@ namespace Logica
 
             foreach (ListviewBestellen x in listVoorListview)
             {
-                ListViewItem MenuItems = new ListViewItem(x.naam);
-                MenuItems.SubItems.Add(x.aantal.ToString());
-                MenuItems.SubItems.Add(x.opmerking);
-                MenuItems.SubItems.Add(x.prijs.ToString());
-                MenuItems.SubItems.Add(x.id.ToString());
+                ListViewItem MenuItems = new ListViewItem(x.Naam);
+                MenuItems.SubItems.Add(x.Aantal.ToString());
+                MenuItems.SubItems.Add(x.Opmerking);
+                MenuItems.SubItems.Add(x.Prijs.ToString());
+                MenuItems.SubItems.Add(x.MenuItemID.ToString());
 
                 list.Items.Add(MenuItems);
             }
@@ -294,11 +297,13 @@ namespace Logica
             return listVoorListview;
         }
 
+        //Code Alex
         public void UpdateVoorraad(List<ListviewBestellen> list)
         {
             menuItem.UpdateVoorraad(list);
         }
 
+        //Code Alex
         public List<Model.MenuItem> GetVoorraad()
         {
             List<Model.MenuItem> checkVoorraad = menuItem.GetMenuItems();

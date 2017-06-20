@@ -12,10 +12,9 @@ namespace Logica
 {
     public class BestellingService
     {
-        
         List<ListviewBestellen> listvoorDB = new List<ListviewBestellen>();
         
-        BestellingDAO bestelling = new BestellingDAO();
+        BestellingDAO bestellingDAO = new BestellingDAO();
         MenuItemService getListMetItems = new MenuItemService();
 
         public BestellingService()
@@ -31,65 +30,60 @@ namespace Logica
             //return bestellingen;
         }
 
+        // Code Alex
         public void MaakNieuweBestelling(Medewerker medewerker, int tafelnr)
         {
-            
-
-            //Getlist.listvoorDB = getListMetItems.listVoorListview;
-
             double totaalprijs = 0;
             string naam = "";
             foreach (ListviewBestellen x in listvoorDB)
             {
-                totaalprijs = totaalprijs + x.prijs;
-                naam = x.naam;
-                
+                totaalprijs = totaalprijs + x.Prijs;
+                naam = x.Naam;
             }
             Bestelling bestellingInfo = new Bestelling();
 
-            bestellingInfo.commentaarKlant = "";
-            bestellingInfo.medewerkerid = medewerker.medewerkerId;
-            bestellingInfo.betaald = "nee";
-            bestellingInfo.btw = totaalprijs * 0.21;
-            bestellingInfo.tafelId= tafelnr;
-            bestellingInfo.fooi = 0;
-            bestellingInfo.totaalprijs = totaalprijs;
-            bestellingInfo.betaalWijze = "";
+            bestellingInfo.CommentaarKlant = "";
+            bestellingInfo.Medewerkerid = medewerker.Id;
+            bestellingInfo.Betaald = "nee";
+            bestellingInfo.Btw = totaalprijs * 0.21;
+            bestellingInfo.TafelId= tafelnr;
+            bestellingInfo.Fooi = 0;
+            bestellingInfo.Totaalprijs = totaalprijs;
+            bestellingInfo.BetaalWijze = "";
 
-            
-            bestelling.PlaatsBestelling(bestellingInfo);
+            bestellingDAO.PlaatsBestelling(bestellingInfo);
         }
 
         public int GetBestellingID(Medewerker medewerker, int tafelnr)
         {
             BestellingDAO bestelling = new BestellingDAO();
-            int bestellingID = bestelling.GetHuidigeBestellingID(medewerker.medewerkerId, tafelnr);
+            int bestellingID = bestelling.GetHuidigeBestellingID(medewerker.Id, tafelnr);
 
             return bestellingID;
         }
 
         public void GetTotaalPrijs(int bestellingid, TextBox txtprijs)
         {
-            double prijs = bestelling.GetTotaalPrijs(bestellingid);
+            double prijs = bestellingDAO.GetTotaalPrijs(bestellingid);
             txtprijs.Text = prijs.ToString("0.00");
         }
 
         public void GetBTW(int bestellingid, TextBox txtbtw)
         {
-            double btw = bestelling.GetBTW(bestellingid);
+            double btw = bestellingDAO.GetBTW(bestellingid);
             txtbtw.Text = btw.ToString("0.00");
         }
 
         public List<Bestelling> GetAlleBestellingen()
         {
-            List<Bestelling> alleBestellingen = bestelling.GetAllBestellingen();
-
+            // Haal alle bestellingen op uit de bestelling tabel via de BestellingDAO en retourneer deze
+            List<Bestelling> alleBestellingen = bestellingDAO.GetAllBestellingen();
             return alleBestellingen;
         }
 
         public void UpdateBestelling(int bestellingid, string betaalwijze, double fooi, string betaald)
         {
-            bestelling.UpdateBestelling(bestellingid, betaalwijze, fooi, betaald);
+            bestellingDAO.UpdateBestelling(bestellingid, betaalwijze, fooi, betaald);
         }
     }
 }

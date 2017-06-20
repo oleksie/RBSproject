@@ -166,11 +166,6 @@
 
         }
 
-        private void HandheldTafels_FormClosing1(object sender, System.Windows.Forms.FormClosingEventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
-
         #endregion
         private System.Windows.Forms.Label lblPersooneelsNummer;
         private System.Windows.Forms.Button Btn_TafelsLoguit;
