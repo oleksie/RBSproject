@@ -25,12 +25,14 @@ namespace DAL
             DBConnectie = connectie.MaakConnectieDB("Reader");
             DBConnectie.Open();
 
+            // Query aanmaken
             SqlCommand command = new SqlCommand(
                 "SELECT medewerker_id, naam, rol FROM Medewerker WHERE inlognummer = @inlognummer",
                 DBConnectie
             );
+            // Inlognummer als parameter meegeven ter voorkoming van SQL injectie
             command.Parameters.Add(new SqlParameter("inlognummer", inlognummer));
-            
+            // Query uitvoeren
             SqlDataReader reader = command.ExecuteReader();
 
             // controleer of er ten minste één record is terug gestuurd

@@ -67,7 +67,7 @@ namespace UI
                     foreach (BestellingItem bestelItem in bestellingItems)
                     {
                         if (
-                            bestelItem.BestellingID == bestelling.Bestelling_id &&
+                            bestelItem.BestellingID == bestelling.Id &&
                             bestelItem.Status == "bereid" &&
                             bestelling.TafelId == tafelId
                             )

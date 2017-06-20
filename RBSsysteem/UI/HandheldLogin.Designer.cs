@@ -74,7 +74,6 @@
             this.txtInlognummer.Name = "txtInlognummer";
             this.txtInlognummer.Size = new System.Drawing.Size(273, 90);
             this.txtInlognummer.TabIndex = 8;
-            this.txtInlognummer.TextChanged += new System.EventHandler(this.txtInlognummer_TextChanged);
             // 
             // label2
             // 
@@ -95,7 +94,6 @@
             this.richTextBox1.Size = new System.Drawing.Size(326, 50);
             this.richTextBox1.TabIndex = 10;
             this.richTextBox1.Text = "Persoonlijk nummer vergeten?\nNaam contact op met uw leidingevende.";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // HandheldLogin
             // 

@@ -46,7 +46,7 @@
     <Compile Include="TafelService.cs" />
     <Compile Include="LoginService.cs" />
     <Compile Include="MenuItemService.cs" />
-    <Compile Include="BarmanKok.cs" />
+    <Compile Include="BarmanKokServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

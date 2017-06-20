@@ -56,6 +56,7 @@
             // 
             // Btn_Afrekenen
             // 
+            this.Btn_Afrekenen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Btn_Afrekenen.Location = new System.Drawing.Point(555, 832);
             this.Btn_Afrekenen.Name = "Btn_Afrekenen";
             this.Btn_Afrekenen.Size = new System.Drawing.Size(128, 79);
@@ -99,6 +100,7 @@
             // 
             // Btn_AfrekenenTerug
             // 
+            this.Btn_AfrekenenTerug.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Btn_AfrekenenTerug.Location = new System.Drawing.Point(57, 824);
             this.Btn_AfrekenenTerug.Name = "Btn_AfrekenenTerug";
             this.Btn_AfrekenenTerug.Size = new System.Drawing.Size(128, 79);
@@ -258,7 +260,6 @@
             this.txtBTW.ReadOnly = true;
             this.txtBTW.Size = new System.Drawing.Size(137, 53);
             this.txtBTW.TabIndex = 10;
-            this.txtBTW.TextChanged += new System.EventHandler(this.txtBTW_TextChanged);
             // 
             // HandheldAfrekenen
             // 
@@ -277,6 +278,7 @@
             this.Controls.Add(this.Btn_Afrekenen);
             this.Name = "HandheldAfrekenen";
             this.Text = "Afrekenen";
+            this.Load += new System.EventHandler(this.HandheldAfrekenen_Load);
             this.Controls.SetChildIndex(this.Btn_Afrekenen, 0);
             this.Controls.SetChildIndex(this.rbPinnen, 0);
             this.Controls.SetChildIndex(this.rbCreditcard, 0);
