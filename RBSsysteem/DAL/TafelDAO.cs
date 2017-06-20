@@ -20,16 +20,14 @@ namespace DAL
 
         public List<Tafel> GetTafels()
         {
-            // Database verbinding tot stand brengen
+            // Database verbinding tot stand brengen en query aanmaken en uitvoeren
             DALConnection connectie = new DALConnection();
             DBConnectie = connectie.MaakConnectieDB("Reader");
             DBConnectie.Open();
-
-            SqlCommand command = new SqlCommand("SELECT * FROM Tafel", DBConnectie);
-
+            SqlCommand command = new SqlCommand("SELECT tafel_id, status, capaciteit, bezet_door FROM Tafel", DBConnectie);
             SqlDataReader reader = command.ExecuteReader();
 
-            // Maak een list aan met Tafel objecten
+            // Maak een list aan met Tafel als datatype
             List<Tafel> tafels = new List<Tafel>();
 
             // vul tafels list met resultaten
@@ -39,9 +37,11 @@ namespace DAL
                 tafels.Add(tafel);
             }
 
+            // Sluit sql reader en database verbinding
             reader.Close();
             DBConnectie.Close();
 
+            // Retourneer opgehaalde tafels
             return tafels;
         }
 
