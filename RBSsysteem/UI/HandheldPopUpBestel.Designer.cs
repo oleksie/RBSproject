@@ -72,7 +72,6 @@
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Aantal";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -83,7 +82,6 @@
             this.label2.Size = new System.Drawing.Size(70, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Opmerkingen";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Txt_HandheldPopUpBetselAantal
             // 
