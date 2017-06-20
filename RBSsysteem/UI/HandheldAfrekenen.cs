@@ -28,14 +28,7 @@ namespace UI
         public HandheldAfrekenen()
         {
             InitializeComponent();
-            // Startpositie voor het scherm meegeven
-            this.StartPosition = FormStartPosition.CenterScreen;
-            // Eventhandler voor als het scherm wordt gesloten (bijv. door middel van kruisje)
-            this.FormClosing += HandheldAfrekenen_FormClosing;
-
             txt_klantBetaalt.TextChanged += txt_klantBetaalt_TextChanged;
-
-            
         }
 
         public HandheldAfrekenen(int bestellingid, Medewerker medewerker, int tafelnr) : this()
@@ -95,8 +88,6 @@ namespace UI
                     naarTafelOverzicht.Show();
 
                 }
-                
-                
             }
             else
             {
@@ -128,14 +119,10 @@ namespace UI
             this.txt_fooi.Text = fooid.ToString("0.00");
         }
 
-        private void txtBTW_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_totaal_TextChanged(object sender, EventArgs e)
+        private void HandheldAfrekenen_Load(object sender, EventArgs e)
         {
 
         }
     }
 }
+

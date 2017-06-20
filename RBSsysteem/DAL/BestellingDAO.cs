@@ -182,7 +182,6 @@ namespace DAL
             return bestellingList;
         }
 
-        //Code Alex
         public double GetTotaalPrijs(int bestellingid)
         {
             DALConnection connectie = new DALConnection();
@@ -211,7 +210,6 @@ namespace DAL
             return prijs;
         }
 
-        //Code Alex
         public double GetBTW(int bestellingid)
         {
             DALConnection connectie = new DALConnection();
@@ -275,8 +273,6 @@ namespace DAL
 
             return bestellingen;
         }
-
-        //Code Alex
         public void UpdateBestelling(int bestellingid, string betaalwijze, double fooi, string betaald)
         {
             DALConnection connectie = new DALConnection();

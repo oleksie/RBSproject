@@ -26,8 +26,6 @@ namespace Logica
         {
             BestellingDAO bestellingDAO = new BestellingDAO();
             return bestellingDAO.GetBestelling();
-
-            //return bestellingen;
         }
 
         // Code Alex

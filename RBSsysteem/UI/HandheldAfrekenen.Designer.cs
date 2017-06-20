@@ -210,7 +210,6 @@
             this.txt_totaal.ReadOnly = true;
             this.txt_totaal.Size = new System.Drawing.Size(137, 53);
             this.txt_totaal.TabIndex = 4;
-            this.txt_totaal.TextChanged += new System.EventHandler(this.txt_totaal_TextChanged);
             // 
             // listAfreken
             // 
@@ -261,7 +260,6 @@
             this.txtBTW.ReadOnly = true;
             this.txtBTW.Size = new System.Drawing.Size(137, 53);
             this.txtBTW.TabIndex = 10;
-            this.txtBTW.TextChanged += new System.EventHandler(this.txtBTW_TextChanged);
             // 
             // HandheldAfrekenen
             // 
@@ -280,6 +278,7 @@
             this.Controls.Add(this.Btn_Afrekenen);
             this.Name = "HandheldAfrekenen";
             this.Text = "Afrekenen";
+            this.Load += new System.EventHandler(this.HandheldAfrekenen_Load);
             this.Controls.SetChildIndex(this.Btn_Afrekenen, 0);
             this.Controls.SetChildIndex(this.rbPinnen, 0);
             this.Controls.SetChildIndex(this.rbCreditcard, 0);
