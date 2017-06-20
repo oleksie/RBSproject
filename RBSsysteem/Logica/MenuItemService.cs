@@ -12,12 +12,18 @@ namespace Logica
 {
     public class MenuItemService
     {
-        public List<ListviewBestellen> listVoorListview = new List<ListviewBestellen>();
+        private List<ListviewBestellen> listVoorListview = new List<ListviewBestellen>();
         MenuItemDAO menuItem = new MenuItemDAO();
 
         public MenuItemService()
         {
 
+        }
+
+        public List<ListviewBestellen> ListVoorListview
+        {
+            get { return listVoorListview; }
+            set { listVoorListview = value; }
         }
 
         //Code Alex

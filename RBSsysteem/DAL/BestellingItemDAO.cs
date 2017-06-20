@@ -98,7 +98,7 @@ namespace DAL
         }
 
         //Code Alex
-        public void PlaatsBestellingItem(BestellingItem item)
+        public void PlaatsBestellingItem(BestellingItem besteldeItem)
         {
             SqlConnection connection = dbConnection.MaakConnectieDB("Writer");
             connection.Open();
@@ -113,22 +113,22 @@ namespace DAL
             SqlParameter IdParam6 = new SqlParameter("@tijdopgenomen", SqlDbType.DateTime);
 
             command.Parameters.Add(IdParam1);
-            IdParam1.Value = item.BestellingID;
+            IdParam1.Value = besteldeItem.BestellingID;
 
             command.Parameters.Add(IdParam2);
-            IdParam2.Value = item.MenuItemID;
+            IdParam2.Value = besteldeItem.MenuItemID;
 
             command.Parameters.Add(IdParam3);
-            IdParam3.Value = item.Commentaar;
+            IdParam3.Value = besteldeItem.Commentaar;
 
             command.Parameters.Add(IdParam4);
-            IdParam4.Value = item.Aantal;
+            IdParam4.Value = besteldeItem.Aantal;
 
             command.Parameters.Add(IdParam5);
-            IdParam5.Value = item.Status;
+            IdParam5.Value = besteldeItem.Status;
 
             command.Parameters.Add(IdParam6);
-            IdParam6.Value = item.TijdOpgenomen;
+            IdParam6.Value = besteldeItem.TijdOpgenomen;
 
             command.Prepare();
 
@@ -138,9 +138,9 @@ namespace DAL
         }
 
         //Code Alex
-        public void vulTotaalPrijs(int bestellingid, List<ListviewBestellen> list)
+        public void vulTotaalPrijs(int bestellingid, List<ListviewBestellen> listMetBesteldeItems)
         {
-            foreach (ListviewBestellen x in list)
+            foreach (ListviewBestellen x in listMetBesteldeItems)
             {
                 SqlConnection connection = dbConnection.MaakConnectieDB("Writer");
                 connection.Open();
@@ -164,7 +164,7 @@ namespace DAL
         }
 
         //Code Alex
-        public void vulBTW(int bestellingid, List<ListviewBestellen> list)
+        public void vulBTW(int bestellingid, List<ListviewBestellen> listMetBesteldeItems)
         {
             SqlConnection connection = dbConnection.MaakConnectieDB("Writer");
             connection.Open();

@@ -27,7 +27,7 @@ namespace DAL
             DBConnectie.Open();
 
             SqlCommand command = new SqlCommand("SELECT * FROM MenuItem", DBConnectie);
-            List<MenuItem> menuItems = new List<MenuItem>();
+            List<MenuItem> listMenuItems = new List<MenuItem>();
 
             SqlDataReader reader = command.ExecuteReader();
 
@@ -48,28 +48,29 @@ namespace DAL
                 menuItem.Prijs = prijs;
                 menuItem.Omschrijving = omschrijving;
 
-                menuItems.Add(menuItem);
+                listMenuItems.Add(menuItem);
             }
 
             reader.Close();
             DBConnectie.Close();
 
-            return menuItems;
+            return listMenuItems;
         }
 
-        public List<MenuItem> GetSpecefiekegerechtItems(int getal)
+        //Code Alex
+        public List<MenuItem> GetSpecefiekegerechtItems(int categorieID)
         {
             DALConnection connectie = new DALConnection();
             DBConnectie = connectie.MaakConnectieDB("Reader");
 
             DBConnectie.Open();
 
-            SqlCommand command = new SqlCommand("SELECT * FROM MenuItem WHERE categorie_id = @getal", DBConnectie);
-            List<MenuItem> menuItems = new List<MenuItem>();
+            SqlCommand command = new SqlCommand("SELECT * FROM MenuItem WHERE categorie_id = @categorieID", DBConnectie);
+            List<MenuItem> listMenuItems = new List<MenuItem>();
 
-            SqlParameter IdParam1 = new SqlParameter("@getal", SqlDbType.Int);
+            SqlParameter IdParam1 = new SqlParameter("@categorieID", SqlDbType.Int);
             command.Parameters.Add(IdParam1);
-            IdParam1.Value = getal;
+            IdParam1.Value = categorieID;
 
             SqlDataReader reader = command.ExecuteReader();
 
@@ -90,13 +91,13 @@ namespace DAL
                 menuItem.Prijs = prijs;
                 menuItem.Omschrijving = omschrijving;
 
-                menuItems.Add(menuItem);
+                listMenuItems.Add(menuItem);
             }
 
             reader.Close();
             DBConnectie.Close();
 
-            return menuItems;
+            return listMenuItems;
         }
         //dit is voor anne
         public List<MenuItem> GetNaamCategorie()
@@ -143,10 +144,9 @@ namespace DAL
         }
 
         //Code Alex
-        public void UpdateVoorraad(List<ListviewBestellen> list)
+        public void UpdateVoorraad(List<ListviewBestellen> listMetBesteldeItems)
         {
-
-            foreach (ListviewBestellen x in list)
+            foreach (ListviewBestellen x in listMetBesteldeItems)
             {
                 DALConnection connectie = new DALConnection();
                 DBConnectie = connectie.MaakConnectieDB("Reader");

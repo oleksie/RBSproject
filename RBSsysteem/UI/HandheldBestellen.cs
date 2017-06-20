@@ -292,13 +292,13 @@ namespace UI
                         bestellingID = bestellingService.GetBestellingID(medewerker, tafelNummer);
                         bestelItemService.VerwerkNieuweBestelling(bestellingID, listVoorDB);
                         menuItemService.UpdateVoorraad(listVoorDB);
-                        menuItemService.listVoorListview.Clear();
+                        menuItemService.ListVoorListview.Clear();
                     }
                     else
                     {
-                        bestelItemService.VerwerkHuidigeBestelling(bestellingID, listVoorDB);
+                        bestelItemService.VerwerkNieuweBestelling(bestellingID, listVoorDB);
                         menuItemService.UpdateVoorraad(listVoorDB);
-                        menuItemService.listVoorListview.Clear();
+                        menuItemService.ListVoorListview.Clear();
                     }
 
                     this.ListViewtje.Items.Clear();

@@ -11,9 +11,7 @@ using System.Windows.Forms;
 namespace Logica
 {
     public class BestellingService
-    {
-        List<ListviewBestellen> listvoorDB = new List<ListviewBestellen>();
-        
+    {   
         BestellingDAO bestellingDAO = new BestellingDAO();
         MenuItemService getListMetItems = new MenuItemService();
 
@@ -31,22 +29,15 @@ namespace Logica
         // Code Alex
         public void MaakNieuweBestelling(Medewerker medewerker, int tafelnr)
         {
-            double totaalprijs = 0;
-            string naam = "";
-            foreach (ListviewBestellen x in listvoorDB)
-            {
-                totaalprijs = totaalprijs + x.Prijs;
-                naam = x.Naam;
-            }
             Bestelling bestellingInfo = new Bestelling();
 
             bestellingInfo.CommentaarKlant = "";
             bestellingInfo.MedewerkerId = medewerker.Id;
             bestellingInfo.Betaald = "nee";
-            bestellingInfo.Btw = totaalprijs * 0.21;
+            bestellingInfo.Btw = 0;
             bestellingInfo.TafelId= tafelnr;
             bestellingInfo.Fooi = 0;
-            bestellingInfo.Totaalprijs = totaalprijs;
+            bestellingInfo.Totaalprijs = 0;
             bestellingInfo.BetaalWijze = "";
 
             bestellingDAO.PlaatsBestelling(bestellingInfo);

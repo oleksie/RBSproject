@@ -20,9 +20,9 @@ namespace Logica
         }
 
         //Code Alex
-        public void VerwerkNieuweBestelling(int bestellingID, List<ListviewBestellen> list)
+        public void VerwerkNieuweBestelling(int bestellingID, List<ListviewBestellen> listMetBesteldeItems)
         {
-            foreach (ListviewBestellen x in list)
+            foreach (ListviewBestellen x in listMetBesteldeItems)
             {
                 besteldeItem.BestellingID = bestellingID;
                 besteldeItem.Aantal = x.Aantal;
@@ -34,26 +34,8 @@ namespace Logica
                 bestellingItemDAO.PlaatsBestellingItem(besteldeItem);
             }
 
-            bestellingItemDAO.vulTotaalPrijs(bestellingID, list);
-            bestellingItemDAO.vulBTW(bestellingID, list);
-        }
-
-        //Code Alex
-        public void VerwerkHuidigeBestelling(int bestellingID, List<ListviewBestellen> list)
-        {
-            foreach (ListviewBestellen x in list)
-            {
-                besteldeItem.BestellingID = bestellingID;
-                besteldeItem.Aantal = x.Aantal;
-                besteldeItem.Commentaar = x.Opmerking;
-                besteldeItem.MenuItemID = x.MenuItemID;
-                besteldeItem.Status = "besteld";
-                besteldeItem.TijdOpgenomen = DateTime.Now;
-
-                bestellingItemDAO.PlaatsBestellingItem(besteldeItem);
-            }
-            bestellingItemDAO.vulTotaalPrijs(bestellingID, list);
-            bestellingItemDAO.vulBTW(bestellingID, list);
+            bestellingItemDAO.vulTotaalPrijs(bestellingID, listMetBesteldeItems);
+            bestellingItemDAO.vulBTW(bestellingID, listMetBesteldeItems);
         }
 
         public void VulAfrekenListview(int bestellingid, ListView list)
