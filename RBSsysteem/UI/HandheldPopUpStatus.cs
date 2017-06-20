@@ -19,9 +19,11 @@ namespace UI
         public HandheldPopUpStatus(int statusButtonTafelId)
         {
             InitializeComponent();
+            // Startpositie van form centreren
             this.StartPosition = FormStartPosition.CenterScreen;
             tafelId = statusButtonTafelId;
 
+            // Listview opmaak
             lvBestelItemsStatus.View = View.Details;
             lvBestelItemsStatus.GridLines = true;
             lvBestelItemsStatus.FullRowSelect = true;
@@ -30,7 +32,9 @@ namespace UI
             lvBestelItemsStatus.Columns.Add("Item naam", 265);
             lvBestelItemsStatus.Columns.Add("Verstreken tijd", 135);
 
-            foreach (BestellingItem bereidBestelItem in getBestellingItemsForListview())
+            // Listview vullen aan de hand van opgehaalde bestellingItems die worden geretourneerd door de
+            // GetBestellingItemsForListview() method die een List<BestellingItem> retourneerd
+            foreach (BestellingItem bereidBestelItem in GetBestellingItemsForListview())
             {
                 ListViewItem lviStatus = new ListViewItem(statusButtonTafelId.ToString());
                 lviStatus.SubItems.Add(bereidBestelItem.Naam);
@@ -39,14 +43,15 @@ namespace UI
                 DateTime nu = DateTime.Now;
                 TimeSpan tijdVerstreken = nu - bereidBestelItem.TijdOpgenomen;
                 lviStatus.SubItems.Add(tijdVerstreken.Minutes.ToString());
-
+                
+                // ListviewItem toevoegen aan listview
                 lvBestelItemsStatus.Items.Add(lviStatus);
             }
 
         }
         
 
-        private List<BestellingItem> getBestellingItemsForListview()
+        private List<BestellingItem> GetBestellingItemsForListview()
         {
             // Bestelling service aanmaken en alle bestellingen ophalen
             BestellingService bestellingService = new BestellingService();
@@ -77,12 +82,13 @@ namespace UI
                     }
                 }
             }
-
+            // Retourneer lijst gevuld met bestellingItems die voldoen aan de criteria
             return bereidBestellingItems;
         }
 
         private void btnSluiten_Click(object sender, EventArgs e)
         {
+            // Sluit huidige venster
             this.Close();
         }
     }

@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
 using Logica;
-using DAL;
 
 namespace UI
 {

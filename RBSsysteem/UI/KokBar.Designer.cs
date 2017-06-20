@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class BasisKokBar
+    partial class KokBar
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BasisKokBar));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KokBar));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Lbl_Tijd = new System.Windows.Forms.Label();
             this.Label1 = new System.Windows.Forms.Label();

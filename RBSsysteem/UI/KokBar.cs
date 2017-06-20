@@ -12,7 +12,7 @@ using Model;
 
 namespace UI
 {
-    public partial class BasisKokBar : Form
+    public partial class KokBar : Form
     {
         //dit zijn de private variables die ik nodig heb in deze form
         private BarmanKokServices BarKok = new BarmanKokServices();
@@ -20,7 +20,7 @@ namespace UI
         private string filter;
         private List<ListViewItem> bestellinglist = new List<ListViewItem>();
 
-        public BasisKokBar(Medewerker m)
+        public KokBar(Medewerker m)
         {
             //instellen basis waarden
             medewerker = m;

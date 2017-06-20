@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BasisKokBar.cs">
+    <Compile Include="KokBar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BasisKokBar.Designer.cs">
-      <DependentUpon>BasisKokBar.cs</DependentUpon>
+    <Compile Include="KokBar.Designer.cs">
+      <DependentUpon>KokBar.cs</DependentUpon>
     </Compile>
     <Compile Include="HandheldBestellen.cs">
       <SubType>Form</SubType>
@@ -105,8 +105,8 @@
     <Compile Include="RoundButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="BasisKokBar.resx">
-      <DependentUpon>BasisKokBar.cs</DependentUpon>
+    <EmbeddedResource Include="KokBar.resx">
+      <DependentUpon>KokBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HandheldBestellen.resx">
       <DependentUpon>HandheldBestellen.cs</DependentUpon>
@@ -155,10 +155,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{d2d52cac-cf17-460b-a66b-0abda7250776}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Logica\Logica.csproj">
       <Project>{9279efea-7d18-4d17-b692-1da78069da9a}</Project>
       <Name>Logica</Name>
