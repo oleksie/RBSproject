@@ -65,7 +65,7 @@ namespace UI
                 {
                     this.ListViewtje.Items.Clear();
                     this.Hide();
-                    naarTafelOverzicht.CreateTafelButtons();
+                    naarTafelOverzicht.CreateTafelOverzichtButtons();
                     naarTafelOverzicht.Show();
                     
                 }
@@ -73,7 +73,7 @@ namespace UI
             else
             {
                 this.Hide();
-                naarTafelOverzicht.CreateTafelButtons();
+                naarTafelOverzicht.CreateTafelOverzichtButtons();
                 naarTafelOverzicht.Show();
             }
         }
@@ -305,7 +305,7 @@ namespace UI
 
                     this.ListViewtje.Items.Clear();
                     this.Hide();
-                    naarTafelOverzicht.CreateTafelButtons();
+                    naarTafelOverzicht.CreateTafelOverzichtButtons();
                     naarTafelOverzicht.Show();
                 }
             }

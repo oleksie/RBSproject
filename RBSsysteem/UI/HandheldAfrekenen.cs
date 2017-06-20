@@ -91,7 +91,7 @@ namespace UI
                     bestelling.UpdateBestelling(bestellingID, betaalWijze, fooi, betaald);
 
                     this.Hide();
-                    naarTafelOverzicht.CreateTafelButtons();
+                    naarTafelOverzicht.CreateTafelOverzichtButtons();
                     naarTafelOverzicht.Show();
 
                 }
