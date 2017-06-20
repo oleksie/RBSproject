@@ -26,13 +26,16 @@ namespace Logica
             List<Model.MenuItem> currentmenuitem = new List<Model.MenuItem>();
             List<Bestelling> currentbestelingtafel = new List<Bestelling>();
             List<ListViewItem> listview = new List<ListViewItem>();
+
             // item om te vullen en arr om te vullen ter hulp aan listviewbuilding
             ListViewItem item = new ListViewItem();
             string[] arr = new string[7];
+
             //vult lists
             currentbestelling = bestelitemconnect.GetAll();
             currentmenuitem = menuitemconnect.GetNaamCategorie();
             currentbestelingtafel = bestellingconnect.GetTafel();
+
             //vult listview list op basis van criteria
             for (int i = 0; i < currentbestelling.Count; i++)
             {
