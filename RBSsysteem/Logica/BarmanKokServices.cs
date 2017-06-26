@@ -19,93 +19,75 @@ namespace Logica
         BestellingDAO bestellingconnect = new BestellingDAO();
         MenuItemDAO menuitemconnect = new MenuItemDAO();
 
-        public List<ListViewItem> BestellinglistGerechten(string filter, Medewerker medewerker)
+        //de meest logische operaties
+        public string[] bestellingArray(BestellingItem currentbestelling,Model.MenuItem currentmenuitem,Bestelling currentbestellingtafel)
         {
-            //maakt de verschillende lists aan waarin we items gaan plaatsen
-            List<BestellingItem> currentbestelling = new List<BestellingItem>();
-            List<Model.MenuItem> currentmenuitem = new List<Model.MenuItem>();
-            List<Bestelling> currentbestelingtafel = new List<Bestelling>();
-            List<ListViewItem> listview = new List<ListViewItem>();
-
-            // item om te vullen en arr om te vullen ter hulp aan listviewbuilding
-            ListViewItem item = new ListViewItem();
+            //array maken die in UI in item gaat en vervolgens in de listviewitemlist
             string[] arr = new string[7];
+            arr[0] = Convert.ToString(currentbestelling.BestelitemID);
+            arr[1] = currentmenuitem.Naam;
+            arr[2] = Convert.ToString(currentbestelling.Aantal);
+            arr[3] = currentbestelling.Commentaar;
+            arr[4] = currentbestelling.Status;
+            arr[5] = Convert.ToString(currentbestelling.TijdOpgenomen);
+            arr[6] = Convert.ToString(currentbestellingtafel.TafelId);
+            return arr;
+        }
+        public bool kok(Medewerker medewerker, Model.MenuItem categorie)
+        {
+            ///vanzelfsprekend
+            if (medewerker.Rol == Rol.Kok & categorie.CategorieID <= 7)//nelleke vindt dit getal minder zie uitleg hieronder
+            {
+                return true;
+            }
 
-            //vult lists
+            //7 en lager is eten 8 en hoger is drinken
+            if (medewerker.Rol == Rol.Barman & categorie.CategorieID >= 8)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        //deze manier ga ik niet toepassen want 100+ regels code om 1 getal weg te laten is crazy
+        //in DAL nieuwe file categorieDAO
+        //die ophaalt categorie on bestelitem +-70 regels code
+        //toevoegin in UI waarin die lijst wordt opgehaald + service waarin hij wordt doorgegeven +-30 regels code
+        //dan kunnen ze worden doorgegeven aan bool kok en wordt het 
+        //if (medewerker.Rol==Rol.kok & categorie.naam == lunch|diner(dit kan niet eens dus heeft ook een verandering in DB nodig haast)
+
+
+        //3 nieuwe methods om dingen door te geven thats all folks
+        public List<BestellingItem> BestellingItemList()
+        {
+            List<BestellingItem> currentbestelling = new List<BestellingItem>();
+
             currentbestelling = bestelitemconnect.GetAll();
+
+            return currentbestelling;
+        }
+        public List<Model.MenuItem> MenuItemList()
+        {
+            List<Model.MenuItem> currentmenuitem = new List<Model.MenuItem>();
+            
             currentmenuitem = menuitemconnect.GetNaamCategorie();
+
+            return currentmenuitem;
+        }
+
+        public List<Bestelling> BestellingList()
+        {
+            List<Bestelling> currentbestelingtafel = new List<Bestelling>();
+
             currentbestelingtafel = bestellingconnect.GetTafel();
 
-            //vult listview list op basis van criteria
-            for (int i = 0; i < currentbestelling.Count; i++)
-            {
-                if (medewerker.Rol == Rol.Kok)
-                {
-                    if (currentmenuitem[i].CategorieID <= 7)
-                    {
-                        if (filter == "bereid" & currentbestelling[i].Status == "bereid")
-                        {
-                            arr[0] = Convert.ToString(currentbestelling[i].BestelitemID);
-                            arr[1] = Convert.ToString(currentmenuitem[i].Naam);
-                            arr[2] = Convert.ToString(currentbestelling[i].Aantal);
-                            arr[3] = Convert.ToString(currentbestelling[i].Commentaar);
-                            arr[4] = currentbestelling[i].Status;
-                            arr[5] = Convert.ToString(currentbestelling[i].TijdOpgenomen);
-                            arr[6] = Convert.ToString(currentbestelingtafel[i].TafelId);
-                            item = new ListViewItem(arr);
-                            listview.Add(item);
-                        }
-                        else if (filter == "besteld" & currentbestelling[i].Status == "besteld")
-                        {
-                            arr[0] = Convert.ToString(currentbestelling[i].BestelitemID);
-                            arr[1] = Convert.ToString(currentmenuitem[i].Naam);
-                            arr[2] = Convert.ToString(currentbestelling[i].Aantal);
-                            arr[3] = Convert.ToString(currentbestelling[i].Commentaar);
-                            arr[4] = currentbestelling[i].Status;
-                            arr[5] = Convert.ToString(currentbestelling[i].TijdOpgenomen);
-                            arr[6] = Convert.ToString(currentbestelingtafel[i].TafelId);
-                            item = new ListViewItem(arr);
-                            listview.Add(item);
-                        }
-                    }
-                }
-                if (medewerker.Rol == Rol.Barman)
-                {
-                    if (currentmenuitem[i].CategorieID >= 8)
-                    {
-                        if (filter == "bereid" & currentbestelling[i].Status == "bereid")
-                        {
-                            arr[0] = Convert.ToString(currentbestelling[i].BestelitemID);
-                            arr[1] = Convert.ToString(currentmenuitem[i].Naam);
-                            arr[2] = Convert.ToString(currentbestelling[i].Aantal);
-                            arr[3] = Convert.ToString(currentbestelling[i].Commentaar);
-                            arr[4] = currentbestelling[i].Status;
-                            arr[5] = Convert.ToString(currentbestelling[i].TijdOpgenomen);
-                            arr[6] = Convert.ToString(currentbestelingtafel[i].TafelId);
-                            item = new ListViewItem(arr);
-                            listview.Add(item);
-                        }
-                        else if (filter == "besteld" & currentbestelling[i].Status == "besteld")
-                        {
-                            arr[0] = Convert.ToString(currentbestelling[i].BestelitemID);
-                            arr[1] = Convert.ToString(currentmenuitem[i].Naam);
-                            arr[2] = Convert.ToString(currentbestelling[i].Aantal);
-                            arr[3] = Convert.ToString(currentbestelling[i].Commentaar);
-                            arr[4] = currentbestelling[i].Status;
-                            arr[5] = Convert.ToString(currentbestelling[i].TijdOpgenomen);
-                            arr[6] = Convert.ToString(currentbestelingtafel[i].TafelId);
-                            item = new ListViewItem(arr);
-                            listview.Add(item);
-                        }
-                    }
-                }
-            }
-            return listview;
+            return currentbestelingtafel;
         }
+        
 
         public void Updatebestelitem(int bestelitemid,string status)
         {
-            //de status moet het tegenovergestelde zijn(daarnaar moet ie veranderd worden dus
+            //de status moet het tegenovergestelde zijn(daarnaar moet ie veranderd worden)
             if (status == "besteld")
             {
                 status = "bereid";

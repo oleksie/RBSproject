@@ -60,8 +60,8 @@ namespace UI
             lv_KokBarman.Columns.Add("Tafel", 90);
 
             //selecteert bestelling list op basis van rol
-            bestellinglist = BarKok.BestellinglistGerechten(filter,medewerker);
-            
+            bestellinglist = BuildListViewItemList(filter);
+
             // vult listview
             for (int i = 0; i < bestellinglist.Count; i++)
             {
@@ -70,12 +70,49 @@ namespace UI
 
         }
 
+        private List<ListViewItem> BuildListViewItemList(string filter)
+        {
+            //verplaatst naar correcte plek
+            List<BestellingItem> currentbestelling = new List<BestellingItem>();
+            List<Model.MenuItem> currentmenuitem = new List<Model.MenuItem>();
+            List<Bestelling> currentbestellingtafel = new List<Bestelling>();
+
+            ListViewItem item = new ListViewItem();
+            string[] arr = new string[7];
+
+            bestellinglist.Clear();
+            currentbestelling = BarKok.BestellingItemList();
+            currentmenuitem = BarKok.MenuItemList();
+            currentbestellingtafel = BarKok.BestellingList();
+            //filter verhaal is flink korter nu rol en categorie if zijn samengevoegd in boolean kok
+            for (int i = 0; i < currentbestelling.Count; i++)
+            {
+                bool kok = BarKok.kok(medewerker, currentmenuitem[i]);
+
+                if (kok & filter == currentbestelling[i].Status)
+                {
+                    arr = BarKok.bestellingArray(currentbestelling[i], currentmenuitem[i], currentbestellingtafel[i]);
+                    item = new ListViewItem(arr);
+                    bestellinglist.Add(item);
+
+                }
+                if (!kok & filter == currentbestelling[i].Status)
+                {
+                    arr = BarKok.bestellingArray(currentbestelling[i], currentmenuitem[i], currentbestellingtafel[i]);
+                    item = new ListViewItem(arr);
+                    bestellinglist.Add(item);
+
+                }
+            }
+            return bestellinglist;
+        }
+
         private void BasisKokBar_Load(object sender, EventArgs e)
         {
-            //klok start
+            ////klok start
             Label1.Text = DateTime.Now.ToShortTimeString();
 
-            //start een timer van 10 seconden waarna de list refresh wordt
+            ////start een timer van 10 seconden waarna de list refresh wordt
             Timer timer = new Timer();
             timer.Interval = (10 * 1000); // 10 secs
             timer.Tick += new EventHandler(timer_Tick);
@@ -84,10 +121,10 @@ namespace UI
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            //de refresh van list (+tijd refresh)
+            ////////de refresh van list (+tijd refresh)
             Label1.Text = DateTime.Now.ToShortTimeString();
             lv_KokBarman.Items.Clear();
-            bestellinglist = BarKok.BestellinglistGerechten(filter, medewerker);
+            bestellinglist = BuildListViewItemList(filter);
             for (int i = 0; i < bestellinglist.Count; i++)
             {
                 lv_KokBarman.Items.Add(bestellinglist[i]);
@@ -101,7 +138,7 @@ namespace UI
             Label1.Text = DateTime.Now.ToShortTimeString();
         }
 
-        
+
 
         private void lv_KokBarman_ItemActivate(object sender, EventArgs e)
         {
@@ -110,7 +147,7 @@ namespace UI
             {
                 int lastdeleteditem = Convert.ToInt32(item.SubItems[0].Text);
                 string deletedItemStatus = Convert.ToString(item.SubItems[4].Text);
-                BarKok.Updatebestelitem(lastdeleteditem,deletedItemStatus);
+                BarKok.Updatebestelitem(lastdeleteditem, deletedItemStatus);
                 item.Remove();
             }
         }
@@ -133,7 +170,7 @@ namespace UI
             filter = "besteld";
             List<ListViewItem> bestellinglist = new List<ListViewItem>();
             lv_KokBarman.Items.Clear();
-            bestellinglist = BarKok.BestellinglistGerechten(filter, medewerker);
+            bestellinglist = BuildListViewItemList(filter);
 
             for (int i = 0; i < bestellinglist.Count; i++)
             {
@@ -150,13 +187,14 @@ namespace UI
             filter = "bereid";
             List<ListViewItem> bestellinglist = new List<ListViewItem>();
             lv_KokBarman.Items.Clear();
-            bestellinglist = BarKok.BestellinglistGerechten(filter, medewerker);
+            bestellinglist = BuildListViewItemList(filter);
+
             for (int i = 0; i < bestellinglist.Count; i++)
             {
                 lv_KokBarman.Items.Add(bestellinglist[i]);
             }
         }
-        
+
         private void BasisKokBar_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
         {
             //zorgt dat login terugkomt na sluiten
